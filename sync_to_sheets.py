@@ -130,12 +130,11 @@ def main():
             print(f"Creando la pestaña '{REPORT_SHEET_NAME}'...")
             report_worksheet = sh.add_worksheet(title=REPORT_SHEET_NAME, rows="100", cols="20")
             
-        # Formula description:
-        # We query Sheet1 A:C, grouping by Employee and Date, taking the MIN(C) (arrival time)
         query_formula = (
             '=QUERY(' + RAW_SHEET_NAME + '!A:C, '
             '"SELECT B, toDate(C), min(C) WHERE A IS NOT NULL GROUP BY B, toDate(C) ORDER BY toDate(C) DESC, B ASC '
-            'LABEL B \'Nombre\', toDate(C) \'Fecha\', min(C) \'Hora de Llegada\'", 1)'
+            'LABEL B \'Nombre\', toDate(C) \'Fecha\', min(C) \'Hora de Llegada\' '
+            'FORMAT min(C) \'hh:mm:ss AM/PM\'", 1)'
         )
         
         print(f"Insertando fórmula dinámica en '{REPORT_SHEET_NAME}'...")
@@ -143,14 +142,14 @@ def main():
         report_worksheet.update(values=[[query_formula]], range_name="A1", value_input_option="USER_ENTERED")
         
         # Format the columns for a clean look
-        # Set Header styling (Blue background, bold white text)
+        # Set Header styling (Slate Gray background, bold white text)
         header_format = {
-            "backgroundColor": {"red": 26/255, "green": 115/255, "blue": 232/255},
+            "backgroundColor": {"red": 50/255, "green": 60/255, "blue": 70/255},
             "textFormat": {"foregroundColor": {"red": 1.0, "green": 1.0, "blue": 1.0}, "bold": True, "fontSize": 11},
             "horizontalAlignment": "CENTER"
         }
         
-        # We can format headers in A1:C1
+        # Format headers in A1:C1
         report_worksheet.format("A1:C1", header_format)
         
         print("¡Sincronización y automatización de fórmulas completadas con éxito!")
