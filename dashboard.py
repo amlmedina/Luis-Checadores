@@ -4,7 +4,6 @@ import sqlite3
 import os
 import json
 import plotly.express as px
-import plotly.graph_objects as go
 from datetime import datetime, time
 
 # Page configuration
@@ -44,6 +43,27 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 DB_PATH = "./Checador/default.db"
+PIN_CONFIG_FILE = "pin_config.json"
+
+def get_saved_pin():
+    """Reads the saved PIN from pin_config.json, defaults to '3465'."""
+    if os.path.exists(PIN_CONFIG_FILE):
+        try:
+            with open(PIN_CONFIG_FILE, "r") as f:
+                config = json.load(f)
+                return str(config.get("pin", "3465"))
+        except Exception:
+            return "3465"
+    return "3465"
+
+def save_new_pin(new_pin):
+    """Saves the new PIN to pin_config.json."""
+    try:
+        with open(PIN_CONFIG_FILE, "w") as f:
+            json.dump({"pin": str(new_pin)}, f)
+        return True
+    except Exception:
+        return False
 
 @st.cache_data
 def load_data_from_sqlite():
@@ -73,6 +93,33 @@ def load_data_from_sqlite():
     df_arrivals = df.sort_values('Fecha_Hora').groupby(['PIN', 'Nombre', 'Fecha']).first().reset_index()
     return df_arrivals
 
+# Initialize authentication state
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+# ----------------- LOGIN SCREEN -----------------
+if not st.session_state.authenticated:
+    st.title("🔑 Acceso al Sistema de RH")
+    st.markdown("Por favor, ingresa el PIN de seguridad para acceder al panel de asistencia.")
+    
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.write("")
+        st.markdown("<div style='background-color:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);'>", unsafe_allow_html=True)
+        pin_input = st.text_input("PIN de Acceso", type="password", key="login_pin")
+        
+        if st.button("Entrar", use_container_width=True):
+            correct_pin = get_saved_pin()
+            if pin_input == correct_pin:
+                st.session_state.authenticated = True
+                st.rerun()
+            else:
+                st.error("PIN incorrecto. Inténtalo de nuevo.")
+        st.markdown("</div>", unsafe_allow_html=True)
+    st.stop()  # Stop rendering the rest of the app if not logged in
+
+# ----------------- MAIN APP CONTENT (Authenticated) -----------------
+
 # Load data
 df = load_data_from_sqlite()
 
@@ -82,7 +129,6 @@ else:
     # Sidebar Filters
     st.sidebar.image("https://img.icons8.com/color/96/worker-male.png", width=80)
     st.sidebar.title("Filtros de Control")
-    st.sidebar.markdown("Personaliza el reporte para el dueño de la tienda.")
     
     # 1. Date filter
     min_date = df['Fecha'].min()
@@ -107,6 +153,33 @@ else:
     # 3. Employee selector
     employees = ["Todos"] + sorted(df['Nombre'].unique().tolist())
     selected_employee = st.sidebar.selectbox("Seleccionar Empleado", employees)
+    
+    # 4. PIN Management Section in Sidebar
+    st.sidebar.write("---")
+    st.sidebar.subheader("Seguridad")
+    with st.sidebar.expander("Cambiar PIN de Acceso"):
+        old_pin = st.text_input("PIN Actual", type="password", key="old_pin")
+        new_pin = st.text_input("PIN Nuevo", type="password", key="new_pin")
+        confirm_pin = st.text_input("Confirmar PIN", type="password", key="confirm_pin")
+        
+        if st.button("Actualizar PIN", use_container_width=True):
+            saved_pin = get_saved_pin()
+            if old_pin != saved_pin:
+                st.error("El PIN actual es incorrecto.")
+            elif new_pin != confirm_pin:
+                st.error("El PIN nuevo y la confirmación no coinciden.")
+            elif len(new_pin) < 4:
+                st.error("El PIN debe tener al menos 4 caracteres.")
+            else:
+                if save_new_pin(new_pin):
+                    st.success("¡PIN actualizado con éxito!")
+                else:
+                    st.error("Error al guardar el nuevo PIN.")
+                    
+    # Log out button
+    if st.sidebar.button("Cerrar Sesión", use_container_width=True):
+        st.session_state.authenticated = False
+        st.rerun()
     
     # Filter Data based on selection
     filtered_df = df.copy()
