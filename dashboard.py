@@ -164,6 +164,18 @@ else:
     st.sidebar.image("https://img.icons8.com/color/96/bicycle.png", width=80)
     st.sidebar.title("Filtros de Control")
     
+    # Real-time synchronization button from Drive
+    if st.sidebar.button("🔄 Sincronizar con Drive Ahora", use_container_width=True):
+        with st.spinner("Sincronizando base de datos..."):
+            try:
+                import sync_to_sheets
+                sync_to_sheets.main()
+                st.cache_data.clear()  # Clear cache so it re-reads from default.db
+                st.success("¡Sincronización completada!")
+                st.rerun()
+            except Exception as e:
+                st.sidebar.error(f"Error al sincronizar: {e}")
+    
     # 1. Date filter
     min_date = df['Fecha'].min()
     max_date = df['Fecha'].max()

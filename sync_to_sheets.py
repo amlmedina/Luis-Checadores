@@ -12,7 +12,7 @@ SPREADSHEET_ID = "1B_MvLNFyZUoLlQwyZopDK487_5zQEv2V4HXbf9zhj-w"
 RAW_SHEET_NAME = "Sheet1"
 REPORT_SHEET_NAME = "Reporte de Llegadas"
 DRIVE_FOLDER_ID = "1Up1Ch18VKQTUeG_LamKo0EbrchlSxiBV"
-LOCAL_DB_PATH = "temp_downloaded_default.db"
+LOCAL_DB_PATH = "./Checador/default.db"
 CREDS_FILE = "Servicio.json"
 
 def download_database_from_drive(creds_info):
@@ -157,9 +157,7 @@ def main():
         
         print("¡Sincronización y automatización de fórmulas completadas con éxito!")
         
-        # Clean up local db file
-        if os.path.exists(LOCAL_DB_PATH):
-            os.remove(LOCAL_DB_PATH)
+        # Database remains local for Streamlit usage
             
     except Exception as e:
         print(f"Error al actualizar Google Sheets: {e}")
