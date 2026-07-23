@@ -79,13 +79,16 @@ def main():
     cursor = conn.cursor()
     
     try:
-        # Fetch raw punch events (PIN, Name, DateTime)
+        # Fetch raw punch events with terminal information
         cursor.execute("""
             SELECT e.emp_pin AS PIN, 
                    e.emp_firstname || ' ' || COALESCE(e.emp_lastname, '') AS Nombre, 
-                   p.punch_time AS Fecha_Hora
+                   p.punch_time AS Fecha_Hora,
+                   p.terminal_id AS ID_Checador,
+                   COALESCE(t.terminal_name, 'Checador ' || p.terminal_id) AS Nombre_Checador
             FROM att_punches p
             JOIN hr_employee e ON p.employee_id = e.id
+            LEFT JOIN att_terminal t ON p.terminal_id = t.id
             ORDER BY p.punch_time DESC;
         """)
         rows = cursor.fetchall()
@@ -96,8 +99,8 @@ def main():
 
     conn.close()
     
-    # Header + data for Sheet1
-    raw_data_to_write = [["PIN", "Nombre", "Fecha y Hora"]] + [list(row) for row in rows]
+    # Header + data for Sheet1 (5 columns)
+    raw_data_to_write = [["PIN", "Nombre", "Fecha y Hora", "ID Checador", "Nombre Checador"]] + [list(row) for row in rows]
     print(f"Se extrajeron {len(rows)} registros.")
 
     # 4. Authenticate with Google Sheets
@@ -131,9 +134,9 @@ def main():
             report_worksheet = sh.add_worksheet(title=REPORT_SHEET_NAME, rows="100", cols="20")
             
         query_formula = (
-            '=QUERY(' + RAW_SHEET_NAME + '!A:C, '
-            '"SELECT B, toDate(C), min(C) WHERE A IS NOT NULL GROUP BY B, toDate(C) ORDER BY toDate(C) DESC, B ASC '
-            'LABEL B \'Nombre\', toDate(C) \'Fecha\', min(C) \'Hora de Llegada\' '
+            '=QUERY(' + RAW_SHEET_NAME + '!A:E, '
+            '"SELECT B, toDate(C), min(C), E WHERE A IS NOT NULL GROUP BY B, toDate(C), E ORDER BY toDate(C) DESC, B ASC '
+            'LABEL B \'Nombre\', toDate(C) \'Fecha\', min(C) \'Hora de Llegada\', E \'Checador\' '
             'FORMAT min(C) \'hh:mm:ss AM/PM\'", 1)'
         )
         
@@ -149,8 +152,8 @@ def main():
             "horizontalAlignment": "CENTER"
         }
         
-        # Format headers in A1:C1
-        report_worksheet.format("A1:C1", header_format)
+        # Format headers in A1:D1 (4 columns)
+        report_worksheet.format("A1:D1", header_format)
         
         print("¡Sincronización y automatización de fórmulas completadas con éxito!")
         

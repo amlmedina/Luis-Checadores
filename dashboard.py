@@ -53,6 +53,7 @@ st.markdown("""
 
 DB_PATH = "./Checador/default.db"
 PIN_CONFIG_FILE = "pin_config.json"
+STORE_MAP_FILE = "terminal_store_map.json"
 
 def get_saved_pin():
     """Reads the saved PIN from pin_config.json, defaults to '3465'."""
@@ -74,6 +75,25 @@ def save_new_pin(new_pin):
     except Exception:
         return False
 
+def get_store_map():
+    """Reads the terminal-to-store mapping from terminal_store_map.json."""
+    if os.path.exists(STORE_MAP_FILE):
+        try:
+            with open(STORE_MAP_FILE, "r") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+def save_store_map(store_map):
+    """Saves the terminal-to-store mapping to terminal_store_map.json."""
+    try:
+        with open(STORE_MAP_FILE, "w") as f:
+            json.dump(store_map, f)
+        return True
+    except Exception:
+        return False
+
 @st.cache_data
 def load_data_from_sqlite():
     """Loads raw records directly from the local SQLite database."""
@@ -84,9 +104,12 @@ def load_data_from_sqlite():
     query = """
         SELECT e.emp_pin AS PIN, 
                e.emp_firstname || ' ' || COALESCE(e.emp_lastname, '') AS Nombre, 
-               p.punch_time AS Fecha_Hora
+               p.punch_time AS Fecha_Hora,
+               p.terminal_id AS ID_Checador,
+               COALESCE(t.terminal_name, 'Checador ' || p.terminal_id) AS Nombre_Checador
         FROM att_punches p
         JOIN hr_employee e ON p.employee_id = e.id
+        LEFT JOIN att_terminal t ON p.terminal_id = t.id
         ORDER BY p.punch_time DESC;
     """
     df = pd.read_sql_query(query, conn)
@@ -99,7 +122,7 @@ def load_data_from_sqlite():
     df['Minutos_del_dia'] = df['Fecha_Hora'].dt.hour * 60 + df['Fecha_Hora'].dt.minute
     
     # Filter to get only the FIRST punch per employee per day (Arrival Time)
-    df_arrivals = df.sort_values('Fecha_Hora').groupby(['PIN', 'Nombre', 'Fecha']).first().reset_index()
+    df_arrivals = df.sort_values('Fecha_Hora').groupby(['PIN', 'Nombre', 'Fecha', 'ID_Checador', 'Nombre_Checador']).first().reset_index()
     return df_arrivals
 
 # Initialize authentication state
@@ -110,6 +133,7 @@ if "authenticated" not in st.session_state:
 if not st.session_state.authenticated:
     st.title("🔑 Acceso al Sistema de RH")
     st.markdown("Por favor, ingresa el PIN de seguridad para acceder al panel de asistencia.")
+    
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         with st.container(border=True):
@@ -132,6 +156,10 @@ df = load_data_from_sqlite()
 if df.empty:
     st.error("No se pudo cargar la base de datos local. Verifica que la carpeta 'Checador' y el archivo 'default.db' existan en este directorio.")
 else:
+    # Load store mapping and apply it
+    store_map = get_store_map()
+    df['Tienda'] = df['ID_Checador'].astype(str).map(store_map).fillna(df['Nombre_Checador'])
+
     # Sidebar Filters
     st.sidebar.image("https://img.icons8.com/color/96/bicycle.png", width=80)
     st.sidebar.title("Filtros de Control")
@@ -156,12 +184,54 @@ else:
         step=pd.Timedelta(minutes=5).to_pytimedelta()
     )
     
-    # 3. Employee selector
-    employees = ["Todos"] + sorted(df['Nombre'].unique().tolist())
-    selected_employee = st.sidebar.selectbox("Seleccionar Empleado", employees)
+    # 3. Multi-select Employee Filter
+    selected_employees = st.sidebar.multiselect(
+        "Filtrar por Empleado(s)", 
+        options=sorted(df['Nombre'].unique().tolist()), 
+        default=[]
+    )
     
-    # 4. PIN Management Section in Sidebar
+    # 4. Multi-select Store (Tienda) Filter
+    selected_stores = st.sidebar.multiselect(
+        "Filtrar por Tienda(s)", 
+        options=sorted(df['Tienda'].unique().tolist()), 
+        default=[]
+    )
+    
+    # 5. Store Association Config Module in Sidebar
     st.sidebar.write("---")
+    st.sidebar.subheader("Administración de Tiendas")
+    with st.sidebar.expander("Asociar Checadores a Tiendas"):
+        # Find all unique terminals in data
+        unique_terminals = df[['ID_Checador', 'Nombre_Checador']].drop_duplicates().values
+        
+        new_store_map = store_map.copy()
+        updated = False
+        
+        for term_id, term_name in unique_terminals:
+            t_key = str(term_id)
+            current_val = store_map.get(t_key, term_name)
+            
+            # Text input for store association
+            new_val = st.text_input(
+                f"Tienda para {term_name} (ID: {term_id})",
+                value=current_val,
+                key=f"store_input_{term_id}"
+            )
+            
+            if new_val != current_val:
+                new_store_map[t_key] = new_val
+                updated = True
+                
+        if updated:
+            if st.button("Guardar Tiendas", use_container_width=True):
+                if save_store_map(new_store_map):
+                    st.success("¡Tiendas guardadas! Recargando...")
+                    st.rerun()
+                else:
+                    st.error("Error al guardar la asociación.")
+
+    # 6. PIN Management Section in Sidebar
     st.sidebar.subheader("Seguridad")
     with st.sidebar.expander("Cambiar PIN de Acceso"):
         old_pin = st.text_input("PIN Actual", type="password", key="old_pin")
@@ -187,7 +257,7 @@ else:
         st.session_state.authenticated = False
         st.rerun()
     
-    # Filter Data based on selection
+    # Filter Data based on selections
     filtered_df = df.copy()
     
     # Apply date filter
@@ -196,8 +266,12 @@ else:
         filtered_df = filtered_df[(filtered_df['Fecha'] >= start_date) & (filtered_df['Fecha'] <= end_date)]
         
     # Apply employee filter
-    if selected_employee != "Todos":
-        filtered_df = filtered_df[filtered_df['Nombre'] == selected_employee]
+    if selected_employees:
+        filtered_df = filtered_df[filtered_df['Nombre'].isin(selected_employees)]
+        
+    # Apply store filter
+    if selected_stores:
+        filtered_df = filtered_df[filtered_df['Tienda'].isin(selected_stores)]
         
     # Determine punctuality state
     limit_in_minutes = limit_hour.hour * 60 + limit_hour.minute
@@ -264,78 +338,86 @@ else:
     with chart_col1:
         st.markdown("#### Historial Diario de Puntualidad")
         # Aggregating daily data
-        daily_stats = filtered_df.groupby(['Fecha', 'Estado']).size().reset_index(name='Cantidad')
-        
-        fig = px.bar(
-            daily_stats, 
-            x='Fecha', 
-            y='Cantidad', 
-            color='Estado',
-            color_discrete_map={'Puntual': '#16A34A', 'Retardo': '#DC2626'},
-            barmode='stack',
-            height=350
-        )
-        fig.update_layout(
-            margin=dict(l=20, r=20, t=10, b=20),
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            legend_title_text=''
-        )
-        st.plotly_chart(fig, use_container_width=True)
+        if not filtered_df.empty:
+            daily_stats = filtered_df.groupby(['Fecha', 'Estado']).size().reset_index(name='Cantidad')
+            
+            fig = px.bar(
+                daily_stats, 
+                x='Fecha', 
+                y='Cantidad', 
+                color='Estado',
+                color_discrete_map={'Puntual': '#16A34A', 'Retardo': '#DC2626'},
+                barmode='stack',
+                height=350
+            )
+            fig.update_layout(
+                margin=dict(l=20, r=20, t=10, b=20),
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
+                legend_title_text=''
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.warning("No hay datos en el rango seleccionado.")
         
     with chart_col2:
         st.markdown("#### Distribución de Horas de Llegada")
-        
-        # Convert times to decimal hours for plotting
-        filtered_df['Hora_Decimal'] = filtered_df['Minutos_del_dia'] / 60
-        
-        fig2 = px.histogram(
-            filtered_df,
-            x='Hora_Decimal',
-            nbins=24,
-            color='Estado',
-            color_discrete_map={'Puntual': '#16A34A', 'Retardo': '#DC2626'},
-            labels={'Hora_Decimal': 'Hora del Día (Formato Decimal)'},
-            height=350
-        )
-        
-        # Add vertical line for the limit
-        limit_decimal = limit_in_minutes / 60
-        fig2.add_vline(x=limit_decimal, line_width=2, line_dash="dash", line_color="#E2E8F0", 
-                      annotation_text=f"Límite {limit_hour.strftime('%H:%M')}", 
-                      annotation_position="top left")
-        
-        fig2.update_layout(
-            margin=dict(l=20, r=20, t=10, b=20),
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            legend_title_text='',
-            yaxis_title_text='Frecuencia'
-        )
-        st.plotly_chart(fig2, use_container_width=True)
+        if not filtered_df.empty:
+            # Convert times to decimal hours for plotting
+            filtered_df['Hora_Decimal'] = filtered_df['Minutos_del_dia'] / 60
+            
+            fig2 = px.histogram(
+                filtered_df,
+                x='Hora_Decimal',
+                nbins=24,
+                color='Estado',
+                color_discrete_map={'Puntual': '#16A34A', 'Retardo': '#DC2626'},
+                labels={'Hora_Decimal': 'Hora del Día (Formato Decimal)'},
+                height=350
+            )
+            
+            # Add vertical line for the limit
+            limit_decimal = limit_in_minutes / 60
+            fig2.add_vline(x=limit_decimal, line_width=2, line_dash="dash", line_color="#E2E8F0", 
+                          annotation_text=f"Límite {limit_hour.strftime('%H:%M')}", 
+                          annotation_position="top left")
+            
+            fig2.update_layout(
+                margin=dict(l=20, r=20, t=10, b=20),
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
+                legend_title_text='',
+                yaxis_title_text='Frecuencia'
+            )
+            st.plotly_chart(fig2, use_container_width=True)
+        else:
+            st.warning("No hay datos en el rango seleccionado.")
         
     st.write(" ")
     
     # Detailed Data Table Section
     st.markdown("#### Tabla de Registros Detallada")
     
-    # Clean dataframe for display
-    display_df = filtered_df[['PIN', 'Nombre', 'Fecha', 'Hora', 'Estado']].copy()
-    display_df['Fecha'] = display_df['Fecha'].apply(lambda x: x.strftime('%d/%m/%Y'))
-    display_df['Hora'] = display_df['Hora'].apply(lambda x: x.strftime('%H:%M:%S'))
-    
-    # Styling table based on status
-    st.dataframe(
-        display_df,
-        use_container_width=True,
-        hide_index=True
-    )
-    
-    # Export options
-    csv = display_df.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
-    st.download_button(
-        label="📥 Descargar Reporte en Excel (CSV)",
-        data=csv,
-        file_name=f"reporte_asistencia_{datetime.now().strftime('%Y%m%d')}.csv",
-        mime="text/csv"
-    )
+    if not filtered_df.empty:
+        # Clean dataframe for display (6 columns: including Tienda)
+        display_df = filtered_df[['PIN', 'Nombre', 'Fecha', 'Hora', 'Tienda', 'Estado']].copy()
+        display_df['Fecha'] = display_df['Fecha'].apply(lambda x: x.strftime('%d/%m/%Y'))
+        display_df['Hora'] = display_df['Hora'].apply(lambda x: x.strftime('%H:%M:%S'))
+        
+        # Styling table based on status
+        st.dataframe(
+            display_df,
+            use_container_width=True,
+            hide_index=True
+        )
+        
+        # Export options
+        csv = display_df.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+        st.download_button(
+            label="📥 Descargar Reporte en Excel (CSV)",
+            data=csv,
+            file_name=f"reporte_asistencia_{datetime.now().strftime('%Y%m%d')}.csv",
+            mime="text/csv"
+        )
+    else:
+        st.warning("No hay datos para mostrar en la tabla detallada.")
