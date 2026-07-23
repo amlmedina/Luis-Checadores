@@ -121,7 +121,7 @@ def main():
             
         print(f"Escribiendo datos crudos en la pestaña '{RAW_SHEET_NAME}'...")
         raw_worksheet.clear()
-        raw_worksheet.update(values=raw_data_to_write, range_name="A1")
+        raw_worksheet.update(values=raw_data_to_write, range_name="A1", value_input_option="USER_ENTERED")
 
         # 5.2 Set up the automated Report Sheet
         try:
