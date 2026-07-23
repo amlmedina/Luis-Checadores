@@ -1,0 +1,1488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExportOption_HtmlCharacterSet" xml:space="preserve">
+    <value>Character set:</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode" xml:space="preserve">
+    <value>Export mode:</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_DifferentFiles" xml:space="preserve">
+    <value>Different files</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_SingleFile" xml:space="preserve">
+    <value>Single file</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>Single file with individual page</value>
+  </data>
+  <data name="ExportOption_HtmlPageBorderColor" xml:space="preserve">
+    <value>Page border color:</value>
+  </data>
+  <data name="ExportOption_HtmlPageBorderWidth" xml:space="preserve">
+    <value>Page border width:</value>
+  </data>
+  <data name="ExportOption_HtmlPageRange" xml:space="preserve">
+    <value>Page range:</value>
+  </data>
+  <data name="ExportOption_HtmlRemoveSecondarySymbols" xml:space="preserve">
+    <value>Remove carriage returns</value>
+  </data>
+  <data name="ExportOption_HtmlTitle" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="ExportOption_ImageExportMode" xml:space="preserve">
+    <value>Export mode:</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_DifferentFiles" xml:space="preserve">
+    <value>Different files</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_SingleFile" xml:space="preserve">
+    <value>Single file</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>Single file page-by-page</value>
+  </data>
+  <data name="ExportOption_ImageFormat" xml:space="preserve">
+    <value>Image format:</value>
+  </data>
+  <data name="ExportOption_ImagePageBorderColor" xml:space="preserve">
+    <value>Page border color:</value>
+  </data>
+  <data name="ExportOption_ImagePageBorderWidth" xml:space="preserve">
+    <value>Page border width:</value>
+  </data>
+  <data name="ExportOption_ImagePageRange" xml:space="preserve">
+    <value>Page range:</value>
+  </data>
+  <data name="ExportOption_ImageResolution" xml:space="preserve">
+    <value>Resolution (dpi):</value>
+  </data>
+  <data name="ExportOption_NativeFormatCompressed" xml:space="preserve">
+    <value>Compressed</value>
+  </data>
+  <data name="ExportOption_PdfCompressed" xml:space="preserve">
+    <value>Compressed</value>
+  </data>
+  <data name="ExportOption_PdfDocumentApplication" xml:space="preserve">
+    <value>Application:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentAuthor" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentKeywords" xml:space="preserve">
+    <value>Keywords:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentSubject" xml:space="preserve">
+    <value>Subject:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentTitle" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality" xml:space="preserve">
+    <value>Images quality:</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_High" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Highest" xml:space="preserve">
+    <value>Highest</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Low" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Lowest" xml:space="preserve">
+    <value>Lowest</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Medium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="ExportOption_PdfNeverEmbeddedFonts" xml:space="preserve">
+    <value>Don't include these fonts:</value>
+  </data>
+  <data name="ExportOption_PdfPageRange" xml:space="preserve">
+    <value>Page range:</value>
+  </data>
+  <data name="ExportOption_PdfShowPrintDialogOnOpen" xml:space="preserve">
+    <value>Show print dialog upon open</value>
+  </data>
+  <data name="ExportOption_RtfExportMode" xml:space="preserve">
+    <value>Export mode:</value>
+  </data>
+  <data name="ExportOption_RtfExportMode_SingleFile" xml:space="preserve">
+    <value>Single file</value>
+  </data>
+  <data name="ExportOption_RtfExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>Single file page-by-page</value>
+  </data>
+  <data name="ExportOption_RtfExportWatermarks" xml:space="preserve">
+    <value>Export watermarks</value>
+  </data>
+  <data name="ExportOption_RtfPageRange" xml:space="preserve">
+    <value>Page range:</value>
+  </data>
+  <data name="ExportOption_TextEncoding" xml:space="preserve">
+    <value>Encoding</value>
+  </data>
+  <data name="ExportOption_TextQuoteStringsWithSeparators" xml:space="preserve">
+    <value>Quote strings with separators</value>
+  </data>
+  <data name="ExportOption_TextSeparator" xml:space="preserve">
+    <value>Text separator:</value>
+  </data>
+  <data name="ExportOption_TextSeparator_TabAlias" xml:space="preserve">
+    <value>TAB</value>
+  </data>
+  <data name="ExportOption_XlsSheetName" xml:space="preserve">
+    <value>Sheet name:</value>
+  </data>
+  <data name="ExportOption_XlsShowGridLines" xml:space="preserve">
+    <value>Show grid lines</value>
+  </data>
+  <data name="ExportOption_XlsUseNativeFormat" xml:space="preserve">
+    <value>Export values using their format</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionCsv" xml:space="preserve">
+    <value>CSV Export Options</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionHtml" xml:space="preserve">
+    <value>HTML Export Options</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionImage" xml:space="preserve">
+    <value>Image Export Options</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionMht" xml:space="preserve">
+    <value>MHT Export Options</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionNativeOptions" xml:space="preserve">
+    <value>Native Format Options</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionPdf" xml:space="preserve">
+    <value>PDF Export Options</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionRtf" xml:space="preserve">
+    <value>RTF Export Options</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionTxt" xml:space="preserve">
+    <value>Text Export Options</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionXls" xml:space="preserve">
+    <value>XLS Export Options</value>
+  </data>
+  <data name="FolderBrowseDlg_ExportDirectory" xml:space="preserve">
+    <value>Select a folder to save the exported document to:</value>
+  </data>
+  <data name="Margin_BottomMargin" xml:space="preserve">
+    <value>Bottom Margin</value>
+  </data>
+  <data name="Margin_Inch" xml:space="preserve">
+    <value>Inch</value>
+  </data>
+  <data name="Margin_LeftMargin" xml:space="preserve">
+    <value>Left Margin</value>
+  </data>
+  <data name="Margin_Millimeter" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="Margin_RightMargin" xml:space="preserve">
+    <value>Right Margin</value>
+  </data>
+  <data name="Margin_TopMargin" xml:space="preserve">
+    <value>Top Margin</value>
+  </data>
+  <data name="MF_Pages" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="MI_BackgrColor" xml:space="preserve">
+    <value>&amp;Color...</value>
+  </data>
+  <data name="MI_Background" xml:space="preserve">
+    <value>&amp;Background</value>
+  </data>
+  <data name="MI_CsvDocument" xml:space="preserve">
+    <value>CSV File</value>
+  </data>
+  <data name="MI_Exit" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="MI_Export" xml:space="preserve">
+    <value>&amp;Export To</value>
+  </data>
+  <data name="MI_File" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="MI_GraphicDocument" xml:space="preserve">
+    <value>Image File</value>
+  </data>
+  <data name="MI_HtmDocument" xml:space="preserve">
+    <value>HTML File</value>
+  </data>
+  <data name="MI_MhtDocument" xml:space="preserve">
+    <value>MHT File</value>
+  </data>
+  <data name="MI_XlsDocumnet" xml:space="preserve">
+    <value>XLS File</value>
+  </data>
+  <data name="MI_XlsxDocument" xml:space="preserve">
+    <value>XLSX File</value>
+  </data>
+  <data name="MI_PageLayout" xml:space="preserve">
+    <value>&amp;Page Layout</value>
+  </data>
+  <data name="MI_PageSetup" xml:space="preserve">
+    <value>Page Set&amp;up</value>
+  </data>
+  <data name="MI_PdfDocument" xml:space="preserve">
+    <value>PDF File</value>
+  </data>
+  <data name="MI_Print" xml:space="preserve">
+    <value>&amp;Print</value>
+  </data>
+  <data name="MI_PrintDirect" xml:space="preserve">
+    <value>P&amp;rint</value>
+  </data>
+  <data name="MI_RtfDocument" xml:space="preserve">
+    <value>RTF File</value>
+  </data>
+  <data name="MI_Send" xml:space="preserve">
+    <value>Sen&amp;d As</value>
+  </data>
+  <data name="MI_TxtDocument" xml:space="preserve">
+    <value>Text File</value>
+  </data>
+  <data name="MI_View" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="MI_ViewContinuous" xml:space="preserve">
+    <value>&amp;Continuous</value>
+  </data>
+  <data name="MI_ViewFacing" xml:space="preserve">
+    <value>&amp;Facing</value>
+  </data>
+  <data name="MI_ViewStatusbar" xml:space="preserve">
+    <value>&amp;Statusba</value>
+  </data>
+  <data name="MI_ViewToolbar" xml:space="preserve">
+    <value>&amp;Toolbar</value>
+  </data>
+  <data name="MI_Watermark" xml:space="preserve">
+    <value>&amp;Watermark...</value>
+  </data>
+  <data name="MI_XlsDocument" xml:space="preserve">
+    <value>Excel File</value>
+  </data>
+  <data name="MI_ZoomPageWidth" xml:space="preserve">
+    <value>Page Width</value>
+  </data>
+  <data name="MI_ZoomTextWidth" xml:space="preserve">
+    <value>Text Width</value>
+  </data>
+  <data name="MI_ZoomTwoPages" xml:space="preserve">
+    <value>Two Pages</value>
+  </data>
+  <data name="MI_ZoomWholePage" xml:space="preserve">
+    <value>Whole Page</value>
+  </data>
+  <data name="Msg_BigBitmapToCreate" xml:space="preserve">
+    <value>The output file is too big. Please try to reduce the image resolution,\r\nor choose another export mode.</value>
+  </data>
+  <data name="Msg_BigFileToCreateJPEG" xml:space="preserve">
+    <value>The output file is too big to create a JPEG file. Please choose another image format or another export mode.</value>
+  </data>
+  <data name="Msg_CannotAccessFile" xml:space="preserve">
+    <value>The program cannot access the file \"{0}\" because it is being used by another process.</value>
+  </data>
+  <data name="Msg_CantFitBarcodeToControlBounds" xml:space="preserve">
+    <value>Control's boundaries are too small for the barcode</value>
+  </data>
+  <data name="Msg_CreatingDocument" xml:space="preserve">
+    <value>Creating the document...</value>
+  </data>
+  <data name="Msg_CustomDrawWarning" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="Msg_EmptyDocument" xml:space="preserve">
+    <value>The document does not contain any pages.</value>
+  </data>
+  <data name="Msg_FileDosntContainValidXml" xml:space="preserve">
+    <value>The specified file doesn't contain valid XML data in the PRNX format. Loading is stopped.</value>
+  </data>
+  <data name="Msg_FileDosntHavePrnxExtention" xml:space="preserve">
+    <value>The specified file doesn't have a PRNX extension. Proceed anyway?</value>
+  </data>
+  <data name="Msg_FileReadOnly" xml:space="preserve">
+    <value>File \"{0}\" is set to read-only, try again with a different file name.</value>
+  </data>
+  <data name="Msg_FontInvalidNumber" xml:space="preserve">
+    <value>The font size cannot be set to zero or a negative number</value>
+  </data>
+  <data name="Msg_IncorrectPageRange" xml:space="preserve">
+    <value>This is not a valid page range</value>
+  </data>
+  <data name="Msg_IncorrectZoomFactor" xml:space="preserve">
+    <value>The number must be beetween {0} and {1}.</value>
+  </data>
+  <data name="Msg_InvalidBarcodeText" xml:space="preserve">
+    <value>There are invalid characters in the text</value>
+  </data>
+  <data name="Msg_InvalidBarcodeTextFormat" xml:space="preserve">
+    <value>Invalid text format</value>
+  </data>
+  <data name="Msg_InvalidMeasurement" xml:space="preserve">
+    <value>This is not a valid measurement.</value>
+  </data>
+  <data name="Msg_NeedPrinter" xml:space="preserve">
+    <value>No printers installed.</value>
+  </data>
+  <data name="Msg_NoDifferentFilesInStream" xml:space="preserve">
+    <value>A document can't be exported to a stream in the DifferentFiles mode. Use the SingleFile or SingleFilePageByPage mode instead.</value>
+  </data>
+  <data name="Msg_NotSupportedFont" xml:space="preserve">
+    <value>This font is not yet supported</value>
+  </data>
+  <data name="Msg_OpenFileQuestion" xml:space="preserve">
+    <value>Do you want to open this file?</value>
+  </data>
+  <data name="Msg_OpenFileQuestionCaption" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Msg_PageMarginsWarning" xml:space="preserve">
+    <value>One or more margins are set outside the printable area of the page. Continue?</value>
+  </data>
+  <data name="Msg_SearchDialogFinishedSearching" xml:space="preserve">
+    <value>Finished searching through the document</value>
+  </data>
+  <data name="Msg_SearchDialogReady" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Msg_SearchDialogTotalFound" xml:space="preserve">
+    <value>Total found:</value>
+  </data>
+  <data name="Msg_UnavailableNetPrinter" xml:space="preserve">
+    <value>The network printer is unavailable.</value>
+  </data>
+  <data name="Msg_WrongPageSettings" xml:space="preserve">
+    <value>The current printer doesn't support the selected paper size.\r\nProceed with printing anyway?</value>
+  </data>
+  <data name="Msg_WrongPrinter" xml:space="preserve">
+    <value>The printer name is invalid. Please check the printer settings.</value>
+  </data>
+  <data name="Msg_WrongPrinting" xml:space="preserve">
+    <value>An error occurred during printing a document.</value>
+  </data>
+  <data name="Msg_XlsMoreThanMaxColumns" xml:space="preserve">
+    <value>The created XLS file is too big for the XLS format, because it contains more than 256 columns.\r\nPlease try to reduce the amount of columns in your report and export the report to XLS again.</value>
+  </data>
+  <data name="Msg_XlsMoreThanMaxRows" xml:space="preserve">
+    <value>The created XLS file is too big for the XLS format, because it contains more than 65536 rows.\r\nPlease try to reduce the amount of rows in your report and export the report to XLS again.</value>
+  </data>
+  <data name="OpenFileDialog_Filter" xml:space="preserve">
+    <value>Preview Document Files (*{0})|*{0}|All Files (*.*)|*.*</value>
+  </data>
+  <data name="OpenFileDialog_Title" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="PageInfo_PageDate" xml:space="preserve">
+    <value>[Date Printed]</value>
+  </data>
+  <data name="PageInfo_PageNumber" xml:space="preserve">
+    <value>[Page #]</value>
+  </data>
+  <data name="PageInfo_PageNumberOfTotal" xml:space="preserve">
+    <value>[Page # of Pages #]</value>
+  </data>
+  <data name="PageInfo_PageTime" xml:space="preserve">
+    <value>[Time Printed]</value>
+  </data>
+  <data name="PageInfo_PageUserName" xml:space="preserve">
+    <value>[User Name]</value>
+  </data>
+  <data name="PF_Caption" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="RibbonPreview_ClosePreview_Caption" xml:space="preserve">
+    <value>Close Print Preview</value>
+  </data>
+  <data name="RibbonPreview_ClosePreview_STipContent" xml:space="preserve">
+    <value>Close Print Preview of the document.</value>
+  </data>
+  <data name="RibbonPreview_ClosePreview_STipTitle" xml:space="preserve">
+    <value>Close Print Preview</value>
+  </data>
+  <data name="RibbonPreview_Customize_Caption" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="RibbonPreview_Customize_STipContent" xml:space="preserve">
+    <value>Open the Print Options dialog, in which you can change printing options.</value>
+  </data>
+  <data name="RibbonPreview_Customize_STipTitle" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_Caption" xml:space="preserve">
+    <value>Bookmarks</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_STipContent" xml:space="preserve">
+    <value>Open the Document Map, which allows you to navigate through a structural view of the document.</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_STipTitle" xml:space="preserve">
+    <value>Document Map</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_Caption" xml:space="preserve">
+    <value>Header/Footer</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_STipContent" xml:space="preserve">
+    <value>Edit the header and footer of the document.</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_STipTitle" xml:space="preserve">
+    <value>Header and Footer</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_Caption" xml:space="preserve">
+    <value>CSV File</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_Description" xml:space="preserve">
+    <value>Comma-Separated Values Text</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_STipContent" xml:space="preserve">
+    <value>Export the document to CSV and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_STipTitle" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_Caption" xml:space="preserve">
+    <value>Export To</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_STipContent" xml:space="preserve">
+    <value>Export the current document in one of the available formats, and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_STipTitle" xml:space="preserve">
+    <value>Export To...</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_Caption" xml:space="preserve">
+    <value>Image File</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_Description" xml:space="preserve">
+    <value>BMP, GIF, JPEG, PNG, TIFF, EMF, WMF</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_STipContent" xml:space="preserve">
+    <value>Export the document to Image and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_STipTitle" xml:space="preserve">
+    <value>Export to Image</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_Caption" xml:space="preserve">
+    <value>HTML File</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_Description" xml:space="preserve">
+    <value>Web Page</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_STipContent" xml:space="preserve">
+    <value>Export the document to HTML and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_STipTitle" xml:space="preserve">
+    <value>Export to HTML</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_Caption" xml:space="preserve">
+    <value>MHT File</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_Description" xml:space="preserve">
+    <value>Single File Web Page</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_STipContent" xml:space="preserve">
+    <value>Export the document to MHT and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_STipTitle" xml:space="preserve">
+    <value>Export to MHT</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_Caption" xml:space="preserve">
+    <value>PDF File</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_Description" xml:space="preserve">
+    <value>Adobe Portable Document Format</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_STipContent" xml:space="preserve">
+    <value>Export the document to PDF and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_STipTitle" xml:space="preserve">
+    <value>Export to PDF</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_Caption" xml:space="preserve">
+    <value>RTF File</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_Description" xml:space="preserve">
+    <value>Rich Text Format</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_STipContent" xml:space="preserve">
+    <value>Export the document to RTF and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_STipTitle" xml:space="preserve">
+    <value>Export to RTF</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_Caption" xml:space="preserve">
+    <value>Text File</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_Description" xml:space="preserve">
+    <value>Plain Text</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_STipContent" xml:space="preserve">
+    <value>Export the document to Text and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_STipTitle" xml:space="preserve">
+    <value>Export to Text</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_Caption" xml:space="preserve">
+    <value>Excel File</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_Description" xml:space="preserve">
+    <value>Microsoft Excel Workbook</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_STipContent" xml:space="preserve">
+    <value>Export the document to XLS and save it to the file on a disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_STipTitle" xml:space="preserve">
+    <value>Export to XLS</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_Caption" xml:space="preserve">
+    <value>Page Color</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_STipContent" xml:space="preserve">
+    <value>Choose a color for the background of the document pages.</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_STipTitle" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="RibbonPreview_Find_Caption" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="RibbonPreview_Find_STipContent" xml:space="preserve">
+    <value>Show the Find dialog to find text in the document.</value>
+  </data>
+  <data name="RibbonPreview_Find_STipTitle" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMargins_Description" xml:space="preserve">
+    <value>Top:\t\t{0}\t\tBottom:\t\t{1}\r\nLeft:\t\t {2}\t\tRight:\t\t   {3}</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsModerate_Caption" xml:space="preserve">
+    <value>Moderate</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsModerate_Description" xml:space="preserve">
+    <value>Moderate</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNarrow_Caption" xml:space="preserve">
+    <value>Narrow</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNarrow_Description" xml:space="preserve">
+    <value>Narrow</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNormal_Caption" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNormal_Description" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsWide_Caption" xml:space="preserve">
+    <value>Wide</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsWide_Description" xml:space="preserve">
+    <value>Wide</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationLandscape_Caption" xml:space="preserve">
+    <value>Landscape</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationLandscape_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationPortrait_Caption" xml:space="preserve">
+    <value>Portrait</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationPortrait_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RibbonPreview_GalleryItem_PaperSize_Description" xml:space="preserve">
+    <value>{0} x {1}</value>
+  </data>
+  <data name="RibbonPreview_HandTool_Caption" xml:space="preserve">
+    <value>Hand Tool</value>
+  </data>
+  <data name="RibbonPreview_HandTool_STipContent" xml:space="preserve">
+    <value>Invoke the Hand tool to manually scroll through pages.</value>
+  </data>
+  <data name="RibbonPreview_HandTool_STipTitle" xml:space="preserve">
+    <value>Hand Tool</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_Caption" xml:space="preserve">
+    <value>Magnifier</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_STipContent" xml:space="preserve">
+    <value>Invoke the Magnifier tool.\r\n\r\nClicking once on a document zooms it so that a single page becomes entirely visible, while clicking another time zooms it to 100% of the normal size.</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_STipTitle" xml:space="preserve">
+    <value>Magnifier</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_Caption" xml:space="preserve">
+    <value>Many Pages</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_STipContent" xml:space="preserve">
+    <value>Choose the page layout to arrange the document pages in preview.</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_STipTitle" xml:space="preserve">
+    <value>View Many Pages</value>
+  </data>
+  <data name="RibbonPreview_Open_Caption" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="RibbonPreview_Open_STipContent" xml:space="preserve">
+    <value>Open a document.</value>
+  </data>
+  <data name="RibbonPreview_Open_STipTitle" xml:space="preserve">
+    <value>Open (Ctrl + O)</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Background" xml:space="preserve">
+    <value>Page Background</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Navigation" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup" xml:space="preserve">
+    <value>Page Setup</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup_STipContent" xml:space="preserve">
+    <value>Show the Page Setup dialog.</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup_STipTitle" xml:space="preserve">
+    <value>Page Setup</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_Caption" xml:space="preserve">
+    <value>Margins</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_STipContent" xml:space="preserve">
+    <value>Select the margin sizes for the entire document.\r\n\r\nTo apply specific margin sizes to the document, click Custom Margins.</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_STipTitle" xml:space="preserve">
+    <value>Page Margins</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_Caption" xml:space="preserve">
+    <value>Orientation</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_STipContent" xml:space="preserve">
+    <value>Switch the pages between portrait and landscape layouts.</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_STipTitle" xml:space="preserve">
+    <value>Page Orientation</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_Caption" xml:space="preserve">
+    <value>Custom Margins...</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_STipContent" xml:space="preserve">
+    <value>Show the Page Setup dialog.</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_STipTitle" xml:space="preserve">
+    <value>Page Setup</value>
+  </data>
+  <data name="RibbonPreview_PageText" xml:space="preserve">
+    <value>Print Preview</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_Caption" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_STipContent" xml:space="preserve">
+    <value>Choose the paper size of the document.</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_STipTitle" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="RibbonPreview_Parameters_Caption" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="RibbonPreview_Parameters_STipContent" xml:space="preserve">
+    <value>Open the Parameters pane, which allows you to enter values for report parameters.</value>
+  </data>
+  <data name="RibbonPreview_Parameters_STipTitle" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="RibbonPreview_Pointer_Caption" xml:space="preserve">
+    <value>Pointer</value>
+  </data>
+  <data name="RibbonPreview_Pointer_STipContent" xml:space="preserve">
+    <value>Show the mouse pointer.</value>
+  </data>
+  <data name="RibbonPreview_Pointer_STipTitle" xml:space="preserve">
+    <value>Mouse Pointer</value>
+  </data>
+  <data name="RibbonPreview_Print_Caption" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="RibbonPreview_Print_STipContent" xml:space="preserve">
+    <value>Select a printer, number of copies and other printing options before printing.</value>
+  </data>
+  <data name="RibbonPreview_Print_STipTitle" xml:space="preserve">
+    <value>Print (Ctrl+P)</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_Caption" xml:space="preserve">
+    <value>Quick Print</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_STipContent" xml:space="preserve">
+    <value>Send the document directly to the default printer without making changes.</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_STipTitle" xml:space="preserve">
+    <value>Quick Print</value>
+  </data>
+  <data name="RibbonPreview_Save_Caption" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="RibbonPreview_Save_STipContent" xml:space="preserve">
+    <value>Save the document.</value>
+  </data>
+  <data name="RibbonPreview_Save_STipTitle" xml:space="preserve">
+    <value>Save (Ctrl + S)</value>
+  </data>
+  <data name="RibbonPreview_Scale_Caption" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="RibbonPreview_Scale_STipContent" xml:space="preserve">
+    <value>Stretch or shrink the printed output to a percentage of its actual size.</value>
+  </data>
+  <data name="RibbonPreview_Scale_STipTitle" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_Caption" xml:space="preserve">
+    <value>CSV File</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_Description" xml:space="preserve">
+    <value>Comma-Separated Values Text</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_STipContent" xml:space="preserve">
+    <value>Export the document to CSV and attach it to the e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_STipTitle" xml:space="preserve">
+    <value>E-Mail As CSV</value>
+  </data>
+  <data name="RibbonPreview_SendFile_Caption" xml:space="preserve">
+    <value>E-Mail As</value>
+  </data>
+  <data name="RibbonPreview_SendFile_STipContent" xml:space="preserve">
+    <value>Export the current document in one of the available formats, and attach it to the e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendFile_STipTitle" xml:space="preserve">
+    <value>E-Mail As...</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_Caption" xml:space="preserve">
+    <value>Image File</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_Description" xml:space="preserve">
+    <value>BMP, GIF, JPEG, PNG, TIFF, EMF, WMF</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_STipContent" xml:space="preserve">
+    <value>Export the document to Image and attach it to the e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_STipTitle" xml:space="preserve">
+    <value>E-Mail As Image</value>
+  </data>
+  <data name="RibbonPreview_SendMht_Caption" xml:space="preserve">
+    <value>MHT File</value>
+  </data>
+  <data name="RibbonPreview_SendMht_Description" xml:space="preserve">
+    <value>Single File Web Page</value>
+  </data>
+  <data name="RibbonPreview_SendMht_STipContent" xml:space="preserve">
+    <value>Export the document to MHT and attach it to the e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendMht_STipTitle" xml:space="preserve">
+    <value>E-Mail As MHT</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_Caption" xml:space="preserve">
+    <value>PDF File</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_Description" xml:space="preserve">
+    <value>Adobe Portable Document Format</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_STipContent" xml:space="preserve">
+    <value>Export the document to PDF and attach it to the e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_STipTitle" xml:space="preserve">
+    <value>E-Mail As PDF</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_Caption" xml:space="preserve">
+    <value>RTF File</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_Description" xml:space="preserve">
+    <value>Rich Text Format</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_STipContent" xml:space="preserve">
+    <value>Export the document to RTF and attach it to the e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_STipTitle" xml:space="preserve">
+    <value>E-Mail As RTF</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_Caption" xml:space="preserve">
+    <value>Text File</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_Description" xml:space="preserve">
+    <value>Plain Text</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_STipContent" xml:space="preserve">
+    <value>Export the document to Text and attach it to the e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_STipTitle" xml:space="preserve">
+    <value>E-Mail As Text</value>
+  </data>
+  <data name="RibbonPreview_SendXls_Caption" xml:space="preserve">
+    <value>Excel File</value>
+  </data>
+  <data name="RibbonPreview_SendXls_Description" xml:space="preserve">
+    <value>Microsoft Excel Workbook</value>
+  </data>
+  <data name="RibbonPreview_SendXls_STipContent" xml:space="preserve">
+    <value>Export the document to XLS and attach it to the e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendXls_STipTitle" xml:space="preserve">
+    <value>E-Mail As XLS</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_Caption" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_STipContent" xml:space="preserve">
+    <value>Navigate to the first page of the document.</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_STipTitle" xml:space="preserve">
+    <value>First Page (Ctrl+Home)</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_Caption" xml:space="preserve">
+    <value>Last  Page</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_STipContent" xml:space="preserve">
+    <value>Navigate to the last page of the document.</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_STipTitle" xml:space="preserve">
+    <value>Last Page (Ctrl+End)</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_Caption" xml:space="preserve">
+    <value>Next  Page</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_STipContent" xml:space="preserve">
+    <value>Navigate to the next page of the document.</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_STipTitle" xml:space="preserve">
+    <value>Next Page (PageDown)</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_Caption" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_STipContent" xml:space="preserve">
+    <value>Navigate to the previous page of the document.</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_STipTitle" xml:space="preserve">
+    <value>Previous Page (PageUp)</value>
+  </data>
+  <data name="RibbonPreview_Watermark_Caption" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="RibbonPreview_Watermark_STipContent" xml:space="preserve">
+    <value>Insert ghosted text or image behind the content of a page.\r\n\r\nThis is often used to indicate that a document is to be treated specially.</value>
+  </data>
+  <data name="RibbonPreview_Watermark_STipTitle" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="RibbonPreview_Zoom_Caption" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="RibbonPreview_Zoom_STipContent" xml:space="preserve">
+    <value>Change the zoom level of the document preview.</value>
+  </data>
+  <data name="RibbonPreview_Zoom_STipTitle" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="RibbonPreview_ZoomExact_Caption" xml:space="preserve">
+    <value>Exact:</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_Caption" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_STipContent" xml:space="preserve">
+    <value>Zoom in to get a close-up view of the document.</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_STipTitle" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_Caption" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_STipContent" xml:space="preserve">
+    <value>Zoom out to see more of the page at a reduced size.</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_STipTitle" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="SaveDlg_FilterBmp" xml:space="preserve">
+    <value>BMP Bitmap Format</value>
+  </data>
+  <data name="SaveDlg_FilterCsv" xml:space="preserve">
+    <value>CSV Document</value>
+  </data>
+  <data name="SaveDlg_FilterEmf" xml:space="preserve">
+    <value>EMF Enhanced Windows Metafile</value>
+  </data>
+  <data name="SaveDlg_FilterGif" xml:space="preserve">
+    <value>GIF Graphics Interchange Format</value>
+  </data>
+  <data name="SaveDlg_FilterHtm" xml:space="preserve">
+    <value>HTML Document</value>
+  </data>
+  <data name="SaveDlg_FilterJpeg" xml:space="preserve">
+    <value>JPEG File Interchange Format</value>
+  </data>
+  <data name="SaveDlg_FilterMht" xml:space="preserve">
+    <value>MHT Document</value>
+  </data>
+  <data name="SaveDlg_FilterNativeFormat" xml:space="preserve">
+    <value>Native Format</value>
+  </data>
+  <data name="SaveDlg_FilterPdf" xml:space="preserve">
+    <value>PDF Document</value>
+  </data>
+  <data name="SaveDlg_FilterPng" xml:space="preserve">
+    <value>PNG Portable Network Graphics Format</value>
+  </data>
+  <data name="SaveDlg_FilterRtf" xml:space="preserve">
+    <value>Rich Text Document</value>
+  </data>
+  <data name="SaveDlg_FilterTiff" xml:space="preserve">
+    <value>TIFF Tag Image File Format</value>
+  </data>
+  <data name="SaveDlg_FilterTxt" xml:space="preserve">
+    <value>Text Document</value>
+  </data>
+  <data name="SaveDlg_FilterWmf" xml:space="preserve">
+    <value>WMF Windows Metafile</value>
+  </data>
+  <data name="SaveDlg_FilterXls" xml:space="preserve">
+    <value>Excel Document</value>
+  </data>
+  <data name="SaveDlg_Title" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="SB_CurrentPageNo" xml:space="preserve">
+    <value>Current Page</value>
+  </data>
+  <data name="SB_PageInfo" xml:space="preserve">
+    <value>{0} of {1}</value>
+  </data>
+  <data name="SB_PageNone" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="SB_PageOfPages" xml:space="preserve">
+    <value>Page {0} of {1}</value>
+  </data>
+  <data name="SB_TotalPageNo" xml:space="preserve">
+    <value>Total Pages:</value>
+  </data>
+  <data name="SB_ZoomFactor" xml:space="preserve">
+    <value>Zoom Factor:</value>
+  </data>
+  <data name="ScalePopup_AdjustTo" xml:space="preserve">
+    <value>Adjust to:</value>
+  </data>
+  <data name="ScalePopup_FitTo" xml:space="preserve">
+    <value>Fit to</value>
+  </data>
+  <data name="ScalePopup_GroupText" xml:space="preserve">
+    <value>Scaling</value>
+  </data>
+  <data name="ScalePopup_NormalSize" xml:space="preserve">
+    <value>% normal size</value>
+  </data>
+  <data name="ScalePopup_PagesWide" xml:space="preserve">
+    <value>pages wide</value>
+  </data>
+  <data name="ScrollingInfo_Page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="TotalTimeCardPageTitle" xml:space="preserve">
+    <value>Total Time Card Report</value>
+  </data>
+  <data name="TransactionsPageTitle" xml:space="preserve">
+    <value>Transactions Report</value>
+  </data>
+  <data name="TT_Backgr" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="TT_Close" xml:space="preserve">
+    <value>Close Preview</value>
+  </data>
+  <data name="TT_Customize" xml:space="preserve">
+    <value>Customize</value>
+  </data>
+  <data name="TT_EditPageHF" xml:space="preserve">
+    <value>Header And Footer</value>
+  </data>
+  <data name="TT_Export" xml:space="preserve">
+    <value>Export Document...</value>
+  </data>
+  <data name="TT_FirstPage" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="TT_HandTool" xml:space="preserve">
+    <value>Hand Tool</value>
+  </data>
+  <data name="TT_LastPage" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="TT_Magnifier" xml:space="preserve">
+    <value>Magnifier</value>
+  </data>
+  <data name="TT_Map" xml:space="preserve">
+    <value>Document Map</value>
+  </data>
+  <data name="TT_MultiplePages" xml:space="preserve">
+    <value>Multiple Pages</value>
+  </data>
+  <data name="TT_NextPage" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="TT_Open" xml:space="preserve">
+    <value>Open a document</value>
+  </data>
+  <data name="TT_PageSetup" xml:space="preserve">
+    <value>Page Setup</value>
+  </data>
+  <data name="TT_Parameters" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="TT_PreviousPage" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="TT_Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="TT_PrintDirect" xml:space="preserve">
+    <value>Quick Print</value>
+  </data>
+  <data name="TT_Save" xml:space="preserve">
+    <value>Save the document</value>
+  </data>
+  <data name="TT_Scale" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="TT_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="TT_Send" xml:space="preserve">
+    <value>Send via E-Mail...</value>
+  </data>
+  <data name="TT_Watermark" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="TT_Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="TT_ZoomIn" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="TT_ZoomOut" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="UserInfoPageTitle" xml:space="preserve">
+    <value>Employee Information Report</value>
+  </data>
+  <data name="UserInfoTipBirthDay" xml:space="preserve">
+    <value>Birthdate</value>
+  </data>
+  <data name="UserInfoTipCardNumber" xml:space="preserve">
+    <value>Card Number</value>
+  </data>
+  <data name="UserInfoTipCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="UserInfoTipCurrentAddress" xml:space="preserve">
+    <value>Address1</value>
+  </data>
+  <data name="UserInfoTipDepartment" xml:space="preserve">
+    <value>Department:</value>
+  </data>
+  <data name="UserInfoTipDuty" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="UserInfoTipEmpState" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="UserInfoTipFamilyName" xml:space="preserve">
+    <value>Cell Phone</value>
+  </data>
+  <data name="UserInfoTipGender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="UserInfoTipJoinDate" xml:space="preserve">
+    <value>Join Date</value>
+  </data>
+  <data name="UserInfoTipPermanentAddress" xml:space="preserve">
+    <value>Address2</value>
+  </data>
+  <data name="UserInfoTipPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="UserInfoTipQualification" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="UserListPageTitle" xml:space="preserve">
+    <value>Employee Sample Report</value>
+  </data>
+  <data name="WMForm_Direction_BackwardDiagonal" xml:space="preserve">
+    <value>BackwardDiagonal</value>
+  </data>
+  <data name="WMForm_Direction_ForwardDiagonal" xml:space="preserve">
+    <value>ForwardDiagonal</value>
+  </data>
+  <data name="WMForm_Direction_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="WMForm_Direction_Vertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="WMForm_HorzAlign_Center" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="WMForm_HorzAlign_Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="WMForm_HorzAlign_Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="WMForm_ImageClip" xml:space="preserve">
+    <value>Clip</value>
+  </data>
+  <data name="WMForm_ImageStretch" xml:space="preserve">
+    <value>Stretch</value>
+  </data>
+  <data name="WMForm_ImageZoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="WMForm_PageRangeRgrItem_All" xml:space="preserve">
+    <value>&amp;All</value>
+  </data>
+  <data name="WMForm_PageRangeRgrItem_Pages" xml:space="preserve">
+    <value>&amp;Pages:</value>
+  </data>
+  <data name="WMForm_PictureDlg_Title" xml:space="preserve">
+    <value>Select Picture</value>
+  </data>
+  <data name="WMForm_VertAlign_Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="WMForm_VertAlign_Middle" xml:space="preserve">
+    <value>Middle</value>
+  </data>
+  <data name="WMForm_VertAlign_Top" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="WMForm_Watermark_Asap" xml:space="preserve">
+    <value>ASAP</value>
+  </data>
+  <data name="WMForm_Watermark_Confidential" xml:space="preserve">
+    <value>CONFIDENTIAL</value>
+  </data>
+  <data name="WMForm_Watermark_Copy" xml:space="preserve">
+    <value>COPY</value>
+  </data>
+  <data name="WMForm_Watermark_DoNotCopy" xml:space="preserve">
+    <value>DO NOT COPY</value>
+  </data>
+  <data name="WMForm_Watermark_Draft" xml:space="preserve">
+    <value>DRAFT</value>
+  </data>
+  <data name="WMForm_Watermark_Evaluation" xml:space="preserve">
+    <value>EVALUATION</value>
+  </data>
+  <data name="WMForm_Watermark_Original" xml:space="preserve">
+    <value>ORIGINAL</value>
+  </data>
+  <data name="WMForm_Watermark_Personal" xml:space="preserve">
+    <value>PERSONAL</value>
+  </data>
+  <data name="WMForm_Watermark_Sample" xml:space="preserve">
+    <value>SAMPLE</value>
+  </data>
+  <data name="WMForm_Watermark_TopSecret" xml:space="preserve">
+    <value>TOP SECRET</value>
+  </data>
+  <data name="WMForm_Watermark_Urgent" xml:space="preserve">
+    <value>URGENT</value>
+  </data>
+  <data name="WMForm_ZOrderRgrItem_Behind" xml:space="preserve">
+    <value>&amp;Behind</value>
+  </data>
+  <data name="WMForm_ZOrderRgrItem_InFront" xml:space="preserve">
+    <value>In &amp;front</value>
+  </data>
+  <data name="SamplePin" xml:space="preserve">
+    <value>Employee pin</value>
+  </data>
+  <data name="SampleCode" xml:space="preserve">
+    <value>Employee Code</value>
+  </data>
+  <data name="SampleFirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="SampleLastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="SampleHireDate" xml:space="preserve">
+    <value>Hire Date</value>
+  </data>
+  <data name="TipOperator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="TipDescription" xml:space="preserve">
+    <value>Description </value>
+  </data>
+  <data name="TipDateTime" xml:space="preserve">
+    <value>DateTime</value>
+  </data>
+  <data name="OperationLogReportPageTitle" xml:space="preserve">
+    <value>System Op Report</value>
+  </data>
+  <data name="BarText_MainMenu" xml:space="preserve">
+    <value>Main Menu</value>
+  </data>
+  <data name="Button_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Button_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Button_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionXlsx" xml:space="preserve">
+    <value>XLSX Export Options</value>
+  </data>
+  <data name="ExportOption_HtmlEmbedImagesInHTML" xml:space="preserve">
+    <value>Embed images in HTML</value>
+  </data>
+  <data name="ExportOption_PdfConvertImagesToJpeg" xml:space="preserve">
+    <value>Convert Images to Jpeg</value>
+  </data>
+  <data name="ExportOption_PdfPasswordSecurityOptions" xml:space="preserve">
+    <value>Password Security:</value>
+  </data>
+  <data name="ExportOption_PdfPasswordSecurityOptions_None" xml:space="preserve">
+    <value>(none)</value>
+  </data>
+  <data name="ExportOption_TextExportMode" xml:space="preserve">
+    <value>Text export mode:</value>
+  </data>
+  <data name="ExportOption_TextExportMode_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="ExportOption_TextExportMode_Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ExportOption_XlsExportHyperlinks" xml:space="preserve">
+    <value>Export hyperlinks</value>
+  </data>
+  <data name="ExportOption_XlsExportMode" xml:space="preserve">
+    <value>Export mode:</value>
+  </data>
+  <data name="ExportOption_XlsExportMode_DifferentFiles" xml:space="preserve">
+    <value>Different files</value>
+  </data>
+  <data name="ExportOption_XlsExportMode_SingleFile" xml:space="preserve">
+    <value>Single file</value>
+  </data>
+  <data name="ExportOption_XlsPageRange" xml:space="preserve">
+    <value>Page range:</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode" xml:space="preserve">
+    <value>Export mode:</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_DifferentFiles" xml:space="preserve">
+    <value>Different files</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_SingleFile" xml:space="preserve">
+    <value>Single file</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>Single file page-by-page</value>
+  </data>
+  <data name="ExportOption_XlsxPageRange" xml:space="preserve">
+    <value>Page range:</value>
+  </data>
+  <data name="SB_TTip_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ExportOption_XlsRawDataMode" xml:space="preserve">
+    <value>Raw Data Mode</value>
+  </data>
+  <data name="ExportOption_HtmlTableLayout" xml:space="preserve">
+    <value>Table layout</value>
+  </data>
+  <data name="ExportOption_PdfACompatibility" xml:space="preserve">
+    <value>PDF/A-2b</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_AnyExceptExtractingPages" xml:space="preserve">
+    <value>Any except extracting pages</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_CommentingFillingSigning" xml:space="preserve">
+    <value>Commenting,filling in form fields,and signing exiting signature fields</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_FillingSigning" xml:space="preserve">
+    <value>Filling in form fields and signing existing signature fields</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_InsertingDeletingRotating" xml:space="preserve">
+    <value>Inserting,deleting and rotating pages</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_HighResolution" xml:space="preserve">
+    <value>High Resolution</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_LowResolution" xml:space="preserve">
+    <value>Low Resolution (150 dpi)</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ExportOption_PdfSignatureOptions" xml:space="preserve">
+    <value>Digital Signature</value>
+  </data>
+  <data name="ExportOption_PdfSignatureOptions_None" xml:space="preserve">
+    <value>(none)</value>
+  </data>
+  <data name="ExportOption_PdfSignature_EmptyCertificate" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SB_PageOfPagesHint" xml:space="preserve">
+    <value>Page number in document. Click to open Go To Page dialog.</value>
+  </data>
+</root>

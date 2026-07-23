@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menus MenuNo="05" MenuFlag="Menu" UserFlag="1">
+  <!--System Manage-->
+  <FirstMenu MenuNo="0505" MenuFlag="System" UserFlag="1">
+    <SecondMenu MenuNo="050505" MenuFlag="Config" UserFlag="1" 
+                AllowOperator="Select,Update"
+                ModelName="ZKTimeNet.UI.Systems.SysOptionSetModule,ZKTimeNet.UI.Systems" HelpURL="_14.htm"></SecondMenu>
+    
+    <SecondMenu MenuNo="050510" MenuFlag="EmailSet" UserFlag="1"
+                AllowOperator="Select,Update"
+                ModelName="ZKTimeNet.UI.Systems.EmailSetModule,ZKTimeNet.UI.Systems" HelpURL="_15.htm"></SecondMenu>
+
+    <SecondMenu MenuNo="050515" MenuFlag="Role" UserFlag="1"
+                AllowOperator="Select,Update,Delete"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Systems.RoleModule,ZKTimeNet.UI.Systems" HelpURL="_16.htm">
+      <MenuDALName>ZKTimeNet.BLL.System.RoleBLL,ZKTimeNet.BLL.System</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.System.Role,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>role_name</Field1Name>
+      <Field2Name>role_name</Field2Name>
+      <Field1Caption>role_name</Field1Caption>
+      <Field2Caption>role_name</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>False</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>
+    </SecondMenu>
+    
+    <SecondMenu MenuNo="050520" MenuFlag="User" UserFlag="1" 
+                AllowOperator="Select,Update,Delete"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Systems.UserModule,ZKTimeNet.UI.Systems" HelpURL="_17.htm">
+      <MenuDALName>ZKTimeNet.BLL.System.UserBLL,ZKTimeNet.BLL.System</MenuDALName>      
+      <MenuEntityName>ZKTimeNet.Entities.System.User,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>username</Field1Name>
+      <Field2Name>username</Field2Name>
+      <Field1Caption>user_name</Field1Caption>
+      <Field2Caption>user_name</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>False</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>  
+    </SecondMenu>
+    
+    <SecondMenu MenuNo="050525" MenuFlag="OperatorLog" UserFlag="1" AllowOperator="Select,Delete,Export"
+                ModelName="ZKTimeNet.UI.Systems.OperationLogModule,ZKTimeNet.UI.Systems" HelpURL="_18.htm"></SecondMenu>
+    <SecondMenu MenuNo="050530" MenuFlag="Database" UserFlag="1" AllowOperator="Select,InitialDB,BackupDB,RestoreDB,ChangeDB"
+                ModelName="ZKTimeNet.UI.Systems.DatabaseManagerModule,ZKTimeNet.UI.Systems" HelpURL="_20.htm"></SecondMenu>
+  </FirstMenu>
+  
+  <!--Human Manage-->
+  <FirstMenu MenuNo="0510" MenuFlag="Human" UserFlag="1">
+    <SecondMenu MenuNo="051005" MenuFlag="Companies" UserFlag="1"
+                AllowOperator="Select,Update"
+                ModelName="ZKTimeNet.UI.HR.CompanyEdit,ZKTimeNet.UI.HR" HelpURL="_25.htm">
+      <MenuDALName></MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.HR.Company,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>cmp_code</Field1Name>
+      <Field2Name>cmp_name</Field2Name>
+      <Field1Caption>StringCode</Field1Caption>
+      <Field2Caption>StringName</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>True</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>
+    </SecondMenu>
+    
+    <SecondMenu MenuNo="051010" MenuFlag="Employees" UserFlag="1"
+                AllowOperator="Select,Update,Delete,Import,Export,BatchUpdate"
+                ShowGridList ="true" ShowFunctionBtn="true" ShowCheckBox ="true"
+                ModelName="ZKTimeNet.UI.HR.EmployeeModule,ZKTimeNet.UI.HR" HelpURL="_26.htm">
+      <MenuDALName>ZKTimeNet.BLL.HR.EmployeeBLL,ZKTimeNet.BLL.HR</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.HR.Employee,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>emp_pin</Field1Name>
+      <Field2Name>emp_Name.Fullname</Field2Name>
+      <Field1Caption>StringPin</Field1Caption>
+      <Field2Caption>StringName</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>True</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>
+    </SecondMenu>
+    
+  </FirstMenu>
+  
+  <!--Attendance Manage-->
+  <FirstMenu MenuNo="0515" MenuFlag="Attendance" UserFlag="1">
+    <SecondMenu MenuNo="051505" MenuFlag="Rules" UserFlag="1"
+                AllowOperator="Select,Update"
+                ModelName="ZKTimeNet.UI.Attendance.RulesModule,ZKTimeNet.UI.Attendance" HelpURL="_32.htm">
+    </SecondMenu>
+        
+    <SecondMenu MenuNo="051510" MenuFlag="DayType" UserFlag="1"
+                AllowOperator="Select,Update"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Attendance.DayTypeModule,ZKTimeNet.UI.Attendance" HelpURL="_35.htm">
+      <MenuDALName>ZKTimeNet.BLL.Attendance.DayTypeBLL,ZKTimeNet.BLL.Attendance</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Attendance.DayType,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>dt_code</Field1Name>
+      <Field2Name>item_Text</Field2Name>
+      <Field1Caption>StringCode</Field1Caption>
+      <Field2Caption>StringName</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>True</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>
+    </SecondMenu>
+
+    <SecondMenu MenuNo="051515" MenuFlag="PayCode" UserFlag="1"
+                AllowOperator="Select,Update,Delete,Assign"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Attendance.PaycodeModule,ZKTimeNet.UI.Attendance" HelpURL="_36.htm">
+      <MenuDALName>ZKTimeNet.BLL.Attendance.StatisticItemBLL,ZKTimeNet.BLL.Attendance</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Attendance.StatisticItem,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>item_code</Field1Name>
+      <Field2Name>item_Text</Field2Name>
+      <Field1Caption>StringCode</Field1Caption>
+      <Field2Caption>StringName</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>True</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>
+    </SecondMenu>
+
+    <SecondMenu MenuNo="051520" MenuFlag="Timetable" UserFlag="1"
+                AllowOperator="Select,Update,Delete"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Attendance.TimeTableModule,ZKTimeNet.UI.Attendance" HelpURL="_37.htm">
+      <MenuDALName>ZKTimeNet.BLL.Attendance.TimetableBLL,ZKTimeNet.BLL.Attendance</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Attendance.Timetable,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>timetable_info.timetable_name</Field1Name>
+      <Field2Name>id</Field2Name>
+      <Field1Caption>StringName</Field1Caption>
+      <Field2Caption>StringCode</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>False</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>
+    </SecondMenu>
+
+    <SecondMenu MenuNo="051525" MenuFlag="Shifts" UserFlag="1"
+                AllowOperator="Select,Update,Delete"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Attendance.ShiftModule,ZKTimeNet.UI.Attendance" HelpURL="_40.htm">
+      <MenuDALName>ZKTimeNet.BLL.Attendance.ShiftBLL,ZKTimeNet.BLL.Attendance</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Attendance.Shift,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>shift_name</Field1Name>
+      <Field2Name>id</Field2Name>
+      <Field1Caption>StringName</Field1Caption>
+      <Field2Caption>StringCode</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>False</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>      
+    </SecondMenu>
+
+    <SecondMenu MenuNo="051530" MenuFlag="Schedule" UserFlag="1"
+               AllowOperator="Select,Update"
+               ShowGridList ="false" ShowFunctionBtn="false"
+               ModelName="ZKTimeNet.UI.Attendance.ScheduleModule,ZKTimeNet.UI.Attendance" HelpURL="_43.htm"></SecondMenu>
+
+
+    <SecondMenu MenuNo="051535" MenuFlag="TemporarySchedule" UserFlag="1"
+               AllowOperator="Select,Update"
+               ShowFunctionBtn="false"
+               ModelName="ZKTimeNet.UI.Attendance.UserCalendar,ZKTimeNet.UI.Attendance" HelpURL="_47.htm"></SecondMenu>
+    
+    <SecondMenu MenuNo="051540" MenuFlag="ExceptionAssign" UserFlag="1" 
+                AllowOperator="Select,Update,Delete"
+                ModelName="ZKTimeNet.UI.Attendance.ExceptionAssignModule,ZKTimeNet.UI.Attendance" HelpURL="_48.htm"></SecondMenu>
+
+  </FirstMenu>
+  
+  <!--Terminal Manage-->
+  <FirstMenu MenuNo="0520" MenuFlag="Terminal" UserFlag="1"> 
+    <SecondMenu MenuNo="052005" MenuFlag="DeviceManagement" UserFlag="1"
+                AllowOperator="Select,Update,Delete,DownloadPunches,SearchTerminal,DownloadPhotos"
+                ShowGridList ="true" ShowFunctionBtn="true" ShowCheckBox ="true"
+                ModelName="ZKTimeNet.UI.Terminal.TerminalModule,ZKTimeNet.UI.Terminal" HelpURL="_50.htm">
+      <MenuDALName>ZKTimeNet.BLL.Terminal.TerminalBLL,ZKTimeNet.BLL.Terminal</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Terminals.Terminal,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>terminal_name</Field1Name>terminal_tcpip
+      <Field2Name>terminal_tcpip</Field2Name>
+      <Field1Caption>TerminalName</Field1Caption>
+      <Field2Caption>IPDomain</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>False</Field2Visible>
+      <Field1ColumnWidth>120</Field1ColumnWidth>  
+    </SecondMenu>
+    
+    <SecondMenu MenuNo="052010" MenuFlag="TerminalGroup" UserFlag="1"
+                AllowOperator="Select,Update,Delete,AssignEmployee"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Terminal.ZoneModule,ZKTimeNet.UI.Terminal" HelpURL="_53.htm">
+      <MenuDALName>ZKTimeNet.BLL.Terminal.ZoneBLL,ZKTimeNet.BLL.Terminal</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Terminals.Zone,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>zone_code</Field1Name>
+      <Field2Name>ZoneName</Field2Name>
+      <Field1Caption>StringCode</Field1Caption>
+      <Field2Caption>StringName</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>True</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>  
+    </SecondMenu>
+    
+    <SecondMenu MenuNo="052015" MenuFlag="DataSync" UserFlag="1"
+                AllowOperator="Select,DataSync"
+                ShowGridList="true" ShowCheckBox ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Terminal.TerminalDataSyncModule,ZKTimeNet.UI.Terminal" HelpURL="_56.htm">
+      <MenuDALName></MenuDALName>
+      <MenuEntityName></MenuEntityName>
+      <Field1Name>zone_code</Field1Name>
+      <Field2Name>ZoneName</Field2Name>
+      <Field1Caption>StringCode</Field1Caption>
+      <Field2Caption>StringName</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>True</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>
+    </SecondMenu>
+    
+    <SecondMenu MenuNo="052020" MenuFlag="ImportExport" UserFlag="1"
+                AllowOperator="Select"
+                ModelName="ZKTimeNet.UI.Terminal.UDiskManagerModule,ZKTimeNet.UI.Terminal" HelpURL="_57.htm"></SecondMenu>
+    
+    <SecondMenu MenuNo="052025" MenuFlag="workcode" UserFlag="1"
+                AllowOperator="Select,Update,Delete"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Terminal.WorkcodeModule,ZKTimeNet.UI.Terminal" HelpURL="_58.htm">
+      <MenuDALName>ZKTimeNet.BLL.Terminal.WorkcodeBLL,ZKTimeNet.BLL.Terminal</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Terminals.Workcode,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>wc_code</Field1Name>
+      <Field2Name>wc_name</Field2Name>
+      <Field1Caption>StringCode</Field1Caption>
+      <Field2Caption>StringName</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>True</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>  
+    </SecondMenu>
+    
+    <SecondMenu MenuNo="052030" MenuFlag="Message" UserFlag="1"
+                AllowOperator="Select,Update,Delete"
+                ShowGridList ="true" ShowFunctionBtn="true"
+                ModelName="ZKTimeNet.UI.Terminal.MessageModule,ZKTimeNet.UI.Terminal" HelpURL="_59.htm">
+      <MenuDALName>ZKTimeNet.BLL.Terminal.MessageBLL,ZKTimeNet.BLL.Terminal</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Terminals.Message,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>code</Field1Name>
+      <Field2Name>title</Field2Name>
+      <Field1Caption>MessageCodeStr</Field1Caption>
+      <Field2Caption>MessageTitleStr</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>True</Field2Visible>
+      <Field1ColumnWidth>60</Field1ColumnWidth>  
+    </SecondMenu> 
+  </FirstMenu>
+  
+  <!--Access Control-->
+  <FirstMenu MenuNo="0525" MenuFlag="AccessControl" UserFlag="1">
+    <SecondMenu MenuNo="052505" MenuFlag="ACTimezone" UserFlag="1" 
+                AllowOperator="Select,Update,Delete"
+                ModelName="ZKTimeNet.UI.Access.ACTimezoneModule,ZKTimeNet.UI.Access" HelpURL="_61.htm"></SecondMenu>
+    
+    <SecondMenu MenuNo="052510" MenuFlag="ACGroup" UserFlag="1"
+                AllowOperator="Select,Update,Delete"
+                ModelName="ZKTimeNet.UI.Access.ACGroupModule,ZKTimeNet.UI.Access" HelpURL="_62.htm"></SecondMenu>
+    
+    <SecondMenu MenuNo="052515" MenuFlag="ACUnlockComb" UserFlag="1"
+                AllowOperator="Select,Update"
+                ModelName="ZKTimeNet.UI.Access.ACUnlockCombModule,ZKTimeNet.UI.Access" HelpURL="_63.htm"></SecondMenu>
+    
+    <SecondMenu MenuNo="052520" MenuFlag="UserACPrivilege" UserFlag="1" 
+                AllowOperator="Select,Update,Delete"
+                ModelName="ZKTimeNet.UI.Access.ACUserPrivilegeModule,ZKTimeNet.UI.Access" HelpURL="_64.htm">
+    </SecondMenu>
+    
+    <SecondMenu MenuNo="052525" MenuFlag="UploadACPrivilege" UserFlag="1"
+                AllowOperator="Select,Assign2Device"
+                ShowGridList="true" ShowCheckBox ="true"
+                ShowFunctionBtn="true" ModelName="ZKTimeNet.UI.Access.UploadSetting,ZKTimeNet.UI.Access" HelpURL="_65.htm">
+      <MenuDALName>ZKTimeNet.BLL.Terminal.TerminalBLL,ZKTimeNet.BLL.Terminal</MenuDALName>
+      <MenuEntityName>ZKTimeNet.Entities.Terminals.Terminal,ZKTimeNet.Entities</MenuEntityName>
+      <Field1Name>terminal_name</Field1Name>terminal_tcpip
+      <Field2Name>terminal_tcpip</Field2Name>
+      <Field1Caption>TerminalName</Field1Caption>
+      <Field2Caption>IPDomain</Field2Caption>
+      <Field1Visible>True</Field1Visible>
+      <Field2Visible>False</Field2Visible>
+      <Field1ColumnWidth>120</Field1ColumnWidth>
+    </SecondMenu>
+  </FirstMenu>
+  
+  <!--Reports Manage-->
+  <FirstMenu MenuNo="0530" MenuFlag="Reports" UserFlag="1">
+    <SecondMenu MenuNo="053005" MenuFlag="Punches" UserFlag="1"
+            AllowOperator="Select,Update,Delete,Import,Export"
+            ModelName="ZKTimeNet.UI.Attendance.SearchPunches,ZKTimeNet.UI.Attendance" HelpURL="_67.htm"></SecondMenu>
+    <SecondMenu MenuNo="053010" MenuFlag="Calculate" UserFlag="1"
+            AllowOperator="Select,Update"
+            ModelName="ZKTimeNet.UI.Attendance.CalculateModule,ZKTimeNet.UI.Attendance" HelpURL="_68.htm"></SecondMenu>
+    <SecondMenu MenuNo="053015" MenuFlag="AttReport" UserFlag="1"
+                AllowOperator="Select,Update,Delete,View"
+                ModelName="ZKTimeNet.UI.Report.ReportCardList,ZKTimeNet.UI.Report" HelpURL="_69.htm"></SecondMenu>    
+  </FirstMenu>
+</Menus>

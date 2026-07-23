@@ -1,0 +1,1489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BarText_MainMenu" xml:space="preserve">
+    <value>주 메뉴</value>
+  </data>
+  <data name="Button_Apply" xml:space="preserve">
+    <value>신청</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="Button_Help" xml:space="preserve">
+    <value>도움</value>
+  </data>
+  <data name="Button_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionCsv" xml:space="preserve">
+    <value>CSV 내보내기 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionHtml" xml:space="preserve">
+    <value>HTML 내보내기 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionImage" xml:space="preserve">
+    <value>이미지 내보내기 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionMht" xml:space="preserve">
+    <value>MHT 내보내기 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionNativeOptions" xml:space="preserve">
+    <value>네이티브 형식 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionPdf" xml:space="preserve">
+    <value>PDF 내보내기 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionRtf" xml:space="preserve">
+    <value>RTF 내보내기 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionTxt" xml:space="preserve">
+    <value>텍스트 내보내기 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionXls" xml:space="preserve">
+    <value>XLS 내보내기 옵션</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionXlsx" xml:space="preserve">
+    <value>XLSX 내보내기 옵션</value>
+  </data>
+  <data name="ExportOption_HtmlCharacterSet" xml:space="preserve">
+    <value> 캐릭터 새트
+</value>
+  </data>
+  <data name="ExportOption_HtmlEmbedImagesInHTML" xml:space="preserve">
+    <value>HTML에 포함 된 이미지</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode" xml:space="preserve">
+    <value>수출 모드 :</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_DifferentFiles" xml:space="preserve">
+    <value>다른 파일</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_SingleFile" xml:space="preserve">
+    <value>단일 파일</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>개별 페이지가있는 단일 파일</value>
+  </data>
+  <data name="ExportOption_HtmlPageBorderColor" xml:space="preserve">
+    <value>페이지 테두리 색상 :</value>
+  </data>
+  <data name="ExportOption_HtmlPageBorderWidth" xml:space="preserve">
+    <value>페이지 테두리 너비 :</value>
+  </data>
+  <data name="ExportOption_HtmlPageRange" xml:space="preserve">
+    <value>페이지 범위 :</value>
+  </data>
+  <data name="ExportOption_HtmlRemoveSecondarySymbols" xml:space="preserve">
+    <value>캐리지 리턴 제거</value>
+  </data>
+  <data name="ExportOption_HtmlTableLayout" xml:space="preserve">
+    <value>테이블 레이아웃</value>
+  </data>
+  <data name="ExportOption_HtmlTitle" xml:space="preserve">
+    <value>표제:</value>
+  </data>
+  <data name="ExportOption_ImageExportMode" xml:space="preserve">
+    <value>수출 모드 :</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_DifferentFiles" xml:space="preserve">
+    <value>다른 파일</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_SingleFile" xml:space="preserve">
+    <value>단일 파일</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>페이지 별 단일 파일</value>
+  </data>
+  <data name="ExportOption_ImageFormat" xml:space="preserve">
+    <value>이미지 형식 :</value>
+  </data>
+  <data name="ExportOption_ImagePageBorderColor" xml:space="preserve">
+    <value>페이지 테두리 색상 :</value>
+  </data>
+  <data name="ExportOption_ImagePageBorderWidth" xml:space="preserve">
+    <value>페이지 테두리 너비 :</value>
+  </data>
+  <data name="ExportOption_ImagePageRange" xml:space="preserve">
+    <value>페이지 범위 :</value>
+  </data>
+  <data name="ExportOption_ImageResolution" xml:space="preserve">
+    <value>해상도 (dpi) :</value>
+  </data>
+  <data name="ExportOption_NativeFormatCompressed" xml:space="preserve">
+    <value>압축</value>
+  </data>
+  <data name="ExportOption_PdfACompatibility" xml:space="preserve">
+    <value>PDF/A-2b</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_AnyExceptExtractingPages" xml:space="preserve">
+    <value>추출 페이지 제외</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_CommentingFillingSigning" xml:space="preserve">
+    <value>주석 달기, 양식 필드 채우기 및 종료 서명 필드 서명</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_FillingSigning" xml:space="preserve">
+    <value>양식 필드 채우기 및 기존 서명 필드 서명</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_InsertingDeletingRotating" xml:space="preserve">
+    <value>페이지 삽입, 삭제 및 회전</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_None" xml:space="preserve">
+    <value>암호 보안 :</value>
+  </data>
+  <data name="ExportOption_PdfCompressed" xml:space="preserve">
+    <value>압축</value>
+  </data>
+  <data name="ExportOption_PdfConvertImagesToJpeg" xml:space="preserve">
+    <value>Jpeg로 이미지 변환</value>
+  </data>
+  <data name="ExportOption_PdfDocumentApplication" xml:space="preserve">
+    <value>신청:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentAuthor" xml:space="preserve">
+    <value>작자:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentKeywords" xml:space="preserve">
+    <value>키워드 :</value>
+  </data>
+  <data name="ExportOption_PdfDocumentSubject" xml:space="preserve">
+    <value>제목:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentTitle" xml:space="preserve">
+    <value>표제:</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality" xml:space="preserve">
+    <value>이미지 품질 :</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_High" xml:space="preserve">
+    <value>높은</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Highest" xml:space="preserve">
+    <value>제일 높은</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Low" xml:space="preserve">
+    <value>낮은</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Lowest" xml:space="preserve">
+    <value>최저</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Medium" xml:space="preserve">
+    <value>중위</value>
+  </data>
+  <data name="ExportOption_PdfNeverEmbeddedFonts" xml:space="preserve">
+    <value>다음 글꼴은 포함하지 마십시오.</value>
+  </data>
+  <data name="ExportOption_PdfPageRange" xml:space="preserve">
+    <value>페이지 범위 :</value>
+  </data>
+  <data name="ExportOption_PdfPasswordSecurityOptions" xml:space="preserve">
+    <value>암호 보안 :</value>
+  </data>
+  <data name="ExportOption_PdfPasswordSecurityOptions_None" xml:space="preserve">
+    <value>(없음)</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_HighResolution" xml:space="preserve">
+    <value>높은 해상도</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_LowResolution" xml:space="preserve">
+    <value>저해상도 (150dpi)</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_None" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="ExportOption_PdfShowPrintDialogOnOpen" xml:space="preserve">
+    <value>열 때 인쇄 대화 상자 표시</value>
+  </data>
+  <data name="ExportOption_PdfSignatureOptions" xml:space="preserve">
+    <value>전자 서명</value>
+  </data>
+  <data name="ExportOption_PdfSignatureOptions_None" xml:space="preserve">
+    <value>(없음)</value>
+  </data>
+  <data name="ExportOption_PdfSignature_EmptyCertificate" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="ExportOption_RtfExportMode" xml:space="preserve">
+    <value>수출 모드 :</value>
+  </data>
+  <data name="ExportOption_RtfExportMode_SingleFile" xml:space="preserve">
+    <value>단일 파일</value>
+  </data>
+  <data name="ExportOption_RtfExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>페이지 별 단일 파일</value>
+  </data>
+  <data name="ExportOption_RtfExportWatermarks" xml:space="preserve">
+    <value>수출 워터 마크</value>
+  </data>
+  <data name="ExportOption_RtfPageRange" xml:space="preserve">
+    <value>페이지 범위 :</value>
+  </data>
+  <data name="ExportOption_TextEncoding" xml:space="preserve">
+    <value>부호화</value>
+  </data>
+  <data name="ExportOption_TextExportMode" xml:space="preserve">
+    <value>텍스트 수출  모드 :</value>
+  </data>
+  <data name="ExportOption_TextExportMode_Text" xml:space="preserve">
+    <value>텍스트</value>
+  </data>
+  <data name="ExportOption_TextExportMode_Value" xml:space="preserve">
+    <value>값</value>
+  </data>
+  <data name="ExportOption_TextQuoteStringsWithSeparators" xml:space="preserve">
+    <value>구분 기호로 문자열 인용</value>
+  </data>
+  <data name="ExportOption_TextSeparator" xml:space="preserve">
+    <value>텍스트 분리 기호 :</value>
+  </data>
+  <data name="ExportOption_TextSeparator_TabAlias" xml:space="preserve">
+    <value>탭</value>
+  </data>
+  <data name="ExportOption_XlsExportHyperlinks" xml:space="preserve">
+    <value>수출 하이퍼 링크</value>
+  </data>
+  <data name="ExportOption_XlsExportMode" xml:space="preserve">
+    <value>수출 모드 :</value>
+  </data>
+  <data name="ExportOption_XlsExportMode_DifferentFiles" xml:space="preserve">
+    <value>다른 파일</value>
+  </data>
+  <data name="ExportOption_XlsExportMode_SingleFile" xml:space="preserve">
+    <value>단일 파일</value>
+  </data>
+  <data name="ExportOption_XlsPageRange" xml:space="preserve">
+    <value>페이지 범위 :</value>
+  </data>
+  <data name="ExportOption_XlsRawDataMode" xml:space="preserve">
+    <value>원시 데이터 모드</value>
+  </data>
+  <data name="ExportOption_XlsSheetName" xml:space="preserve">
+    <value>시트 이름 :</value>
+  </data>
+  <data name="ExportOption_XlsShowGridLines" xml:space="preserve">
+    <value>눈금 선 표시</value>
+  </data>
+  <data name="ExportOption_XlsUseNativeFormat" xml:space="preserve">
+    <value>형식을 사용하여 값 내보내기</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode" xml:space="preserve">
+    <value>수출 모드 :</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_DifferentFiles" xml:space="preserve">
+    <value>다른 파일</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_SingleFile" xml:space="preserve">
+    <value>단일 파일</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>페이지 별 단일 파일</value>
+  </data>
+  <data name="ExportOption_XlsxPageRange" xml:space="preserve">
+    <value>페이지 범위 :</value>
+  </data>
+  <data name="FolderBrowseDlg_ExportDirectory" xml:space="preserve">
+    <value>내 보낸 문서를 저장할 폴더를 선택하십시오.</value>
+  </data>
+  <data name="Margin_BottomMargin" xml:space="preserve">
+    <value>하단 여백</value>
+  </data>
+  <data name="Margin_Inch" xml:space="preserve">
+    <value>인치</value>
+  </data>
+  <data name="Margin_LeftMargin" xml:space="preserve">
+    <value>왼쪽 여백</value>
+  </data>
+  <data name="Margin_Millimeter" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="Margin_RightMargin" xml:space="preserve">
+    <value>오른쪽 여백</value>
+  </data>
+  <data name="Margin_TopMargin" xml:space="preserve">
+    <value>상위 여백</value>
+  </data>
+  <data name="MF_Pages" xml:space="preserve">
+    <value>페이지</value>
+  </data>
+  <data name="MI_BackgrColor" xml:space="preserve">
+    <value>&amp;색깔...</value>
+  </data>
+  <data name="MI_Background" xml:space="preserve">
+    <value>&amp;배경</value>
+  </data>
+  <data name="MI_CsvDocument" xml:space="preserve">
+    <value>CSV 파일</value>
+  </data>
+  <data name="MI_Exit" xml:space="preserve">
+    <value>출구</value>
+  </data>
+  <data name="MI_Export" xml:space="preserve">
+    <value>&amp;내보내기 위치 </value>
+  </data>
+  <data name="MI_File" xml:space="preserve">
+    <value>&amp;파일</value>
+  </data>
+  <data name="MI_GraphicDocument" xml:space="preserve">
+    <value>이미지 파일</value>
+  </data>
+  <data name="MI_HtmDocument" xml:space="preserve">
+    <value>HTML 파일</value>
+  </data>
+  <data name="MI_MhtDocument" xml:space="preserve">
+    <value>MHT 파일</value>
+  </data>
+  <data name="MI_PageLayout" xml:space="preserve">
+    <value>&amp;페이지 레이아웃</value>
+  </data>
+  <data name="MI_PageSetup" xml:space="preserve">
+    <value>페이지 설정 및 위로</value>
+  </data>
+  <data name="MI_PdfDocument" xml:space="preserve">
+    <value>PDF 파일</value>
+  </data>
+  <data name="MI_Print" xml:space="preserve">
+    <value>&amp;인쇄</value>
+  </data>
+  <data name="MI_PrintDirect" xml:space="preserve">
+    <value>&amp;인쇄</value>
+  </data>
+  <data name="MI_RtfDocument" xml:space="preserve">
+    <value>RTF 파일</value>
+  </data>
+  <data name="MI_Send" xml:space="preserve">
+    <value>...으로 보내기</value>
+  </data>
+  <data name="MI_TxtDocument" xml:space="preserve">
+    <value>텍스트 파일</value>
+  </data>
+  <data name="MI_View" xml:space="preserve">
+    <value>&amp;전망</value>
+  </data>
+  <data name="MI_ViewContinuous" xml:space="preserve">
+    <value>&amp;마디 없는</value>
+  </data>
+  <data name="MI_ViewFacing" xml:space="preserve">
+    <value>&amp;면함</value>
+  </data>
+  <data name="MI_ViewStatusbar" xml:space="preserve">
+    <value>상태 바</value>
+  </data>
+  <data name="MI_ViewToolbar" xml:space="preserve">
+    <value>&amp;도구 모음</value>
+  </data>
+  <data name="MI_Watermark" xml:space="preserve">
+    <value>&amp;워터 마크 ...</value>
+  </data>
+  <data name="MI_XlsDocument" xml:space="preserve">
+    <value>엑셀 파일</value>
+  </data>
+  <data name="MI_XlsDocumnet" xml:space="preserve">
+    <value>XLS 파일</value>
+  </data>
+  <data name="MI_XlsxDocument" xml:space="preserve">
+    <value>XLSX 파일</value>
+  </data>
+  <data name="MI_ZoomPageWidth" xml:space="preserve">
+    <value>페이지 너비</value>
+  </data>
+  <data name="MI_ZoomTextWidth" xml:space="preserve">
+    <value>텍스트 너비</value>
+  </data>
+  <data name="MI_ZoomTwoPages" xml:space="preserve">
+    <value>두 페이지</value>
+  </data>
+  <data name="MI_ZoomWholePage" xml:space="preserve">
+    <value>전체 페이지</value>
+  </data>
+  <data name="Msg_BigBitmapToCreate" xml:space="preserve">
+    <value>출력 파일이 너무 큽니다. 이미지 해상도를 줄이거 나 다른 내보내기 모드를 선택하십시오.</value>
+  </data>
+  <data name="Msg_BigFileToCreateJPEG" xml:space="preserve">
+    <value>출력 파일이 너무 커서 JPEG 파일을 만들 수 없습니다. 다른 이미지 형식이나 다른 내보내기 모드를 선택하십시오.</value>
+  </data>
+  <data name="Msg_CannotAccessFile" xml:space="preserve">
+    <value>프로그램이 \ "{0} \"파일을 다른 프로세스에서 사용 중이므로 액세스 할 수 없습니다.</value>
+  </data>
+  <data name="Msg_CantFitBarcodeToControlBounds" xml:space="preserve">
+    <value>컨트롤의 경계가 바코드에 비해 너무 작습니다.</value>
+  </data>
+  <data name="Msg_CreatingDocument" xml:space="preserve">
+    <value>문서 만들기 중 ...</value>
+  </data>
+  <data name="Msg_CustomDrawWarning" xml:space="preserve">
+    <value>경고!</value>
+  </data>
+  <data name="Msg_EmptyDocument" xml:space="preserve">
+    <value>문서에 페이지가 없습니다.</value>
+  </data>
+  <data name="Msg_FileDosntContainValidXml" xml:space="preserve">
+    <value>지정된 파일에 유효한 XML 데이터가 PRNX 형식으로 포함되어 있지 않습니다. 로드가 중지되었습니다.</value>
+  </data>
+  <data name="Msg_FileDosntHavePrnxExtention" xml:space="preserve">
+    <value>지정한 파일에 PRNX 확장자가 없습니다. 어쨌든 계속 하시겠습니까?</value>
+  </data>
+  <data name="Msg_FileReadOnly" xml:space="preserve">
+    <value>\ "{0} \"파일이 읽기 전용으로 설정되어 있으면 다른 파일 이름으로 다시 시도하십시오.</value>
+  </data>
+  <data name="Msg_FontInvalidNumber" xml:space="preserve">
+    <value>글꼴 크기를 0 또는 음수로 설정할 수 없습니다.</value>
+  </data>
+  <data name="Msg_IncorrectPageRange" xml:space="preserve">
+    <value>올바른 페이지 범위가 아닙니다.</value>
+  </data>
+  <data name="Msg_IncorrectZoomFactor" xml:space="preserve">
+    <value>숫자는 {0}에서 {1} 사이 여야합니다.</value>
+  </data>
+  <data name="Msg_InvalidBarcodeText" xml:space="preserve">
+    <value>텍스트에 유효하지 않은 문자가 있습니다.</value>
+  </data>
+  <data name="Msg_InvalidBarcodeTextFormat" xml:space="preserve">
+    <value>텍스트 형식이 잘못되었습니다.</value>
+  </data>
+  <data name="Msg_InvalidMeasurement" xml:space="preserve">
+    <value>이것은 유효한 측정 값이 아닙니다.</value>
+  </data>
+  <data name="Msg_NeedPrinter" xml:space="preserve">
+    <value>설치된 프린터가 없습니다.</value>
+  </data>
+  <data name="Msg_NoDifferentFilesInStream" xml:space="preserve">
+    <value>다른 파일 모드에서는 문서를 스트림으로 내보낼 수 없습니다. 대신 단일 파일 또는 페이지 별 단일 파일 페이지 모드를 사용하십시오.</value>
+  </data>
+  <data name="Msg_NotSupportedFont" xml:space="preserve">
+    <value>이 글꼴은 아직 지원되지 않습니다.</value>
+  </data>
+  <data name="Msg_OpenFileQuestion" xml:space="preserve">
+    <value>이 파일을 열시겠습니까?</value>
+  </data>
+  <data name="Msg_OpenFileQuestionCaption" xml:space="preserve">
+    <value>수출</value>
+  </data>
+  <data name="Msg_PageMarginsWarning" xml:space="preserve">
+    <value>하나 이상의 여백이 페이지의 인쇄 가능 영역 외부에 설정됩니다. 잇다?</value>
+  </data>
+  <data name="Msg_SearchDialogFinishedSearching" xml:space="preserve">
+    <value>문서를 통한 검색 완료</value>
+  </data>
+  <data name="Msg_SearchDialogReady" xml:space="preserve">
+    <value>준비된</value>
+  </data>
+  <data name="Msg_SearchDialogTotalFound" xml:space="preserve">
+    <value>총 발견 횟수 :</value>
+  </data>
+  <data name="Msg_UnavailableNetPrinter" xml:space="preserve">
+    <value>네트워크 프린터를 사용할 수 없습니다.</value>
+  </data>
+  <data name="Msg_WrongPageSettings" xml:space="preserve">
+    <value>현재 프린터가 선택한 용지 크기를 지원하지 않습니다. \ r \ n 그래도 인쇄를 계속 하시겠습니까?</value>
+  </data>
+  <data name="Msg_WrongPrinter" xml:space="preserve">
+    <value>프린터 이름이 잘못되었습니다. 프린터 설정을 확인하십시오.</value>
+  </data>
+  <data name="Msg_WrongPrinting" xml:space="preserve">
+    <value>문서 인쇄 중 오류가 발생했습니다.</value>
+  </data>
+  <data name="Msg_XlsMoreThanMaxColumns" xml:space="preserve">
+    <value>생성 된 XLS 파일은 256 열 이상을 포함하고 있기 때문에 XLS 형식에 비해 너무 큽니다. \ r \ n 보고서의 열 수를 줄이고 보고서를 XLS로 다시 내보내십시오.</value>
+  </data>
+  <data name="Msg_XlsMoreThanMaxRows" xml:space="preserve">
+    <value>생성 된 XLS 파일은 65536 개가 넘는 행을 포함하고 있기 때문에 XLS 형식에 비해 너무 큽니다. \ r \ n 보고서의 행을 줄이고 XLS로 보고서를 다시 내보내십시오.</value>
+  </data>
+  <data name="OpenFileDialog_Filter" xml:space="preserve">
+    <value>문서 파일 미리보기 (* {0}) | * {0} | 모든 파일 (*. *) | *. *</value>
+  </data>
+  <data name="OpenFileDialog_Title" xml:space="preserve">
+    <value>열린</value>
+  </data>
+  <data name="OperationLogReportPageTitle" xml:space="preserve">
+    <value>시스템 운영 보고서</value>
+  </data>
+  <data name="PageInfo_PageDate" xml:space="preserve">
+    <value>[날짜 인쇄]</value>
+  </data>
+  <data name="PageInfo_PageNumber" xml:space="preserve">
+    <value>[페이지 #]</value>
+  </data>
+  <data name="PageInfo_PageNumberOfTotal" xml:space="preserve">
+    <value>[총 페이지 #]</value>
+  </data>
+  <data name="PageInfo_PageTime" xml:space="preserve">
+    <value>[인쇄 시간]</value>
+  </data>
+  <data name="PageInfo_PageUserName" xml:space="preserve">
+    <value>[사용자 이름]</value>
+  </data>
+  <data name="PF_Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RibbonPreview_ClosePreview_Caption" xml:space="preserve">
+    <value>인쇄 미리보기 닫기</value>
+  </data>
+  <data name="RibbonPreview_ClosePreview_STipContent" xml:space="preserve">
+    <value>문서의 인쇄 미리보기를 닫습니다.</value>
+  </data>
+  <data name="RibbonPreview_ClosePreview_STipTitle" xml:space="preserve">
+    <value>인쇄 미리보기 닫기</value>
+  </data>
+  <data name="RibbonPreview_Customize_Caption" xml:space="preserve">
+    <value>옵션</value>
+  </data>
+  <data name="RibbonPreview_Customize_STipContent" xml:space="preserve">
+    <value>인쇄 옵션을 변경할 수있는 인쇄 옵션 대화 상자를 엽니 다.</value>
+  </data>
+  <data name="RibbonPreview_Customize_STipTitle" xml:space="preserve">
+    <value>옵션</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_Caption" xml:space="preserve">
+    <value>즐겨 찾기</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_STipContent" xml:space="preserve">
+    <value>문서 구조보기를 탐색 할 수있는 문서 맵을 엽니 다.</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_STipTitle" xml:space="preserve">
+    <value>문서 맵</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_Caption" xml:space="preserve">
+    <value>머리말 / 꼬리말</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_STipContent" xml:space="preserve">
+    <value>문서의 머리말과 꼬리말을 편집하십시오.</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_STipTitle" xml:space="preserve">
+    <value>머리글과 바닥 글</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_Caption" xml:space="preserve">
+    <value>CSV 파일</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_Description" xml:space="preserve">
+    <value>쉼표로 분리 된 값 텍스트</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_STipContent" xml:space="preserve">
+    <value>문서를 CSV로 내보내고 디스크의 파일에 저장하십시오.</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_STipTitle" xml:space="preserve">
+    <value>CSV로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_Caption" xml:space="preserve">
+    <value>...로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_STipContent" xml:space="preserve">
+    <value>사용 가능한 형식 중 하나로 현재 문서를 내보내고 디스크의 파일에 저장합니다.</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_STipTitle" xml:space="preserve">
+    <value>...로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_Caption" xml:space="preserve">
+    <value>이미지 파일</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_Description" xml:space="preserve">
+    <value>BMP, GIF, JPEG, PNG, TIFF, EMF, WMF</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_STipContent" xml:space="preserve">
+    <value>문서를 이미지로 내 보낸 다음 디스크의 파일에 저장하십시오.</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_STipTitle" xml:space="preserve">
+    <value>이미지로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_Caption" xml:space="preserve">
+    <value>HTML 파일</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_Description" xml:space="preserve">
+    <value>웹 페이지</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_STipContent" xml:space="preserve">
+    <value>문서를 HTML로 내보내고 디스크의 파일에 저장하십시오.</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_STipTitle" xml:space="preserve">
+    <value>HTML로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_Caption" xml:space="preserve">
+    <value>MHT 파일</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_Description" xml:space="preserve">
+    <value>단일 파일 웹 페이지</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_STipContent" xml:space="preserve">
+    <value>문서를 MHT로 내보내고 디스크의 파일에 저장하십시오.</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_STipTitle" xml:space="preserve">
+    <value>MHT로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_Caption" xml:space="preserve">
+    <value>PDF 파일</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_Description" xml:space="preserve">
+    <value>Adobe PDF 형식</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_STipContent" xml:space="preserve">
+    <value>문서를 PDF로 내 보낸 다음 디스크의 파일에 저장합니다.</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_STipTitle" xml:space="preserve">
+    <value>PDF로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_Caption" xml:space="preserve">
+    <value>RTF 파일</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_Description" xml:space="preserve">
+    <value>서식있는 텍스트 형식</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_STipContent" xml:space="preserve">
+    <value>문서를 RTF 형식으로 내 보낸 다음 디스크의 파일에 저장합니다.</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_STipTitle" xml:space="preserve">
+    <value>RTF로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_Caption" xml:space="preserve">
+    <value>텍스트 파일</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_Description" xml:space="preserve">
+    <value>일반 텍스트</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_STipContent" xml:space="preserve">
+    <value>문서를 텍스트로 내 보낸 다음 디스크의 파일에 저장하십시오.</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_STipTitle" xml:space="preserve">
+    <value>텍스트로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_Caption" xml:space="preserve">
+    <value>엑셀 파일</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_Description" xml:space="preserve">
+    <value>Microsoft Excel 통합 문서</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_STipContent" xml:space="preserve">
+    <value>문서를 XLS로 내 보낸 다음 디스크의 파일에 저장합니다.</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_STipTitle" xml:space="preserve">
+    <value>XLS로 내보내기</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_Caption" xml:space="preserve">
+    <value>페이지 색상</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_STipContent" xml:space="preserve">
+    <value>문서 페이지의 배경색을 선택하십시오.</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_STipTitle" xml:space="preserve">
+    <value>배경색</value>
+  </data>
+  <data name="RibbonPreview_Find_Caption" xml:space="preserve">
+    <value>발견</value>
+  </data>
+  <data name="RibbonPreview_Find_STipContent" xml:space="preserve">
+    <value>문서에서 텍스트를 찾으려면 찾기 대화 상자를 표시하십시오.</value>
+  </data>
+  <data name="RibbonPreview_Find_STipTitle" xml:space="preserve">
+    <value>발견</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsModerate_Caption" xml:space="preserve">
+    <value>보통</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsModerate_Description" xml:space="preserve">
+    <value>보통</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNarrow_Caption" xml:space="preserve">
+    <value>제한된</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNarrow_Description" xml:space="preserve">
+    <value>제한된</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNormal_Caption" xml:space="preserve">
+    <value>표준</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNormal_Description" xml:space="preserve">
+    <value>표준</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsWide_Caption" xml:space="preserve">
+    <value>넓은</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsWide_Description" xml:space="preserve">
+    <value>넓은</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMargins_Description" xml:space="preserve">
+    <value>상단 : \ t \ t {0} \ t \ t 하단 : \ t \ t {1} \ r \ n 왼쪽 : \ t \ t {2} \ t \ t 오른쪽 : \ t \ t {3}</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationLandscape_Caption" xml:space="preserve">
+    <value>경치</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationLandscape_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationPortrait_Caption" xml:space="preserve">
+    <value>초상화</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationPortrait_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RibbonPreview_GalleryItem_PaperSize_Description" xml:space="preserve">
+    <value>{0} x {1}</value>
+  </data>
+  <data name="RibbonPreview_HandTool_Caption" xml:space="preserve">
+    <value>손 도구</value>
+  </data>
+  <data name="RibbonPreview_HandTool_STipContent" xml:space="preserve">
+    <value>페이지를 수동으로 스크롤하려면 손 도구를 호출하십시오.</value>
+  </data>
+  <data name="RibbonPreview_HandTool_STipTitle" xml:space="preserve">
+    <value>손 도구</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_Caption" xml:space="preserve">
+    <value>돋보기</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_STipContent" xml:space="preserve">
+    <value>돋보기 도구를 호출하십시오. \ r \ n \ r \ n 문서를 한 번 클릭하면 한 페이지가 완전히 보입니다. 다른 시간을 클릭하면 일반 크기의 100 %로 확대됩니다.</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_STipTitle" xml:space="preserve">
+    <value>돋보기</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_Caption" xml:space="preserve">
+    <value>많은 페이지</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_STipContent" xml:space="preserve">
+    <value>미리보기에서 문서 페이지를 정렬 할 페이지 레이아웃을 선택하십시오.</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_STipTitle" xml:space="preserve">
+    <value>많은 페이지보기</value>
+  </data>
+  <data name="RibbonPreview_Open_Caption" xml:space="preserve">
+    <value>열린</value>
+  </data>
+  <data name="RibbonPreview_Open_STipContent" xml:space="preserve">
+    <value>문서를 엽니 다.</value>
+  </data>
+  <data name="RibbonPreview_Open_STipTitle" xml:space="preserve">
+    <value>열기 (Ctrl + O)</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Background" xml:space="preserve">
+    <value>페이지 배경</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Document" xml:space="preserve">
+    <value>문서</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Export" xml:space="preserve">
+    <value>수출</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Navigation" xml:space="preserve">
+    <value>항해</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup" xml:space="preserve">
+    <value>페이지 설정</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup_STipContent" xml:space="preserve">
+    <value>페이지 설정 대화 상자를 표시하십시오.</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup_STipTitle" xml:space="preserve">
+    <value>페이지 설정</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Print" xml:space="preserve">
+    <value>인쇄</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Zoom" xml:space="preserve">
+    <value>줌</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_Caption" xml:space="preserve">
+    <value>여백</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_STipContent" xml:space="preserve">
+    <value>전체 문서의 여백 크기를 선택하십시오. \ r \ n \ r \ n 문서에 특정 여백 크기를 적용하려면 사용자 지정 여백을 클릭하십시오.</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_STipTitle" xml:space="preserve">
+    <value>페이지 여백</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_Caption" xml:space="preserve">
+    <value>정위</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_STipContent" xml:space="preserve">
+    <value>세로 및 가로 레이아웃간에 페이지를 전환하십시오.</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_STipTitle" xml:space="preserve">
+    <value>페이지 오리엔테이션</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_Caption" xml:space="preserve">
+    <value>맞춤 여백 ...</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_STipContent" xml:space="preserve">
+    <value>페이지 설정 대화 상자를 표시하십시오.</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_STipTitle" xml:space="preserve">
+    <value>페이지 설정</value>
+  </data>
+  <data name="RibbonPreview_PageText" xml:space="preserve">
+    <value>인쇄 미리보기</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_Caption" xml:space="preserve">
+    <value>사이즈</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_STipContent" xml:space="preserve">
+    <value>문서의 용지 크기를 선택하십시오.</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_STipTitle" xml:space="preserve">
+    <value>페이지 크기</value>
+  </data>
+  <data name="RibbonPreview_Parameters_Caption" xml:space="preserve">
+    <value>파라미터</value>
+  </data>
+  <data name="RibbonPreview_Parameters_STipContent" xml:space="preserve">
+    <value>이 보고서 매개 변수에 대한 값을 입력 할 수있는 매개 변수 창을 엽니 다.</value>
+  </data>
+  <data name="RibbonPreview_Parameters_STipTitle" xml:space="preserve">
+    <value>파라미터</value>
+  </data>
+  <data name="RibbonPreview_Pointer_Caption" xml:space="preserve">
+    <value>포인터</value>
+  </data>
+  <data name="RibbonPreview_Pointer_STipContent" xml:space="preserve">
+    <value>마우스 포인터를 표시합니다.</value>
+  </data>
+  <data name="RibbonPreview_Pointer_STipTitle" xml:space="preserve">
+    <value>마우스 포인터</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_Caption" xml:space="preserve">
+    <value>빠른 인쇄</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_STipContent" xml:space="preserve">
+    <value>변경하지 않고 기본 프린터로 문서를 직접 전송합니다.</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_STipTitle" xml:space="preserve">
+    <value>빠른 인쇄</value>
+  </data>
+  <data name="RibbonPreview_Print_Caption" xml:space="preserve">
+    <value>인쇄</value>
+  </data>
+  <data name="RibbonPreview_Print_STipContent" xml:space="preserve">
+    <value>인쇄하기 전에 사본 및 기타 인쇄 옵션의 프린터 번호를 선택합니다.</value>
+  </data>
+  <data name="RibbonPreview_Print_STipTitle" xml:space="preserve">
+    <value>인쇄 (Ctrl 키 + P)</value>
+  </data>
+  <data name="RibbonPreview_Save_Caption" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="RibbonPreview_Save_STipContent" xml:space="preserve">
+    <value>문서를 저장합니다.</value>
+  </data>
+  <data name="RibbonPreview_Save_STipTitle" xml:space="preserve">
+    <value>저장 (Ctrl 키 + S)</value>
+  </data>
+  <data name="RibbonPreview_Scale_Caption" xml:space="preserve">
+    <value>규모</value>
+  </data>
+  <data name="RibbonPreview_Scale_STipContent" xml:space="preserve">
+    <value>스트레치 실제 크기의 비율로 인쇄물 수축.</value>
+  </data>
+  <data name="RibbonPreview_Scale_STipTitle" xml:space="preserve">
+    <value>규모</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_Caption" xml:space="preserve">
+    <value>CSV 파일</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_Description" xml:space="preserve">
+    <value>쉼표로 구분 된 값 텍스트</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_STipContent" xml:space="preserve">
+    <value>CSV로 문서를 내보내고 전자 메일에 첨부.</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_STipTitle" xml:space="preserve">
+    <value>CSV로 이메일</value>
+  </data>
+  <data name="RibbonPreview_SendFile_Caption" xml:space="preserve">
+    <value>이메일로</value>
+  </data>
+  <data name="RibbonPreview_SendFile_STipContent" xml:space="preserve">
+    <value>사용 가능한 형식 중 하나로 현재 문서를 내보내고 전자 메일에 첨부하십시오.</value>
+  </data>
+  <data name="RibbonPreview_SendFile_STipTitle" xml:space="preserve">
+    <value>이메일로</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_Caption" xml:space="preserve">
+    <value>이미지 파일</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_Description" xml:space="preserve">
+    <value>BMP, GIF, JPEG, PNG, TIFF, EMF, WMF</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_STipContent" xml:space="preserve">
+    <value>이미지로 문서를 내보내고 전자 메일에 첨부.</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_STipTitle" xml:space="preserve">
+    <value>이미지로 E 메일</value>
+  </data>
+  <data name="RibbonPreview_SendMht_Caption" xml:space="preserve">
+    <value>MHT 파일</value>
+  </data>
+  <data name="RibbonPreview_SendMht_Description" xml:space="preserve">
+    <value>단일 파일 웹 페이지</value>
+  </data>
+  <data name="RibbonPreview_SendMht_STipContent" xml:space="preserve">
+    <value>MHT로 문서를 내보내고 전자 메일에 첨부.</value>
+  </data>
+  <data name="RibbonPreview_SendMht_STipTitle" xml:space="preserve">
+    <value>MHT으로 전자 메일</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_Caption" xml:space="preserve">
+    <value>PDF 파일</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_Description" xml:space="preserve">
+    <value>어도비 PDF 형식</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_STipContent" xml:space="preserve">
+    <value>PDF로 문서를 내보내고 전자 메일에 첨부.</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_STipTitle" xml:space="preserve">
+    <value>PDF로 이메일</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_Caption" xml:space="preserve">
+    <value>RTF 파일</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_Description" xml:space="preserve">
+    <value>서식있는 텍스트</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_STipContent" xml:space="preserve">
+    <value>RTF로 문서를 내보내고 전자 메일에 첨부.</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_STipTitle" xml:space="preserve">
+    <value>RTF로 E 메일</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_Caption" xml:space="preserve">
+    <value>텍스트 파일</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_Description" xml:space="preserve">
+    <value>일반 텍스트</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_STipContent" xml:space="preserve">
+    <value>텍스트 및 전자 메일에 첨부하는 문서를 내 보냅니다.</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_STipTitle" xml:space="preserve">
+    <value>텍스트로 전자 메일</value>
+  </data>
+  <data name="RibbonPreview_SendXls_Caption" xml:space="preserve">
+    <value>엑셀 파일</value>
+  </data>
+  <data name="RibbonPreview_SendXls_Description" xml:space="preserve">
+    <value>Microsoft Excel에서 통합 문서</value>
+  </data>
+  <data name="RibbonPreview_SendXls_STipContent" xml:space="preserve">
+    <value>XLS에 문서를 내보내고 전자 메일에 첨부.</value>
+  </data>
+  <data name="RibbonPreview_SendXls_STipTitle" xml:space="preserve">
+    <value>XLS으로 전자 메일</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_Caption" xml:space="preserve">
+    <value>첫 페이지</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_STipContent" xml:space="preserve">
+    <value>문서의 첫 페이지로 이동합니다.</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_STipTitle" xml:space="preserve">
+    <value>첫 페이지 (Ctrl 키 + 홈)</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_Caption" xml:space="preserve">
+    <value>마지막 페이지</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_STipContent" xml:space="preserve">
+    <value>문서의 마지막 페이지로 이동합니다.</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_STipTitle" xml:space="preserve">
+    <value>마지막 페이지 (Ctrl 키 + 끝)</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_Caption" xml:space="preserve">
+    <value>다음 페이지</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_STipContent" xml:space="preserve">
+    <value>문서의 다음 페이지로 이동합니다.</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_STipTitle" xml:space="preserve">
+    <value>다음 페이지 (PageDown 키)</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_Caption" xml:space="preserve">
+    <value>이전 페이지</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_STipContent" xml:space="preserve">
+    <value>문서의 이전 페이지로 이동합니다.</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_STipTitle" xml:space="preserve">
+    <value>이전 페이지 (페이지 업)</value>
+  </data>
+  <data name="RibbonPreview_Watermark_Caption" xml:space="preserve">
+    <value>워터 마크</value>
+  </data>
+  <data name="RibbonPreview_Watermark_STipContent" xml:space="preserve">
+    <value>삽입 페이지의 내용 뒤에 텍스트 또는 이미지를 고스트 있습니다. \ r \ n \ r에 \ n이 종종 문서를 특수 처리되어야 함을 나타 내기 위해 사용된다.</value>
+  </data>
+  <data name="RibbonPreview_Watermark_STipTitle" xml:space="preserve">
+    <value>워터 마크</value>
+  </data>
+  <data name="RibbonPreview_ZoomExact_Caption" xml:space="preserve">
+    <value>정확한 :</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_Caption" xml:space="preserve">
+    <value>확대</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_STipContent" xml:space="preserve">
+    <value>확대하여 문서의 확대보기를 얻습니다.</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_STipTitle" xml:space="preserve">
+    <value>확대</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_Caption" xml:space="preserve">
+    <value>축소</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_STipContent" xml:space="preserve">
+    <value>확대 축소하여 더 많은 페이지를 볼 수 있습니다.</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_STipTitle" xml:space="preserve">
+    <value>축소</value>
+  </data>
+  <data name="RibbonPreview_Zoom_Caption" xml:space="preserve">
+    <value>줌</value>
+  </data>
+  <data name="RibbonPreview_Zoom_STipContent" xml:space="preserve">
+    <value>문서 미리보기의 줌 레벨을 변경합니다.</value>
+  </data>
+  <data name="RibbonPreview_Zoom_STipTitle" xml:space="preserve">
+    <value>줌</value>
+  </data>
+  <data name="SampleCode" xml:space="preserve">
+    <value>직원 코드</value>
+  </data>
+  <data name="SampleFirstName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="SampleHireDate" xml:space="preserve">
+    <value>고용 날짜 </value>
+  </data>
+  <data name="SampleLastName" xml:space="preserve">
+    <value>성</value>
+  </data>
+  <data name="SamplePin" xml:space="preserve">
+    <value>종업원 핀</value>
+  </data>
+  <data name="SaveDlg_FilterBmp" xml:space="preserve">
+    <value>BMP 비트 맵 형식</value>
+  </data>
+  <data name="SaveDlg_FilterCsv" xml:space="preserve">
+    <value>CSV 문서</value>
+  </data>
+  <data name="SaveDlg_FilterEmf" xml:space="preserve">
+    <value>EMF 향상된 Windows 메타 파일</value>
+  </data>
+  <data name="SaveDlg_FilterGif" xml:space="preserve">
+    <value>GIF 그래픽 교환 형식</value>
+  </data>
+  <data name="SaveDlg_FilterHtm" xml:space="preserve">
+    <value>HTML 문서</value>
+  </data>
+  <data name="SaveDlg_FilterJpeg" xml:space="preserve">
+    <value>JPEG 파일 교환 형식</value>
+  </data>
+  <data name="SaveDlg_FilterMht" xml:space="preserve">
+    <value>MHT 문서</value>
+  </data>
+  <data name="SaveDlg_FilterNativeFormat" xml:space="preserve">
+    <value>네이티브 형식</value>
+  </data>
+  <data name="SaveDlg_FilterPdf" xml:space="preserve">
+    <value>PDF 문서</value>
+  </data>
+  <data name="SaveDlg_FilterPng" xml:space="preserve">
+    <value>PNG 휴대용 네트워크 그래픽 형식</value>
+  </data>
+  <data name="SaveDlg_FilterRtf" xml:space="preserve">
+    <value>서식있는 텍스트 문서</value>
+  </data>
+  <data name="SaveDlg_FilterTiff" xml:space="preserve">
+    <value>TIFF 태그 이미지 파일 형식</value>
+  </data>
+  <data name="SaveDlg_FilterTxt" xml:space="preserve">
+    <value>텍스트 문서</value>
+  </data>
+  <data name="SaveDlg_FilterWmf" xml:space="preserve">
+    <value>WMF Windows 메타 파일</value>
+  </data>
+  <data name="SaveDlg_FilterXls" xml:space="preserve">
+    <value>Excel 문서</value>
+  </data>
+  <data name="SaveDlg_Title" xml:space="preserve">
+    <value>다른 이름으로 저장</value>
+  </data>
+  <data name="SB_CurrentPageNo" xml:space="preserve">
+    <value>현재 페이지</value>
+  </data>
+  <data name="SB_PageInfo" xml:space="preserve">
+    <value>{1} 중 {0}</value>
+  </data>
+  <data name="SB_PageNone" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="SB_PageOfPages" xml:space="preserve">
+    <value>{1} 중 {0}</value>
+  </data>
+  <data name="SB_PageOfPagesHint" xml:space="preserve">
+    <value>문서의 페이지 번호. 클릭하면 페이지 이동 대화 상자가 열립니다.</value>
+  </data>
+  <data name="SB_TotalPageNo" xml:space="preserve">
+    <value>총 페이지 수 :</value>
+  </data>
+  <data name="SB_TTip_Stop" xml:space="preserve">
+    <value>중지</value>
+  </data>
+  <data name="SB_ZoomFactor" xml:space="preserve">
+    <value>줌 배율 :</value>
+  </data>
+  <data name="ScalePopup_AdjustTo" xml:space="preserve">
+    <value>조정 대상 :</value>
+  </data>
+  <data name="ScalePopup_FitTo" xml:space="preserve">
+    <value>맞추기</value>
+  </data>
+  <data name="ScalePopup_GroupText" xml:space="preserve">
+    <value>스케일링</value>
+  </data>
+  <data name="ScalePopup_NormalSize" xml:space="preserve">
+    <value>정상 크기 %</value>
+  </data>
+  <data name="ScalePopup_PagesWide" xml:space="preserve">
+    <value>페이지 와이드</value>
+  </data>
+  <data name="ScrollingInfo_Page" xml:space="preserve">
+    <value>페이지</value>
+  </data>
+  <data name="TipDateTime" xml:space="preserve">
+    <value>날짜 시간</value>
+  </data>
+  <data name="TipDescription" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="TipOperator" xml:space="preserve">
+    <value>운영자</value>
+  </data>
+  <data name="TotalTimeCardPageTitle" xml:space="preserve">
+    <value>총 시간표 보고서</value>
+  </data>
+  <data name="TransactionsPageTitle" xml:space="preserve">
+    <value>거래 보고서</value>
+  </data>
+  <data name="TT_Backgr" xml:space="preserve">
+    <value>배경</value>
+  </data>
+  <data name="TT_Close" xml:space="preserve">
+    <value>미리보기 닫기</value>
+  </data>
+  <data name="TT_Customize" xml:space="preserve">
+    <value>사용자 정의</value>
+  </data>
+  <data name="TT_EditPageHF" xml:space="preserve">
+    <value>머리글과 바닥 글</value>
+  </data>
+  <data name="TT_Export" xml:space="preserve">
+    <value>문서 내보내기 ...</value>
+  </data>
+  <data name="TT_FirstPage" xml:space="preserve">
+    <value>첫 페이지</value>
+  </data>
+  <data name="TT_HandTool" xml:space="preserve">
+    <value>손 도구</value>
+  </data>
+  <data name="TT_LastPage" xml:space="preserve">
+    <value>마지막 페이지</value>
+  </data>
+  <data name="TT_Magnifier" xml:space="preserve">
+    <value>돋보기</value>
+  </data>
+  <data name="TT_Map" xml:space="preserve">
+    <value>문서 맵</value>
+  </data>
+  <data name="TT_MultiplePages" xml:space="preserve">
+    <value>다중 페이지</value>
+  </data>
+  <data name="TT_NextPage" xml:space="preserve">
+    <value>다음 페이지</value>
+  </data>
+  <data name="TT_Open" xml:space="preserve">
+    <value>문서 열기</value>
+  </data>
+  <data name="TT_PageSetup" xml:space="preserve">
+    <value>페이지 설정</value>
+  </data>
+  <data name="TT_Parameters" xml:space="preserve">
+    <value>파라미터</value>
+  </data>
+  <data name="TT_PreviousPage" xml:space="preserve">
+    <value>이전 페이지</value>
+  </data>
+  <data name="TT_Print" xml:space="preserve">
+    <value>인쇄</value>
+  </data>
+  <data name="TT_PrintDirect" xml:space="preserve">
+    <value>빠른 인쇄</value>
+  </data>
+  <data name="TT_Save" xml:space="preserve">
+    <value>문서 저장</value>
+  </data>
+  <data name="TT_Scale" xml:space="preserve">
+    <value>규모</value>
+  </data>
+  <data name="TT_Search" xml:space="preserve">
+    <value>수색</value>
+  </data>
+  <data name="TT_Send" xml:space="preserve">
+    <value>전자 메일로 보내기 ...</value>
+  </data>
+  <data name="TT_Watermark" xml:space="preserve">
+    <value>워터 마크</value>
+  </data>
+  <data name="TT_Zoom" xml:space="preserve">
+    <value>줌</value>
+  </data>
+  <data name="TT_ZoomIn" xml:space="preserve">
+    <value>확대</value>
+  </data>
+  <data name="TT_ZoomOut" xml:space="preserve">
+    <value>축소</value>
+  </data>
+  <data name="UserInfoPageTitle" xml:space="preserve">
+    <value>직원 정보 보고서</value>
+  </data>
+  <data name="UserInfoTipBirthDay" xml:space="preserve">
+    <value>생일</value>
+  </data>
+  <data name="UserInfoTipCardNumber" xml:space="preserve">
+    <value>카드 번호</value>
+  </data>
+  <data name="UserInfoTipCity" xml:space="preserve">
+    <value>도시</value>
+  </data>
+  <data name="UserInfoTipCurrentAddress" xml:space="preserve">
+    <value>주소 1</value>
+  </data>
+  <data name="UserInfoTipDepartment" xml:space="preserve">
+    <value>학과:</value>
+  </data>
+  <data name="UserInfoTipDuty" xml:space="preserve">
+    <value>표제</value>
+  </data>
+  <data name="UserInfoTipEmpState" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="UserInfoTipFamilyName" xml:space="preserve">
+    <value>핸드폰</value>
+  </data>
+  <data name="UserInfoTipGender" xml:space="preserve">
+    <value>성별</value>
+  </data>
+  <data name="UserInfoTipJoinDate" xml:space="preserve">
+    <value>가입 날짜</value>
+  </data>
+  <data name="UserInfoTipPermanentAddress" xml:space="preserve">
+    <value>주소 2</value>
+  </data>
+  <data name="UserInfoTipPhone" xml:space="preserve">
+    <value>전화</value>
+  </data>
+  <data name="UserInfoTipQualification" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="UserListPageTitle" xml:space="preserve">
+    <value>직원 표본 보고서</value>
+  </data>
+  <data name="WMForm_Direction_BackwardDiagonal" xml:space="preserve">
+    <value>후방 대각선</value>
+  </data>
+  <data name="WMForm_Direction_ForwardDiagonal" xml:space="preserve">
+    <value>전달 다각형</value>
+  </data>
+  <data name="WMForm_Direction_Horizontal" xml:space="preserve">
+    <value>수평</value>
+  </data>
+  <data name="WMForm_Direction_Vertical" xml:space="preserve">
+    <value>수직선</value>
+  </data>
+  <data name="WMForm_HorzAlign_Center" xml:space="preserve">
+    <value>센터</value>
+  </data>
+  <data name="WMForm_HorzAlign_Left" xml:space="preserve">
+    <value>왼쪽</value>
+  </data>
+  <data name="WMForm_HorzAlign_Right" xml:space="preserve">
+    <value>오른쪽 </value>
+  </data>
+  <data name="WMForm_ImageClip" xml:space="preserve">
+    <value>클립</value>
+  </data>
+  <data name="WMForm_ImageStretch" xml:space="preserve">
+    <value>뻗기</value>
+  </data>
+  <data name="WMForm_ImageZoom" xml:space="preserve">
+    <value>줌</value>
+  </data>
+  <data name="WMForm_PageRangeRgrItem_All" xml:space="preserve">
+    <value>&amp;모든</value>
+  </data>
+  <data name="WMForm_PageRangeRgrItem_Pages" xml:space="preserve">
+    <value>&amp;페이지 :</value>
+  </data>
+  <data name="WMForm_PictureDlg_Title" xml:space="preserve">
+    <value>그림 선택</value>
+  </data>
+  <data name="WMForm_VertAlign_Bottom" xml:space="preserve">
+    <value>바닥</value>
+  </data>
+  <data name="WMForm_VertAlign_Middle" xml:space="preserve">
+    <value>중간</value>
+  </data>
+  <data name="WMForm_VertAlign_Top" xml:space="preserve">
+    <value>상단</value>
+  </data>
+  <data name="WMForm_Watermark_Asap" xml:space="preserve">
+    <value>ASAP</value>
+  </data>
+  <data name="WMForm_Watermark_Confidential" xml:space="preserve">
+    <value>기밀</value>
+  </data>
+  <data name="WMForm_Watermark_Copy" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="WMForm_Watermark_DoNotCopy" xml:space="preserve">
+    <value>복사하지 마십시오</value>
+  </data>
+  <data name="WMForm_Watermark_Draft" xml:space="preserve">
+    <value>초안</value>
+  </data>
+  <data name="WMForm_Watermark_Evaluation" xml:space="preserve">
+    <value>평가</value>
+  </data>
+  <data name="WMForm_Watermark_Original" xml:space="preserve">
+    <value>기발한</value>
+  </data>
+  <data name="WMForm_Watermark_Personal" xml:space="preserve">
+    <value>개인적인</value>
+  </data>
+  <data name="WMForm_Watermark_Sample" xml:space="preserve">
+    <value>샘플</value>
+  </data>
+  <data name="WMForm_Watermark_TopSecret" xml:space="preserve">
+    <value>기밀</value>
+  </data>
+  <data name="WMForm_Watermark_Urgent" xml:space="preserve">
+    <value>긴급한</value>
+  </data>
+  <data name="WMForm_ZOrderRgrItem_Behind" xml:space="preserve">
+    <value>&amp;뒤에</value>
+  </data>
+  <data name="WMForm_ZOrderRgrItem_InFront" xml:space="preserve">
+    <value>&amp;앞에서</value>
+  </data>
+</root>

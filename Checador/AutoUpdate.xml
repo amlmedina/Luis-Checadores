@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AutoUpdater>
+	<URLAddres URL="http://113.108.97.187:808/update/"/>
+	<UpdateInfo>
+		<UpdateTime Date = "2015-06-15"/>
+		<Version Num = "3.0.0.28"/>
+	</UpdateInfo>
+	<UpdateFileList>
+		<UpdateFile FileName = "KB20150615.zip"/>
+	</UpdateFileList>
+	<RestartApp>
+		<ReStart Allow = "Yes"/>
+		<AppName Name = "ZKTimeNet.exe"/>
+	</RestartApp>
+</AutoUpdater>

@@ -1,0 +1,5936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ProductName" xml:space="preserve">
+    <value>ZKTime.Net</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>4월</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>8월</value>
+  </data>
+  <data name="btnApplyDays.Text" xml:space="preserve">
+    <value>적용일</value>
+  </data>
+  <data name="btnEditHoliday.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="btnToday.Text" xml:space="preserve">
+    <value>오늘</value>
+  </data>
+  <data name="btnViewAll.Text" xml:space="preserve">
+    <value>전체보기</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>12월</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>2월</value>
+  </data>
+  <data name="Fri" xml:space="preserve">
+    <value>금요일</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>금요일</value>
+  </data>
+  <data name="FrmHolidayTypeEdit" xml:space="preserve">
+    <value>휴일 편집</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>1월</value>
+  </data>
+  <data name="Jan." xml:space="preserve">
+    <value>1월</value>
+  </data>
+  <data name="Feb." xml:space="preserve">
+    <value>2월</value>
+  </data>
+  <data name="Mar." xml:space="preserve">
+    <value>3월</value>
+  </data>
+  <data name="Apr." xml:space="preserve">
+    <value>4월</value>
+  </data>
+  <data name="May." xml:space="preserve">
+    <value>5월</value>
+  </data>
+  <data name="Jun." xml:space="preserve">
+    <value>6월</value>
+  </data>
+  <data name="Jul." xml:space="preserve">
+    <value>7월</value>
+  </data>
+  <data name="Aug." xml:space="preserve">
+    <value>8월</value>
+  </data>
+  <data name="Sep." xml:space="preserve">
+    <value>9월</value>
+  </data>
+  <data name="Oct." xml:space="preserve">
+    <value>10월</value>
+  </data>
+  <data name="Nov." xml:space="preserve">
+    <value>11월</value>
+  </data>
+  <data name="Dec." xml:space="preserve">
+    <value>12월</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>7월</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>6월</value>
+  </data>
+  <data name="AndroidInvaliedStr" xml:space="preserve">
+    <value>";"을 입력 할 수 없습니다.</value>
+  </data>
+  <data name="lblHolidayName.Text" xml:space="preserve">
+    <value>휴일명</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>3월</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>5월</value>
+  </data>
+  <data name="Mon" xml:space="preserve">
+    <value>월요일</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>월요일</value>
+  </data>
+  <data name="MsgCodeRepeat" xml:space="preserve">
+    <value>코드 반복</value>
+  </data>
+  <data name="MsgconfirmStr" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="MsgErrorStr" xml:space="preserve">
+    <value>에러</value>
+  </data>
+  <data name="MsgNameRepeat" xml:space="preserve">
+    <value>이름이 이미 존재합니다.</value>
+  </data>
+  <data name="MsgInformationStr" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="MsgquestionStr" xml:space="preserve">
+    <value>질문</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>11월</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>10월</value>
+  </data>
+  <data name="Sat" xml:space="preserve">
+    <value>토요일</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>토요일</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>9월</value>
+  </data>
+  <data name="StringCode" xml:space="preserve">
+    <value>코드</value>
+  </data>
+  <data name="StringPin" xml:space="preserve">
+    <value>Emp ID</value>
+  </data>
+  <data name="StringName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="Sun" xml:space="preserve">
+    <value>일요일</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>일요일</value>
+  </data>
+  <data name="Thur" xml:space="preserve">
+    <value>목요일</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>목요일</value>
+  </data>
+  <data name="Tues" xml:space="preserve">
+    <value>화요일</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>화요일</value>
+  </data>
+  <data name="Wed" xml:space="preserve">
+    <value>수요일</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>수요일</value>
+  </data>
+  <data name="colHolDate" xml:space="preserve">
+    <value>날짜</value>
+  </data>
+  <data name="colHolName" xml:space="preserve">
+    <value>휴일명</value>
+  </data>
+  <data name="FrmViewHoliday" xml:space="preserve">
+    <value>휴일 보기</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="btnLoad.Text" xml:space="preserve">
+    <value>불러오기</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="grpAddress.Text" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="grpGeneral.Text" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="lblAddress1.Text" xml:space="preserve">
+    <value>주소 1</value>
+  </data>
+  <data name="lblAddress2.Text" xml:space="preserve">
+    <value>주소 2</value>
+  </data>
+  <data name="lblCity.Text" xml:space="preserve">
+    <value>도시</value>
+  </data>
+  <data name="lblCmpCode.Text" xml:space="preserve">
+    <value>회사 코드</value>
+  </data>
+  <data name="lblCmpName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblCountry.Text" xml:space="preserve">
+    <value>국가</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>이메일 주소</value>
+  </data>
+  <data name="lblFax.Text" xml:space="preserve">
+    <value>팩스</value>
+  </data>
+  <data name="lblOperationMode.Text" xml:space="preserve">
+    <value>급여 모드</value>
+  </data>
+  <data name="lblPhone.Text" xml:space="preserve">
+    <value>전화</value>
+  </data>
+  <data name="lblPhotoSize.Text" xml:space="preserve">
+    <value>로고</value>
+  </data>
+  <data name="lblPostal.Text" xml:space="preserve">
+    <value>우편번호</value>
+  </data>
+  <data name="lblProvince.Text" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="lblWebsite.Text" xml:space="preserve">
+    <value>웹사이트</value>
+  </data>
+  <data name="tsAttendanceRule.Text" xml:space="preserve">
+    <value>출근 규정</value>
+  </data>
+  <data name="tsGeneral.Text" xml:space="preserve">
+    <value>일반 설정</value>
+  </data>
+  <data name="tsAdvance.Text" xml:space="preserve">
+    <value>고급 설정</value>
+  </data>
+  <data name="tsHoliday.Text" xml:space="preserve">
+    <value>휴일</value>
+  </data>
+  <data name="tsOTSetting.Text" xml:space="preserve">
+    <value>야근 및 주말 설정</value>
+  </data>
+  <data name="MsgShouldInput" xml:space="preserve">
+    <value>필수 항목이 비워져 있습니다.</value>
+  </data>
+  <data name="MsgShouldSelect" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="MsgInvalidValue" xml:space="preserve">
+    <value>유효하지 않은 값</value>
+  </data>
+  <data name="OperationMode1" xml:space="preserve">
+    <value>급여</value>
+  </data>
+  <data name="OperationMode2" xml:space="preserve">
+    <value>시간</value>
+  </data>
+  <data name="MsgLargePhoto" xml:space="preserve">
+    <value>사진 사이즈가 너무 큽니다. 사이즈는 최대 2MB 이하여야 합니다.</value>
+  </data>
+  <data name="MsgPhotoSize" xml:space="preserve">
+    <value>이미지의 사이즈가 적절하지 않습니다.</value>
+  </data>
+  <data name="SearchValue" xml:space="preserve">
+    <value>ID 또는 이름으로 검색</value>
+  </data>
+  <data name="lblPaycode.Text" xml:space="preserve">
+    <value>지급 코드</value>
+  </data>
+  <data name="SelectPaycode" xml:space="preserve">
+    <value>지급코드 선택 필수</value>
+  </data>
+  <data name="SelectEmployee" xml:space="preserve">
+    <value>왼쪽에서 직원을 선택하십시오.</value>
+  </data>
+  <data name="MsgFromTimeBeforeTo" xml:space="preserve">
+    <value>시작 시간은 종료 시간 이전이어야 합니다.</value>
+  </data>
+  <data name="DataNotExist" xml:space="preserve">
+    <value>데이터가 삭제되었습니다. 데이터 목록을 새로고침 하십시오.</value>
+  </data>
+  <data name="btnAssign.Text" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="btnYes.Text" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="btnNo.Text" xml:space="preserve">
+    <value>아니오</value>
+  </data>
+  <data name="grpWeekendSetting.Text" xml:space="preserve">
+    <value>주말 설정</value>
+  </data>
+  <data name="lblOTLevel1.Text" xml:space="preserve">
+    <value>OT 레벨1 (H)</value>
+  </data>
+  <data name="lblOTLevel2.Text" xml:space="preserve">
+    <value>OT 레벨2 (H)</value>
+  </data>
+  <data name="lblOTLevel3.Text" xml:space="preserve">
+    <value>OT 레벨3 (H)</value>
+  </data>
+  <data name="OTLevel1" xml:space="preserve">
+    <value>OT 레벨1</value>
+  </data>
+  <data name="OTLevel2" xml:space="preserve">
+    <value>OT 레벨2</value>
+  </data>
+  <data name="OTLevel3" xml:space="preserve">
+    <value>OT 레벨3</value>
+  </data>
+  <data name="ckbNoClockIn.Text" xml:space="preserve">
+    <value>체크인되지 않아 다음으로 처리</value>
+  </data>
+  <data name="ckbNoClockOut.Text" xml:space="preserve">
+    <value>체크아웃되지 않아 다음으로 처리</value>
+  </data>
+  <data name="ckbLateExceed.Text" xml:space="preserve">
+    <value>정시 초과 시간</value>
+  </data>
+  <data name="ckbEarlyLeaveExceed.Text" xml:space="preserve">
+    <value>조퇴 초과 시간</value>
+  </data>
+  <data name="ckbCountOTAfterCheckout.Text" xml:space="preserve">
+    <value>야근 체크아웃 횟수</value>
+  </data>
+  <data name="lblCountOTAfterCheckout.Text" xml:space="preserve">
+    <value>해당 시간차는 야근으로 처리</value>
+  </data>
+  <data name="ckbMaxOTAfterCheckout.Text" xml:space="preserve">
+    <value>체크아웃 후 가장 긴 야근 시간</value>
+  </data>
+  <data name="ckbCountOTBeforeCheckin.Text" xml:space="preserve">
+    <value>야근 체크인 횟수</value>
+  </data>
+  <data name="lblCountOTBeforeCheckin.Text" xml:space="preserve">
+    <value>해당 시간차는 야근으로 처리</value>
+  </data>
+  <data name="ckbMaxOTBeforeCheckin.Text" xml:space="preserve">
+    <value>체크인 전 가장 긴 야근 시간</value>
+  </data>
+  <data name="ckbMaxOTMins.Text" xml:space="preserve">
+    <value>가장 긴 야근 시간</value>
+  </data>
+  <data name="lblLateExceed.Text" xml:space="preserve">
+    <value>분, 결근으로 처리</value>
+  </data>
+  <data name="lblEarlyLeaveExceed.Text" xml:space="preserve">
+    <value>분, 결근으로 처리</value>
+  </data>
+  <data name="mins" xml:space="preserve">
+    <value>분</value>
+  </data>
+  <data name="ckbActiveAttStatus.Text" xml:space="preserve">
+    <value>출근 상태 활성화</value>
+  </data>
+  <data name="tabpageGeneral.Text" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="tabpageRoundRule.Text" xml:space="preserve">
+    <value>반올림 설정</value>
+  </data>
+  <data name="lblTimetableName.Text" xml:space="preserve">
+    <value>시간표 이름</value>
+  </data>
+  <data name="lblTimetableType.Text" xml:space="preserve">
+    <value>시간표 유형</value>
+  </data>
+  <data name="lblEarlyCome.Text" xml:space="preserve">
+    <value>minutes, count as work.</value>
+  </data>
+  <data name="lblLateOut.Text" xml:space="preserve">
+    <value>minutes, count as work.</value>
+  </data>
+  <data name="grpRegularType.Text" xml:space="preserve">
+    <value>정규 유형</value>
+  </data>
+  <data name="lblOnDutyTime.Text" xml:space="preserve">
+    <value>체크인 시간</value>
+  </data>
+  <data name="lblOffDutyTime.Text" xml:space="preserve">
+    <value>체크아웃 시간</value>
+  </data>
+  <data name="lblBeginCheckInTime.Text" xml:space="preserve">
+    <value>체크인 시작</value>
+  </data>
+  <data name="lblBeginCheckOutTime.Text" xml:space="preserve">
+    <value>체크아웃 시작</value>
+  </data>
+  <data name="lblEndCheckInTime.Text" xml:space="preserve">
+    <value>체크인 종료</value>
+  </data>
+  <data name="lblEndCheckOutTime.Text" xml:space="preserve">
+    <value>체크아웃 종료</value>
+  </data>
+  <data name="lblCountWorkTime.Text" xml:space="preserve">
+    <value>다른 이름으로 산출</value>
+  </data>
+  <data name="lblRegularColor.Text" xml:space="preserve">
+    <value>컬러</value>
+  </data>
+  <data name="ckbLateCome.Text" xml:space="preserve">
+    <value>지각</value>
+  </data>
+  <data name="ckbEarlyOut.Text" xml:space="preserve">
+    <value>조퇴</value>
+  </data>
+  <data name="ckbMustCheckIn.Text" xml:space="preserve">
+    <value>체크인 필수</value>
+  </data>
+  <data name="ckbMustCheckOut.Text" xml:space="preserve">
+    <value>체크아웃 필수</value>
+  </data>
+  <data name="ckbRegularConPunch.Text" xml:space="preserve">
+    <value>첫번째 출입자 및 마지막 출입자 정보 확인 기능</value>
+  </data>
+  <data name="grpFlexibleType.Text" xml:space="preserve">
+    <value>탄력근무 유형</value>
+  </data>
+  <data name="lblDailyWorkTime.Text" xml:space="preserve">
+    <value>일일 근무 시간</value>
+  </data>
+  <data name="lblFlexibleColor.Text" xml:space="preserve">
+    <value>컬러</value>
+  </data>
+  <data name="lblMins2.Text" xml:space="preserve">
+    <value>(1-30)분</value>
+  </data>
+  <data name="btnConfirm.Text" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="lblMinPunchInterval.Text" xml:space="preserve">
+    <value>재인증 간격</value>
+  </data>
+  <data name="ckbFlexibleConPunch.Text" xml:space="preserve">
+    <value>출퇴근 기록만 적용</value>
+  </data>
+  <data name="lblDayStartAt.Text" xml:space="preserve">
+    <value>일 변경</value>
+  </data>
+  <data name="ckbOTL1Available.Text" xml:space="preserve">
+    <value>OT 레벨1           근무 시간 초과</value>
+  </data>
+  <data name="ckbOTL2Available.Text" xml:space="preserve">
+    <value>OT 레벨2           근무 시간 초과</value>
+  </data>
+  <data name="ckbOTL3Available.Text" xml:space="preserve">
+    <value>OT 레벨3           근무 시간 초과</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>(분)</value>
+  </data>
+  <data name="grpBreak.Text" xml:space="preserve">
+    <value>휴식</value>
+  </data>
+  <data name="btnAddBreak.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="btnUpdateBreak.Text" xml:space="preserve">
+    <value>업데이트</value>
+  </data>
+  <data name="btnDeleteBreak.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="lblRoundValue.Text" xml:space="preserve">
+    <value>라운드 값</value>
+  </data>
+  <data name="lblRoundDown.Text" xml:space="preserve">
+    <value>라운드 다운</value>
+  </data>
+  <data name="lblCheckIn.Text" xml:space="preserve">
+    <value>체크인</value>
+  </data>
+  <data name="lblCheckOut.Text" xml:space="preserve">
+    <value>체크아웃</value>
+  </data>
+  <data name="grpRegularRoundRule.Text" xml:space="preserve">
+    <value>정규 유형</value>
+  </data>
+  <data name="grpCustomRoundRule.Text" xml:space="preserve">
+    <value>사용자 정의 유형</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>정규</value>
+  </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>탄력근무</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>사용자</value>
+  </data>
+  <data name="colRoundTime" xml:space="preserve">
+    <value>라운드 타임</value>
+  </data>
+  <data name="colRoundFrom" xml:space="preserve">
+    <value>시작 시간</value>
+  </data>
+  <data name="colRoundTo" xml:space="preserve">
+    <value>종료 시간</value>
+  </data>
+  <data name="lblBreakName.Text" xml:space="preserve">
+    <value>휴식 구분</value>
+  </data>
+  <data name="lblBreakStartTime.Text" xml:space="preserve">
+    <value>시작 시간</value>
+  </data>
+  <data name="lblBreakEndTime.Text" xml:space="preserve">
+    <value>종료 시간</value>
+  </data>
+  <data name="lblBreakMins.Text" xml:space="preserve">
+    <value>휴식시간(분)</value>
+  </data>
+  <data name="ckbBackEarly.Text" xml:space="preserve">
+    <value>조기 복귀</value>
+  </data>
+  <data name="lblBackEarly.Text" xml:space="preserve">
+    <value>남은 시간</value>
+  </data>
+  <data name="ckbBreakExceed.Text" xml:space="preserve">
+    <value>초과 휴식</value>
+  </data>
+  <data name="lblBreakExceed.Text" xml:space="preserve">
+    <value>남은 시간</value>
+  </data>
+  <data name="SelectBreakFirst" xml:space="preserve">
+    <value>먼저 휴식을 선택하십시오.</value>
+  </data>
+  <data name="TimetableNotExist" xml:space="preserve">
+    <value>해당 시간표는 아직 존재하지 않습니다.</value>
+  </data>
+  <data name="MsgBetweenFromTimeAndTo" xml:space="preserve">
+    <value>라운딩 시간은 범위가 지정되어야 함</value>
+  </data>
+  <data name="MsgHadSameRounding" xml:space="preserve">
+    <value>동일한 시간대가 이미 존재합니다.</value>
+  </data>
+  <data name="TimetableHadUsed" xml:space="preserve">
+    <value>해당 시간표가 사용된 적이 있습니다. 삭제 하시겠습니까?</value>
+  </data>
+  <data name="lblAdvanceTo.Text" xml:space="preserve">
+    <value>, 조기 시작</value>
+  </data>
+  <data name="lblDelayTo.Text" xml:space="preserve">
+    <value>, 지연</value>
+  </data>
+  <data name="btnBreakManagement.Text" xml:space="preserve">
+    <value>관리</value>
+  </data>
+  <data name="BreakPolicy0" xml:space="preserve">
+    <value>자동 공제</value>
+  </data>
+  <data name="BreakPolicy1" xml:space="preserve">
+    <value>필수 확인</value>
+  </data>
+  <data name="lblRoundRuleType.Text" xml:space="preserve">
+    <value>반올림 유형</value>
+  </data>
+  <data name="lblDeptCode.Text" xml:space="preserve">
+    <value>부서 코드</value>
+  </data>
+  <data name="lblDeptName.Text" xml:space="preserve">
+    <value>부서 이름</value>
+  </data>
+  <data name="FrmDepartmentEdit" xml:space="preserve">
+    <value>부서 편집</value>
+  </data>
+  <data name="HintHadEmployee" xml:space="preserve">
+    <value>해당 부서에 아직 직원들이 존재합니다. 지정한 직원을 기본 부서로 이동하시겠습니까?</value>
+  </data>
+  <data name="HintDefaultDepartment" xml:space="preserve">
+    <value>시스템 부서는 삭제할 수 없습니다.</value>
+  </data>
+  <data name="DepartmentNotNull" xml:space="preserve">
+    <value>The department is being used and cannot be deleted.</value>
+  </data>
+  <data name="MsgSureToDeleteDepartment" xml:space="preserve">
+    <value>Sure To Delete Department</value>
+  </data>
+  <data name="lblParent.Text" xml:space="preserve">
+    <value>상급</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>남성</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>여성</value>
+  </data>
+  <data name="department" xml:space="preserve">
+    <value>부서</value>
+  </data>
+  <data name="tabGeneralPage.Text" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="tabEnrollPage.Text" xml:space="preserve">
+    <value>지문 등록</value>
+  </data>
+  <data name="tabCalendarPage.Text" xml:space="preserve">
+    <value>캘린더</value>
+  </data>
+  <data name="tabPersonalPage.Text" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="lblEmpStatus.Text" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="ckbEmpActived.Text" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="lblEmpNumber.Text" xml:space="preserve">
+    <value>직원 ID</value>
+  </data>
+  <data name="lblEmpFirstName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblEmpLastName.Text" xml:space="preserve">
+    <value>성</value>
+  </data>
+  <data name="lblEmpDepartment.Text" xml:space="preserve">
+    <value>부서</value>
+  </data>
+  <data name="lblEmpHireDate.Text" xml:space="preserve">
+    <value>입사일</value>
+  </data>
+  <data name="lblEmpTerminalZone.Text" xml:space="preserve">
+    <value>단말기 구역</value>
+  </data>
+  <data name="lblEmpPwd1.Text" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="lblEmpPwd2.Text" xml:space="preserve">
+    <value>비밀번호2</value>
+  </data>
+  <data name="lblEmpCardNo1.Text" xml:space="preserve">
+    <value>카드 번호</value>
+  </data>
+  <data name="lblEmpCardNo2.Text" xml:space="preserve">
+    <value>카드 번호2</value>
+  </data>
+  <data name="lblFPNum.Text" xml:space="preserve">
+    <value>지문 개수</value>
+  </data>
+  <data name="lblFaceNum.Text" xml:space="preserve">
+    <value>얼굴 개수</value>
+  </data>
+  <data name="lblEmpPhotoSize.Text" xml:space="preserve">
+    <value>사이즈(200*200)</value>
+  </data>
+  <data name="grpEmpBaseInfo.Text" xml:space="preserve">
+    <value>기본 정보</value>
+  </data>
+  <data name="grpEquipment.Text" xml:space="preserve">
+    <value>단말기 유형</value>
+  </data>
+  <data name="lblMachines.Text" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="btnCameral.Text" xml:space="preserve">
+    <value>카메라</value>
+  </data>
+  <data name="EmployeeModelCancelEnroll.Text" xml:space="preserve">
+    <value>등록 취소</value>
+  </data>
+  <data name="grpEmpAddress.Text" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="grpEmpECP.Text" xml:space="preserve">
+    <value>비상 연락처</value>
+  </data>
+  <data name="grpEmpAdditional.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="lblEmpCity.Text" xml:space="preserve">
+    <value>도시</value>
+  </data>
+  <data name="lblEmpState.Text" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="lblEmpCountry.Text" xml:space="preserve">
+    <value>국가</value>
+  </data>
+  <data name="lblEmpPostal.Text" xml:space="preserve">
+    <value>우편번호</value>
+  </data>
+  <data name="lblEmpPhone.Text" xml:space="preserve">
+    <value>휴대폰</value>
+  </data>
+  <data name="lblEmpFlax.Text" xml:space="preserve">
+    <value>팩스</value>
+  </data>
+  <data name="lblEmpEmail.Text" xml:space="preserve">
+    <value>이메일 주소</value>
+  </data>
+  <data name="lblEmpAddress.Text" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="lblECPname.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblECPaddress.Text" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="lblECPphone1.Text" xml:space="preserve">
+    <value>전화1</value>
+  </data>
+  <data name="lblECPphone2.Text" xml:space="preserve">
+    <value>전화2</value>
+  </data>
+  <data name="lblEmpTitle.Text" xml:space="preserve">
+    <value>위치</value>
+  </data>
+  <data name="lblEmpSSN.Text" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="lblEmpGender.Text" xml:space="preserve">
+    <value>성별</value>
+  </data>
+  <data name="lblEmpBirthday.Text" xml:space="preserve">
+    <value>생일</value>
+  </data>
+  <data name="lblEmpDismissalDate.Text" xml:space="preserve">
+    <value>퇴사 날짜</value>
+  </data>
+  <data name="lblEmpReason.Text" xml:space="preserve">
+    <value>사유</value>
+  </data>
+  <data name="lblEmpPayroll.Text" xml:space="preserve">
+    <value>지급 명부</value>
+  </data>
+  <data name="lblEmpNationalID.Text" xml:space="preserve">
+    <value>국가 ID</value>
+  </data>
+  <data name="MsgInvalidEmail" xml:space="preserve">
+    <value>유효하지 않은 이메일</value>
+  </data>
+  <data name="FrmEmpEnrollEquipment1" xml:space="preserve">
+    <value>단말기</value>
+  </data>
+  <data name="FrmEmpEnrollEquipment2" xml:space="preserve">
+    <value>지문 센서</value>
+  </data>
+  <data name="CardNoExist" xml:space="preserve">
+    <value>카드 번호가 이미 존재합니다.</value>
+  </data>
+  <data name="samePwd" xml:space="preserve">
+    <value>비밀번호가 동일합니다. 다시 입력하십시오.</value>
+  </data>
+  <data name="sameCardNo" xml:space="preserve">
+    <value>카드 번호가 동일합니다. 다시 시도해 주십시오.</value>
+  </data>
+  <data name="EmpNumExist" xml:space="preserve">
+    <value>직원 번호가 이미 {0}에 있습니다.</value>
+  </data>
+  <data name="SamePinInfo" xml:space="preserve">
+    <value>동일한 직원 번호 ({0})를 해당 존에 설정할 수 없습니다.</value>
+  </data>
+  <data name="PinExistInfo" xml:space="preserve">
+    <value>직원 번호 {0}이 이미 {1}에 존재합니다.</value>
+  </data>
+  <data name="NotOpenAndroidFun" xml:space="preserve">
+    <value>Android 기능을 지원하지 않는 버전입니다.</value>
+  </data>
+  <data name="MsgInvalidFax" xml:space="preserve">
+    <value>유효하지 않은 팩스</value>
+  </data>
+  <data name="LicenseUsersLimit" xml:space="preserve">
+    <value>라이선스 제한, {0} 이상의 직원을 선택할 수 없습니다.</value>
+  </data>
+  <data name="MsgEnrollSucceed" xml:space="preserve">
+    <value>등록 완료</value>
+  </data>
+  <data name="MsgRepeatTemplate" xml:space="preserve">
+    <value>중복 템플릿</value>
+  </data>
+  <data name="MsgEnrollFailed" xml:space="preserve">
+    <value>등록 실패</value>
+  </data>
+  <data name="MsgPoorPressTimes" xml:space="preserve">
+    <value>퀄리티가 좋지 않습니다. 남은 시간: {0}</value>
+  </data>
+  <data name="MsgPressTimes" xml:space="preserve">
+    <value>손가락 플랫웨어 누르는데 남은 시간: {0}</value>
+  </data>
+  <data name="MsgNotInstalSensorDriver" xml:space="preserve">
+    <value>지문 센서 드라이버를 설치하십시오.</value>
+  </data>
+  <data name="MsgSensorNotFound" xml:space="preserve">
+    <value>센서를 찾을 수 없습니다.</value>
+  </data>
+  <data name="MsgNoSensorLicence" xml:space="preserve">
+    <value>센서의 라이선스를 찾을 수 없음</value>
+  </data>
+  <data name="MsgInitialSensorFailed" xml:space="preserve">
+    <value>센서 초기화 실패</value>
+  </data>
+  <data name="MsgSelectFinger" xml:space="preserve">
+    <value>손가락을 선택하십시오</value>
+  </data>
+  <data name="NoInstallSDKDriver" xml:space="preserve">
+    <value>드라이버가 설치 되었는지 확인하십시오.</value>
+  </data>
+  <data name="MsgSureToDeleteTmp" xml:space="preserve">
+    <value>템플릿을 삭제 하시겠습니까?</value>
+  </data>
+  <data name="SelectTerminal" xml:space="preserve">
+    <value>단말기을 선택하십시오.</value>
+  </data>
+  <data name="StringConnect" xml:space="preserve">
+    <value>연결</value>
+  </data>
+  <data name="CanNotConnect2Terminal" xml:space="preserve">
+    <value>'{0}' 단말기에 연결할 수 없습니다.</value>
+  </data>
+  <data name="StringDisConnect" xml:space="preserve">
+    <value>연결 해제</value>
+  </data>
+  <data name="SaveEmployeeFirst" xml:space="preserve">
+    <value>직원을 먼저 저장하십시오.</value>
+  </data>
+  <data name="MsgEnrolledFinger" xml:space="preserve">
+    <value>손가락이 등록되었습니다. 먼저 다운로드 하십시오.</value>
+  </data>
+  <data name="MsgTerminalDisconnect" xml:space="preserve">
+    <value>단말기를 먼저 연결하십시오.</value>
+  </data>
+  <data name="EmployeeNotExist" xml:space="preserve">
+    <value>해당 직원은 아직 존재하지 않습니다.</value>
+  </data>
+  <data name="pwdNotSame" xml:space="preserve">
+    <value>비밀번호가 동일하지 않습니다.</value>
+  </data>
+  <data name="pwdLengthError" xml:space="preserve">
+    <value>비밀번호 길이는 4자리 이상이어야 합니다.</value>
+  </data>
+  <data name="MsgCardRepeat" xml:space="preserve">
+    <value>이 카드 번호는 이미 사용 중입니다. 다른 카드 번호로 변경하십시오.</value>
+  </data>
+  <data name="NewPwd" xml:space="preserve">
+    <value>신규 비밀번호</value>
+  </data>
+  <data name="ConfirmPwd" xml:space="preserve">
+    <value>비밀번호 확인</value>
+  </data>
+  <data name="NewCard" xml:space="preserve">
+    <value>신규 카드</value>
+  </data>
+  <data name="DeletePwdInfo" xml:space="preserve">
+    <value>암호를 삭제 하시겠습니까?</value>
+  </data>
+  <data name="DeleteCardInfo" xml:space="preserve">
+    <value>카드 번호를 삭제 하시겠습니까?</value>
+  </data>
+  <data name="AddSuccessfully" xml:space="preserve">
+    <value>추가 성공</value>
+  </data>
+  <data name="AddFailed" xml:space="preserve">
+    <value>추가 실패</value>
+  </data>
+  <data name="UpdateSuccessfully" xml:space="preserve">
+    <value>업데이트 완료</value>
+  </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>업데이트 실패</value>
+  </data>
+  <data name="lblPrivilege.Text" xml:space="preserve">
+    <value>권한</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>사용자 </value>
+  </data>
+  <data name="PrivilegeEmployee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="PrivilegeEnroller" xml:space="preserve">
+    <value>등록자</value>
+  </data>
+  <data name="PrivilegeManager" xml:space="preserve">
+    <value>서브 관리자</value>
+  </data>
+  <data name="PrivilegeAdministrator" xml:space="preserve">
+    <value>관리자</value>
+  </data>
+  <data name="chkHasFace.Text" xml:space="preserve">
+    <value>등록된 얼굴</value>
+  </data>
+  <data name="grpEnrollFinger.Text" xml:space="preserve">
+    <value>지문</value>
+  </data>
+  <data name="barbtnAdd.Caption" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="barbtnSave.Caption" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="barbtnDelete.Caption" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="barbtnCancel.Caption" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="barbtnImport.Caption" xml:space="preserve">
+    <value>입력</value>
+  </data>
+  <data name="barbtnExport.Caption" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="barbtnBatchUpdate.Caption" xml:space="preserve">
+    <value>일괄 업데이트</value>
+  </data>
+  <data name="barbtnDataSync.Caption" xml:space="preserve">
+    <value>데이터 동기화</value>
+  </data>
+  <data name="barbtnDownloadPunches.Caption" xml:space="preserve">
+    <value>기록 다운로드</value>
+  </data>
+  <data name="barbtnAssign.Caption" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="barbtnView.Caption" xml:space="preserve">
+    <value>보기</value>
+  </data>
+  <data name="barAssignToDevice.Caption" xml:space="preserve">
+    <value>업로드</value>
+  </data>
+  <data name="barBtnAssignEmp.Caption" xml:space="preserve">
+    <value>직원 적용</value>
+  </data>
+  <data name="barBtnAssignDevice.Caption" xml:space="preserve">
+    <value>장치 적용</value>
+  </data>
+  <data name="barBtnDownloadPhotoes.Caption" xml:space="preserve">
+    <value>사진 다운로드</value>
+  </data>
+  <data name="barBtnSearchTerminal.Caption" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="ZoneEmpListNotNull" xml:space="preserve">
+    <value>There are employees in this area and cannot be deleted</value>
+  </data>
+  <data name="MsgBeSureToDelete" xml:space="preserve">
+    <value>데이터를 삭제 하시겠습니까?</value>
+  </data>
+  <data name="SucceedImportEmployees" xml:space="preserve">
+    <value>'{0}'직원정보 입력 성공</value>
+  </data>
+  <data name="barbtnDeletePwd.Caption" xml:space="preserve">
+    <value>비밀번호 삭제</value>
+  </data>
+  <data name="barbtnDeleteCard.Caption" xml:space="preserve">
+    <value>카드 삭제</value>
+  </data>
+  <data name="barbtnDeleteFP.Caption" xml:space="preserve">
+    <value>지문 삭제</value>
+  </data>
+  <data name="barbtnDeleteFace.Caption" xml:space="preserve">
+    <value>얼굴 삭제</value>
+  </data>
+  <data name="ImportWizardStep1" xml:space="preserve">
+    <value>입력하려는 파일의 유형과 이름을 선택하십시오.</value>
+  </data>
+  <data name="ImportWizardStep2" xml:space="preserve">
+    <value>오른쪽 표에서 필드 칼럼을 선택 하십시오.</value>
+  </data>
+  <data name="WizardFinish" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="WizardNext" xml:space="preserve">
+    <value>다음</value>
+  </data>
+  <data name="WizardBack" xml:space="preserve">
+    <value>뒤로</value>
+  </data>
+  <data name="WizardCancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="FieldName" xml:space="preserve">
+    <value>필드 이름</value>
+  </data>
+  <data name="ExcelCol" xml:space="preserve">
+    <value>엑셀 칼럼</value>
+  </data>
+  <data name="ImportWizard" xml:space="preserve">
+    <value>Wizard 불러오기</value>
+  </data>
+  <data name="btnOpen.Text" xml:space="preserve">
+    <value>열기</value>
+  </data>
+  <data name="btnAutoFill.Text" xml:space="preserve">
+    <value>자동 입력</value>
+  </data>
+  <data name="HintSelectImportColumn" xml:space="preserve">
+    <value>입력을 원하는 필드를 선택하십시오.</value>
+  </data>
+  <data name="lblFields.Text" xml:space="preserve">
+    <value>필드</value>
+  </data>
+  <data name="IDduplicated" xml:space="preserve">
+    <value>Data has duplicate ID，Line number：</value>
+  </data>
+  <data name="PromptNoData" xml:space="preserve">
+    <value>데이터 없음</value>
+  </data>
+  <data name="MoreRecord" xml:space="preserve">
+    <value>추출 기록이 65,535 건 이상이므로, 엑셀(xlsx) 형식을 선택해 주십시오.</value>
+  </data>
+  <data name="SucceedExportEmployees" xml:space="preserve">
+    <value>'{0}' 직원 정보 추출 성공</value>
+  </data>
+  <data name="SucceedExportPunches" xml:space="preserve">
+    <value>'{0}' 기록 산출 성공</value>
+  </data>
+  <data name="SucceedExportLogs" xml:space="preserve">
+    <value>'{0}' 시스템 로그 산출 성공</value>
+  </data>
+  <data name="SucceedExportCalculateResult" xml:space="preserve">
+    <value>'{0}' 결과 요약 산출 성공</value>
+  </data>
+  <data name="ExportWizardStep1" xml:space="preserve">
+    <value>추출하려는 파일의 유형과 이름을 선택하십시오.</value>
+  </data>
+  <data name="ExportWizardStep2" xml:space="preserve">
+    <value>추출할 필드를 선택하십시오. 선택하지 않는 경우 전체 필드가 적용됩니다.</value>
+  </data>
+  <data name="ExportWizard" xml:space="preserve">
+    <value>Wizard 추출</value>
+  </data>
+  <data name="terminal_name" xml:space="preserve">
+    <value>단말기 이름</value>
+  </data>
+  <data name="fullname" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="att_date" xml:space="preserve">
+    <value>날짜</value>
+  </data>
+  <data name="EmptyExportFile" xml:space="preserve">
+    <value>추출 파일을 설정하십시오.</value>
+  </data>
+  <data name="MessageCodeStr" xml:space="preserve">
+    <value>코드</value>
+  </data>
+  <data name="MessageTitleStr" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="IPDomain" xml:space="preserve">
+    <value>IP 및 도메인</value>
+  </data>
+  <data name="TerminalName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="MsgPublicType" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="MsgPersonalType" xml:space="preserve">
+    <value>개인정보</value>
+  </data>
+  <data name="LinuxTerminal" xml:space="preserve">
+    <value>Linux</value>
+  </data>
+  <data name="PT100Terminal" xml:space="preserve">
+    <value>MT100</value>
+  </data>
+  <data name="ZPadTerminal" xml:space="preserve">
+    <value>ZPad</value>
+  </data>
+  <data name="GenderGirl" xml:space="preserve">
+    <value>여성</value>
+  </data>
+  <data name="GenderBoy" xml:space="preserve">
+    <value>남성</value>
+  </data>
+  <data name="FilterDepartment" xml:space="preserve">
+    <value>부서</value>
+  </data>
+  <data name="FilterZone" xml:space="preserve">
+    <value>구역</value>
+  </data>
+  <data name="OnlyOneAdminUserCanNotBeDeleted" xml:space="preserve">
+    <value>The administrator user cannot be deleted when there is only one left.</value>
+  </data>
+  <data name="RoleIsBeingUsed" xml:space="preserve">
+    <value> This role is being used and cannot be deleted</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>시스템 </value>
+  </data>
+  <data name="Config" xml:space="preserve">
+    <value>시스템 구성</value>
+  </data>
+  <data name="EmailSet" xml:space="preserve">
+    <value>송신자 설정</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>역할</value>
+  </data>
+  <data name="OperatorLog" xml:space="preserve">
+    <value>작업 로그</value>
+  </data>
+  <data name="Database" xml:space="preserve">
+    <value>데이터베이스 </value>
+  </data>
+  <data name="Human" xml:space="preserve">
+    <value>인사과</value>
+  </data>
+  <data name="Companies" xml:space="preserve">
+    <value>회사</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>직원</value>
+  </data>
+  <data name="PayCode" xml:space="preserve">
+    <value>지급 코드</value>
+  </data>
+  <data name="Attendance" xml:space="preserve">
+    <value>출근</value>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>규정</value>
+  </data>
+  <data name="Shifts" xml:space="preserve">
+    <value>교대</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>스케줄</value>
+  </data>
+  <data name="ExceptionAssign" xml:space="preserve">
+    <value>예외 지정</value>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="Terminal" xml:space="preserve">
+    <value>단말기</value>
+  </data>
+  <data name="DeviceManagement" xml:space="preserve">
+    <value>장비 관리</value>
+  </data>
+  <data name="TerminalGroup" xml:space="preserve">
+    <value>구역</value>
+  </data>
+  <data name="RealTime" xml:space="preserve">
+    <value>실시간</value>
+  </data>
+  <data name="DataSync" xml:space="preserve">
+    <value>데이터 동기화</value>
+  </data>
+  <data name="ImportExport" xml:space="preserve">
+    <value>USB 드라이브</value>
+  </data>
+  <data name="workcode" xml:space="preserve">
+    <value>근무 코드</value>
+  </data>
+  <data name="Punches" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="AccessControl" xml:space="preserve">
+    <value>출입통제</value>
+  </data>
+  <data name="ACTimezone" xml:space="preserve">
+    <value>출입 시간대</value>
+  </data>
+  <data name="ACGroup" xml:space="preserve">
+    <value>출입통제 그룹</value>
+  </data>
+  <data name="ACUnlockComb" xml:space="preserve">
+    <value>출입통제 개방 그룹</value>
+  </data>
+  <data name="UserACPrivilege" xml:space="preserve">
+    <value>직원 출입 권한</value>
+  </data>
+  <data name="UploadACPrivilege" xml:space="preserve">
+    <value>출입 권한 업로드</value>
+  </data>
+  <data name="OpenDoor" xml:space="preserve">
+    <value>도어 열기</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>리포트</value>
+  </data>
+  <data name="EmployeeReport" xml:space="preserve">
+    <value>직원 리포트</value>
+  </data>
+  <data name="AttReport" xml:space="preserve">
+    <value>리포트</value>
+  </data>
+  <data name="AccessReport" xml:space="preserve">
+    <value>출입 리포트</value>
+  </data>
+  <data name="SalaryExport" xml:space="preserve">
+    <value>급여 추출</value>
+  </data>
+  <data name="AccessSettings" xml:space="preserve">
+    <value>출입 설정</value>
+  </data>
+  <data name="IsBeingUsed" xml:space="preserve">
+    <value>This area is being used and cannot be deleted</value>
+  </data>
+  <data name="FrmBatchUpdateEmpInfo" xml:space="preserve">
+    <value>직원 정보 일괄 업데이트</value>
+  </data>
+  <data name="emp_pin" xml:space="preserve">
+    <value>직원 ID</value>
+  </data>
+  <data name="emp_Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="emp_city" xml:space="preserve">
+    <value>도시</value>
+  </data>
+  <data name="emp_phone" xml:space="preserve">
+    <value>전화</value>
+  </data>
+  <data name="emp_hiredate" xml:space="preserve">
+    <value>입사일</value>
+  </data>
+  <data name="emp_address" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="emp_firedate" xml:space="preserve">
+    <value>퇴사 날짜</value>
+  </data>
+  <data name="emp_firereason" xml:space="preserve">
+    <value>퇴사 사유</value>
+  </data>
+  <data name="emp_cardnumber" xml:space="preserve">
+    <value>카드 번호</value>
+  </data>
+  <data name="emp_email" xml:space="preserve">
+    <value>이메일 주소</value>
+  </data>
+  <data name="emp_title" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="emp_gender" xml:space="preserve">
+    <value>성별</value>
+  </data>
+  <data name="emp_birthday" xml:space="preserve">
+    <value>생일</value>
+  </data>
+  <data name="Employee_Department" xml:space="preserve">
+    <value>부서</value>
+  </data>
+  <data name="emp_country" xml:space="preserve">
+    <value>국가</value>
+  </data>
+  <data name="emp_firstname" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="emp_lastname" xml:space="preserve">
+    <value>성</value>
+  </data>
+  <data name="dept_name" xml:space="preserve">
+    <value>부서</value>
+  </data>
+  <data name="emp_privilege" xml:space="preserve">
+    <value>권한</value>
+  </data>
+  <data name="punch_time" xml:space="preserve">
+    <value>시간 </value>
+  </data>
+  <data name="workstate" xml:space="preserve">
+    <value>근무 상태</value>
+  </data>
+  <data name="punch_type" xml:space="preserve">
+    <value>펀치 유형</value>
+  </data>
+  <data name="chkAllowPaycode.Text" xml:space="preserve">
+    <value>지급 코드</value>
+  </data>
+  <data name="lblTimetable.Text" xml:space="preserve">
+    <value>시간표</value>
+  </data>
+  <data name="SelectTimetable" xml:space="preserve">
+    <value>시간표를 선택하십시오.</value>
+  </data>
+  <data name="NoShift" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="btnDepartmentSchedule.Text" xml:space="preserve">
+    <value>부서 일정</value>
+  </data>
+  <data name="btnEmployeeSchedule.Text" xml:space="preserve">
+    <value>직원 스케줄</value>
+  </data>
+  <data name="btnTempSchedule.Text" xml:space="preserve">
+    <value>임시 일정</value>
+  </data>
+  <data name="btnAssignTemp.Text" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="btnClearTemp.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="infoSelectEmployee" xml:space="preserve">
+    <value>왼쪽에 있는 직원을 선택하십시오.</value>
+  </data>
+  <data name="infoSelectDepartment" xml:space="preserve">
+    <value>왼쪽에 있는 부서를 선택하십시오.</value>
+  </data>
+  <data name="lblTitleEmployee.Text" xml:space="preserve">
+    <value>직원</value>
+  </data>
+  <data name="btnFunHelp.Text" xml:space="preserve">
+    <value>도움말</value>
+  </data>
+  <data name="btnFunSave.Text" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="btnFunAdd.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="btnFunDelete.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="lblPunchDate.Text" xml:space="preserve">
+    <value>날짜</value>
+  </data>
+  <data name="lblPunchTime.Text" xml:space="preserve">
+    <value>시간 </value>
+  </data>
+  <data name="lblWorkCode.Text" xml:space="preserve">
+    <value>근무 코드</value>
+  </data>
+  <data name="lblWorkstate.Text" xml:space="preserve">
+    <value>근무 상태</value>
+  </data>
+  <data name="lblReason.Text" xml:space="preserve">
+    <value>사유</value>
+  </data>
+  <data name="PunchTypeNormal" xml:space="preserve">
+    <value>정상</value>
+  </data>
+  <data name="PunchTypeManual" xml:space="preserve">
+    <value>매뉴얼</value>
+  </data>
+  <data name="FrmPunchMCaption" xml:space="preserve">
+    <value>기록 수정</value>
+  </data>
+  <data name="colTime_Width" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="colTime" xml:space="preserve">
+    <value>기록 시간</value>
+  </data>
+  <data name="colWorkState_Width" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="colWorkState" xml:space="preserve">
+    <value>근무 상태</value>
+  </data>
+  <data name="colTerminal_Width" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="colTerminal" xml:space="preserve">
+    <value>단말기</value>
+  </data>
+  <data name="colPunchType_Width" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="colPunchType" xml:space="preserve">
+    <value>기록 소스</value>
+  </data>
+  <data name="lblPCCode.Text" xml:space="preserve">
+    <value>코드</value>
+  </data>
+  <data name="lblPCName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblPCExportCode.Text" xml:space="preserve">
+    <value>코드 추출</value>
+  </data>
+  <data name="PaycodeNotExist" xml:space="preserve">
+    <value>해당 지급 코드는 아직 존재하지 않습니다.</value>
+  </data>
+  <data name="lblSign.Text" xml:space="preserve">
+    <value>리포트 서명</value>
+  </data>
+  <data name="grpPaycodeRule.Text" xml:space="preserve">
+    <value>통계 규칙</value>
+  </data>
+  <data name="lblPaycodeMinUnit.Text" xml:space="preserve">
+    <value>분. 단위</value>
+  </data>
+  <data name="grpPaycodeRound.Text" xml:space="preserve">
+    <value>Round-off Control</value>
+  </data>
+  <data name="unit_minute" xml:space="preserve">
+    <value>분</value>
+  </data>
+  <data name="unit_hour" xml:space="preserve">
+    <value>시간</value>
+  </data>
+  <data name="round_type1" xml:space="preserve">
+    <value>라운드 다운</value>
+  </data>
+  <data name="round_type2" xml:space="preserve">
+    <value>Round Off</value>
+  </data>
+  <data name="round_type3" xml:space="preserve">
+    <value>Round Up</value>
+  </data>
+  <data name="colPIN_Width" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="colPIN" xml:space="preserve">
+    <value>직원 ID</value>
+  </data>
+  <data name="colNAME_Width" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="colNAME" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="colDate_Width" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="colDate" xml:space="preserve">
+    <value>날짜</value>
+  </data>
+  <data name="colShift_Width" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="colShift" xml:space="preserve">
+    <value>시간표</value>
+  </data>
+  <data name="colCheckin_Width" xml:space="preserve">
+    <value>75</value>
+  </data>
+  <data name="colCheckin" xml:space="preserve">
+    <value>체크인</value>
+  </data>
+  <data name="colCheckout_Width" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="colCheckout" xml:space="preserve">
+    <value>체크아웃</value>
+  </data>
+  <data name="colRoundIn_Width" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="colRoundIn" xml:space="preserve">
+    <value>Rounded In</value>
+  </data>
+  <data name="colRoundOut" xml:space="preserve">
+    <value>Rounded Out</value>
+  </data>
+  <data name="colRoundOut_Width" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="colWorked" xml:space="preserve">
+    <value>근무 시간</value>
+  </data>
+  <data name="colWorked_Width" xml:space="preserve">
+    <value>75</value>
+  </data>
+  <data name="colRoundWorked" xml:space="preserve">
+    <value>Rounded Working Time</value>
+  </data>
+  <data name="colRoundWorked_Width" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="colWorkcode_Width" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="colWorkcode" xml:space="preserve">
+    <value>근무 코드</value>
+  </data>
+  <data name="colWeek" xml:space="preserve">
+    <value>주말</value>
+  </data>
+  <data name="colWeek_Width" xml:space="preserve">
+    <value>75</value>
+  </data>
+  <data name="FrmPunchgrdSummary" xml:space="preserve">
+    <value>요약</value>
+  </data>
+  <data name="FrmPunchgrdHours" xml:space="preserve">
+    <value>분</value>
+  </data>
+  <data name="lblEmployees.Text" xml:space="preserve">
+    <value>직원</value>
+  </data>
+  <data name="lblTimeFrom.Text" xml:space="preserve">
+    <value>시작 시간</value>
+  </data>
+  <data name="lblTimeTo.Text" xml:space="preserve">
+    <value>종료 시간</value>
+  </data>
+  <data name="btnCalculate.Text" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="btnModifyPunch.Text" xml:space="preserve">
+    <value>기록 수정</value>
+  </data>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>입력</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="SucceedImportPunches" xml:space="preserve">
+    <value>'{0}' 신규 기록 입력 성공</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>추출할 데이터 없음</value>
+  </data>
+  <data name="lblTZID.Text" xml:space="preserve">
+    <value>시간대  ID</value>
+  </data>
+  <data name="lblTZDesc.Text" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="grpTimezone.Text" xml:space="preserve">
+    <value>시간대 설정</value>
+  </data>
+  <data name="DeleteDataFailed" xml:space="preserve">
+    <value>데이터 삭제 실패</value>
+  </data>
+  <data name="ErrorTimezoneID" xml:space="preserve">
+    <value>ID는 최소 한 개 이상이어야 합니다.</value>
+  </data>
+  <data name="MoreTimezone" xml:space="preserve">
+    <value>시간대 최대 50</value>
+  </data>
+  <data name="TimezoneHadUsed" xml:space="preserve">
+    <value>해당 시간대가 사용된 적이 있습니다. 삭제 하시겠습니까?</value>
+  </data>
+  <data name="GC_TimeTable.Text" xml:space="preserve">
+    <value>시간표</value>
+  </data>
+  <data name="GC_ShiftBaseInfo.Text" xml:space="preserve">
+    <value>기본 정보</value>
+  </data>
+  <data name="LCStartDate.Text" xml:space="preserve">
+    <value>시작 날짜</value>
+  </data>
+  <data name="LCEndDate.Text" xml:space="preserve">
+    <value>종료일</value>
+  </data>
+  <data name="LCCycleType.Text" xml:space="preserve">
+    <value>주기 단위</value>
+  </data>
+  <data name="LCCycleDays.Text" xml:space="preserve">
+    <value>주기 값</value>
+  </data>
+  <data name="TimePeroid" xml:space="preserve">
+    <value>시간표</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>주</value>
+  </data>
+  <data name="LCShiftName.Text" xml:space="preserve">
+    <value>교대 이름</value>
+  </data>
+  <data name="ShiftHadUsed" xml:space="preserve">
+    <value>해당 교대 내용이 존재합니다. 삭제 하시겠습니까?</value>
+  </data>
+  <data name="TipDrag" xml:space="preserve">
+    <value>드래그</value>
+  </data>
+  <data name="lblShift.Text" xml:space="preserve">
+    <value>교대</value>
+  </data>
+  <data name="LCEndtDate.Text" xml:space="preserve">
+    <value>종료일</value>
+  </data>
+  <data name="colHolidayEffect" xml:space="preserve">
+    <value>휴일 사유</value>
+  </data>
+  <data name="EmptyTerminal" xml:space="preserve">
+    <value>단말기에 최소 1개 이상 정보 입력 필수</value>
+  </data>
+  <data name="ACGroupHadUsed" xml:space="preserve">
+    <value>그룹이 사용된 적이 있습니다. 삭제 하시겠습니까?</value>
+  </data>
+  <data name="colGroup1" xml:space="preserve">
+    <value>그룹 1</value>
+  </data>
+  <data name="colGroup2" xml:space="preserve">
+    <value>그룹 2</value>
+  </data>
+  <data name="colGroup3" xml:space="preserve">
+    <value>그룹 3</value>
+  </data>
+  <data name="colGroup4" xml:space="preserve">
+    <value>그룹 4</value>
+  </data>
+  <data name="colGroup5" xml:space="preserve">
+    <value>그룹 5</value>
+  </data>
+  <data name="MoreAcUnlockComb" xml:space="preserve">
+    <value>최대 10 그룹</value>
+  </data>
+  <data name="UnLockCombName" xml:space="preserve">
+    <value>조합</value>
+  </data>
+  <data name="lblID.Text" xml:space="preserve">
+    <value>조합 ID</value>
+  </data>
+  <data name="lblcombName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblGroup1.Text" xml:space="preserve">
+    <value>그룹1</value>
+  </data>
+  <data name="lblGroup2.Text" xml:space="preserve">
+    <value>그룹2</value>
+  </data>
+  <data name="lblGroup3.Text" xml:space="preserve">
+    <value>그룹3</value>
+  </data>
+  <data name="lblGroup4.Text" xml:space="preserve">
+    <value>그룹4 </value>
+  </data>
+  <data name="lblGroup5.Text" xml:space="preserve">
+    <value>그룹5</value>
+  </data>
+  <data name="FormModifyAcUnlockComb" xml:space="preserve">
+    <value>출입통제 해제 조합 수정</value>
+  </data>
+  <data name="lblTerminalCategory.Text" xml:space="preserve">
+    <value>단말기 유형</value>
+  </data>
+  <data name="lblTerminalStatus.Text" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="lblTerminalName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="grpConnectionInfo.Text" xml:space="preserve">
+    <value>연결 정보</value>
+  </data>
+  <data name="lblTerminalSN.Text" xml:space="preserve">
+    <value>SN</value>
+  </data>
+  <data name="lblTerminalIP.Text" xml:space="preserve">
+    <value>IP 주소</value>
+  </data>
+  <data name="lblMAC.Text" xml:space="preserve">
+    <value>MAC Address</value>
+  </data>
+  <data name="lblTerminalPort.Text" xml:space="preserve">
+    <value>포트</value>
+  </data>
+  <data name="lblTerminalPassword.Text" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="lblTerminalZone.Text" xml:space="preserve">
+    <value>단말기 구역</value>
+  </data>
+  <data name="lblTerminalPolicy.Text" xml:space="preserve">
+    <value>기록 설정</value>
+  </data>
+  <data name="btnTestConnect.Text" xml:space="preserve">
+    <value>연결 테스트</value>
+  </data>
+  <data name="grpTerminalInfo.Text" xml:space="preserve">
+    <value>단말기 정보</value>
+  </data>
+  <data name="lblTerminalType.Text" xml:space="preserve">
+    <value>단말기 유형</value>
+  </data>
+  <data name="lblTerminalDateFormat.Text" xml:space="preserve">
+    <value>날짜 형식</value>
+  </data>
+  <data name="lblAlgorithmVersion.Text" xml:space="preserve">
+    <value>알고리즘 버전</value>
+  </data>
+  <data name="lblTerminalUsers.Text" xml:space="preserve">
+    <value>사용자</value>
+  </data>
+  <data name="lblTerminalFingerprints.Text" xml:space="preserve">
+    <value>지문 개수</value>
+  </data>
+  <data name="lblTerminalFaces.Text" xml:space="preserve">
+    <value>얼굴 개수</value>
+  </data>
+  <data name="lblTerminalPalms.Text" xml:space="preserve">
+    <value>Palm</value>
+  </data>
+  <data name="lblTerminalFV.Text" xml:space="preserve">
+    <value>Finger Vein</value>
+  </data>
+  <data name="lblTerminalPunches.Text" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="grpTerminalManagement.Text" xml:space="preserve">
+    <value>단말기 관리</value>
+  </data>
+  <data name="btnSleepTimes.Text" xml:space="preserve">
+    <value>휴면 시간 설정</value>
+  </data>
+  <data name="btnSyncTime.Text" xml:space="preserve">
+    <value>동기화 시간</value>
+  </data>
+  <data name="btnClearAllFP.Text" xml:space="preserve">
+    <value>전체 지문 삭제</value>
+  </data>
+  <data name="btnClearAdmin.Text" xml:space="preserve">
+    <value>관리자 삭제</value>
+  </data>
+  <data name="btnClearAllPunches.Text" xml:space="preserve">
+    <value>전체 기록 삭제</value>
+  </data>
+  <data name="btnClearAllUsers.Text" xml:space="preserve">
+    <value>전체 사용자 삭제</value>
+  </data>
+  <data name="btnClearAllData.Text" xml:space="preserve">
+    <value>전체 데이터 삭제</value>
+  </data>
+  <data name="UnknowHost" xml:space="preserve">
+    <value>알 수없는 호스트</value>
+  </data>
+  <data name="ConfirmAction" xml:space="preserve">
+    <value>'{0}' 하시겠습니까?</value>
+  </data>
+  <data name="lblTerminalZEM.Text" xml:space="preserve">
+    <value>코어보드 유형</value>
+  </data>
+  <data name="lblTerminalFirmware.Text" xml:space="preserve">
+    <value>펌웨어 버전</value>
+  </data>
+  <data name="lblTerminalAdmins.Text" xml:space="preserve">
+    <value>관리자</value>
+  </data>
+  <data name="tsDataManage.Text" xml:space="preserve">
+    <value>데이터 관리</value>
+  </data>
+  <data name="tsCommunication.Text" xml:space="preserve">
+    <value>통신</value>
+  </data>
+  <data name="tsDoor.Text" xml:space="preserve">
+    <value>도어 옵션</value>
+  </data>
+  <data name="tsWiegand.Text" xml:space="preserve">
+    <value>Wiegand 옵션</value>
+  </data>
+  <data name="tsDuress.Text" xml:space="preserve">
+    <value>강제 침입 설정 옵션</value>
+  </data>
+  <data name="grpCommunication.Text" xml:space="preserve">
+    <value>통신 옵션</value>
+  </data>
+  <data name="lblIP.Text" xml:space="preserve">
+    <value>IP 주소</value>
+  </data>
+  <data name="lblSubnetMask.Text" xml:space="preserve">
+    <value>서브넷 마스크</value>
+  </data>
+  <data name="lblGateway.Text" xml:space="preserve">
+    <value>게이트웨이</value>
+  </data>
+  <data name="lblDeviceID.Text" xml:space="preserve">
+    <value>장비 ID</value>
+  </data>
+  <data name="grpZoneInfo.Text" xml:space="preserve">
+    <value>구역 정보</value>
+  </data>
+  <data name="lblZoneCode.Text" xml:space="preserve">
+    <value>코드</value>
+  </data>
+  <data name="lblZoneName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblZoneDescription.Text" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="grpZoneData.Text" xml:space="preserve">
+    <value>구역 데이터</value>
+  </data>
+  <data name="lblZoneUsers.Text" xml:space="preserve">
+    <value>사용자</value>
+  </data>
+  <data name="lblZonePasswords.Text" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="lblZoneCards.Text" xml:space="preserve">
+    <value>카드</value>
+  </data>
+  <data name="lblZoneFingerprints.Text" xml:space="preserve">
+    <value>지문 개수</value>
+  </data>
+  <data name="lblZonePunches.Text" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="btnViewResult.Text" xml:space="preserve">
+    <value>결과보기</value>
+  </data>
+  <data name="btnExportResult.Text" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="SaveSuccuss" xml:space="preserve">
+    <value>저장 성공</value>
+  </data>
+  <data name="SaveFailed" xml:space="preserve">
+    <value>저장 실패</value>
+  </data>
+  <data name="AssignEmp" xml:space="preserve">
+    <value>직원 적용</value>
+  </data>
+  <data name="AssignDevice" xml:space="preserve">
+    <value>장치 적용</value>
+  </data>
+  <data name="lblZoneDeletePunches.Text" xml:space="preserve">
+    <value>이전 미들웨어 기록 삭제</value>
+  </data>
+  <data name="btnDeletePunch.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="MsgSureDeletePunches" xml:space="preserve">
+    <value>이 기록들을 삭제 하시겠습니까?</value>
+  </data>
+  <data name="MsgSelectDate" xml:space="preserve">
+    <value>날짜를 먼저 선택하십시오.</value>
+  </data>
+  <data name="FormPopupNotifyCaption" xml:space="preserve">
+    <value>통지</value>
+  </data>
+  <data name="TimeStr" xml:space="preserve">
+    <value>시간 </value>
+  </data>
+  <data name="MessageStr" xml:space="preserve">
+    <value>메시지</value>
+  </data>
+  <data name="ContinueStr" xml:space="preserve">
+    <value>계속</value>
+  </data>
+  <data name="PauseStr" xml:space="preserve">
+    <value>일시정지</value>
+  </data>
+  <data name="Connect2Ter" xml:space="preserve">
+    <value>'{0}' 단말기에 연결 중</value>
+  </data>
+  <data name="ConnectTerminalFailed" xml:space="preserve">
+    <value>'{0}'에 연결 실패</value>
+  </data>
+  <data name="SetUserError" xml:space="preserve">
+    <value>{0} - {1} 직원 설정 장비에서 에러 발생, 에러 코드: {2}</value>
+  </data>
+  <data name="SetTemplateError" xml:space="preserve">
+    <value>{0} - {1} 템플릿 설정 장비에서 에러 발생, 에러 코드: {2}</value>
+  </data>
+  <data name="SaveNewEmployees" xml:space="preserve">
+    <value>신입 직원 저장 ({0})</value>
+  </data>
+  <data name="SaveNewTemplates" xml:space="preserve">
+    <value>신규 템플릿 저장 ({0})</value>
+  </data>
+  <data name="SaveNewEmployeesFailed" xml:space="preserve">
+    <value>직원 저장 실패 ({0})</value>
+  </data>
+  <data name="SaveNewTemplatesFailed" xml:space="preserve">
+    <value>템플릿 저장 실패 ({0})</value>
+  </data>
+  <data name="DeleteEmployeeFailed" xml:space="preserve">
+    <value>단말기 {1}에서 {0} 삭제 실패</value>
+  </data>
+  <data name="DeleteEmployeeOnTerminal" xml:space="preserve">
+    <value>{1} 단말기에서 ({0}) 직원 삭제</value>
+  </data>
+  <data name="UploadEmployeeToTerminal" xml:space="preserve">
+    <value>{0} 직원, {1} 손가락, {2} 얼굴, {3} 단말기 업로드</value>
+  </data>
+  <data name="SyncData" xml:space="preserve">
+    <value>데이터 동기화</value>
+  </data>
+  <data name="BeginUploadEmployee" xml:space="preserve">
+    <value>{0}으로 직원 업로드 시작</value>
+  </data>
+  <data name="BeginUploadTemplate" xml:space="preserve">
+    <value>{0}으로 템플릿 업로드 시작</value>
+  </data>
+  <data name="BeginDownloadEmployee" xml:space="preserve">
+    <value>{0}으로부터 직원 다운로드 시작</value>
+  </data>
+  <data name="BeginDownloadTemplate" xml:space="preserve">
+    <value>{0}으로부터 템플릿 다운로드 시작</value>
+  </data>
+  <data name="DownloadEmployee" xml:space="preserve">
+    <value>{1}로부터 {0} 직원 정보를 불러오십시오.</value>
+  </data>
+  <data name="DownloadTemplate" xml:space="preserve">
+    <value>{1}로부터 {0} 템플릿을 불러오십시오.</value>
+  </data>
+  <data name="NoActiveTerminal" xml:space="preserve">
+    <value>{0} 단말기 구역에 활성화된 단말기가 없습니다.</value>
+  </data>
+  <data name="ShouldSelecteZone" xml:space="preserve">
+    <value>데이터 동기화를 원하는 구역을 왼쪽에서 선택하십시오.</value>
+  </data>
+  <data name="chk_DataSyncFace.Text" xml:space="preserve">
+    <value>얼굴 템플릿 동기화</value>
+  </data>
+  <data name="chk_DataSyncFingerPrinter.Text" xml:space="preserve">
+    <value>지문 템플릿 동기화</value>
+  </data>
+  <data name="chk_DataSyncUploadPhoto.Text" xml:space="preserve">
+    <value>직원 사진 업로드</value>
+  </data>
+  <data name="chk_DataSyncUploadWorkcode.Text" xml:space="preserve">
+    <value>근무 코드 업로드</value>
+  </data>
+  <data name="chk_DataSyncUserinfor.Text" xml:space="preserve">
+    <value>직원 정보 동기화</value>
+  </data>
+  <data name="chk_DataSyncUseSoftwareData.Text" xml:space="preserve">
+    <value>다운로드 후 이전 정보 덮어쓰기</value>
+  </data>
+  <data name="ProcessSyncData" xml:space="preserve">
+    <value>동기화되는 데이터 프로세스</value>
+  </data>
+  <data name="chk_DataSyncUploadMsg.Text" xml:space="preserve">
+    <value>메시지 업로드</value>
+  </data>
+  <data name="MsgIPRepeat" xml:space="preserve">
+    <value>해당 IP는 과거에 사용된 적이 있습니다.</value>
+  </data>
+  <data name="ConnectSuccessfully" xml:space="preserve">
+    <value>연결 성공</value>
+  </data>
+  <data name="SuccessfullyString" xml:space="preserve">
+    <value>성공</value>
+  </data>
+  <data name="FailedString" xml:space="preserve">
+    <value>실패</value>
+  </data>
+  <data name="MsgSNExist" xml:space="preserve">
+    <value>해당 시리얼 넘버가 이미 존재합니다.</value>
+  </data>
+  <data name="TerminalMngInactive" xml:space="preserve">
+    <value>사용 안함</value>
+  </data>
+  <data name="TerminalMngActive" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="PolicyReset" xml:space="preserve">
+    <value>리셋</value>
+  </data>
+  <data name="PolicyMerge" xml:space="preserve">
+    <value>통합</value>
+  </data>
+  <data name="downloadTerminalInfo" xml:space="preserve">
+    <value>{0} 단말기를 추가하고, {1} 단말기를 업데이트 하십시오. </value>
+  </data>
+  <data name="btnGetCommunication.Text" xml:space="preserve">
+    <value>옵션 읽기 </value>
+  </data>
+  <data name="btnSetCommunication.Text" xml:space="preserve">
+    <value>옵션 설정</value>
+  </data>
+  <data name="btnSetDateFormat.Text" xml:space="preserve">
+    <value>날짜 형식 설정</value>
+  </data>
+  <data name="btnCamera.Text" xml:space="preserve">
+    <value>카메라</value>
+  </data>
+  <data name="NoCameraDetected" xml:space="preserve">
+    <value>감지된 카메라 없음</value>
+  </data>
+  <data name="OpenCameraFailed" xml:space="preserve">
+    <value>카메라 열기 실패</value>
+  </data>
+  <data name="CaptureImageFailed" xml:space="preserve">
+    <value>이미지 캡처 실패</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>이미지 데이터 없음</value>
+  </data>
+  <data name="groupBoxPreviewPhoto.Text" xml:space="preserve">
+    <value>프리뷰</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>캡처</value>
+  </data>
+  <data name="lblCaptureMsg.Text" xml:space="preserve">
+    <value>감지된 카메라 없음</value>
+  </data>
+  <data name="lvMessageEmpCloumn1" xml:space="preserve">
+    <value>직원 ID</value>
+  </data>
+  <data name="lvMessageEmpCloumn2" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="formEmpSelectOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="formEmpSelectCancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="MessageNotExist" xml:space="preserve">
+    <value>해당 메시지는 이미 존재하지 않습니다.</value>
+  </data>
+  <data name="StrAdmin" xml:space="preserve">
+    <value>관리자</value>
+  </data>
+  <data name="SelectZoneFirst" xml:space="preserve">
+    <value>먼저 구역을 지정하십시오.</value>
+  </data>
+  <data name="MessageSetReceiverBox" xml:space="preserve">
+    <value>수신 설정</value>
+  </data>
+  <data name="lblContent.Text" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="lblEndTime.Text" xml:space="preserve">
+    <value>종료 시간</value>
+  </data>
+  <data name="lblMessageCode.Text" xml:space="preserve">
+    <value>코드</value>
+  </data>
+  <data name="lblMessageSender.Text" xml:space="preserve">
+    <value>송신자</value>
+  </data>
+  <data name="lblMessageTitle.Text" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="lblMessageType.Text" xml:space="preserve">
+    <value>메시지 유형</value>
+  </data>
+  <data name="lblMessageZone.Text" xml:space="preserve">
+    <value>단말기 구역</value>
+  </data>
+  <data name="lblRecipient.Text" xml:space="preserve">
+    <value>수신자</value>
+  </data>
+  <data name="lblStartTime.Text" xml:space="preserve">
+    <value>시작 시간</value>
+  </data>
+  <data name="StrPin" xml:space="preserve">
+    <value>직원 ID</value>
+  </data>
+  <data name="StrName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="btnSelectEmp.Text" xml:space="preserve">
+    <value>직원</value>
+  </data>
+  <data name="DateTimeInvalid" xml:space="preserve">
+    <value>종료 시간은 시작 시간 이후여야 합니다.</value>
+  </data>
+  <data name="connectedsuccess" xml:space="preserve">
+    <value>({0}) 단말기에 연결 성공</value>
+  </data>
+  <data name="colStatus" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="colTerminalName" xml:space="preserve">
+    <value>단말기 이름</value>
+  </data>
+  <data name="colSerialNumber" xml:space="preserve">
+    <value>시리얼 넘버</value>
+  </data>
+  <data name="colFirmwareVer" xml:space="preserve">
+    <value>펌웨어 버전</value>
+  </data>
+  <data name="colIP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="colUsers" xml:space="preserve">
+    <value>사용자</value>
+  </data>
+  <data name="colFingerprints" xml:space="preserve">
+    <value>지문</value>
+  </data>
+  <data name="colFaces" xml:space="preserve">
+    <value>얼굴 템플릿</value>
+  </data>
+  <data name="colPalms" xml:space="preserve">
+    <value>Palm</value>
+  </data>
+  <data name="colFV" xml:space="preserve">
+    <value>Finger Vein</value>
+  </data>
+  <data name="colPunches" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="colPunchTime" xml:space="preserve">
+    <value>시간 </value>
+  </data>
+  <data name="colAction" xml:space="preserve">
+    <value>실행</value>
+  </data>
+  <data name="colVerifyMode" xml:space="preserve">
+    <value>인증 모드</value>
+  </data>
+  <data name="colEventTime" xml:space="preserve">
+    <value>시간 </value>
+  </data>
+  <data name="colContentdata" xml:space="preserve">
+    <value>컨텐츠 데이터</value>
+  </data>
+  <data name="TerminalMonitor" xml:space="preserve">
+    <value>단말기 모니터링</value>
+  </data>
+  <data name="lblPin.Text" xml:space="preserve">
+    <value>사용자 ID:</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>이름:</value>
+  </data>
+  <data name="btnConnect.Text" xml:space="preserve">
+    <value>연결</value>
+  </data>
+  <data name="btnDisconnect.Text" xml:space="preserve">
+    <value>연결 해제</value>
+  </data>
+  <data name="btnOpenDoor.Text" xml:space="preserve">
+    <value>도어 열기</value>
+  </data>
+  <data name="opendoorsuccess" xml:space="preserve">
+    <value>{0} 도어 열기 성공</value>
+  </data>
+  <data name="opendoorfailed" xml:space="preserve">
+    <value>{0} 도어 열기 실패</value>
+  </data>
+  <data name="btnAutoRefshStop" xml:space="preserve">
+    <value>중지</value>
+  </data>
+  <data name="btnAutoRefresh" xml:space="preserve">
+    <value>자동 새로고침</value>
+  </data>
+  <data name="BarOpenSync" xml:space="preserve">
+    <value>동기화 열기</value>
+  </data>
+  <data name="BarCloseSync" xml:space="preserve">
+    <value>동기화 닫기</value>
+  </data>
+  <data name="BarExecuteReset" xml:space="preserve">
+    <value>리셋 실행</value>
+  </data>
+  <data name="BarExecuteMerge" xml:space="preserve">
+    <value>통합 실행</value>
+  </data>
+  <data name="ConnectZKProtoFailed" xml:space="preserve">
+    <value>zkproto 연결 실패</value>
+  </data>
+  <data name="NotOpenZKProtoConnection" xml:space="preserve">
+    <value>zkproto 연결이 되지 않음</value>
+  </data>
+  <data name="MonitorDeviceSN" xml:space="preserve">
+    <value>SN</value>
+  </data>
+  <data name="MonitorDeviceIP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="MonitorDevicePort" xml:space="preserve">
+    <value>포트</value>
+  </data>
+  <data name="MonitorDeviceName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="MonitorDeviceAuth" xml:space="preserve">
+    <value>승인됨</value>
+  </data>
+  <data name="MonitorDeviceConnected" xml:space="preserve">
+    <value>연결됨</value>
+  </data>
+  <data name="MonitorDevicePolicy" xml:space="preserve">
+    <value>정책</value>
+  </data>
+  <data name="MonitorDeviceZoneName" xml:space="preserve">
+    <value>구역명</value>
+  </data>
+  <data name="MonitorDevice" xml:space="preserve">
+    <value>장비 모니터링</value>
+  </data>
+  <data name="tabPageImportUser.Text" xml:space="preserve">
+    <value>직원 입력</value>
+  </data>
+  <data name="tabPageExportUser.Text" xml:space="preserve">
+    <value>직원 정보 추출</value>
+  </data>
+  <data name="tabPageImportPunches.Text" xml:space="preserve">
+    <value>기록 불러오기</value>
+  </data>
+  <data name="tabPageImportEncrypt.Text" xml:space="preserve">
+    <value>암호화 기록 입력</value>
+  </data>
+  <data name="tabPageImportUserPhoto.Text" xml:space="preserve">
+    <value>직원 사진 불러오기</value>
+  </data>
+  <data name="tabPageExportUserPhoto.Text" xml:space="preserve">
+    <value>직원 사진 추출</value>
+  </data>
+  <data name="tabPageImportAttPhoto.Text" xml:space="preserve">
+    <value>출근 사진 불러오기</value>
+  </data>
+  <data name="tabPageImportMessage.Text" xml:space="preserve">
+    <value>메시지 불러오기</value>
+  </data>
+  <data name="tabPageExportMessage.Text" xml:space="preserve">
+    <value>메시지 전송</value>
+  </data>
+  <data name="grpUDiskFile.Text" xml:space="preserve">
+    <value>디스크 파일 목록</value>
+  </data>
+  <data name="btnImportEmployee.Text" xml:space="preserve">
+    <value>직원 정보 입력</value>
+  </data>
+  <data name="btnImporPunches.Text" xml:space="preserve">
+    <value>기록 불러오기</value>
+  </data>
+  <data name="btnDeleteDate.Text" xml:space="preserve">
+    <value>디스크 파일 삭제</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>파일 목록 새로고침</value>
+  </data>
+  <data name="btnImportLocale.Text" xml:space="preserve">
+    <value>로컬 파일 불러오기</value>
+  </data>
+  <data name="btnImporAttPhoto.Text" xml:space="preserve">
+    <value>출근 사진 불러오기</value>
+  </data>
+  <data name="btnImporUserPhoto.Text" xml:space="preserve">
+    <value>직원 사진 불러오기</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NotExistsUDisk" xml:space="preserve">
+    <value>USB 드라이브 없음</value>
+  </data>
+  <data name="FoundSomeUDisk" xml:space="preserve">
+    <value>...에서 불러오기:</value>
+  </data>
+  <data name="colCardNumber" xml:space="preserve">
+    <value>카드 번호</value>
+  </data>
+  <data name="colTerminalNum" xml:space="preserve">
+    <value>단말기 번호</value>
+  </data>
+  <data name="colDownloadTime" xml:space="preserve">
+    <value>시간 다운로드 </value>
+  </data>
+  <data name="colSize" xml:space="preserve">
+    <value>사이즈(Bytes)</value>
+  </data>
+  <data name="colChecktime" xml:space="preserve">
+    <value>시간 확인</value>
+  </data>
+  <data name="colVerifycode" xml:space="preserve">
+    <value>인증 스타일</value>
+  </data>
+  <data name="TerminalScreenItem0" xml:space="preserve">
+    <value>흑백 스크린</value>
+  </data>
+  <data name="TerminalScreenItem1" xml:space="preserve">
+    <value>컬러 스크린</value>
+  </data>
+  <data name="Algorithm9Text" xml:space="preserve">
+    <value>알고리즘 9</value>
+  </data>
+  <data name="Algorithm10Text" xml:space="preserve">
+    <value>알고리즘 10</value>
+  </data>
+  <data name="NotExistUserInfoFiles" xml:space="preserve">
+    <value>사용자 정보 파일을 찾을 수 없음</value>
+  </data>
+  <data name="ImportUserInfoNotify" xml:space="preserve">
+    <value>{0}개 사용자를 성공적으로 등록했습니다.</value>
+  </data>
+  <data name="ImportTempInfoNotify" xml:space="preserve">
+    <value>{0}개 지문 템플릿을 성공적으로 등록했습니다.</value>
+  </data>
+  <data name="ImportFaceInfoNotify" xml:space="preserve">
+    <value>{0}개 얼굴 템플릿을 성공적으로 등록했습니다.</value>
+  </data>
+  <data name="SelectedImportFile" xml:space="preserve">
+    <value>입력을 원하는 파일을 선택하십시오.</value>
+  </data>
+  <data name="NotExistPunchesFiles" xml:space="preserve">
+    <value>기록 파일을 찾을 수 없음</value>
+  </data>
+  <data name="ImportAttlogNotify" xml:space="preserve">
+    <value>{0}개 기록을 성공적으로 입력, {1} 신규 기록</value>
+  </data>
+  <data name="ExportUserInfoSuccess" xml:space="preserve">
+    <value>{0}개 사용자를 성공적으로 추출했습니다.</value>
+  </data>
+  <data name="ExportUserInfoFailed" xml:space="preserve">
+    <value>직원 정보 추출 실패</value>
+  </data>
+  <data name="ExportFPsInfoFailed" xml:space="preserve">
+    <value>지문 추출 실패</value>
+  </data>
+  <data name="ExportFPsInfoSuccess" xml:space="preserve">
+    <value>{0}개 지문을 성공적으로 추출했습니다.</value>
+  </data>
+  <data name="ExportFaceInfoFailed" xml:space="preserve">
+    <value>얼굴 추출 실패</value>
+  </data>
+  <data name="ExportFaceInfoSuccess" xml:space="preserve">
+    <value>{0}개 얼굴을 성공적으로 추출했습니다.</value>
+  </data>
+  <data name="NoEmployeeSelected" xml:space="preserve">
+    <value>직원을 먼저 선택하십시오.</value>
+  </data>
+  <data name="ImportUserPhotoNotify" xml:space="preserve">
+    <value>{0}개 사진을 성공적으로 등록했습니다.</value>
+  </data>
+  <data name="ImportUserPhotoFailedNotify" xml:space="preserve">
+    <value>직원 사진 불러오기 실패</value>
+  </data>
+  <data name="NotExistUserPhoto" xml:space="preserve">
+    <value>직원 사진을  찾을 수 없음</value>
+  </data>
+  <data name="NotExistAttPhoto" xml:space="preserve">
+    <value>출근 사진을 찾을 수 없음</value>
+  </data>
+  <data name="DataError" xml:space="preserve">
+    <value>데이터 에러입니다. 저장할 수 없습니다.</value>
+  </data>
+  <data name="exportPhotoSuccess" xml:space="preserve">
+    <value>직원 사진 추출 성공</value>
+  </data>
+  <data name="exportPhotoFailed" xml:space="preserve">
+    <value>직원 사진 추출 실패</value>
+  </data>
+  <data name="btnExportUserPhoto.Text" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="lblExportUserPhoto.Text" xml:space="preserve">
+    <value>직원의 사진을 USB 드라이브로 전송</value>
+  </data>
+  <data name="grpExportUserPhotoUserList" xml:space="preserve">
+    <value>사진이 등록된 직원 목록</value>
+  </data>
+  <data name="lblExportUserData.Text" xml:space="preserve">
+    <value>직원 데이터 추출</value>
+  </data>
+  <data name="btnExportUser.Text" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="grpExportUserList" xml:space="preserve">
+    <value>직원 정보 찾아보기</value>
+  </data>
+  <data name="grpUDiskPara.Text" xml:space="preserve">
+    <value>단말기 유형 선택</value>
+  </data>
+  <data name="lblUnassignedEmp.Text" xml:space="preserve">
+    <value>지정되지 않음</value>
+  </data>
+  <data name="lblAssignedEmp.Text" xml:space="preserve">
+    <value>적용됨</value>
+  </data>
+  <data name="lblUnassigendTer.Text" xml:space="preserve">
+    <value>지정되지 않음</value>
+  </data>
+  <data name="lblAssignedTer.Text" xml:space="preserve">
+    <value>적용됨</value>
+  </data>
+  <data name="AssignDeviceSN" xml:space="preserve">
+    <value>SN</value>
+  </data>
+  <data name="AssignDeviceName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="DataNotSaved" xml:space="preserve">
+    <value>데이터가 변경되었습니다. 저장 하시겠습니까?</value>
+  </data>
+  <data name="checkBtnSelectAll.Text" xml:space="preserve">
+    <value>전체 선택</value>
+  </data>
+  <data name="GCUploadUser.Text" xml:space="preserve">
+    <value>직원 데이터</value>
+  </data>
+  <data name="cbxUserInfo.Text" xml:space="preserve">
+    <value>직원 정보</value>
+  </data>
+  <data name="cbxFingerprint.Text" xml:space="preserve">
+    <value>템플릿</value>
+  </data>
+  <data name="GCUploadAccSettings.Text" xml:space="preserve">
+    <value>출입그룹 설정</value>
+  </data>
+  <data name="cbxTimeZone.Text" xml:space="preserve">
+    <value>시간대</value>
+  </data>
+  <data name="cbxAccGroup.Text" xml:space="preserve">
+    <value>출입통제 그룹</value>
+  </data>
+  <data name="cbxUnlockCombination.Text" xml:space="preserve">
+    <value>조합 잠금 해제</value>
+  </data>
+  <data name="cbxUserPrivilege.Text" xml:space="preserve">
+    <value>직원 출입 권한</value>
+  </data>
+  <data name="cbxHolidaySetting.Text" xml:space="preserve">
+    <value>휴일 설정</value>
+  </data>
+  <data name="btnFunEdit.Text" xml:space="preserve">
+    <value>편집</value>
+  </data>
+  <data name="grpEmployee.Text" xml:space="preserve">
+    <value>직원</value>
+  </data>
+  <data name="grpTerminal.Text" xml:space="preserve">
+    <value>단말기</value>
+  </data>
+  <data name="grpOtherOptions.Text" xml:space="preserve">
+    <value>기타 옵션</value>
+  </data>
+  <data name="lblGroup.Text" xml:space="preserve">
+    <value>출입통제 그룹</value>
+  </data>
+  <data name="lblTimezone1.Text" xml:space="preserve">
+    <value>시간대 1</value>
+  </data>
+  <data name="lblTimezone2.Text" xml:space="preserve">
+    <value>시간대 2</value>
+  </data>
+  <data name="lblTimezone3.Text" xml:space="preserve">
+    <value>시간대 3</value>
+  </data>
+  <data name="lblVerifyStyle.Text" xml:space="preserve">
+    <value>인증 모드</value>
+  </data>
+  <data name="chkUseGroup.Text" xml:space="preserve">
+    <value>사용자 그룹 권한</value>
+  </data>
+  <data name="rgEnableUserItem0" xml:space="preserve">
+    <value>직원 허용</value>
+  </data>
+  <data name="rgEnableUserItem1" xml:space="preserve">
+    <value>직원 제외</value>
+  </data>
+  <data name="chkCopy.Text" xml:space="preserve">
+    <value>다른 단말기에 권한 적용</value>
+  </data>
+  <data name="chkDisable.Text" xml:space="preserve">
+    <value>권한 승인 취소</value>
+  </data>
+  <data name="colID" xml:space="preserve">
+    <value>NO.</value>
+  </data>
+  <data name="colSunStart" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="colSunEnd" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="colGroup" xml:space="preserve">
+    <value>그룹</value>
+  </data>
+  <data name="colUseGroup" xml:space="preserve">
+    <value>사용자 그룹 권한</value>
+  </data>
+  <data name="colTimezone1" xml:space="preserve">
+    <value>시간대 1</value>
+  </data>
+  <data name="colTimezone2" xml:space="preserve">
+    <value>시간대 2</value>
+  </data>
+  <data name="colTimezone3" xml:space="preserve">
+    <value>시간대 3</value>
+  </data>
+  <data name="colDisable" xml:space="preserve">
+    <value>비허가 직원</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>편집</value>
+  </data>
+  <data name="ZKProtoLog" xml:space="preserve">
+    <value>ZKProto 데이터 동기화 로그</value>
+  </data>
+  <data name="HintSelectEmployee" xml:space="preserve">
+    <value>직원을 선택하십시오.</value>
+  </data>
+  <data name="HintSelectTerminal" xml:space="preserve">
+    <value>단말기을 선택하십시오.</value>
+  </data>
+  <data name="HintSelectAcGroup" xml:space="preserve">
+    <value>출입 그룹을 선택하십시오.</value>
+  </data>
+  <data name="HintSelectAcTimezone" xml:space="preserve">
+    <value>시간대를 선택하십시오.</value>
+  </data>
+  <data name="FormAddACUserPrivilege" xml:space="preserve">
+    <value>직원 출입통제 권한 추가</value>
+  </data>
+  <data name="FormModifyACUserPrivilege" xml:space="preserve">
+    <value>직원 출입 권한 수정</value>
+  </data>
+  <data name="lblTerminal.Text" xml:space="preserve">
+    <value>단말기</value>
+  </data>
+  <data name="GroupVerify" xml:space="preserve">
+    <value>그룹 승인</value>
+  </data>
+  <data name="TimetableLimit" xml:space="preserve">
+    <value>시간표의 수는 하루에 3개 미만이어야합니다.</value>
+  </data>
+  <data name="NoRepeatTime" xml:space="preserve">
+    <value>시간표에 시간이 중복되서는 안됩니다.</value>
+  </data>
+  <data name="HintSetTempShift" xml:space="preserve">
+    <value>오늘 임시 근무교대를 설정 하시겠습니까?</value>
+  </data>
+  <data name="HintClearTempShift" xml:space="preserve">
+    <value>오늘의 임시 근무교대를 취소 하시겠습니까?</value>
+  </data>
+  <data name="HintNone" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="GetAccessSetting" xml:space="preserve">
+    <value>옵션 읽기 </value>
+  </data>
+  <data name="SetAccessSetting" xml:space="preserve">
+    <value>옵션 설정</value>
+  </data>
+  <data name="grpDoorSetting.Text" xml:space="preserve">
+    <value>도어 세팅</value>
+  </data>
+  <data name="lblDoorDelay.Text" xml:space="preserve">
+    <value>잠금 시간</value>
+  </data>
+  <data name="lblSensorDelay.Text" xml:space="preserve">
+    <value>도어 센서 지연</value>
+  </data>
+  <data name="lblSensorMode.Text" xml:space="preserve">
+    <value>도어 센서 모드</value>
+  </data>
+  <data name="lblAlarmDelay.Text" xml:space="preserve">
+    <value>알람 지연</value>
+  </data>
+  <data name="lblNCTZ.Text" xml:space="preserve">
+    <value>NC TZ</value>
+  </data>
+  <data name="lblRetryTimes.Text" xml:space="preserve">
+    <value>재시도 횟수</value>
+  </data>
+  <data name="lblNOTZ.Text" xml:space="preserve">
+    <value>TZ 없음</value>
+  </data>
+  <data name="grpAntiPassSetting.Text" xml:space="preserve">
+    <value>안티-패스 설정</value>
+  </data>
+  <data name="lblAntiPassMode.Text" xml:space="preserve">
+    <value>안티-패스 모드</value>
+  </data>
+  <data name="lblMasterStatus.Text" xml:space="preserve">
+    <value>마스터 상태</value>
+  </data>
+  <data name="grpWiegandSetting.Text" xml:space="preserve">
+    <value>Wiegand 설정</value>
+  </data>
+  <data name="lblWiegandFormat1.Text" xml:space="preserve">
+    <value>Wiegand 방식</value>
+  </data>
+  <data name="lblWiegandFormat2.Text" xml:space="preserve">
+    <value>Wiegand 방식</value>
+  </data>
+  <data name="lblIDType1.Text" xml:space="preserve">
+    <value>데이터 유형</value>
+  </data>
+  <data name="lblIDType2.Text" xml:space="preserve">
+    <value>데이터 유형</value>
+  </data>
+  <data name="ckbFailedID.Text" xml:space="preserve">
+    <value>실패한 ID</value>
+  </data>
+  <data name="ckbSiteCode.Text" xml:space="preserve">
+    <value>사이트 코드</value>
+  </data>
+  <data name="grpWiegandIn.Text" xml:space="preserve">
+    <value>Wiegand In</value>
+  </data>
+  <data name="grpWiegandOut.Text" xml:space="preserve">
+    <value>Wiegand Out</value>
+  </data>
+  <data name="grpDuressOptions.Text" xml:space="preserve">
+    <value>강제 침입 설정 옵션</value>
+  </data>
+  <data name="lblHelpKey.Text" xml:space="preserve">
+    <value>도움말 키</value>
+  </data>
+  <data name="lblAlarmOn11Match.Text" xml:space="preserve">
+    <value>1:1 매칭 알람 </value>
+  </data>
+  <data name="lblAlarmOnPwd.Text" xml:space="preserve">
+    <value>비밀번호 알람</value>
+  </data>
+  <data name="lblAlarmOn1NMatch.Text" xml:space="preserve">
+    <value>1:N 매칭 알람</value>
+  </data>
+  <data name="SureSetValueTODevice" xml:space="preserve">
+    <value>이 값을 장치에 설정 하시겠습니까?</value>
+  </data>
+  <data name="lblDuressAlarmDelay.Text" xml:space="preserve">
+    <value>알람 지연</value>
+  </data>
+  <data name="lblDoorAlarmDelay.Text" xml:space="preserve">
+    <value>알람 지연</value>
+  </data>
+  <data name="tbpBaseSet.Text" xml:space="preserve">
+    <value>기본 설정</value>
+  </data>
+  <data name="tbpAndroidSet.Text" xml:space="preserve">
+    <value>Android 데이터 동기화 설정</value>
+  </data>
+  <data name="lblAndroidServerIP.Text" xml:space="preserve">
+    <value>서버 IP</value>
+  </data>
+  <data name="lblAndroidServerPort.Text" xml:space="preserve">
+    <value>포트</value>
+  </data>
+  <data name="InvalidIP" xml:space="preserve">
+    <value>서버 주소가 유효하지 않습니다. 다시 입력하십시오.</value>
+  </data>
+  <data name="InvalidPort" xml:space="preserve">
+    <value>포트값은 1에서 65,535 사이여야 합니다.</value>
+  </data>
+  <data name="AndroidSetSaveSucceed" xml:space="preserve">
+    <value>Android 설정 저장 성공</value>
+  </data>
+  <data name="gpbClientBaseSet.Text" xml:space="preserve">
+    <value>ZKTime 기본 설정</value>
+  </data>
+  <data name="lblAndroidCustomID.Text" xml:space="preserve">
+    <value>클라이언트 ID</value>
+  </data>
+  <data name="lblAndroidMaxOpe.Text" xml:space="preserve">
+    <value>최대 버퍼</value>
+  </data>
+  <data name="lblAndroidSyncInterval.Text" xml:space="preserve">
+    <value>동기화 간격</value>
+  </data>
+  <data name="lblAndroidConnInterval.Text" xml:space="preserve">
+    <value>간격 연결</value>
+  </data>
+  <data name="lblAndroidIntervalUnit1.Text" xml:space="preserve">
+    <value>(단위: 초)</value>
+  </data>
+  <data name="lblAndroidIntervalUnit2.Text" xml:space="preserve">
+    <value>(단위: 초)</value>
+  </data>
+  <data name="FrmSysOptiongrpTransSet.Text" xml:space="preserve">
+    <value>기록 다운로드 옵션</value>
+  </data>
+  <data name="FrmSysOptionlblMininumTime.Text" xml:space="preserve">
+    <value>두 개 기록 간의 시간차 (1-30분)</value>
+  </data>
+  <data name="chkDeletePunches.Text" xml:space="preserve">
+    <value>다운로드 후 단말기에서 기록 삭제</value>
+  </data>
+  <data name="FrmSysOptiongrpDTFormat.Text" xml:space="preserve">
+    <value>날짜 및 시간 형식</value>
+  </data>
+  <data name="FrmCmplblCmpDateFormate.Text" xml:space="preserve">
+    <value>날짜 형식</value>
+  </data>
+  <data name="FrmCmplblCmpTimeFormate.Text" xml:space="preserve">
+    <value>시간 형식</value>
+  </data>
+  <data name="FrmSysOptionbtnSave.Text" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="FrmSysOptiongrpCalType.Text" xml:space="preserve">
+    <value>캘린더 유형</value>
+  </data>
+  <data name="ckbAutoConnectZKProto.Text" xml:space="preserve">
+    <value>zktime.net 시작시 자동 연결</value>
+  </data>
+  <data name="lblPolicy.Text" xml:space="preserve">
+    <value>데이터 모드</value>
+  </data>
+  <data name="grbSyncServerSet.Text" xml:space="preserve">
+    <value>동기화 서버 설정</value>
+  </data>
+  <data name="grbControlServerSet.Text" xml:space="preserve">
+    <value>제어 서버 설정</value>
+  </data>
+  <data name="grbUpdateZKProtoConfig.Text" xml:space="preserve">
+    <value>ZKProto 구성 업데이트</value>
+  </data>
+  <data name="grpSyncServer.Text" xml:space="preserve">
+    <value>동기화 서버</value>
+  </data>
+  <data name="grpControlServer.Text" xml:space="preserve">
+    <value>제어 서버</value>
+  </data>
+  <data name="btnUpdateSyncSet.Text" xml:space="preserve">
+    <value>제출</value>
+  </data>
+  <data name="btnUpdateControlSet.Text" xml:space="preserve">
+    <value>제출</value>
+  </data>
+  <data name="ckbShowSyncDebug.Text" xml:space="preserve">
+    <value>디버그 표시</value>
+  </data>
+  <data name="lblControlPort2.Text" xml:space="preserve">
+    <value>포트</value>
+  </data>
+  <data name="lblControlPwd.Text" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="lblSyncPort.Text" xml:space="preserve">
+    <value>동기화 포트</value>
+  </data>
+  <data name="ckbShowControlDebug.Text" xml:space="preserve">
+    <value>디버그 표시</value>
+  </data>
+  <data name="ckbNeedPassword.Text" xml:space="preserve">
+    <value>비밀번호 필요</value>
+  </data>
+  <data name="lblControlPort.Text" xml:space="preserve">
+    <value>제어 포트</value>
+  </data>
+  <data name="lblNewPwd2.Text" xml:space="preserve">
+    <value>신규 비밀번호</value>
+  </data>
+  <data name="btnConnectZKProto.Text" xml:space="preserve">
+    <value>저장 및 연결</value>
+  </data>
+  <data name="btnDisConnectZKProto.Text" xml:space="preserve">
+    <value>연결 해제</value>
+  </data>
+  <data name="lblMaxBufferUnit.Text" xml:space="preserve">
+    <value>(단위: KB)</value>
+  </data>
+  <data name="grbZKProtoConnection.Text" xml:space="preserve">
+    <value>ZKProto Connect 정보</value>
+  </data>
+  <data name="grbZKProtoBaseSet.Text" xml:space="preserve">
+    <value>기본 설정</value>
+  </data>
+  <data name="CalendarTypeNormal" xml:space="preserve">
+    <value>정상</value>
+  </data>
+  <data name="CalendarTypeIran" xml:space="preserve">
+    <value>이란</value>
+  </data>
+  <data name="CalendarTypeArabia" xml:space="preserve">
+    <value>아라비아</value>
+  </data>
+  <data name="MsgSaveSucceed" xml:space="preserve">
+    <value>데이터가 성공적으로 저장되었습니다.</value>
+  </data>
+  <data name="InvalidMaxOpe" xml:space="preserve">
+    <value>최대 버퍼는 값을 입력해야 합니다.</value>
+  </data>
+  <data name="SelectDataPolicy" xml:space="preserve">
+    <value>먼저 데이터 정책을 선택하십시오.</value>
+  </data>
+  <data name="saveMergePolicyInfo" xml:space="preserve">
+    <value>ZKTimeNet과 ZKProto의 데이터를 결합할 경우, 데이터 충돌이 있는 경우 ZKTimeNet의 데이터가 ZKProto의 데이터를 대체합니다.</value>
+  </data>
+  <data name="saveClearPolicyInfo" xml:space="preserve">
+    <value>ZKTimeNet의 데이터를 삭제하고 ZKProto에서 데이터를 다운로드하십시오.</value>
+  </data>
+  <data name="UpdateZKProtoConfigConfirm" xml:space="preserve">
+    <value>업데이트 성공 시 연결이 닫힙니다. 계속 하시겠습니까?</value>
+  </data>
+  <data name="UpdateZKProtoSuccessInfo" xml:space="preserve">
+    <value>성공,필요한 경우 다시 연결하십시오.</value>
+  </data>
+  <data name="UpdateZKProtoFailedInfo" xml:space="preserve">
+    <value>실패</value>
+  </data>
+  <data name="tbpDataTransferSet.Text" xml:space="preserve">
+    <value>데이터 전송 설정</value>
+  </data>
+  <data name="grpTranserPhoto.Text" xml:space="preserve">
+    <value>사진 전송</value>
+  </data>
+  <data name="chkUserHttp.Text" xml:space="preserve">
+    <value>HTTP를 통해 사진 전송</value>
+  </data>
+  <data name="lblPhotoDirectory.Text" xml:space="preserve">
+    <value>사진 디렉토리</value>
+  </data>
+  <data name="btnSelect.Text" xml:space="preserve">
+    <value>선택</value>
+  </data>
+  <data name="lblPort.Text" xml:space="preserve">
+    <value>포트</value>
+  </data>
+  <data name="grpTranseType.Text" xml:space="preserve">
+    <value>로그</value>
+  </data>
+  <data name="lblInterval.Text" xml:space="preserve">
+    <value>(단위: 분)</value>
+  </data>
+  <data name="lblTimes.Text" xml:space="preserve">
+    <value>예: 00:00;12:00</value>
+  </data>
+  <data name="chkAutoSync.Text" xml:space="preserve">
+    <value>WDMS 데이터 동기화 설정</value>
+  </data>
+  <data name="lblWDMSIP.Text" xml:space="preserve">
+    <value>도메인 / IP</value>
+  </data>
+  <data name="lblWDMSClientAlias.Text" xml:space="preserve">
+    <value>클라이언트 이름</value>
+  </data>
+  <data name="btnDateTransferSet.Text" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="InvalidDirectory" xml:space="preserve">
+    <value>디렉토리가 존재하지 않습니다. 먼저 생성하십시오.</value>
+  </data>
+  <data name="Portisinuse" xml:space="preserve">
+    <value>{0} 포트가 사용되고 있는지 확인하십시오.</value>
+  </data>
+  <data name="WDMSconnectfailed" xml:space="preserve">
+    <value>WDMS 연결 실패, 확인하십시오.</value>
+  </data>
+  <data name="TranseType0" xml:space="preserve">
+    <value>실시간</value>
+  </data>
+  <data name="TranseType1" xml:space="preserve">
+    <value>간격</value>
+  </data>
+  <data name="TranseType2" xml:space="preserve">
+    <value>횟수</value>
+  </data>
+  <data name="grpFunctionOption.Text" xml:space="preserve">
+    <value>기능 옵션</value>
+  </data>
+  <data name="chkIncludeACControl.Text" xml:space="preserve">
+    <value>출입통제 활성화</value>
+  </data>
+  <data name="chkIncludeEmail.Text" xml:space="preserve">
+    <value>이메일 푸시 리포트 활성화</value>
+  </data>
+  <data name="chkIncludeShortMessage.Text" xml:space="preserve">
+    <value>단문 메시지 활성화</value>
+  </data>
+  <data name="chkIncludePushPhoto.Text" xml:space="preserve">
+    <value>푸시 데이터 수집 활성화</value>
+  </data>
+  <data name="chkIncludeWorkcode.Text" xml:space="preserve">
+    <value>근무 코드 활성화</value>
+  </data>
+  <data name="chkIncludeUDisk.Text" xml:space="preserve">
+    <value>USB 드라이브 활성화</value>
+  </data>
+  <data name="chkIncludeSalary.Text" xml:space="preserve">
+    <value>급여 인터페이스 활성화</value>
+  </data>
+  <data name="chkIncludeDownloadAttPhoto.Text" xml:space="preserve">
+    <value>출근 사진 다운로드 활성화</value>
+  </data>
+  <data name="chkAddNewTerminal.Text" xml:space="preserve">
+    <value>자동으로 단말기 추가</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>다운로드 중입니다. 잠시 기다려 주십시오.</value>
+  </data>
+  <data name="ACCHolidaySetting" xml:space="preserve">
+    <value>휴일 설정</value>
+  </data>
+  <data name="UploadDataToTerminal" xml:space="preserve">
+    <value>{0}  {1}을 {2} 단말기에 업로드</value>
+  </data>
+  <data name="ACCEmployeeInfo" xml:space="preserve">
+    <value>직원</value>
+  </data>
+  <data name="ACCTemplate" xml:space="preserve">
+    <value>템플릿</value>
+  </data>
+  <data name="ACCTimeZone" xml:space="preserve">
+    <value>시간대 </value>
+  </data>
+  <data name="ACCGroup" xml:space="preserve">
+    <value>그룹6</value>
+  </data>
+  <data name="ACCUnlockComb" xml:space="preserve">
+    <value>조합 잠금 해제</value>
+  </data>
+  <data name="ACCUserGroup" xml:space="preserve">
+    <value>사용자 그룹</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>{0} 단말기 연결 실패</value>
+  </data>
+  <data name="UploadDataToTerSuc" xml:space="preserve">
+    <value>{0} 단말기에 데이터 업로드 성공</value>
+  </data>
+  <data name="btnTestSend.Text" xml:space="preserve">
+    <value>연결 테스트</value>
+  </data>
+  <data name="chkCredentials.Text" xml:space="preserve">
+    <value>자격 필요</value>
+  </data>
+  <data name="chkSendAbsent.Text" xml:space="preserve">
+    <value>결근 데이터 자동 전송</value>
+  </data>
+  <data name="chkSendEarlyOut.Text" xml:space="preserve">
+    <value>조퇴 데이터 자동 전송</value>
+  </data>
+  <data name="chkSendLate.Text" xml:space="preserve">
+    <value>지각 데이터 자동 전송</value>
+  </data>
+  <data name="chkSSL.Text" xml:space="preserve">
+    <value>사용 중인 SSL</value>
+  </data>
+  <data name="gbSendData.Text" xml:space="preserve">
+    <value>데이터 전송</value>
+  </data>
+  <data name="gbSmtpSet.Text" xml:space="preserve">
+    <value>송신자 정보</value>
+  </data>
+  <data name="lblDispalyName.Text" xml:space="preserve">
+    <value>이름 표시:</value>
+  </data>
+  <data name="lblEmailAddr.Text" xml:space="preserve">
+    <value>이메일 주소</value>
+  </data>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="lblSmtpName.Text" xml:space="preserve">
+    <value>SMTP 서버:</value>
+  </data>
+  <data name="SmtpTestingSuccess" xml:space="preserve">
+    <value>서버 연결 성공</value>
+  </data>
+  <data name="MsgShouldNumeric" xml:space="preserve">
+    <value>숫자로만 구성</value>
+  </data>
+  <data name="chkAsmr.Text" xml:space="preserve">
+    <value>전체 기록 다운로드</value>
+  </data>
+  <data name="chkCalculate.Text" xml:space="preserve">
+    <value>출근 산출 시프트 사용</value>
+  </data>
+  <data name="chkEnabledCollectionData.Text" xml:space="preserve">
+    <value>데이터 수집 일정 사용</value>
+  </data>
+  <data name="lblStartAt.Text" xml:space="preserve">
+    <value>시작 위치:</value>
+  </data>
+  <data name="checkEditAutoDownload.Text" xml:space="preserve">
+    <value>ZKTime.net이 켜져있을 때 단말기에서 기록 자동 다운로드</value>
+  </data>
+  <data name="DownloadPunchFailed" xml:space="preserve">
+    <value>기록 다운로드 실패</value>
+  </data>
+  <data name="DownloadPunchSuccess" xml:space="preserve">
+    <value>{0}개 기록이 {1} 단말기로부터 다운로드 되었습니다.</value>
+  </data>
+  <data name="Begindownload" xml:space="preserve">
+    <value>기록 다운로드 중</value>
+  </data>
+  <data name="DownloadedPunches" xml:space="preserve">
+    <value>{0} 기록 다운로드 완료, 신규 {1} 기록</value>
+  </data>
+  <data name="notActived" xml:space="preserve">
+    <value>{0}이 활성화되지 않았습니다.</value>
+  </data>
+  <data name="NoEventsStr" xml:space="preserve">
+    <value>로그를 찾을 수 없음</value>
+  </data>
+  <data name="ShouldSelecteTerminal" xml:space="preserve">
+    <value>기록을 다운로드할 단말기를 왼쪽에서 선택하십시오.</value>
+  </data>
+  <data name="UserModel_NameRepeat" xml:space="preserve">
+    <value>해당 사용자 이름이 이미 존재합니다.</value>
+  </data>
+  <data name="lblUserName.Text" xml:space="preserve">
+    <value>사용자 이름</value>
+  </data>
+  <data name="lblRole.Text" xml:space="preserve">
+    <value>역할</value>
+  </data>
+  <data name="lblRemark.Text" xml:space="preserve">
+    <value>비고</value>
+  </data>
+  <data name="user_name" xml:space="preserve">
+    <value>사용자 이름</value>
+  </data>
+  <data name="RoleModel_NameRepeat" xml:space="preserve">
+    <value>해당 역할명이 이미 존재합니다.</value>
+  </data>
+  <data name="grpSetPrivilege.Text" xml:space="preserve">
+    <value>권한 설정</value>
+  </data>
+  <data name="role_name" xml:space="preserve">
+    <value>역할명</value>
+  </data>
+  <data name="RoleType0" xml:space="preserve">
+    <value>정상</value>
+  </data>
+  <data name="RoleType1" xml:space="preserve">
+    <value>관리자</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>전체 선택</value>
+  </data>
+  <data name="btnInverse.Text" xml:space="preserve">
+    <value>인벌스</value>
+  </data>
+  <data name="break" xml:space="preserve">
+    <value>휴식</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>총</value>
+  </data>
+  <data name="sick" xml:space="preserve">
+    <value>병가</value>
+  </data>
+  <data name="overtime2" xml:space="preserve">
+    <value>OT 레벨2</value>
+  </data>
+  <data name="overtime3" xml:space="preserve">
+    <value>OT 레벨3</value>
+  </data>
+  <data name="overtime1" xml:space="preserve">
+    <value>OT 레벨1</value>
+  </data>
+  <data name="lateCome" xml:space="preserve">
+    <value>지각</value>
+  </data>
+  <data name="holiday" xml:space="preserve">
+    <value>휴일</value>
+  </data>
+  <data name="earlyOut" xml:space="preserve">
+    <value>조퇴</value>
+  </data>
+  <data name="vacation" xml:space="preserve">
+    <value>휴가</value>
+  </data>
+  <data name="pc_break" xml:space="preserve">
+    <value>휴식</value>
+  </data>
+  <data name="pc_total" xml:space="preserve">
+    <value>총</value>
+  </data>
+  <data name="pc_sick" xml:space="preserve">
+    <value>병가</value>
+  </data>
+  <data name="pc_work" xml:space="preserve">
+    <value>근무</value>
+  </data>
+  <data name="pc_overtime2" xml:space="preserve">
+    <value>OT 레벨2</value>
+  </data>
+  <data name="pc_overtime3" xml:space="preserve">
+    <value>OT 레벨3</value>
+  </data>
+  <data name="pc_overtime1" xml:space="preserve">
+    <value>OT 레벨1</value>
+  </data>
+  <data name="pc_absence" xml:space="preserve">
+    <value>결근</value>
+  </data>
+  <data name="pc_lateCome" xml:space="preserve">
+    <value>지각</value>
+  </data>
+  <data name="pc_holiday" xml:space="preserve">
+    <value>휴일</value>
+  </data>
+  <data name="pc_earlyOut" xml:space="preserve">
+    <value>조퇴</value>
+  </data>
+  <data name="pc_vacation" xml:space="preserve">
+    <value>휴가</value>
+  </data>
+  <data name="pc_missingTime" xml:space="preserve">
+    <value>누락된 시간</value>
+  </data>
+  <data name="pc_requireWork" xml:space="preserve">
+    <value>Require Work</value>
+  </data>
+  <data name="pc_actualWork" xml:space="preserve">
+    <value>Actual Work</value>
+  </data>
+  <data name="pc_personalLeave" xml:space="preserve">
+    <value>Personal Leave</value>
+  </data>
+  <data name="pc_annualLeave" xml:space="preserve">
+    <value>Annual Leave</value>
+  </data>
+  <data name="pc_businessLeave" xml:space="preserve">
+    <value>Business Leave</value>
+  </data>
+  <data name="pc_roundWork" xml:space="preserve">
+    <value>Round Work</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>기본값</value>
+  </data>
+  <data name="pv_DownloadPunches" xml:space="preserve">
+    <value>기록 불러오기</value>
+  </data>
+  <data name="pv_Update" xml:space="preserve">
+    <value>업데이트</value>
+  </data>
+  <data name="pv_Select" xml:space="preserve">
+    <value>선택</value>
+  </data>
+  <data name="pv_Delete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="pv_Import" xml:space="preserve">
+    <value>입력</value>
+  </data>
+  <data name="pv_View" xml:space="preserve">
+    <value>보기</value>
+  </data>
+  <data name="pv_Export" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="pv_Assign" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="pv_BatchUpdate" xml:space="preserve">
+    <value>일괄 업데이트</value>
+  </data>
+  <data name="pv_AssignDevice" xml:space="preserve">
+    <value>장비 설정</value>
+  </data>
+  <data name="pv_AssignEmployee" xml:space="preserve">
+    <value>직원 설정</value>
+  </data>
+  <data name="pv_SearchTerminal" xml:space="preserve">
+    <value>단말기 검색</value>
+  </data>
+  <data name="pv_Search" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="pv_Assign2Device" xml:space="preserve">
+    <value>권한 업로드 </value>
+  </data>
+  <data name="pv_DownloadPhotos" xml:space="preserve">
+    <value>사진 다운로드</value>
+  </data>
+  <data name="pv_DataSync" xml:space="preserve">
+    <value>데이터 동기화</value>
+  </data>
+  <data name="pv_InitialDB" xml:space="preserve">
+    <value>초기화</value>
+  </data>
+  <data name="pv_BackupDB" xml:space="preserve">
+    <value>백업</value>
+  </data>
+  <data name="pv_RestoreDB" xml:space="preserve">
+    <value>복원</value>
+  </data>
+  <data name="cmbItemOneWeek" xml:space="preserve">
+    <value>최근 주(W)</value>
+  </data>
+  <data name="cmbItemOneMonth" xml:space="preserve">
+    <value>최근 월(M)</value>
+  </data>
+  <data name="cmbItemThreeMonth" xml:space="preserve">
+    <value>최근 3개월</value>
+  </data>
+  <data name="cmbItemSixMonth" xml:space="preserve">
+    <value>최근 6개월</value>
+  </data>
+  <data name="cmbItemOneYear" xml:space="preserve">
+    <value>최근 연(Y)</value>
+  </data>
+  <data name="cmbItemAll" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="lblDeleteLogs.Text" xml:space="preserve">
+    <value>이전 로그 삭제</value>
+  </data>
+  <data name="MsgDeleteRecordCount" xml:space="preserve">
+    <value>{0} 기록 삭제</value>
+  </data>
+  <data name="colUserName" xml:space="preserve">
+    <value>사용자 이름</value>
+  </data>
+  <data name="colDateTime" xml:space="preserve">
+    <value>날짜 시간</value>
+  </data>
+  <data name="colMessage" xml:space="preserve">
+    <value>메시지</value>
+  </data>
+  <data name="btnDeleteLogs.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="btnExportLogs.Text" xml:space="preserve">
+    <value>산출</value>
+  </data>
+  <data name="logToolImportEmployee" xml:space="preserve">
+    <value>{0} 직원 입력</value>
+  </data>
+  <data name="logToolExportEmployee" xml:space="preserve">
+    <value>직원 추출</value>
+  </data>
+  <data name="logDeletePaycode" xml:space="preserve">
+    <value>({0}) 지급 코드 삭제</value>
+  </data>
+  <data name="logUpdatePaycode" xml:space="preserve">
+    <value>({0}) 지급 코드 업데이트</value>
+  </data>
+  <data name="logAddPaycode" xml:space="preserve">
+    <value>({0}) 지급 코드 추가</value>
+  </data>
+  <data name="logAddTimeTable" xml:space="preserve">
+    <value>({0}) 시간표 추가</value>
+  </data>
+  <data name="logUpdateTimeTable" xml:space="preserve">
+    <value>({0}) 시간표 업데이트</value>
+  </data>
+  <data name="logDeleteTimeTable" xml:space="preserve">
+    <value>({0}) 시간표 삭제</value>
+  </data>
+  <data name="logAddShift" xml:space="preserve">
+    <value>({0}) 교대 추가</value>
+  </data>
+  <data name="logUpdateShift" xml:space="preserve">
+    <value>({0}) 교대 정보 업데이트</value>
+  </data>
+  <data name="logDeleteShift" xml:space="preserve">
+    <value>({0}) 교대 삭제</value>
+  </data>
+  <data name="logAddTerminal" xml:space="preserve">
+    <value>({0}) 단말기 추가</value>
+  </data>
+  <data name="logUpdateTerminal" xml:space="preserve">
+    <value>({0}) 단말기 업데이트</value>
+  </data>
+  <data name="logDeleteTerminal" xml:space="preserve">
+    <value>({0}) 단말기 삭제</value>
+  </data>
+  <data name="logSearchTerminal" xml:space="preserve">
+    <value>단말기 검색을 통해 {0} 단말기를 추가하고, {1} 단말기를 업데이트 하십시오. </value>
+  </data>
+  <data name="logAddZone" xml:space="preserve">
+    <value>({0}) 시간대 추가</value>
+  </data>
+  <data name="logUpdateZone" xml:space="preserve">
+    <value>({0}) 구역 업데이트</value>
+  </data>
+  <data name="logDeleteZone" xml:space="preserve">
+    <value>({0}) 구역 삭제</value>
+  </data>
+  <data name="logZoneAssignEmp" xml:space="preserve">
+    <value>직원을 {0}에 적용</value>
+  </data>
+  <data name="logZoneAssignTer" xml:space="preserve">
+    <value>{0}에 터미널 적용</value>
+  </data>
+  <data name="logTerminalMonitor" xml:space="preserve">
+    <value>단말기 모니터 열기</value>
+  </data>
+  <data name="logDataSync" xml:space="preserve">
+    <value>리눅스 장비와 데이터 동기화</value>
+  </data>
+  <data name="logUpdateBaseSet" xml:space="preserve">
+    <value>업데이트 시스템 기본 설정</value>
+  </data>
+  <data name="logUpdateDataTranserSet" xml:space="preserve">
+    <value>시스템 데이터 전송 설정 업데이트</value>
+  </data>
+  <data name="logUpdateAndroidDataSyncSet" xml:space="preserve">
+    <value>Android 데이터 동기화 열기</value>
+  </data>
+  <data name="logDisconnectAndroidDataSync" xml:space="preserve">
+    <value>안드로이드 데이터 동기화 연결 해제</value>
+  </data>
+  <data name="logUpdateSyncServerSet" xml:space="preserve">
+    <value>동기화 서버 설정 업데이트</value>
+  </data>
+  <data name="logUpdateControlServerSet" xml:space="preserve">
+    <value>제어 서버 설정 업데이트</value>
+  </data>
+  <data name="logUpdateEmailSet" xml:space="preserve">
+    <value>송신자 설정 업데이트</value>
+  </data>
+  <data name="logBatchUpdateEmployee" xml:space="preserve">
+    <value>직원 일괄 업데이트</value>
+  </data>
+  <data name="logUpdateEmployee" xml:space="preserve">
+    <value>({0}) 직원 업데이트</value>
+  </data>
+  <data name="logAddEmployee" xml:space="preserve">
+    <value>({0}) 직원 추가</value>
+  </data>
+  <data name="logDeleteEmployee" xml:space="preserve">
+    <value>({0}) 직원 삭제</value>
+  </data>
+  <data name="logEnrollFP" xml:space="preserve">
+    <value>지문 ({0}) 추가</value>
+  </data>
+  <data name="logDeleteFP" xml:space="preserve">
+    <value>({0}) 지문 삭제</value>
+  </data>
+  <data name="logUpdateEmpShift" xml:space="preserve">
+    <value>직원 교대 근무 업데이트</value>
+  </data>
+  <data name="logCreateBreak" xml:space="preserve">
+    <value>휴식시간 ({0}) 추가</value>
+  </data>
+  <data name="logUpdateBreak" xml:space="preserve">
+    <value>({0}) 휴식 정보 업데이트</value>
+  </data>
+  <data name="logDeleteBreak" xml:space="preserve">
+    <value>({0}) 휴식 삭제</value>
+  </data>
+  <data name="logDeleteDepartment" xml:space="preserve">
+    <value>부서 번호 {0} 삭제</value>
+  </data>
+  <data name="logUpdateCompany" xml:space="preserve">
+    <value>회사 정보 업데이트</value>
+  </data>
+  <data name="logUpdateRules" xml:space="preserve">
+    <value>규정 정보 업데이트</value>
+  </data>
+  <data name="logAddDepartment" xml:space="preserve">
+    <value>({0}) 부서 추가</value>
+  </data>
+  <data name="logUpdateDepartment" xml:space="preserve">
+    <value>({0}) 부서 업데이트</value>
+  </data>
+  <data name="logAddUser" xml:space="preserve">
+    <value>({0}) 사용자 추가</value>
+  </data>
+  <data name="logUpdateUser" xml:space="preserve">
+    <value>({0}) 사용자 업데이트</value>
+  </data>
+  <data name="logDeleteUser" xml:space="preserve">
+    <value>({0}) 사용자 삭제</value>
+  </data>
+  <data name="logAddRole" xml:space="preserve">
+    <value>({0}) 역할 추가</value>
+  </data>
+  <data name="logUpdateRole" xml:space="preserve">
+    <value>({0}) 역할 업데이트</value>
+  </data>
+  <data name="logDeleteRole" xml:space="preserve">
+    <value>({0}) 역할 삭제</value>
+  </data>
+  <data name="logAddWorkcode" xml:space="preserve">
+    <value>({0}) 근무 코드 추가</value>
+  </data>
+  <data name="logUpdateWorkcode" xml:space="preserve">
+    <value>({0}) 근무 코드 업데이트</value>
+  </data>
+  <data name="logDeleteWorkcode" xml:space="preserve">
+    <value>({0}) 근무 코드 삭제</value>
+  </data>
+  <data name="logAddMessage" xml:space="preserve">
+    <value>({0}) 메시지 추가</value>
+  </data>
+  <data name="logUpdateMessage" xml:space="preserve">
+    <value>({0}) 메시지 업데이트</value>
+  </data>
+  <data name="logDeleteMessage" xml:space="preserve">
+    <value>({0}) 메시지 삭제</value>
+  </data>
+  <data name="logConnectTerminal" xml:space="preserve">
+    <value>({0}) 단말기 연결</value>
+  </data>
+  <data name="log_btnSetDateFormat" xml:space="preserve">
+    <value>({0}) 단말기 날짜 형식 설정</value>
+  </data>
+  <data name="log_btnSyncTime" xml:space="preserve">
+    <value>({0}) 단말기 동기화 시간 설정</value>
+  </data>
+  <data name="log_btnClearAdmin" xml:space="preserve">
+    <value>({0}) 단말기 관리자 삭제</value>
+  </data>
+  <data name="log_btnClearAllUsers" xml:space="preserve">
+    <value>({0}) 단말기 전체 사용자 삭제</value>
+  </data>
+  <data name="log_btnClearAllFP" xml:space="preserve">
+    <value>({0}) 단말기 전체 지문 삭제</value>
+  </data>
+  <data name="log_btnClearAllPunches" xml:space="preserve">
+    <value>({0}) 단말기 전체 기록 삭제</value>
+  </data>
+  <data name="log_btnClearAllData" xml:space="preserve">
+    <value>({0}) 단말기 전체 데이터 삭제</value>
+  </data>
+  <data name="log_btnSleepTimes" xml:space="preserve">
+    <value>({0}) 단말기 휴면 시간 설정</value>
+  </data>
+  <data name="logCalculateZoneData" xml:space="preserve">
+    <value>영역 ({0})의 데이터 산출</value>
+  </data>
+  <data name="logExportUserPhoto" xml:space="preserve">
+    <value>{0} 직원 사진을 USB 드라이브로 전송</value>
+  </data>
+  <data name="logExportEmployee" xml:space="preserve">
+    <value>{0} 직원을 USB 드라이브로 전송</value>
+  </data>
+  <data name="logImportEmployee" xml:space="preserve">
+    <value>USB 드라이브에서 {0} 직원 정보 불러오기</value>
+  </data>
+  <data name="logDeleteDiskFile" xml:space="preserve">
+    <value>USB 드라이브 파일 삭제</value>
+  </data>
+  <data name="logFromLocalDisk" xml:space="preserve">
+    <value>로컬 디스크로부터 블러오기</value>
+  </data>
+  <data name="logRefreshDisk" xml:space="preserve">
+    <value>디스크 새로고침</value>
+  </data>
+  <data name="logDeleteDiskDirectory" xml:space="preserve">
+    <value>USB 드라이브 디렉토리 삭제</value>
+  </data>
+  <data name="ImportAttPhoto" xml:space="preserve">
+    <value>출근 사진 불러오기</value>
+  </data>
+  <data name="logImportPunches" xml:space="preserve">
+    <value>{0} 기록 입력</value>
+  </data>
+  <data name="logImportEmpPhoto" xml:space="preserve">
+    <value>{0} 직원 사진 블러오기</value>
+  </data>
+  <data name="logRefreshEmpPhoto" xml:space="preserve">
+    <value>직원 사진 새로고침</value>
+  </data>
+  <data name="logSearchPunches" xml:space="preserve">
+    <value>직원 기록 검색</value>
+  </data>
+  <data name="logExportPunches" xml:space="preserve">
+    <value>직원 기록 추출</value>
+  </data>
+  <data name="logAddACTimeZone" xml:space="preserve">
+    <value>({0}) 출입 시간대 추가</value>
+  </data>
+  <data name="logUpdateACTimeZone" xml:space="preserve">
+    <value>({0}) 출입 시간대 업데이트</value>
+  </data>
+  <data name="logDeleteACTimeZone" xml:space="preserve">
+    <value>({0}) 출입 시간대 삭제</value>
+  </data>
+  <data name="logAddACGroup" xml:space="preserve">
+    <value>({0}) 단말기에 출입그룹 ({1}) 추가</value>
+  </data>
+  <data name="logUpdateACGroup" xml:space="preserve">
+    <value>({0}) 단말기 ({1}) 출입 그룹 업데이트</value>
+  </data>
+  <data name="logDeleteACGroup" xml:space="preserve">
+    <value>({0}) 단말기의 ({1}) 출입 그룹 삭제</value>
+  </data>
+  <data name="logUpdateACUnlockComb" xml:space="preserve">
+    <value>({0}) 단말기의 ({1}) 출입 잠금해제 조합 업데이트</value>
+  </data>
+  <data name="logUpdateACUserPriviledge" xml:space="preserve">
+    <value>({1}) 권한에 ({0}) 직원 업데이트</value>
+  </data>
+  <data name="logDeleteACUserPriviledge" xml:space="preserve">
+    <value>({1}) 단말기 권한에서 ({0}) 직원 삭제</value>
+  </data>
+  <data name="logBatchDeleteACUserPriviledge" xml:space="preserve">
+    <value>{0} 단말기 권한에 일괄적으로 직원 삭제</value>
+  </data>
+  <data name="logBatchCreateACUserPriviledge" xml:space="preserve">
+    <value>({0}) 단말기 권한에 일괄적으로 직원 추가</value>
+  </data>
+  <data name="logCreateACUserPriviledge" xml:space="preserve">
+    <value>단말기 ({1})에 ({0}) 직원 권한 추가</value>
+  </data>
+  <data name="logBatchUpdateACUserPriviledge" xml:space="preserve">
+    <value>({0}) 단말기 권한에 직원 일괄 업데이트</value>
+  </data>
+  <data name="logReadDoorOption" xml:space="preserve">
+    <value>({0}) 단말기의 도어 옵션 읽기 </value>
+  </data>
+  <data name="logReadWiegandOption" xml:space="preserve">
+    <value>({0}) 단말기의 Wiegand 옵션 읽기 </value>
+  </data>
+  <data name="logReadDuressOption" xml:space="preserve">
+    <value>({0}) 단말기의 강제침입 관리 옵션 읽기 </value>
+  </data>
+  <data name="logSetDoorOption" xml:space="preserve">
+    <value>({0}) 단말기 도어 옵션 설정</value>
+  </data>
+  <data name="logSetWiegandOption" xml:space="preserve">
+    <value>({0}) 단말기 Wiegand 옵션 설정</value>
+  </data>
+  <data name="logSetDuressOption" xml:space="preserve">
+    <value>({0}) 단말기 강제침입 관리 옵션 설정</value>
+  </data>
+  <data name="FrmSchAssignCaption" xml:space="preserve">
+    <value>교대 지정</value>
+  </data>
+  <data name="SaveNewData" xml:space="preserve">
+    <value>이 작업을 수행하기 전에 신규 데이터를 먼저 저장해야합니다.</value>
+  </data>
+  <data name="HintStartDateBeforeEnd" xml:space="preserve">
+    <value>종료일은 시작일 이후여야 합니다.</value>
+  </data>
+  <data name="AssignShiftFailed" xml:space="preserve">
+    <value>직원 적용이 실패했습니다.</value>
+  </data>
+  <data name="ExitTimetableYesNo" xml:space="preserve">
+    <value>시간표가 존재합니다. 덮어 쓰시겠습니까?</value>
+  </data>
+  <data name="ReportSaveFailed" xml:space="preserve">
+    <value>리포트 저장 실패</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="lblFromDate.Text" xml:space="preserve">
+    <value>시작일</value>
+  </data>
+  <data name="lblToDate.Text" xml:space="preserve">
+    <value>종료일</value>
+  </data>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>필터</value>
+  </data>
+  <data name="rbAllFilter.Text" xml:space="preserve">
+    <value>전체 직원</value>
+  </data>
+  <data name="rbSelectFrom.Text" xml:space="preserve">
+    <value>목록에서 선택</value>
+  </data>
+  <data name="TipDepartment" xml:space="preserve">
+    <value>부서</value>
+  </data>
+  <data name="TipFrom" xml:space="preserve">
+    <value>시작일</value>
+  </data>
+  <data name="TipTo" xml:space="preserve">
+    <value>종료일</value>
+  </data>
+  <data name="TipFullName" xml:space="preserve">
+    <value>성명</value>
+  </data>
+  <data name="TipCardNumber" xml:space="preserve">
+    <value>카드 번호</value>
+  </data>
+  <data name="TipDailyGross" xml:space="preserve">
+    <value>Daily Gross</value>
+  </data>
+  <data name="TipJobNumber" xml:space="preserve">
+    <value>사용자 ID</value>
+  </data>
+  <data name="TipDate" xml:space="preserve">
+    <value>날짜</value>
+  </data>
+  <data name="TipShiftException" xml:space="preserve">
+    <value>기간/예외</value>
+  </data>
+  <data name="TipShiftStart" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="TipShiftEnd" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="TipBreakStart" xml:space="preserve">
+    <value>휴식  시작</value>
+  </data>
+  <data name="TipBreakEnd" xml:space="preserve">
+    <value>휴식 종료</value>
+  </data>
+  <data name="TipPageDateTime" xml:space="preserve">
+    <value>날짜/시간:</value>
+  </data>
+  <data name="TipDateTime" xml:space="preserve">
+    <value>날짜/시간</value>
+  </data>
+  <data name="TipWorkCode" xml:space="preserve">
+    <value>근무 코드</value>
+  </data>
+  <data name="TipRecordType" xml:space="preserve">
+    <value>기록 유형</value>
+  </data>
+  <data name="TipPageInfo" xml:space="preserve">
+    <value>페이지: {0} / {1}</value>
+  </data>
+  <data name="TipCode" xml:space="preserve">
+    <value>코드</value>
+  </data>
+  <data name="TipDesc" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="TipTotalHours" xml:space="preserve">
+    <value>총 근무중 시간</value>
+  </data>
+  <data name="TipAccounting" xml:space="preserve">
+    <value>지급 기간</value>
+  </data>
+  <data name="TipShiftName" xml:space="preserve">
+    <value>시간표</value>
+  </data>
+  <data name="TipREG" xml:space="preserve">
+    <value>정규 시간</value>
+  </data>
+  <data name="TipRequireWork" xml:space="preserve">
+    <value>Require Work</value>
+  </data>
+  <data name="TipOT1Total" xml:space="preserve">
+    <value>총 OT 레벨1 시간</value>
+  </data>
+  <data name="TipOT2Total" xml:space="preserve">
+    <value>총 OT 레벨2 시간</value>
+  </data>
+  <data name="TipOT3Total" xml:space="preserve">
+    <value>총 OT 레벨3 시간</value>
+  </data>
+  <data name="TipOT3" xml:space="preserve">
+    <value>OT 레벨3 시간</value>
+  </data>
+  <data name="TipOT2" xml:space="preserve">
+    <value>OT 레벨2 시간</value>
+  </data>
+  <data name="TipOT1" xml:space="preserve">
+    <value>OT 레벨1 시간</value>
+  </data>
+  <data name="TipBREAK" xml:space="preserve">
+    <value>휴식 시간</value>
+  </data>
+  <data name="TipBREAK_" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="TipBreakHours" xml:space="preserve">
+    <value>총 휴식 시간</value>
+  </data>
+  <data name="TipABS" xml:space="preserve">
+    <value>결근 시간</value>
+  </data>
+  <data name="TipABS_" xml:space="preserve">
+    <value>Absence</value>
+  </data>
+  <data name="TipTOTALS" xml:space="preserve">
+    <value>총</value>
+  </data>
+  <data name="TipRoundWork" xml:space="preserve">
+    <value>Round Work</value>
+  </data>
+  <data name="TipLate" xml:space="preserve">
+    <value>지각</value>
+  </data>
+  <data name="TipLateIN" xml:space="preserve">
+    <value>Late-In</value>
+  </data>
+  <data name="TipEarly" xml:space="preserve">
+    <value>조퇴</value>
+  </data>
+  <data name="TipEarlyOut" xml:space="preserve">
+    <value>Early-Out</value>
+  </data>
+  <data name="TipWorkHours" xml:space="preserve">
+    <value>총 근무 시간</value>
+  </data>
+  <data name="TipExceptionHours" xml:space="preserve">
+    <value>총 예외 시간</value>
+  </data>
+  <data name="TipPaidHours" xml:space="preserve">
+    <value>총 유급 시간</value>
+  </data>
+  <data name="TipSubBreakHours" xml:space="preserve">
+    <value>총 휴식 시간</value>
+  </data>
+  <data name="TipSubWorkHours" xml:space="preserve">
+    <value>총 근무 시간</value>
+  </data>
+  <data name="TipStatisticsItem" xml:space="preserve">
+    <value>Statistics Item</value>
+  </data>
+  <data name="TipSubExceptionHours" xml:space="preserve">
+    <value>총 예외 시간</value>
+  </data>
+  <data name="TipSubPaidHours" xml:space="preserve">
+    <value>총 유급 시간</value>
+  </data>
+  <data name="TipSubOT1Total" xml:space="preserve">
+    <value>총 OT 레벨1 시간</value>
+  </data>
+  <data name="TipSubOT2Total" xml:space="preserve">
+    <value>총 OT 레벨2 시간</value>
+  </data>
+  <data name="TipTotalBreakHours" xml:space="preserve">
+    <value>총 휴식 시간</value>
+  </data>
+  <data name="TipTotalWorkHours" xml:space="preserve">
+    <value>총 근무 시간</value>
+  </data>
+  <data name="TipTotalExceptionHours" xml:space="preserve">
+    <value>총 예외 시간</value>
+  </data>
+  <data name="TipTotalPaidHours" xml:space="preserve">
+    <value>총 유급 시간</value>
+  </data>
+  <data name="TipTotalOT1Total" xml:space="preserve">
+    <value>총 OT 레벨1 시간</value>
+  </data>
+  <data name="TipTotalOT2Total" xml:space="preserve">
+    <value>총 OT 레벨2 시간</value>
+  </data>
+  <data name="TipDepartmentSubTotal" xml:space="preserve">
+    <value>부서 소계</value>
+  </data>
+  <data name="TipTotalDays" xml:space="preserve">
+    <value>결근일</value>
+  </data>
+  <data name="TipHours" xml:space="preserve">
+    <value>시간</value>
+  </data>
+  <data name="TipLateInHours" xml:space="preserve">
+    <value>Gross Late-In</value>
+  </data>
+  <data name="TipEarlyOutHours" xml:space="preserve">
+    <value>Gross Early-Out</value>
+  </data>
+  <data name="TipAbsenceHours" xml:space="preserve">
+    <value>Gross Absence</value>
+  </data>
+  <data name="TipDepartmentSubTotalHours" xml:space="preserve">
+    <value>부서 총 시간</value>
+  </data>
+  <data name="TipTotalMissingDays" xml:space="preserve">
+    <value>총 결근 일수</value>
+  </data>
+  <data name="TipTotalMissingHours" xml:space="preserve">
+    <value>총 결근 시간</value>
+  </data>
+  <data name="TipWeek" xml:space="preserve">
+    <value>주</value>
+  </data>
+  <data name="TipOut" xml:space="preserve">
+    <value>체크아웃</value>
+  </data>
+  <data name="TipClockOut" xml:space="preserve">
+    <value>Clock-Out</value>
+  </data>
+  <data name="TipAmount" xml:space="preserve">
+    <value>수량</value>
+  </data>
+  <data name="TipDepartmentAmount" xml:space="preserve">
+    <value>부서 개수</value>
+  </data>
+  <data name="TipTotalAmount" xml:space="preserve">
+    <value>총계</value>
+  </data>
+  <data name="TipDepartmentHours" xml:space="preserve">
+    <value>부서 시간</value>
+  </data>
+  <data name="TipDepartmentLateInHours" xml:space="preserve">
+    <value>Department Late-In</value>
+  </data>
+  <data name="TipDepartmentEarlyOutHours" xml:space="preserve">
+    <value>Department Early-Out</value>
+  </data>
+  <data name="TipTotalEarlyHours" xml:space="preserve">
+    <value>총 조퇴 시간</value>
+  </data>
+  <data name="TipException" xml:space="preserve">
+    <value>예외</value>
+  </data>
+  <data name="Tip1Hours" xml:space="preserve">
+    <value>예외 시간</value>
+  </data>
+  <data name="TipPayPeriodTotals" xml:space="preserve">
+    <value>총 지급 기간</value>
+  </data>
+  <data name="TipIn" xml:space="preserve">
+    <value>체크인</value>
+  </data>
+  <data name="TipClockIn" xml:space="preserve">
+    <value>Clock-In</value>
+  </data>
+  <data name="TipTotalLateHours" xml:space="preserve">
+    <value>총 지각 시간</value>
+  </data>
+  <data name="TipRoundIn" xml:space="preserve">
+    <value>Round In</value>
+  </data>
+  <data name="TipRoundOut" xml:space="preserve">
+    <value>Round Out</value>
+  </data>
+  <data name="TipRoundWorked" xml:space="preserve">
+    <value>근무 시간</value>
+  </data>
+  <data name="TipTotalTime" xml:space="preserve">
+    <value>Total time</value>
+  </data>
+  <data name="CheckedBy" xml:space="preserve">
+    <value>확인자</value>
+  </data>
+  <data name="ApprovedBy" xml:space="preserve">
+    <value>승인자</value>
+  </data>
+  <data name="TipWorkedHours" xml:space="preserve">
+    <value>근무 시간</value>
+  </data>
+  <data name="TipLateDays" xml:space="preserve">
+    <value>지각일</value>
+  </data>
+  <data name="TipLateTimes" xml:space="preserve">
+    <value>총 지각 시간</value>
+  </data>
+  <data name="TipEarlyDays" xml:space="preserve">
+    <value>조퇴 날짜</value>
+  </data>
+  <data name="TipEarlyTimes" xml:space="preserve">
+    <value>총 조퇴 시간</value>
+  </data>
+  <data name="TipCheckIn1" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="TipCheckIn2" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="TipCheckOut1" xml:space="preserve">
+    <value>외근</value>
+  </data>
+  <data name="TipCheckOut2" xml:space="preserve">
+    <value>외근</value>
+  </data>
+  <data name="TipWork" xml:space="preserve">
+    <value>근무</value>
+  </data>
+  <data name="TipAbsent" xml:space="preserve">
+    <value>결근</value>
+  </data>
+  <data name="TipOvertime1" xml:space="preserve">
+    <value>OT1</value>
+  </data>
+  <data name="TipOvertime2" xml:space="preserve">
+    <value>OT2</value>
+  </data>
+  <data name="TipOvertime3" xml:space="preserve">
+    <value>OT3</value>
+  </data>
+  <data name="TipHoliday" xml:space="preserve">
+    <value>휴일</value>
+  </data>
+  <data name="btnSelectColumn.Text" xml:space="preserve">
+    <value>칼럼 선택</value>
+  </data>
+  <data name="TipTerminationDate" xml:space="preserve">
+    <value>해지일</value>
+  </data>
+  <data name="UserInfoTipQualification" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="TipZip" xml:space="preserve">
+    <value>Zip</value>
+  </data>
+  <data name="TipName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="UserInfoTipGender" xml:space="preserve">
+    <value>성별</value>
+  </data>
+  <data name="UserInfoTipBirthDay" xml:space="preserve">
+    <value>생일</value>
+  </data>
+  <data name="UserInfoTipPhone" xml:space="preserve">
+    <value>전화</value>
+  </data>
+  <data name="ExportOption_HtmlTitle" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="UserInfoTipJoinDate" xml:space="preserve">
+    <value>입사일</value>
+  </data>
+  <data name="UserInfoTipCity" xml:space="preserve">
+    <value>도시</value>
+  </data>
+  <data name="UserInfoTipEmpState" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="UserInfoTipPermanentAddress" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="FrmSelectColumn_lblcolumn8" xml:space="preserve">
+    <value>여덟번째 칼럼</value>
+  </data>
+  <data name="FrmSelectColumn_lblcolumn1" xml:space="preserve">
+    <value>첫번째 칼럼</value>
+  </data>
+  <data name="FrmSelectColumn_lblcolumn3" xml:space="preserve">
+    <value>세번째 칼럼</value>
+  </data>
+  <data name="FrmSelectColumn_lblcolumn2" xml:space="preserve">
+    <value>두번째 칼럼</value>
+  </data>
+  <data name="FrmSelectColumn_lblcolumn5" xml:space="preserve">
+    <value>다섯번째 칼럼</value>
+  </data>
+  <data name="FrmSelectColumn_lblcolumn4" xml:space="preserve">
+    <value>네번째 칼럼</value>
+  </data>
+  <data name="FrmSelectColumn_lblcolumn7" xml:space="preserve">
+    <value>일곱번째 칼럼</value>
+  </data>
+  <data name="FrmSelectColumn_lblcolumn6" xml:space="preserve">
+    <value>여섯번째 칼럼</value>
+  </data>
+  <data name="btnAccept.Text" xml:space="preserve">
+    <value>승인</value>
+  </data>
+  <data name="FrmSelectColumn_lblSelectColumn" xml:space="preserve">
+    <value>칼럼 선택</value>
+  </data>
+  <data name="EmployeeReport_01" xml:space="preserve">
+    <value>직원 리포트</value>
+  </data>
+  <data name="EmployeeReport_02" xml:space="preserve">
+    <value>직원 정보 리포트</value>
+  </data>
+  <data name="PromptNoSelectColumn" xml:space="preserve">
+    <value>선택된 칼럼 없음</value>
+  </data>
+  <data name="AttendanceReport_01" xml:space="preserve">
+    <value>로그 리포트</value>
+  </data>
+  <data name="AttendanceReport_02" xml:space="preserve">
+    <value>일일 합계 리포트</value>
+  </data>
+  <data name="AttendanceReport_03" xml:space="preserve">
+    <value>타임 카드 리포트</value>
+  </data>
+  <data name="AttendanceReport_04" xml:space="preserve">
+    <value>종합 타임카드 리포트</value>
+  </data>
+  <data name="AttendanceReport_05" xml:space="preserve">
+    <value>조퇴 리포트</value>
+  </data>
+  <data name="AttendanceReport_06" xml:space="preserve">
+    <value>지각 리포트</value>
+  </data>
+  <data name="AttendanceReport_07" xml:space="preserve">
+    <value>결근 리포트</value>
+  </data>
+  <data name="AttendanceReport_08" xml:space="preserve">
+    <value>직원 교대 리포트</value>
+  </data>
+  <data name="AttendanceReport_09" xml:space="preserve">
+    <value>예외 리포트</value>
+  </data>
+  <data name="AttendanceReport_10" xml:space="preserve">
+    <value>시간 요약 리포트</value>
+  </data>
+  <data name="AttendanceReport_11" xml:space="preserve">
+    <value>타임카드 목록 리포트</value>
+  </data>
+  <data name="AttendanceReport_12" xml:space="preserve">
+    <value>출근 카드 리포트</value>
+  </data>
+  <data name="AttendanceReport_13" xml:space="preserve">
+    <value>일일 출근 리포트</value>
+  </data>
+  <data name="AttendanceReport_14" xml:space="preserve">
+    <value>월간 리포트</value>
+  </data>
+  <data name="AttendanceReport_15" xml:space="preserve">
+    <value>탄력근무 일정 리포트</value>
+  </data>
+  <data name="Transactions Report" xml:space="preserve">
+    <value>로그 리포트</value>
+  </data>
+  <data name="Daily Total Report" xml:space="preserve">
+    <value>일일 합계 리포트</value>
+  </data>
+  <data name="TimeCard Report" xml:space="preserve">
+    <value>타임 카드 리포트</value>
+  </data>
+  <data name="Total TimeCard Report" xml:space="preserve">
+    <value>종합 타임카드 리포트</value>
+  </data>
+  <data name="Early Out Report" xml:space="preserve">
+    <value>조퇴 리포트</value>
+  </data>
+  <data name="Late Come Report" xml:space="preserve">
+    <value>지각 리포트</value>
+  </data>
+  <data name="Absence Report" xml:space="preserve">
+    <value>결근 리포트</value>
+  </data>
+  <data name="Employee Shift Report" xml:space="preserve">
+    <value>직원 교대 리포트</value>
+  </data>
+  <data name="Exception Report" xml:space="preserve">
+    <value>예외 리포트</value>
+  </data>
+  <data name="Hours Summary Report" xml:space="preserve">
+    <value>시간 요약 리포트</value>
+  </data>
+  <data name="TimeCard List Report" xml:space="preserve">
+    <value>타임카드 목록 리포트</value>
+  </data>
+  <data name="Attendance Card Report" xml:space="preserve">
+    <value>출근 카드 리포트</value>
+  </data>
+  <data name="Daily Attendance Report" xml:space="preserve">
+    <value>일일 출근 리포트</value>
+  </data>
+  <data name="Monthly Summary Report" xml:space="preserve">
+    <value>월간 요약 리포트</value>
+  </data>
+  <data name="Flexible Schedule Report" xml:space="preserve">
+    <value>탄력근무 일정 리포트</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>로그</value>
+  </data>
+  <data name="Daily Total" xml:space="preserve">
+    <value>일일 합계</value>
+  </data>
+  <data name="TimeCard" xml:space="preserve">
+    <value>타임카드</value>
+  </data>
+  <data name="Total TimeCard" xml:space="preserve">
+    <value>총 타임카드</value>
+  </data>
+  <data name="Early Out" xml:space="preserve">
+    <value>조퇴</value>
+  </data>
+  <data name="Late Come" xml:space="preserve">
+    <value>지각</value>
+  </data>
+  <data name="Employee Shift" xml:space="preserve">
+    <value>직원 교대</value>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>예외</value>
+  </data>
+  <data name="Hours Summary" xml:space="preserve">
+    <value>시간 요약</value>
+  </data>
+  <data name="TimeCard List" xml:space="preserve">
+    <value>타임카드 목록</value>
+  </data>
+  <data name="Attendance Card" xml:space="preserve">
+    <value>출근 카드</value>
+  </data>
+  <data name="Daily Attendance" xml:space="preserve">
+    <value>일일 출근</value>
+  </data>
+  <data name="Monthly Summary" xml:space="preserve">
+    <value>월간 요약</value>
+  </data>
+  <data name="Flexible Schedule" xml:space="preserve">
+    <value>탄력근무 일정</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>직원</value>
+  </data>
+  <data name="Employee Information" xml:space="preserve">
+    <value>직원 정보</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="HintLoadMenuResource" xml:space="preserve">
+    <value>메뉴 리소스 불러오는 중...</value>
+  </data>
+  <data name="HintLoadMenu" xml:space="preserve">
+    <value>메뉴 불러오는 중...</value>
+  </data>
+  <data name="HintInitDB" xml:space="preserve">
+    <value>데이터베이스 초기화...</value>
+  </data>
+  <data name="HintClear" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="HintConnectDB" xml:space="preserve">
+    <value>데이터베이스 연결 중...</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="licenseToolStripMenuItem.Text" xml:space="preserve">
+    <value>라이선스</value>
+  </data>
+  <data name="initializeToolStripMenuItem.Text" xml:space="preserve">
+    <value>DB 초기화</value>
+  </data>
+  <data name="backupDBToolStripMenuItem.Text" xml:space="preserve">
+    <value>백업 DB</value>
+  </data>
+  <data name="restoreDBToolStripMenuItem.Text" xml:space="preserve">
+    <value>DB 복원</value>
+  </data>
+  <data name="configuratToolStripMenuItem.Text" xml:space="preserve">
+    <value>시스템 구성</value>
+  </data>
+  <data name="checkUpdateToolStripMenuItem.Text" xml:space="preserve">
+    <value>업데이트 확인</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="Languageid" xml:space="preserve">
+    <value>Bahasa</value>
+  </data>
+  <data name="Languagetr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="Languageus" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Languagees" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="Languagear" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="Languagefr" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="Languageru" xml:space="preserve">
+    <value>Pусский</value>
+  </data>
+  <data name="Languageja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="Languagevn" xml:space="preserve">
+    <value>Tiếng Việt</value>
+  </data>
+  <data name="Languagecht" xml:space="preserve">
+    <value>繁體中文</value>
+  </data>
+  <data name="Languageth" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="Languagekr" xml:space="preserve">
+    <value>한국</value>
+  </data>
+  <data name="Languagept" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="Languagecn" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="dBManageToolStripMenuItem.Text" xml:space="preserve">
+    <value>DB 관리</value>
+  </data>
+  <data name="UpgradeFailed" xml:space="preserve">
+    <value>업그레이드 실패, 다시 시도하십시오.</value>
+  </data>
+  <data name="DownloadUpdateFileFailed" xml:space="preserve">
+    <value>업데이트 파일을 다운로드 할 수 없습니다. 다시 시도하십시오.</value>
+  </data>
+  <data name="ConnectToServer" xml:space="preserve">
+    <value>업데이트 서버 연결</value>
+  </data>
+  <data name="MD5Failed" xml:space="preserve">
+    <value>MD5 check failed.</value>
+  </data>
+  <data name="NoNewRelease" xml:space="preserve">
+    <value>현재 버전이 최신 버전입니다.</value>
+  </data>
+  <data name="ConnectToServerFailed" xml:space="preserve">
+    <value>업데이트 서버에 연결할 수 없습니다.</value>
+  </data>
+  <data name="FrmConfirm_Caption" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="FrmConfirmLCMessage.Text" xml:space="preserve">
+    <value>신규 버전이 출시되었습니다. 업데이트 하시겠습니까?</value>
+  </data>
+  <data name="FrmConfirmCENotPrompt.Text" xml:space="preserve">
+    <value>잠시만 기다려 주십시오.</value>
+  </data>
+  <data name="FrmConfirmBtnYes.Text" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="FrmConfirmBtnNo.Text" xml:space="preserve">
+    <value>아니오</value>
+  </data>
+  <data name="FrmCloseAlert_btnSave" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="DownloadingAttPhotoes" xml:space="preserve">
+    <value>단말기로부터 출근 사진 다운로드 시작</value>
+  </data>
+  <data name="ConnectTerminalFirst" xml:space="preserve">
+    <value>단말기 먼저 연결</value>
+  </data>
+  <data name="connectedfailed" xml:space="preserve">
+    <value>({0}) 단말기 연결 실패</value>
+  </data>
+  <data name="StringRecords" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="StringLoginUser" xml:space="preserve">
+    <value>사용자 로그인 </value>
+  </data>
+  <data name="EmployeeCard" xml:space="preserve">
+    <value>직원 카드</value>
+  </data>
+  <data name="TerminalCard" xml:space="preserve">
+    <value>단말기 카드</value>
+  </data>
+  <data name="ReportCard" xml:space="preserve">
+    <value>리포트 카드</value>
+  </data>
+  <data name="StringGrid" xml:space="preserve">
+    <value>그리드</value>
+  </data>
+  <data name="HintInitializeDB" xml:space="preserve">
+    <value>DB를 초기화 하시겠습니까?</value>
+  </data>
+  <data name="ConfirmIfChange" xml:space="preserve">
+    <value>수정된 값을 저장 하시겠습니까?</value>
+  </data>
+  <data name="FrmMainlblWDMSStatus.Text" xml:space="preserve">
+    <value>WDMS 데이터 동기화 상태</value>
+  </data>
+  <data name="btnInitDB.Text" xml:space="preserve">
+    <value>데이터베이스 초기화</value>
+  </data>
+  <data name="btnBackupDB.Text" xml:space="preserve">
+    <value>백업 데이터베이스</value>
+  </data>
+  <data name="btnRestoreDB.Text" xml:space="preserve">
+    <value>데이터베이스 복원</value>
+  </data>
+  <data name="btnChangeDB.Text" xml:space="preserve">
+    <value>데이터베이스 변경</value>
+  </data>
+  <data name="CheckStatus7" xml:space="preserve">
+    <value>안에서 열기</value>
+  </data>
+  <data name="CheckStatus6" xml:space="preserve">
+    <value>야근 체크아웃</value>
+  </data>
+  <data name="CheckStatus5" xml:space="preserve">
+    <value>야근 체크인</value>
+  </data>
+  <data name="CheckStatus4" xml:space="preserve">
+    <value>복귀</value>
+  </data>
+  <data name="CheckStatus3" xml:space="preserve">
+    <value>외근</value>
+  </data>
+  <data name="CheckStatus2" xml:space="preserve">
+    <value>체크아웃</value>
+  </data>
+  <data name="CheckStatus1" xml:space="preserve">
+    <value>체크인</value>
+  </data>
+  <data name="CheckStatus8" xml:space="preserve">
+    <value>밖에서 열기</value>
+  </data>
+  <data name="FrmAboutLC3Text" xml:space="preserve">
+    <value>SDK 버전 {0}</value>
+  </data>
+  <data name="FrmAbount.Text" xml:space="preserve">
+    <value>ZKTime.Net 정보</value>
+  </data>
+  <data name="ZKTimeNetDemoVersion" xml:space="preserve">
+    <value>ZKTime.Net 평가</value>
+  </data>
+  <data name="ZKTimeNetVersion" xml:space="preserve">
+    <value>ZKTime.Net 스탠다드</value>
+  </data>
+  <data name="FrmAboutBtnCancel.Text" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="FrmAboutLC2.Text" xml:space="preserve">
+    <value>Copyright @ 2010-2015 ZKTeco Corporation, All Rights Reserved.</value>
+  </data>
+  <data name="FrmAboutLC1.Text" xml:space="preserve">
+    <value>ZKTime.Net 스탠다드 버전</value>
+  </data>
+  <data name="LicenseExpired" xml:space="preserve">
+    <value>현재 라이선스가 만료되었으므로 새로운 라이선스를 등록 하시겠습니까?</value>
+  </data>
+  <data name="LicenseRemainDays" xml:space="preserve">
+    <value>현재 라이선스는 {0} 일 밖에 남지 않았습니다. 새로운 라이선스로 변경 하시겠습니까?</value>
+  </data>
+  <data name="PermissionDenied" xml:space="preserve">
+    <value>유효하지 않은 라이선스</value>
+  </data>
+  <data name="ExpiredLicense" xml:space="preserve">
+    <value>만료된 라이선스</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>만료</value>
+  </data>
+  <data name="NoLimit" xml:space="preserve">
+    <value>제한 없음</value>
+  </data>
+  <data name="TrialLicenseType" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="ProLicenseType" xml:space="preserve">
+    <value>프로페셔널</value>
+  </data>
+  <data name="AdvLicenseType" xml:space="preserve">
+    <value>고급</value>
+  </data>
+  <data name="FrmPermission.Text" xml:space="preserve">
+    <value>ZKTime.Net 라이선스</value>
+  </data>
+  <data name="btnQuit.Text" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="NoLicenseFile" xml:space="preserve">
+    <value>라이선스 정보를 로드 할 수 없습니다. ZKTime.Net을 다시 설치하십시오.</value>
+  </data>
+  <data name="InvalidLicenseFile" xml:space="preserve">
+    <value>유효하지 않은 라이선스 정보입니다. ZKTime.Net을 다시 설치하십시오.</value>
+  </data>
+  <data name="MustTypeLicense" xml:space="preserve">
+    <value>라이선스 정보를 입력하십시오.</value>
+  </data>
+  <data name="PermissionAllowed" xml:space="preserve">
+    <value>허용 권한</value>
+  </data>
+  <data name="ReInstall" xml:space="preserve">
+    <value>설치 오류가 발생했습니다. 다시 설치하십시오.</value>
+  </data>
+  <data name="SystemDateChanged" xml:space="preserve">
+    <value>시스템 날짜가 최근에 변경되었습니다. 정상으로 변경하십시오.</value>
+  </data>
+  <data name="FrmPermissionGCLicense.Text" xml:space="preserve">
+    <value>활성화</value>
+  </data>
+  <data name="FrmLicenseLCLicense.Text" xml:space="preserve">
+    <value>라이선스</value>
+  </data>
+  <data name="FrmPermissionBtnActive.Text" xml:space="preserve">
+    <value>오프라인 등록</value>
+  </data>
+  <data name="FrmPermissionBtnActiveOnline.Text" xml:space="preserve">
+    <value>온라인 등록</value>
+  </data>
+  <data name="FrmPermissionGCUPKInfo.Text" xml:space="preserve">
+    <value>라이선스 정보</value>
+  </data>
+  <data name="FrmLicenseLCEmployeeLimit.Text" xml:space="preserve">
+    <value>직원 수 제한</value>
+  </data>
+  <data name="FrmLicenseLCExpireDate.Text" xml:space="preserve">
+    <value>만료일</value>
+  </data>
+  <data name="FrmLicenseLCLicenseType.Text" xml:space="preserve">
+    <value>라이선스 유형</value>
+  </data>
+  <data name="FrmLicenseLCUPK.Text" xml:space="preserve">
+    <value>제품 고유 코드</value>
+  </data>
+  <data name="FrmPermissionBtnCopy.Text" xml:space="preserve">
+    <value>다운로드</value>
+  </data>
+  <data name="FrmPermissionBtnTrial.Text" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="FrmPermissionBtnCancel.Text" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="FrmLicenseLCDeviceLimit.Text" xml:space="preserve">
+    <value>단말기 개수 제한 </value>
+  </data>
+  <data name="RegisterLoginUser" xml:space="preserve">
+    <value>로그인 사용자 등록</value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>비밀번호가 유효하지 않습니다.</value>
+  </data>
+  <data name="AccountNotExists" xml:space="preserve">
+    <value>계정이 존재하지 않습니다</value>
+  </data>
+  <data name="btnRegister" xml:space="preserve">
+    <value>등록</value>
+  </data>
+  <data name="chkRemeber.Text" xml:space="preserve">
+    <value>로그인 상태 유지</value>
+  </data>
+  <data name="lblForgetPwd.Text" xml:space="preserve">
+    <value>비밀번호를 잊으셨나요?</value>
+  </data>
+  <data name="btnLogin.Text" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="EmailValue" xml:space="preserve">
+    <value>사용자 이메일 주소</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>직원 Name</value>
+  </data>
+  <data name="CapturedTime" xml:space="preserve">
+    <value>캡처 시간</value>
+  </data>
+  <data name="AllPhotoes" xml:space="preserve">
+    <value>전체 사진</value>
+  </data>
+  <data name="LastMonth" xml:space="preserve">
+    <value>지난 달</value>
+  </data>
+  <data name="CurrentMonth" xml:space="preserve">
+    <value>이번 달</value>
+  </data>
+  <data name="UserCustomization" xml:space="preserve">
+    <value>사용자 지정 기간</value>
+  </data>
+  <data name="btnSearchPhoto.Text" xml:space="preserve">
+    <value>사진 검색</value>
+  </data>
+  <data name="btnDownloadPhoto.Text" xml:space="preserve">
+    <value>사진 다운로드</value>
+  </data>
+  <data name="lblDate.Text" xml:space="preserve">
+    <value>날짜</value>
+  </data>
+  <data name="lblMonth.Text" xml:space="preserve">
+    <value>월</value>
+  </data>
+  <data name="lblWeeks.Text" xml:space="preserve">
+    <value>주</value>
+  </data>
+  <data name="lblWeek.Text" xml:space="preserve">
+    <value>요일</value>
+  </data>
+  <data name="lblYearMonth.Text" xml:space="preserve">
+    <value>월</value>
+  </data>
+  <data name="lblYearDay.Text" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="lblDays.Text" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="HolidayCycleType0" xml:space="preserve">
+    <value>확정일</value>
+  </data>
+  <data name="HolidayCycleType1" xml:space="preserve">
+    <value>연도 별 주기</value>
+  </data>
+  <data name="HolidayCycleType2" xml:space="preserve">
+    <value>날짜 별 주기</value>
+  </data>
+  <data name="lblStartDate.Text" xml:space="preserve">
+    <value>시작 위치</value>
+  </data>
+  <data name="Door" xml:space="preserve">
+    <value>도어</value>
+  </data>
+  <data name="Alarm" xml:space="preserve">
+    <value>알람</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>신규 사용자</value>
+  </data>
+  <data name="DeleteFinger" xml:space="preserve">
+    <value>손가락 삭제</value>
+  </data>
+  <data name="EnrollFinger" xml:space="preserve">
+    <value>손가락 등록</value>
+  </data>
+  <data name="Identify" xml:space="preserve">
+    <value>식별</value>
+  </data>
+  <data name="Verify failed" xml:space="preserve">
+    <value>인증 실패</value>
+  </data>
+  <data name="Door No Close" xml:space="preserve">
+    <value>도어가 닫히지 않음</value>
+  </data>
+  <data name="Open Door" xml:space="preserve">
+    <value>도어 열기</value>
+  </data>
+  <data name="Close Door" xml:space="preserve">
+    <value>도어 닫기</value>
+  </data>
+  <data name="Door Button" xml:space="preserve">
+    <value>도어 버튼</value>
+  </data>
+  <data name="Anti-pass Alarm" xml:space="preserve">
+    <value>안티-패스 알람</value>
+  </data>
+  <data name="Device Broken" xml:space="preserve">
+    <value>단말기 파손</value>
+  </data>
+  <data name="Error Alarm" xml:space="preserve">
+    <value>에러 알람</value>
+  </data>
+  <data name="Duress Alarm" xml:space="preserve">
+    <value>강제 침입 알람</value>
+  </data>
+  <data name="PassWord" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="Finger" xml:space="preserve">
+    <value>손가락</value>
+  </data>
+  <data name="Card" xml:space="preserve">
+    <value>카드</value>
+  </data>
+  <data name="Face" xml:space="preserve">
+    <value>얼굴</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="FrmCloseAlert_Caption" xml:space="preserve">
+    <value>시스템 구성</value>
+  </data>
+  <data name="FrmCloseAlert_lblWhenClose" xml:space="preserve">
+    <value>프로그램 종료 시:</value>
+  </data>
+  <data name="FrmCloseAlert_rbHide" xml:space="preserve">
+    <value>작업표시줄 영역에 숨기고 프로그램 종료하지 않음</value>
+  </data>
+  <data name="FrmCloseAlert_rbExit" xml:space="preserve">
+    <value>프로그램 종료</value>
+  </data>
+  <data name="FrmCloseAlert_chkNexttime" xml:space="preserve">
+    <value>잠시만 기다려 주십시오.</value>
+  </data>
+  <data name="DeleteTemplateStr" xml:space="preserve">
+    <value>{1} 단말기에서 {0}의 템플릿을 지우십시오.</value>
+  </data>
+  <data name="BatchDeleteTemplateStr" xml:space="preserve">
+    <value>{1} 단말기부터 일괄적으로 {0} 직원 템플릿 삭제</value>
+  </data>
+  <data name="ClearCardStr" xml:space="preserve">
+    <value>{1} 단말기에서 {0}의 카드를 지우십시오.</value>
+  </data>
+  <data name="BatchClearCardStr" xml:space="preserve">
+    <value>{1} 단말기부터 일괄적으로 {0} 직원 카드 삭제</value>
+  </data>
+  <data name="ClearPasswordStr" xml:space="preserve">
+    <value>{1} 단말기에서 {0}의 비밀번호를 지우십시오.</value>
+  </data>
+  <data name="BatchClearPasswordStr" xml:space="preserve">
+    <value>{1} 단말기부터 일괄적으로 {0} 직원 비밀번호 삭제</value>
+  </data>
+  <data name="btnSelectReportEmp.Text" xml:space="preserve">
+    <value>직원</value>
+  </data>
+  <data name="lblTerCardIP.Text" xml:space="preserve">
+    <value>IP 주소</value>
+  </data>
+  <data name="lblTerCardUsers.Text" xml:space="preserve">
+    <value>사용자</value>
+  </data>
+  <data name="lblTerCardFP.Text" xml:space="preserve">
+    <value>지문</value>
+  </data>
+  <data name="lblTerCardFaces.Text" xml:space="preserve">
+    <value>얼굴 템플릿</value>
+  </data>
+  <data name="lblTerCardPunches.Text" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="lblTerCardArea.Text" xml:space="preserve">
+    <value>단말기 영역</value>
+  </data>
+  <data name="barTerCardBase.Text" xml:space="preserve">
+    <value>기본</value>
+  </data>
+  <data name="barBtnSyncTime.Text" xml:space="preserve">
+    <value>동기화 시간</value>
+  </data>
+  <data name="barBtnSyncData.Text" xml:space="preserve">
+    <value>데이터 동기화</value>
+  </data>
+  <data name="barBtnDownloadLog.Text" xml:space="preserve">
+    <value>로그 다운로드</value>
+  </data>
+  <data name="barBtnDownloadPhoto.Text" xml:space="preserve">
+    <value>출근 사진 다운로드</value>
+  </data>
+  <data name="barBtnOpenDoor.Text" xml:space="preserve">
+    <value>도어 열기</value>
+  </data>
+  <data name="barBtnEnable.Text" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="barBtnConnect.Text" xml:space="preserve">
+    <value>연결</value>
+  </data>
+  <data name="barBtnDisconnect.Text" xml:space="preserve">
+    <value>연결 해제</value>
+  </data>
+  <data name="barBtnReboot.Text" xml:space="preserve">
+    <value>재부팅</value>
+  </data>
+  <data name="barBtnPowerOff.Text" xml:space="preserve">
+    <value>전원꺼짐</value>
+  </data>
+  <data name="cmbTerCardListAll" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="cmbTerCardListEnabled" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="cmbTerCardListDisabled" xml:space="preserve">
+    <value>사용 안함</value>
+  </data>
+  <data name="cmbTerCardListConnected" xml:space="preserve">
+    <value>연결됨</value>
+  </data>
+  <data name="cmbTerCardListDisconnected" xml:space="preserve">
+    <value>연결 해제</value>
+  </data>
+  <data name="cmbTerCardListAlarming" xml:space="preserve">
+    <value>알람중</value>
+  </data>
+  <data name="cmbTerCardListDownloading" xml:space="preserve">
+    <value>다운로드 중</value>
+  </data>
+  <data name="cmbTerCardListAuthorize" xml:space="preserve">
+    <value>승인됨</value>
+  </data>
+  <data name="cmbTerCardListNotAuthorize" xml:space="preserve">
+    <value>승인되지 않음</value>
+  </data>
+  <data name="lblEmpPin.Text" xml:space="preserve">
+    <value>직원 ID</value>
+  </data>
+  <data name="lblEmpCard.Text" xml:space="preserve">
+    <value>카드 번호</value>
+  </data>
+  <data name="empCardNoChecked" xml:space="preserve">
+    <value>확인되지 않음</value>
+  </data>
+  <data name="empCardCheckIn" xml:space="preserve">
+    <value>체크인</value>
+  </data>
+  <data name="empCardCheckOut" xml:space="preserve">
+    <value>체크아웃</value>
+  </data>
+  <data name="searchEmployee" xml:space="preserve">
+    <value>ID 또는 이름으로 검색</value>
+  </data>
+  <data name="searchTerminal" xml:space="preserve">
+    <value>IP 또는 이름으로 검색</value>
+  </data>
+  <data name="CustomColum" xml:space="preserve">
+    <value>사용자 정의 열</value>
+  </data>
+  <data name="cmbEmpCardListAll" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="cmbEmpCardListChecked" xml:space="preserve">
+    <value>확인됨</value>
+  </data>
+  <data name="cmbEmpCardListUnchecked" xml:space="preserve">
+    <value>확인되지 않음</value>
+  </data>
+  <data name="cmbEmpCardListOnDuty" xml:space="preserve">
+    <value>근무</value>
+  </data>
+  <data name="cmbEmpCardListOffDuty" xml:space="preserve">
+    <value>비번</value>
+  </data>
+  <data name="cmbEmpCardListLateCome" xml:space="preserve">
+    <value>지각</value>
+  </data>
+  <data name="cmbEmpCardListEarlyOut" xml:space="preserve">
+    <value>조퇴</value>
+  </data>
+  <data name="btnRetrieve.Text" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="FindPwdNote1" xml:space="preserve">
+    <value>사용자 이름을 먼저 입력하십시오.</value>
+  </data>
+  <data name="FindPwdNote2" xml:space="preserve">
+    <value>{0}이 존재하지 않습니다. 다시 입력하십시오.</value>
+  </data>
+  <data name="FindPwdNote3" xml:space="preserve">
+    <value>비밀번호가 귀하의 이메일로 발송되었습니다. 확인하시기 바랍니다.</value>
+  </data>
+  <data name="FindPwdMsgTitle" xml:space="preserve">
+    <value>Reloj Checador Steren-비밀번호 찾기</value>
+  </data>
+  <data name="FindPwdMsgContent" xml:space="preserve">
+    <value>비밀번호는 {0}입니다.</value>
+  </data>
+  <data name="MsgFindPwd" xml:space="preserve">
+    <value>비밀번호 검색</value>
+  </data>
+  <data name="colGroupName" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblGroupName.Text" xml:space="preserve">
+    <value>그룹명</value>
+  </data>
+  <data name="NoDevice" xml:space="preserve">
+    <value>업데이트가 필요한 단말기 없음</value>
+  </data>
+  <data name="lblRulesTitle.Text" xml:space="preserve">
+    <value>회사</value>
+  </data>
+  <data name="PlSelectTerminal" xml:space="preserve">
+    <value>단말기을 선택하십시오.</value>
+  </data>
+  <data name="PlSelectItem" xml:space="preserve">
+    <value>항목을 선택하십시오.</value>
+  </data>
+  <data name="ConnectMidSuccess" xml:space="preserve">
+    <value>{0} 연결 성공</value>
+  </data>
+  <data name="ConnectMidFailed" xml:space="preserve">
+    <value>{0} 연결 실패</value>
+  </data>
+  <data name="WelcomeZKProto1" xml:space="preserve">
+    <value>zkproto에 오신 것을 환영합니다. 이 기능을 처음 사용하십니다.</value>
+  </data>
+  <data name="WelcomeZKProto2" xml:space="preserve">
+    <value>데이터 일관성을 유지하려면 데이터 정책을 실행해야합니다. 잠시 기다려주십시오.</value>
+  </data>
+  <data name="StartControlPolicy" xml:space="preserve">
+    <value>제어 서버의 데이터 작업 시작</value>
+  </data>
+  <data name="CompleteControlPolicy" xml:space="preserve">
+    <value>서버 데이터 관리 작업을 완료하십시오.</value>
+  </data>
+  <data name="DisconnectControl" xml:space="preserve">
+    <value>zkproto 연결 해제</value>
+  </data>
+  <data name="zkpConnectSuccess" xml:space="preserve">
+    <value>zkproto 연결 성공</value>
+  </data>
+  <data name="zkpConnectNotAuthorized" xml:space="preserve">
+    <value>승인되지 않음</value>
+  </data>
+  <data name="zkpConnectTimeout" xml:space="preserve">
+    <value>시간 초과</value>
+  </data>
+  <data name="zkpConnectServerError" xml:space="preserve">
+    <value>서버 에러</value>
+  </data>
+  <data name="zkpConnectFailed" xml:space="preserve">
+    <value>zkproto 연결 실패</value>
+  </data>
+  <data name="zkpDisconnect" xml:space="preserve">
+    <value>zkproto 연결 해제</value>
+  </data>
+  <data name="StartDownloadPunches" xml:space="preserve">
+    <value>기록 다운로드 시작, 잠시만 기다려 주십시오.</value>
+  </data>
+  <data name="DownloadPunchesNumber" xml:space="preserve">
+    <value>{0} 기록 다운로드</value>
+  </data>
+  <data name="SyncBeginReset" xml:space="preserve">
+    <value>데이터 리셋 작업 시작, 잠시 기다려주십시오 ......</value>
+  </data>
+  <data name="SyncEndReset" xml:space="preserve">
+    <value>데이터 리셋 작업 완료</value>
+  </data>
+  <data name="SyncBeginMerge" xml:space="preserve">
+    <value>데이터 통합 작업 시작, 잠시 기다려주십시오 ......</value>
+  </data>
+  <data name="SyncEndMerge" xml:space="preserve">
+    <value>데이터 통합 작업 완료</value>
+  </data>
+  <data name="logEmpExist" xml:space="preserve">
+    <value>({0}) 직원이 존재합니다.</value>
+  </data>
+  <data name="logAddEmp" xml:space="preserve">
+    <value>직원 ({0})을 추가하십시오.</value>
+  </data>
+  <data name="logAddEmployees" xml:space="preserve">
+    <value>{0} 직원 정보 추가</value>
+  </data>
+  <data name="logUpdateEmp" xml:space="preserve">
+    <value>({0}) 직원 업데이트</value>
+  </data>
+  <data name="logDeleteEmp" xml:space="preserve">
+    <value>({0}) 직원 삭제</value>
+  </data>
+  <data name="logEmpLoginExist" xml:space="preserve">
+    <value>{1} 직원_로그인이 {0}에 존재합니다.</value>
+  </data>
+  <data name="logAddEmpLogin" xml:space="preserve">
+    <value>{0}이 {1}을 추가</value>
+  </data>
+  <data name="logAddEmpLogins" xml:space="preserve">
+    <value>{0} 템플릿 추가</value>
+  </data>
+  <data name="logUpdateEmpLogin" xml:space="preserve">
+    <value>{0}의 {1} 업데이트</value>
+  </data>
+  <data name="logDeleteEmpLogin" xml:space="preserve">
+    <value>{0}의 {1} 삭제</value>
+  </data>
+  <data name="logDeleteEmpLogin2" xml:space="preserve">
+    <value>{0}의 직원-로그인 삭제</value>
+  </data>
+  <data name="logAddPunch" xml:space="preserve">
+    <value>{0}이 기록 추가</value>
+  </data>
+  <data name="logMsgExist" xml:space="preserve">
+    <value>({0}) 메시지가 존재합니다.</value>
+  </data>
+  <data name="logAddMsg" xml:space="preserve">
+    <value>메시지 ({0}) 추가</value>
+  </data>
+  <data name="logUpdateMsg" xml:space="preserve">
+    <value>({0}) 메시지 업데이트</value>
+  </data>
+  <data name="logDeleteMsg" xml:space="preserve">
+    <value>({0}) 메시지 삭제</value>
+  </data>
+  <data name="logAddMsgEntity" xml:space="preserve">
+    <value>메시지 ({0}) 추가</value>
+  </data>
+  <data name="zk_add_emp" xml:space="preserve">
+    <value>{1}에 직원 ({0})을 추가하십시오.</value>
+  </data>
+  <data name="zk_update_emp" xml:space="preserve">
+    <value>{1}에서 ({0}) 직원 업데이트</value>
+  </data>
+  <data name="zk_delete_emp" xml:space="preserve">
+    <value>{1}에서 ({0}) 직원 삭제</value>
+  </data>
+  <data name="template_flag_1" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="template_flag_2" xml:space="preserve">
+    <value>지문</value>
+  </data>
+  <data name="template_flag_3" xml:space="preserve">
+    <value>카드</value>
+  </data>
+  <data name="zk_add_temp" xml:space="preserve">
+    <value>{0}이 {2}의 {1}을 추가</value>
+  </data>
+  <data name="zk_update_temp" xml:space="preserve">
+    <value>{0}이 {2}의 {1} 업데이트</value>
+  </data>
+  <data name="zk_delete_temp" xml:space="preserve">
+    <value>{0}이 {2}의 {1}을 삭제</value>
+  </data>
+  <data name="zk_add_msg" xml:space="preserve">
+    <value>{0}에 메시지를 추가하십시오.</value>
+  </data>
+  <data name="zk_update_msg" xml:space="preserve">
+    <value>{0}에서 메시지 업데이트</value>
+  </data>
+  <data name="zk_delete_msg" xml:space="preserve">
+    <value>{0}에서 메시지 삭제</value>
+  </data>
+  <data name="connectSeverSucceed" xml:space="preserve">
+    <value>서버 연결 성공</value>
+  </data>
+  <data name="connectSeverFailed" xml:space="preserve">
+    <value>서버에 연결할 수 없습니다.</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>필수 필드</value>
+  </data>
+  <data name="transferDataFailed" xml:space="preserve">
+    <value>데이터 전송 실패</value>
+  </data>
+  <data name="starttotransferData" xml:space="preserve">
+    <value>데이터 전송 시작...</value>
+  </data>
+  <data name="transferDataFinished" xml:space="preserve">
+    <value>데이터 전송 완료</value>
+  </data>
+  <data name="BeSureToCancel" xml:space="preserve">
+    <value>작업을 취소 하시겠습니까?</value>
+  </data>
+  <data name="SourceDBSetting" xml:space="preserve">
+    <value>소스 데이터베이스 선택 </value>
+  </data>
+  <data name="DestinationDBSetting" xml:space="preserve">
+    <value>데이터베이스 구분 선택</value>
+  </data>
+  <data name="lblDataSource" xml:space="preserve">
+    <value>데이터베이스 이름</value>
+  </data>
+  <data name="lblServer" xml:space="preserve">
+    <value>서버</value>
+  </data>
+  <data name="lblPort" xml:space="preserve">
+    <value>포트</value>
+  </data>
+  <data name="lblUserID" xml:space="preserve">
+    <value>사용자 ID</value>
+  </data>
+  <data name="lblPassword" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="btnTestConnect" xml:space="preserve">
+    <value>연결 테스트</value>
+  </data>
+  <data name="grpSourceDB.Text" xml:space="preserve">
+    <value>ZKTime.Net 2.0 데이터베이스</value>
+  </data>
+  <data name="btnUpgrade.Text" xml:space="preserve">
+    <value>업그레이드</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>닫기</value>
+  </data>
+  <data name="grpDestinationDB.Text" xml:space="preserve">
+    <value>데이터베이스 구분</value>
+  </data>
+  <data name="operationSucceed" xml:space="preserve">
+    <value>작업 성공</value>
+  </data>
+  <data name="ckbShowLogo.Text" xml:space="preserve">
+    <value>리포트에 표시</value>
+  </data>
+  <data name="chkCountWork.Text" xml:space="preserve">
+    <value>근무 시 계산</value>
+  </data>
+  <data name="1st" xml:space="preserve">
+    <value>첫번째</value>
+  </data>
+  <data name="2nd" xml:space="preserve">
+    <value>두번째</value>
+  </data>
+  <data name="3rd" xml:space="preserve">
+    <value>세번째</value>
+  </data>
+  <data name="4th" xml:space="preserve">
+    <value>네번째</value>
+  </data>
+  <data name="5th" xml:space="preserve">
+    <value>다섯번째</value>
+  </data>
+  <data name="6th" xml:space="preserve">
+    <value>여섯번째</value>
+  </data>
+  <data name="WiegandType0" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="WiegandType1" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="ConnectionModel0" xml:space="preserve">
+    <value>TCP/IP</value>
+  </data>
+  <data name="ConnectionModel1" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="AntiPassMode0" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="AntiPassMode1" xml:space="preserve">
+    <value>외근</value>
+  </data>
+  <data name="AntiPassMode2" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="AntiPassMode3" xml:space="preserve">
+    <value>아웃/인</value>
+  </data>
+  <data name="MasterStatus0" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="MasterStatus1" xml:space="preserve">
+    <value>제어 출력</value>
+  </data>
+  <data name="MasterStatus2" xml:space="preserve">
+    <value>제어 입력</value>
+  </data>
+  <data name="chkDLAttenPhoto.Text" xml:space="preserve">
+    <value>출근 사진 다운로드 활성화</value>
+  </data>
+  <data name="lblMins.Text" xml:space="preserve">
+    <value>분</value>
+  </data>
+  <data name="lblTerTimezone.Text" xml:space="preserve">
+    <value>시간대 </value>
+  </data>
+  <data name="FeedbackMenuItem.Text" xml:space="preserve">
+    <value>피드백</value>
+  </data>
+  <data name="logLoginSystem" xml:space="preserve">
+    <value>시스템 로그인 </value>
+  </data>
+  <data name="lblConnectionModel.Text" xml:space="preserve">
+    <value>연결 모드</value>
+  </data>
+  <data name="grpFileType.Text" xml:space="preserve">
+    <value>파일 유형</value>
+  </data>
+  <data name="lblSeparator.Text" xml:space="preserve">
+    <value>분리 기호</value>
+  </data>
+  <data name="lblSourceFile.Text" xml:space="preserve">
+    <value>소스 파일</value>
+  </data>
+  <data name="lblSkipLine.Text" xml:space="preserve">
+    <value>건너뛰기</value>
+  </data>
+  <data name="lblExportFile.Text" xml:space="preserve">
+    <value>파일 추출</value>
+  </data>
+  <data name="grpFields.Text" xml:space="preserve">
+    <value>필드</value>
+  </data>
+  <data name="lblDateFormat.Text" xml:space="preserve">
+    <value>날짜 형식</value>
+  </data>
+  <data name="lblTimeFormat.Text" xml:space="preserve">
+    <value>시간 형식</value>
+  </data>
+  <data name="lblShowHeader.Text" xml:space="preserve">
+    <value>헤더 표시</value>
+  </data>
+  <data name="lblLengthOfPin.Text" xml:space="preserve">
+    <value>직원 숫자핀</value>
+  </data>
+  <data name="lblPreFix.Text" xml:space="preserve">
+    <value>사전설정</value>
+  </data>
+  <data name="lblUserPhoto.Text" xml:space="preserve">
+    <value>사용자 사진</value>
+  </data>
+  <data name="lblAttPhoto.Text" xml:space="preserve">
+    <value>출근 사진</value>
+  </data>
+  <data name="MS_Excel" xml:space="preserve">
+    <value>마이크로소프트 엑셀</value>
+  </data>
+  <data name="TextFile" xml:space="preserve">
+    <value>텍스트 파일</value>
+  </data>
+  <data name="CSVFile" xml:space="preserve">
+    <value>CSV 파일</value>
+  </data>
+  <data name="PDFFile" xml:space="preserve">
+    <value>PDF 파일</value>
+  </data>
+  <data name="bDeleteDept" xml:space="preserve">
+    <value>이 부서 이름을 변경 하시겠습니까?</value>
+  </data>
+  <data name="FrmBatchUpdateInfo" xml:space="preserve">
+    <value>일괄 업데이트</value>
+  </data>
+  <data name="ckbAdvanceSetting.Text" xml:space="preserve">
+    <value>추가 설정 활성화</value>
+  </data>
+  <data name="ckbActiveRoundSetting.Text" xml:space="preserve">
+    <value>라운딩 설정 활성화 (출근-&gt; 시간표-&gt;  라운딩 설정)</value>
+  </data>
+  <data name="UserNameValue" xml:space="preserve">
+    <value>사용자 이름</value>
+  </data>
+  <data name="PwdValue" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="RepeatValue" xml:space="preserve">
+    <value>비밀번호 반복</value>
+  </data>
+  <data name="HintUpgradeDB" xml:space="preserve">
+    <value>데이터베이스 업그레이드...</value>
+  </data>
+  <data name="lblStart.Text" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="lblEnd.Text" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="ErrorSDK" xml:space="preserve">
+    <value>SDK 초기화 에러</value>
+  </data>
+  <data name="FileNotExists" xml:space="preserve">
+    <value>파일이 존재하지 않습니다. 다시 선택하십시오.</value>
+  </data>
+  <data name="GetOptionFailed" xml:space="preserve">
+    <value>옵션 불러오기 실패</value>
+  </data>
+  <data name="SetOptionFailed" xml:space="preserve">
+    <value>옵션 설정 실패</value>
+  </data>
+  <data name="RebootDevice" xml:space="preserve">
+    <value>신규 암호는 재부팅 후에 적용됩니다. 지금 단말기를 재부팅 하시겠습니까?</value>
+  </data>
+  <data name="syncTimeFailed" xml:space="preserve">
+    <value>단말기 시간 동기화 실패</value>
+  </data>
+  <data name="syncTimeSuccess" xml:space="preserve">
+    <value>단말기 시간 동기화 성공</value>
+  </data>
+  <data name="powerOFFFailed" xml:space="preserve">
+    <value>단말기 전원 끄기 실패</value>
+  </data>
+  <data name="powerOFFSuccess" xml:space="preserve">
+    <value>단말기 전원 끄기 성공</value>
+  </data>
+  <data name="rebootFailed" xml:space="preserve">
+    <value>단말기 재부팅 실패</value>
+  </data>
+  <data name="rebootSuccess" xml:space="preserve">
+    <value>단말기 재부팅 성공</value>
+  </data>
+  <data name="MsgSyncDataFinished" xml:space="preserve">
+    <value>데이터 동기화 완료 </value>
+  </data>
+  <data name="chkHighRateMode.Text" xml:space="preserve">
+    <value>고속 모드</value>
+  </data>
+  <data name="btnGenerate.Text" xml:space="preserve">
+    <value>일반 설정</value>
+  </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>파일 경로</value>
+  </data>
+  <data name="lblIn.Text" xml:space="preserve">
+    <value>입력 기호</value>
+  </data>
+  <data name="lblOut.Text" xml:space="preserve">
+    <value>외근 표시</value>
+  </data>
+  <data name="lblNoOfChar.Text" xml:space="preserve">
+    <value>문자수</value>
+  </data>
+  <data name="lblFieldFormat.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="lblFieldChar.Text" xml:space="preserve">
+    <value>문자수</value>
+  </data>
+  <data name="lblFileNameFormat.Text" xml:space="preserve">
+    <value>파일 이름 형식</value>
+  </data>
+  <data name="lblFileExtension.Text" xml:space="preserve">
+    <value>파일 확장자</value>
+  </data>
+  <data name="lblFieldSeparator.Text" xml:space="preserve">
+    <value>필드 구분</value>
+  </data>
+  <data name="lblDataField" xml:space="preserve">
+    <value>데이터 필드 번호</value>
+  </data>
+  <data name="ExportLogsInCustomFormatFormCaption" xml:space="preserve">
+    <value>사용자 지정 형식으로 로그 추출</value>
+  </data>
+  <data name="FieldSeparatorType1" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="FieldSeparatorType2" xml:space="preserve">
+    <value>콤마</value>
+  </data>
+  <data name="FieldSeparatorType3" xml:space="preserve">
+    <value>공간</value>
+  </data>
+  <data name="FieldSeparatorType4" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="terminal_no" xml:space="preserve">
+    <value>단말기 번호</value>
+  </data>
+  <data name="reserved_field" xml:space="preserve">
+    <value>예약 필드</value>
+  </data>
+  <data name="ExportLogsSucceed" xml:space="preserve">
+    <value>로그 기록 추출 성공</value>
+  </data>
+  <data name="NoExportLogs" xml:space="preserve">
+    <value>로그가 존재하지 않음</value>
+  </data>
+  <data name="ErrorDatePeriod" xml:space="preserve">
+    <value>종료일은 시작일 이후여야 합니다.</value>
+  </data>
+  <data name="ErrorFilePath" xml:space="preserve">
+    <value>파일 경로를 지정하십시오.</value>
+  </data>
+  <data name="ErrorSymbol" xml:space="preserve">
+    <value>입출력 기호 필드값을 공백으로 둘 수 없습니다.</value>
+  </data>
+  <data name="ErrorNoField" xml:space="preserve">
+    <value>추출할 필드를 선택하십시오.</value>
+  </data>
+  <data name="LicenseDevicesLimit" xml:space="preserve">
+    <value>라이선스 제한, {0} 이상의 단말기를 추가 할 수 없습니다.</value>
+  </data>
+  <data name="btnTransfer.Text" xml:space="preserve">
+    <value>전송</value>
+  </data>
+  <data name="grpDBType.Text" xml:space="preserve">
+    <value>데이터베이스 유형을 선택하십시오.</value>
+  </data>
+  <data name="FormZKTime5Caption" xml:space="preserve">
+    <value>ZKTime5로부터 데이터 전송</value>
+  </data>
+  <data name="chkCopyData.Text" xml:space="preserve">
+    <value>데이터 복사</value>
+  </data>
+  <data name="lblSourceDBType.Text" xml:space="preserve">
+    <value>데이터베이스 유형</value>
+  </data>
+  <data name="lblRoleDataFilter.Text" xml:space="preserve">
+    <value>부서 관리</value>
+  </data>
+  <data name="ckbRunningBackground.Text" xml:space="preserve">
+    <value>실행 배경</value>
+  </data>
+  <data name="lblDownloadingFiles.Text" xml:space="preserve">
+    <value>파일 다운로드</value>
+  </data>
+  <data name="OperFileError" xml:space="preserve">
+    <value>{0} 파일 열기 실패</value>
+  </data>
+  <data name="DeviceIsWorking" xml:space="preserve">
+    <value>'{0}' 통신 중, 잠시 기다려주십시오...</value>
+  </data>
+  <data name="ReachedMaxConnection" xml:space="preserve">
+    <value>장비의 최대 연결 개수를 초과해 '{0}'에 연결할 수 없습니다.</value>
+  </data>
+  <data name="maxP2PConnecion" xml:space="preserve">
+    <value>P2P 단말기에는 더 많은 연결이 가능합니다.</value>
+  </data>
+  <data name="GetLicenseFailed" xml:space="preserve">
+    <value>라이선스 불러오기 실패</value>
+  </data>
+  <data name="GetRequestFailed" xml:space="preserve">
+    <value>서버 요청 불러오기 실패</value>
+  </data>
+  <data name="LicenseServerException" xml:space="preserve">
+    <value>라이선스 서버 예외</value>
+  </data>
+  <data name="InvalidUPK" xml:space="preserve">
+    <value>유효하지 않은 UPK</value>
+  </data>
+  <data name="lblSNFile.Text" xml:space="preserve">
+    <value>시리얼 넘버 파일</value>
+  </data>
+  <data name="lblCompanyName.Text" xml:space="preserve">
+    <value>회사 이름</value>
+  </data>
+  <data name="btnChooseFile.Text" xml:space="preserve">
+    <value>파일 선택</value>
+  </data>
+  <data name="MsgNoFileChoose" xml:space="preserve">
+    <value>선택된 파일 없음</value>
+  </data>
+  <data name="lblCollectTimes.Text" xml:space="preserve">
+    <value>시간 수집</value>
+  </data>
+  <data name="planChkCalculate.Text" xml:space="preserve">
+    <value>자동 산출</value>
+  </data>
+  <data name="tbpPlanTaskSet.Text" xml:space="preserve">
+    <value>작업 설정 계획</value>
+  </data>
+  <data name="chkMode1.Text" xml:space="preserve">
+    <value>모드 1</value>
+  </data>
+  <data name="chkMode2.Text" xml:space="preserve">
+    <value>모드 2</value>
+  </data>
+  <data name="SDKToLow" xml:space="preserve">
+    <value>SDK가 6.3.0.7 버전 이상이어야 합니다. 업그레이드 하시기 바랍니다.</value>
+  </data>
+  <data name="lblZonePalms.Text" xml:space="preserve">
+    <value>손바닥(장문) 개수</value>
+  </data>
+  <data name="lblZoneFaces.Text" xml:space="preserve">
+    <value>얼굴 개수</value>
+  </data>
+  <data name="lblPalmNum.Text" xml:space="preserve">
+    <value>손바닥(장문) 개수</value>
+  </data>
+  <data name="NoCamera" xml:space="preserve">
+    <value>비디오 장비 없음</value>
+  </data>
+  <data name="NoPhotos" xml:space="preserve">
+    <value>사진 없음</value>
+  </data>
+  <data name="ConnectCameraDevice" xml:space="preserve">
+    <value>비디오 장비를 연결하십시오.</value>
+  </data>
+  <data name="CameraAnomaly" xml:space="preserve">
+    <value>카메라 예외</value>
+  </data>
+  <data name="chk_DataSyncPalm.Text" xml:space="preserve">
+    <value>손바닥 템플릿 동기화</value>
+  </data>
+  <data name="chk_DataSyncFV.Text" xml:space="preserve">
+    <value>지 정맥 템플릿 동기화</value>
+  </data>
+  <data name="labName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="labContacts.Text" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="labIndustry.Text" xml:space="preserve">
+    <value>Industry</value>
+  </data>
+  <data name="labAddress.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="labCity.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="labCountry.Text" xml:space="preserve">
+    <value>Country And Region</value>
+  </data>
+  <data name="openSNXMLfile" xml:space="preserve">
+    <value>Select SN.xml File</value>
+  </data>
+  <data name="selectLicenseXmlfile" xml:space="preserve">
+    <value>Select License.xml File</value>
+  </data>
+  <!--在线更新程序，翻译-->
+  <data name="frmVersionInfo" xml:space="preserve">
+    <value>Version Information</value>
+  </data>
+  <data name="frmMain" xml:space="preserve">
+    <value>Update Online</value>
+  </data>
+  <data name="btnVersionInfo.Text" xml:space="preserve">
+    <value>Version Info</value>
+  </data>
+  <data name="btnRunMainApp.Text" xml:space="preserve">
+    <value>Start Software</value>
+  </data>
+  <data name="labUpdateTo.Text" xml:space="preserve">
+    <value>Update To</value>
+  </data>
+  <data name="labCurrent.Text" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="labApply.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="labDownload.Text" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="labLoadmsg01" xml:space="preserve">
+    <value>Failed To Download</value>
+  </data>
+  <data name="frmSelectDestVersion" xml:space="preserve">
+    <value>Update List</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="labFeedback1.Text" xml:space="preserve">
+    <value>We sincerely looking forward to your feedback.</value>
+  </data>
+  <data name="labFeedback2.Text" xml:space="preserve">
+    <value>Feedback Type And Module Required</value>
+  </data>
+  <data name="labFeedback3.Text" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="labFeedback4.Text" xml:space="preserve">
+    <value>Email Setting Required,Fill in System--Email Setting.</value>
+  </data>
+  <data name="btnAddDocument.Text" xml:space="preserve">
+    <value>Add Attachment</value>
+  </data>
+  <data name="chkSetEmail.Text" xml:space="preserve">
+    <value>Use Personal Email</value>
+  </data>
+  <data name="btnSendFeedback.Text" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Suggestions" xml:space="preserve">
+    <value>Suggestion</value>
+  </data>
+  <data name="Bugs" xml:space="preserve">
+    <value>Bug</value>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="SystemModule" xml:space="preserve">
+    <value>System Module</value>
+  </data>
+  <data name="HRModule" xml:space="preserve">
+    <value>Personnel Module</value>
+  </data>
+  <data name="AttendanceModule" xml:space="preserve">
+    <value>Attendance Module</value>
+  </data>
+  <data name="AccessModule" xml:space="preserve">
+    <value>Access Module</value>
+  </data>
+  <data name="AttendanceReports" xml:space="preserve">
+    <value>Report Mudule</value>
+  </data>
+  <data name="DeviceModule" xml:space="preserve">
+    <value>Device Module</value>
+  </data>
+  <data name="PayrollModule" xml:space="preserve">
+    <value>Payroll Module</value>
+  </data>
+  <data name="sendFeedbackSuccess" xml:space="preserve">
+    <value>Succeeded To Send Feedback</value>
+  </data>
+  <data name="PleaseSelectAVersionToUpdate" xml:space="preserve">
+    <value>Please Select A Version To Update.</value>
+  </data>
+  <!--added by Quinn 20180912-->
+  <data name="barbtnReset.Caption" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="labEachYear.Text" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="chkBoxEnable.Text" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="PaycodeAssign" xml:space="preserve">
+    <value>Day Off Assign</value>
+  </data>
+  <data name="MsgWithoutEnoughDays" xml:space="preserve">
+    <value>The number of days can be arranged is not enough</value>
+  </data>
+  <data name="MsgHourlyEmpNoHoliday" xml:space="preserve">
+    <value>The employee is an hourly employee and cannot arrange a holiday</value>
+  </data>
+  <data name="msgPeriodConflicted" xml:space="preserve">
+    <value>The period is conflicted with shift</value>
+  </data>
+  <data name="msgTimeInvalid" xml:space="preserve">
+    <value>The time of this shift is invalid</value>
+  </data>
+  <data name="msgInvalidDate" xml:space="preserve">
+    <value>Invalid Date</value>
+  </data>
+  <data name="MsgAllPeopleWithoutEnoughDays" xml:space="preserve">
+    <value>Invalid Operation</value>
+  </data>
+  <data name="MsgPeopleBelowAsignFailed" xml:space="preserve">
+    <value>Failed To Assign Employee</value>
+  </data>
+  <data name="UnSupportedPlatform" xml:space="preserve">
+    <value>Platform UnSupported</value>
+  </data>
+  <data name="LoadSNFileFailed" xml:space="preserve">
+    <value>Failed To Load SN-File-SN.xml File</value>
+  </data>
+  <data name="check_in" xml:space="preserve">
+    <value>Check-In</value>
+  </data>
+  <data name="check_out" xml:space="preserve">
+    <value>Check-Out</value>
+  </data>
+  <data name="grpWeekdaysOTSetting.Text" xml:space="preserve">
+    <value>Weekday Work Time Level</value>
+  </data>
+  <data name="ckbWeekendOTSetting.Text" xml:space="preserve">
+    <value>Enable Work In Day Off</value>
+  </data>
+  <data name="GrpPanSalary.Text" xml:space="preserve">
+    <value>Salary Mode</value>
+  </data>
+  <data name="GrpPanHourly.Text" xml:space="preserve">
+    <value>Wage Mode</value>
+  </data>
+  <data name="chkRequirePunchForLeave.Text" xml:space="preserve">
+    <value>Require Punch For Leave</value>
+  </data>
+  <data name="chkActive.Text" xml:space="preserve">
+    <value>Use Device Attendance State</value>
+  </data>
+  <data name="labMinimumTimeHourly.Text" xml:space="preserve">
+    <value>Minutes for Duplicate Punch (1-30 Minutes)</value>
+  </data>
+  <data name="chkFirstLastRecord.Text" xml:space="preserve">
+    <value>Use First Check-In And Last Check-Out Only</value>
+  </data>
+  <data name="chkHolidayOTSetting.Text" xml:space="preserve">
+    <value>Enable Work In Holiday</value>
+  </data>
+  <!--DayType-->
+  <data name="lblDTName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lblDTExportCode.Text" xml:space="preserve">
+    <value>Export Number</value>
+  </data>
+  <data name="lblDTSign.Text" xml:space="preserve">
+    <value>Report Symbol</value>
+  </data>
+  <data name="DayType" xml:space="preserve">
+    <value>Work Type</value>
+  </data>
+  <data name="dt_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="dt_Weekend" xml:space="preserve">
+    <value>Weekend</value>
+  </data>
+  <data name="dt_OffDuty" xml:space="preserve">
+    <value>Day Off</value>
+  </data>
+  <data name="dt_NormalWork" xml:space="preserve">
+    <value>Normal Work</value>
+  </data>
+  <data name="dt_Holiday" xml:space="preserve">
+    <value>Holiday</value>
+  </data>
+  <data name="dt_Leave" xml:space="preserve">
+    <value>Leave</value>
+  </data>
+  <data name="dt_OverTime" xml:space="preserve">
+    <value>Overtime</value>
+  </data>
+  <data name="pc_reserved" xml:space="preserve">
+    <value>Reserved</value>
+  </data>
+  <data name="TemporarySchedule" xml:space="preserve">
+    <value>Temporary Schedule</value>
+  </data>
+  <!--Timetable break-->
+  <data name="tabBreak.Text" xml:space="preserve">
+    <value>Break</value>
+  </data>
+  <data name="labRequireWork.Text" xml:space="preserve">
+    <value>Timetable Duration</value>
+  </data>
+  <data name="labRegColor.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="labValidRecordsFrom.Text" xml:space="preserve">
+    <value>Punch From</value>
+  </data>
+  <data name="labValidRecordsTo.Text" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="chkForSmartShift.Text" xml:space="preserve">
+    <value>Smart Shift Option</value>
+  </data>
+  <data name="labSmartCheckInEnd.Text" xml:space="preserve">
+    <value>Check-In End At</value>
+  </data>
+  <data name="labSmartCheckOutStart.Text" xml:space="preserve">
+    <value>Check-Out Start At</value>
+  </data>
+  <data name="chkAllowLateCome.Text" xml:space="preserve">
+    <value>Allow Late-In</value>
+  </data>
+  <data name="chkAllowEarlyOut.Text" xml:space="preserve">
+    <value>Allow Early-Out</value>
+  </data>
+  <data name="chkNoClockInAsLateAllDay.Text" xml:space="preserve">
+    <value>Late-In Full Timetable Without Check-In</value>
+  </data>
+  <data name="chkNoClockOutAsEarlyAllday.Text" xml:space="preserve">
+    <value>Early-Out Full Timetable Without Check-Out</value>
+  </data>
+  <data name="chkEnableOT.Text" xml:space="preserve">
+    <value>Enable OT</value>
+  </data>
+  <data name="chkEarlyComeAsWork.Text" xml:space="preserve">
+    <value>Early-In Count As Work</value>
+  </data>
+  <data name="chkLateOutAsWork.Text" xml:space="preserve">
+    <value>Late-Out Count As Work</value>
+  </data>
+  <data name="ckbFirstLastRecord.Text" xml:space="preserve">
+    <value>Use First Check-In And Last Check-Out Only</value>
+  </data>
+  <data name="btnBreakSelect.Text" xml:space="preserve">
+    <value>Select Break</value>
+  </data>
+  <data name="lblFlexColor.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="labFlexRequireWork.Text" xml:space="preserve">
+    <value>Timetable Work Duration</value>
+  </data>
+  <data name="labFlexDayChangeAt.Text" xml:space="preserve">
+    <value>Day Change At</value>
+  </data>
+  <data name="chkFleFirstLastRecord.Text" xml:space="preserve">
+    <value>Use First Check-In And Last Check-Out Only</value>
+  </data>
+  <data name="chkFlexEnableOT.Text" xml:space="preserve">
+    <value>Enable OT</value>
+  </data>
+  <data name="chkBreakTimeWorkIsValid.Text" xml:space="preserve">
+    <value>Count As Work Without Break</value>
+  </data>
+  <!--Schedule  shift assign-->
+  <data name="labShifts.Text" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="btnSelectDepartments.Text" xml:space="preserve">
+    <value>Assign To Department</value>
+  </data>
+  <data name="btnSelectEmployees.Text" xml:space="preserve">
+    <value>Assign To Employee</value>
+  </data>
+  <data name="btnAssignSmartShift.Text" xml:space="preserve">
+    <value>Smart Shift Management</value>
+  </data>
+  <data name="tpByShift.Text" xml:space="preserve">
+    <value>By Shift</value>
+  </data>
+  <data name="tpByDepartmentAndEmployee.Text" xml:space="preserve">
+    <value>By Employee</value>
+  </data>
+  <data name="labShiftList.Text" xml:space="preserve">
+    <value>Shift List</value>
+  </data>
+  <data name="labAssignDetailsByShift.Text" xml:space="preserve">
+    <value>Assign Detail</value>
+  </data>
+  <data name="labLeftListEmployee.Text" xml:space="preserve">
+    <value>Employee List</value>
+  </data>
+  <data name="labAssignDetailsByEmployee.Text" xml:space="preserve">
+    <value>Assign Detail</value>
+  </data>
+  <data name="colEmployeeName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="colShiftName" xml:space="preserve">
+    <value>Shift Name</value>
+  </data>
+  <data name="colDepartmentName" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="colFrom" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="colTo" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="SelectDepartments" xml:space="preserve">
+    <value>Select Department</value>
+  </data>
+  <data name="SelectEmployees" xml:space="preserve">
+    <value>Select Employee</value>
+  </data>
+  <data name="SmartShiftAssign" xml:space="preserve">
+    <value>Smart Shift Management</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <!--temporary schedule-->
+  <data name="SmartShift" xml:space="preserve">
+    <value>Smart Shift</value>
+  </data>
+  <data name="UnknownShift" xml:space="preserve">
+    <value>Unknown Shift</value>
+  </data>
+  <data name="labSmartShiftDisplayColor.Text" xml:space="preserve">
+    <value>Color for Smart Shift </value>
+  </data>
+  <data name="labWorkState.Text" xml:space="preserve">
+    <value>Work Type</value>
+  </data>
+  <data name="HourlyMode" xml:space="preserve">
+    <value>Wage Mode</value>
+  </data>
+  <!--Exception Assign-->
+  <data name="labRightTitle.Text" xml:space="preserve">
+    <value>Exception Assign</value>
+  </data>
+  <data name="HaveTemScheduleNotAllowException" xml:space="preserve">
+    <value>Invalid Operation. Employee is Using Temporary Schedule.</value>
+  </data>
+  <data name="MsgInvalidTime" xml:space="preserve">
+    <value>Invalid Time</value>
+  </data>
+  <data name="MsgUsdedTimetableCannotBeDelete" xml:space="preserve">
+    <value>Invalid Operation. Timetable is in Use</value>
+  </data>
+  <data name="AutoPunchForLeave" xml:space="preserve">
+    <value>Auto Punch For Leave</value>
+  </data>
+  <data name="SystemAutoPunch" xml:space="preserve">
+    <value>System Auto Punch</value>
+  </data>
+  <data name="lblFVNum.Text" xml:space="preserve">
+    <value>Finger Vein</value>
+  </data>
+  <data name="lblTerminalNumber.Text" xml:space="preserve">
+    <value>Device Number</value>
+  </data>
+  <data name="Timetable" xml:space="preserve">
+    <value>시간표</value>
+  </data>
+  <data name="Work" xml:space="preserve">
+    <value>근무</value>
+  </data>
+  <data name="Absence" xml:space="preserve">
+    <value>결근</value>
+  </data>
+  <data name="SelectDataAtLeastOne" xml:space="preserve">
+    <value>파울</value>
+  </data>
+  <data name="btnTestDataBase.Text" xml:space="preserve">
+    <value>연결 테스트</value>
+  </data>
+  <data name="NoInstallOrStartService" xml:space="preserve">
+    <value>데이터베이스 서비스가 설치 또는 시작되었는지 확인하십시오.</value>
+  </data>
+  <data name="NohasSrviceOrNameAndPwsFail" xml:space="preserve">
+    <value>데이터베이스 이름 또는 계정 암호가 잘못되었습니다.</value>
+  </data>
+  <data name="RestartSoftware" xml:space="preserve">
+    <value>소프트웨어를 수동으로 다시 시작하십시오!</value>
+  </data>
+  <data name="pv_ChangeDB" xml:space="preserve">
+    <value>대체</value>
+  </data>
+  <data name="NLinDataIsAbnormal" xml:space="preserve">
+    <value>{0} 행 데이터가 비정상입니다!</value>
+  </data>
+  <data name="DataNotMatchAndLengthRange" xml:space="preserve">
+    <value>{0}이 길이와 일치하지 않습니다. 길이 범위는 {1}입니다!</value>
+  </data>
+  <data name="ChangeDataAgain" xml:space="preserve">
+    <value>작동하기 전에 데이터를 수정하십시오!</value>
+  </data>
+  <data name="DataFormatIncorrect" xml:space="preserve">
+    <value>{0} 데이터 형식이 잘못되었습니다!</value>
+  </data>
+  <data name="FrmPopupNotifyCaption" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="SucceedExportAttCalculation" xml:space="preserve">
+    <value>작업 요약을 '{0}'성공적으로 전송합니다!</value>
+  </data>
+  <data name="AttCalculation" xml:space="preserve">
+    <value>세부 정보 게시</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>수량</value>
+  </data>
+  <data name="Come" xml:space="preserve">
+    <value>와라.</value>
+  </data>
+  <data name="Absent" xml:space="preserve">
+    <value>부재</value>
+  </data>
+  <data name="btnPrint.Text" xml:space="preserve">
+    <value>인쇄</value>
+  </data>
+  <data name="attCalculationTitle" xml:space="preserve">
+    <value>{0}의 각 부서에서 종업원 활동</value>
+  </data>
+  <data name="calculationNote" xml:space="preserve">
+    <value>여러 부서에서 근무하는 직원의 세부 사항이 계산됩니다...</value>
+  </data>
+
+  <!--findpassword-->
+  <data name="Pwd_UserName" xml:space="preserve">
+    <value>User Name:</value>
+  </data>
+  <data name="Pwd_Pwd" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="Pwd_Email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="Pwd0" xml:space="preserve">
+    <value>Hello，a request has been received to retrieve password for Reloj Checador Steren.Here are the details of your account.</value>
+  </data>
+  <data name="Pwd1" xml:space="preserve">
+    <value>To make your account secure.Please change your password or delete this email soon.This is an automated reply from Reloj Checador Steren. Please do not reply to this email.</value>
+  </data>
+  <data name="Pwd2" xml:space="preserve">
+    <value>Best Regards.</value>
+  </data>
+  <data name="Pwd3" xml:space="preserve">
+    <value>Steren2</value>
+  </data>
+
+  <!--added for sqlite db password-->
+  <data name="TextPasswordEditGroup" xml:space="preserve" >
+    <value>Change SQLite Database Password</value>
+  </data>
+  <data name="TextPassword" xml:space="preserve" >
+    <value>Password</value>
+  </data>
+  <data name="TextFailedToConnectToDatabase" xml:space="preserve" >
+    <value>Connection Failed</value>
+  </data>
+  <data name="TextFailedToRestoreDatabase" xml:space="preserve" >
+    <value>Restoration Failed: Invalid Password or Database</value>
+  </data>
+  <data name="TextSureToClearPassword" xml:space="preserve" >
+    <value>Are you sure to clear database password?</value>
+  </data>
+  <data name="TextFilePathCanNotBeEmpty" xml:space="preserve" >
+    <value>File path can't be empty!</value>
+  </data>
+    
+  <!--Mexico[6667]-->
+  <data name="OperationSucceeds" xml:space="preserve" >
+    <value>Operation succeeds!</value>
+  </data>
+  <data name="PublicKeyExpired" xml:space="preserve" >
+    <value>Expired Public Key</value>
+  </data>
+  <data name="InvalidPublicKey" xml:space="preserve" >
+    <value>Invalid Public Key</value>
+  </data>
+  <data name="PublicKeyHasRegistered" xml:space="preserve" >
+    <value>(Registered)</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve" >
+    <value>Register</value>
+  </data>
+  <data name="TextSteren2" xml:space="preserve" >
+    <value>Reloj Checador Steren</value>
+  </data>
+  <data name="TextSterenCopyright" xml:space="preserve" >
+    <value>Copyright 2020-2022 Steren.</value>
+  </data>
+  <data name="TextGetKey" xml:space="preserve">
+    <value>Get Key...</value>
+  </data>
+
+</root>

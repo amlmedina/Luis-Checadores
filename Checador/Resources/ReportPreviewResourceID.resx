@@ -1,0 +1,1488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BarText_MainMenu" xml:space="preserve">
+    <value>Menu Utama</value>
+  </data>
+  <data name="Button_Apply" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="Button_Help" xml:space="preserve">
+    <value>Bantuan</value>
+  </data>
+  <data name="Button_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionCsv" xml:space="preserve">
+    <value>Pilihan Ekspor CSV</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionHtml" xml:space="preserve">
+    <value>Pilihan Ekspor HTML</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionImage" xml:space="preserve">
+    <value>Pilihan Ekspor Gambar</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionMht" xml:space="preserve">
+    <value>Pilihan Ekspor MHT</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionNativeOptions" xml:space="preserve">
+    <value>Pilihan Format Native</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionPdf" xml:space="preserve">
+    <value>Pilihan Ekspor PDF</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionRtf" xml:space="preserve">
+    <value>Pilihan Ekspor RTF</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionTxt" xml:space="preserve">
+    <value>Pilihan Ekspor Teks</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionXls" xml:space="preserve">
+    <value>Pilihan Ekspor XLS</value>
+  </data>
+  <data name="ExportOptionsForm_CaptionXlsx" xml:space="preserve">
+    <value>Pilihan Ekspor XLSX</value>
+  </data>
+  <data name="ExportOption_HtmlCharacterSet" xml:space="preserve">
+    <value>Atur karakter:</value>
+  </data>
+  <data name="ExportOption_HtmlEmbedImagesInHTML" xml:space="preserve">
+    <value>Melekatkan gambar di HTML</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode" xml:space="preserve">
+    <value>Mode ekspor:</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_DifferentFiles" xml:space="preserve">
+    <value>File berbeda</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_SingleFile" xml:space="preserve">
+    <value>File tunggal</value>
+  </data>
+  <data name="ExportOption_HtmlExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>File tunggal dengan halaman tersendiri</value>
+  </data>
+  <data name="ExportOption_HtmlPageBorderColor" xml:space="preserve">
+    <value>Warna batas halaman:</value>
+  </data>
+  <data name="ExportOption_HtmlPageBorderWidth" xml:space="preserve">
+    <value>Lebar batas halaman:</value>
+  </data>
+  <data name="ExportOption_HtmlPageRange" xml:space="preserve">
+    <value>Rentang halaman:</value>
+  </data>
+  <data name="ExportOption_HtmlRemoveSecondarySymbols" xml:space="preserve">
+    <value>Hapus tombol kembali</value>
+  </data>
+  <data name="ExportOption_HtmlTableLayout" xml:space="preserve">
+    <value>Tata letak tabel</value>
+  </data>
+  <data name="ExportOption_HtmlTitle" xml:space="preserve">
+    <value>Judul:</value>
+  </data>
+  <data name="ExportOption_ImageExportMode" xml:space="preserve">
+    <value>Mode ekspor:</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_DifferentFiles" xml:space="preserve">
+    <value>File berbeda</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_SingleFile" xml:space="preserve">
+    <value>File tunggal</value>
+  </data>
+  <data name="ExportOption_ImageExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>File tunggal per halaman</value>
+  </data>
+  <data name="ExportOption_ImageFormat" xml:space="preserve">
+    <value>Format gambar:</value>
+  </data>
+  <data name="ExportOption_ImagePageBorderColor" xml:space="preserve">
+    <value>Warna batas halaman:</value>
+  </data>
+  <data name="ExportOption_ImagePageBorderWidth" xml:space="preserve">
+    <value>Lebar batas halaman:</value>
+  </data>
+  <data name="ExportOption_ImagePageRange" xml:space="preserve">
+    <value>Rentang halaman:</value>
+  </data>
+  <data name="ExportOption_ImageResolution" xml:space="preserve">
+    <value>Resolusi (dpi)</value>
+  </data>
+  <data name="ExportOption_NativeFormatCompressed" xml:space="preserve">
+    <value>Dikompress</value>
+  </data>
+  <data name="ExportOption_PdfACompatibility" xml:space="preserve">
+    <value>PDF/A-2b</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_AnyExceptExtractingPages" xml:space="preserve">
+    <value>Pengecualian Halaman Ekstraksi</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_CommentingFillingSigning" xml:space="preserve">
+    <value>Mengomentari, mengisi kolom formulir, dan menandatangani bidang tanda tangan yang ada</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_FillingSigning" xml:space="preserve">
+    <value>Mengisi kolom formulir dan menandatangani bidang tanda tangan yang ada</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_InsertingDeletingRotating" xml:space="preserve">
+    <value>Memasukkan, menghapus dan memutar halaman</value>
+  </data>
+  <data name="ExportOption_PdfChangingPermissions_None" xml:space="preserve">
+    <value>Tidak ada</value>
+  </data>
+  <data name="ExportOption_PdfCompressed" xml:space="preserve">
+    <value>Dikompress</value>
+  </data>
+  <data name="ExportOption_PdfConvertImagesToJpeg" xml:space="preserve">
+    <value>Ubah gambar ke Jpeg</value>
+  </data>
+  <data name="ExportOption_PdfDocumentApplication" xml:space="preserve">
+    <value>Aplikasi:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentAuthor" xml:space="preserve">
+    <value>Penulis:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentKeywords" xml:space="preserve">
+    <value>Kata kunci:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentSubject" xml:space="preserve">
+    <value>Subjek:</value>
+  </data>
+  <data name="ExportOption_PdfDocumentTitle" xml:space="preserve">
+    <value>Judul:</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality" xml:space="preserve">
+    <value>Kualitas gambar:</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_High" xml:space="preserve">
+    <value>Tingi</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Highest" xml:space="preserve">
+    <value>Paling tinggi</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Low" xml:space="preserve">
+    <value>Rendah</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Lowest" xml:space="preserve">
+    <value>Paling rendah</value>
+  </data>
+  <data name="ExportOption_PdfImageQuality_Medium" xml:space="preserve">
+    <value>Sedang</value>
+  </data>
+  <data name="ExportOption_PdfNeverEmbeddedFonts" xml:space="preserve">
+    <value>Jangan menyertakan font ini:</value>
+  </data>
+  <data name="ExportOption_PdfPageRange" xml:space="preserve">
+    <value>Rentang halaman:</value>
+  </data>
+  <data name="ExportOption_PdfPasswordSecurityOptions" xml:space="preserve">
+    <value>Password Keamanan</value>
+  </data>
+  <data name="ExportOption_PdfPasswordSecurityOptions_None" xml:space="preserve">
+    <value>(tidak ada)</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_HighResolution" xml:space="preserve">
+    <value>Resolusi Tinggi</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_LowResolution" xml:space="preserve">
+    <value>Resolusi Rendah (150 dpi)</value>
+  </data>
+  <data name="ExportOption_PdfPrintingPermissions_None" xml:space="preserve">
+    <value>Tidak ada</value>
+  </data>
+  <data name="ExportOption_PdfShowPrintDialogOnOpen" xml:space="preserve">
+    <value>Tampilkan dialog cetak saat terbuka</value>
+  </data>
+  <data name="ExportOption_PdfSignatureOptions" xml:space="preserve">
+    <value>Tanda tangan digital</value>
+  </data>
+  <data name="ExportOption_PdfSignatureOptions_None" xml:space="preserve">
+    <value>(tidak ada)</value>
+  </data>
+  <data name="ExportOption_PdfSignature_EmptyCertificate" xml:space="preserve">
+    <value>Tidak ada</value>
+  </data>
+  <data name="ExportOption_RtfExportMode" xml:space="preserve">
+    <value>Mode ekspor:</value>
+  </data>
+  <data name="ExportOption_RtfExportMode_SingleFile" xml:space="preserve">
+    <value>File tunggal</value>
+  </data>
+  <data name="ExportOption_RtfExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>File tunggal per halaman</value>
+  </data>
+  <data name="ExportOption_RtfExportWatermarks" xml:space="preserve">
+    <value>Ekspor Watermark</value>
+  </data>
+  <data name="ExportOption_RtfPageRange" xml:space="preserve">
+    <value>Rentang halaman:</value>
+  </data>
+  <data name="ExportOption_TextEncoding" xml:space="preserve">
+    <value>Pengkodean</value>
+  </data>
+  <data name="ExportOption_TextExportMode" xml:space="preserve">
+    <value>Mode ekspor teks:</value>
+  </data>
+  <data name="ExportOption_TextExportMode_Text" xml:space="preserve">
+    <value>Teks</value>
+  </data>
+  <data name="ExportOption_TextExportMode_Value" xml:space="preserve">
+    <value>Nilai</value>
+  </data>
+  <data name="ExportOption_TextQuoteStringsWithSeparators" xml:space="preserve">
+    <value>Kutipan string dengan pemisah</value>
+  </data>
+  <data name="ExportOption_TextSeparator" xml:space="preserve">
+    <value>Pemisah Teks:</value>
+  </data>
+  <data name="ExportOption_TextSeparator_TabAlias" xml:space="preserve">
+    <value>TAB</value>
+  </data>
+  <data name="ExportOption_XlsExportHyperlinks" xml:space="preserve">
+    <value>Ekspor hiperlink</value>
+  </data>
+  <data name="ExportOption_XlsExportMode" xml:space="preserve">
+    <value>Mode ekspor:</value>
+  </data>
+  <data name="ExportOption_XlsExportMode_DifferentFiles" xml:space="preserve">
+    <value>File berbeda</value>
+  </data>
+  <data name="ExportOption_XlsExportMode_SingleFile" xml:space="preserve">
+    <value>File tunggal</value>
+  </data>
+  <data name="ExportOption_XlsPageRange" xml:space="preserve">
+    <value>Rentang halaman:</value>
+  </data>
+  <data name="ExportOption_XlsRawDataMode" xml:space="preserve">
+    <value>Mode Data Mentah</value>
+  </data>
+  <data name="ExportOption_XlsSheetName" xml:space="preserve">
+    <value>Nama lembar:</value>
+  </data>
+  <data name="ExportOption_XlsShowGridLines" xml:space="preserve">
+    <value>Tampilkan garis kisi</value>
+  </data>
+  <data name="ExportOption_XlsUseNativeFormat" xml:space="preserve">
+    <value>Ekspor nilai menggunakan format mereka</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode" xml:space="preserve">
+    <value>Mode Ekspor:</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_DifferentFiles" xml:space="preserve">
+    <value>File berbeda</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_SingleFile" xml:space="preserve">
+    <value>File tunggal</value>
+  </data>
+  <data name="ExportOption_XlsxExportMode_SingleFilePageByPage" xml:space="preserve">
+    <value>File tunggal per halaman</value>
+  </data>
+  <data name="ExportOption_XlsxPageRange" xml:space="preserve">
+    <value>Berbagai halaman:</value>
+  </data>
+  <data name="FolderBrowseDlg_ExportDirectory" xml:space="preserve">
+    <value>Pilih folder untuk menyimpan dokumen diekspor ke:</value>
+  </data>
+  <data name="Margin_BottomMargin" xml:space="preserve">
+    <value>Batas Tepi Bawah</value>
+  </data>
+  <data name="Margin_Inch" xml:space="preserve">
+    <value>Inch</value>
+  </data>
+  <data name="Margin_LeftMargin" xml:space="preserve">
+    <value>Batas Tepi Kiri</value>
+  </data>
+  <data name="Margin_Millimeter" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="Margin_RightMargin" xml:space="preserve">
+    <value>Batas Tepi Kanan</value>
+  </data>
+  <data name="Margin_TopMargin" xml:space="preserve">
+    <value>Batas Tepi Atas</value>
+  </data>
+  <data name="MF_Pages" xml:space="preserve">
+    <value>Halaman</value>
+  </data>
+  <data name="MI_BackgrColor" xml:space="preserve">
+    <value>&amp;Warna...</value>
+  </data>
+  <data name="MI_Background" xml:space="preserve">
+    <value>&amp;Latar belakang</value>
+  </data>
+  <data name="MI_CsvDocument" xml:space="preserve">
+    <value>File CSV</value>
+  </data>
+  <data name="MI_Exit" xml:space="preserve">
+    <value>&amp;Exit</value>
+  </data>
+  <data name="MI_Export" xml:space="preserve">
+    <value>&amp;Ekspor ke</value>
+  </data>
+  <data name="MI_File" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="MI_GraphicDocument" xml:space="preserve">
+    <value>File Gambar</value>
+  </data>
+  <data name="MI_HtmDocument" xml:space="preserve">
+    <value>File HTML</value>
+  </data>
+  <data name="MI_MhtDocument" xml:space="preserve">
+    <value>File MHT</value>
+  </data>
+  <data name="MI_PageLayout" xml:space="preserve">
+    <value>&amp;Tata letak halaman</value>
+  </data>
+  <data name="MI_PageSetup" xml:space="preserve">
+    <value>&amp;Pengaturan halaman</value>
+  </data>
+  <data name="MI_PdfDocument" xml:space="preserve">
+    <value>File PDF</value>
+  </data>
+  <data name="MI_Print" xml:space="preserve">
+    <value>&amp;Cetak</value>
+  </data>
+  <data name="MI_PrintDirect" xml:space="preserve">
+    <value>&amp;Cetak Langsung</value>
+  </data>
+  <data name="MI_RtfDocument" xml:space="preserve">
+    <value>File RTF</value>
+  </data>
+  <data name="MI_Send" xml:space="preserve">
+    <value>Kirim Sebagai</value>
+  </data>
+  <data name="MI_TxtDocument" xml:space="preserve">
+    <value>File Teks</value>
+  </data>
+  <data name="MI_View" xml:space="preserve">
+    <value>&amp;Tampilkan</value>
+  </data>
+  <data name="MI_ViewContinuous" xml:space="preserve">
+    <value>&amp;Terus menerus</value>
+  </data>
+  <data name="MI_ViewFacing" xml:space="preserve">
+    <value>&amp;Muka</value>
+  </data>
+  <data name="MI_ViewStatusbar" xml:space="preserve">
+    <value>&amp;Statusbar</value>
+  </data>
+  <data name="MI_ViewToolbar" xml:space="preserve">
+    <value>&amp;Toolbar</value>
+  </data>
+  <data name="MI_Watermark" xml:space="preserve">
+    <value>&amp;Watermark...</value>
+  </data>
+  <data name="MI_XlsDocument" xml:space="preserve">
+    <value>File Excel</value>
+  </data>
+  <data name="MI_XlsDocumnet" xml:space="preserve">
+    <value>File XLS</value>
+  </data>
+  <data name="MI_XlsxDocument" xml:space="preserve">
+    <value>File XLSX</value>
+  </data>
+  <data name="MI_ZoomPageWidth" xml:space="preserve">
+    <value>Lebar Halaman</value>
+  </data>
+  <data name="MI_ZoomTextWidth" xml:space="preserve">
+    <value>Lebar Teks</value>
+  </data>
+  <data name="MI_ZoomTwoPages" xml:space="preserve">
+    <value>Dua Halaman</value>
+  </data>
+  <data name="MI_ZoomWholePage" xml:space="preserve">
+    <value>Semua Halaman</value>
+  </data>
+  <data name="Msg_BigBitmapToCreate" xml:space="preserve">
+    <value>Output file terlalu besar. Silakan coba untuk mengurangi resolusi gambar,\r\nAtau pilih mode ekspor lain.</value>
+  </data>
+  <data name="Msg_BigFileToCreateJPEG" xml:space="preserve">
+    <value>Output file terlalu besar untuk membuat file JPEG. Silakan pilih format gambar lain atau mode ekspor lain.</value>
+  </data>
+  <data name="Msg_CannotAccessFile" xml:space="preserve">
+    <value>Program ini tidak dapat mengakses file \"{0}\" karena sedang digunakan oleh proses lain.</value>
+  </data>
+  <data name="Msg_CantFitBarcodeToControlBounds" xml:space="preserve">
+    <value>batas-batas kontrol yang terlalu kecil untuk barcode</value>
+  </data>
+  <data name="Msg_CreatingDocument" xml:space="preserve">
+    <value>Membuat dokumen ...</value>
+  </data>
+  <data name="Msg_CustomDrawWarning" xml:space="preserve">
+    <value>Peringatan!</value>
+  </data>
+  <data name="Msg_EmptyDocument" xml:space="preserve">
+    <value>Dokumen tidak berisi halaman apapun.</value>
+  </data>
+  <data name="Msg_FileDosntContainValidXml" xml:space="preserve">
+    <value>File tersebut tidak berisi data XML yang valid dalam format PRNX. Pemuatan dihentikan.</value>
+  </data>
+  <data name="Msg_FileDosntHavePrnxExtention" xml:space="preserve">
+    <value>File tersebut tidak memiliki ekstensi PRNX. Tetap melanjutkan?</value>
+  </data>
+  <data name="Msg_FileReadOnly" xml:space="preserve">
+    <value>File \"{0}\" diatur untuk read-only, coba lagi dengan nama file yang berbeda.</value>
+  </data>
+  <data name="Msg_FontInvalidNumber" xml:space="preserve">
+    <value>Ukuran font tidak dapat diatur ke nol atau angka negatif</value>
+  </data>
+  <data name="Msg_IncorrectPageRange" xml:space="preserve">
+    <value>Ini bukan rentang halaman yang valid</value>
+  </data>
+  <data name="Msg_IncorrectZoomFactor" xml:space="preserve">
+    <value>Nilai tersebut harus diantara {0} dan {1}.</value>
+  </data>
+  <data name="Msg_InvalidBarcodeText" xml:space="preserve">
+    <value>Ada karakter yang tidak valid dalam teks</value>
+  </data>
+  <data name="Msg_InvalidBarcodeTextFormat" xml:space="preserve">
+    <value>Format teks yang tidak valid</value>
+  </data>
+  <data name="Msg_InvalidMeasurement" xml:space="preserve">
+    <value>Ini bukan pengukuran yang valid.</value>
+  </data>
+  <data name="Msg_NeedPrinter" xml:space="preserve">
+    <value>Tidak ada printer terinstal</value>
+  </data>
+  <data name="Msg_NoDifferentFilesInStream" xml:space="preserve">
+    <value>Sebuah dokumen tidak dapat diekspor ke berkas dalam mode FileBerbeda. Gunakan FileTunggal atau mode FileTunggalPerHalaman gantinya.</value>
+  </data>
+  <data name="Msg_NotSupportedFont" xml:space="preserve">
+    <value>Font ini belum didukung</value>
+  </data>
+  <data name="Msg_OpenFileQuestion" xml:space="preserve">
+    <value>Apakah kamu mau membuka file ini?</value>
+  </data>
+  <data name="Msg_OpenFileQuestionCaption" xml:space="preserve">
+    <value>Ekspor</value>
+  </data>
+  <data name="Msg_PageMarginsWarning" xml:space="preserve">
+    <value>Satu atau lebih garis batas yang ditetapkan di luar area cetak halaman. Lanjutkan?</value>
+  </data>
+  <data name="Msg_SearchDialogFinishedSearching" xml:space="preserve">
+    <value>Selesai mencari melalui dokumen</value>
+  </data>
+  <data name="Msg_SearchDialogReady" xml:space="preserve">
+    <value>Siap</value>
+  </data>
+  <data name="Msg_SearchDialogTotalFound" xml:space="preserve">
+    <value>Total ditemukan:</value>
+  </data>
+  <data name="Msg_UnavailableNetPrinter" xml:space="preserve">
+    <value>Printer jaringan tidak tersedia.</value>
+  </data>
+  <data name="Msg_WrongPageSettings" xml:space="preserve">
+    <value>Saat printer tidak mendukung ukuran kertas yang dipilih. \r\nLanjutkan dengan mencetak?</value>
+  </data>
+  <data name="Msg_WrongPrinter" xml:space="preserve">
+    <value>Nama printer tidak valid. Silakan periksa pengaturan printer.</value>
+  </data>
+  <data name="Msg_WrongPrinting" xml:space="preserve">
+    <value>Terjadi kesalahan saat mencetak dokumen.</value>
+  </data>
+  <data name="Msg_XlsMoreThanMaxColumns" xml:space="preserve">
+    <value>File XLS yang dibuat terlalu besar untuk format XLS, karena terdiri lebih dari 256 kolom. \r\nCoba untuk mengurangi jumlah kolom dalam laporan Anda dan ekspor laporan ke XLS lagi.</value>
+  </data>
+  <data name="Msg_XlsMoreThanMaxRows" xml:space="preserve">
+    <value>file XLS yang dibuat terlalu besar untuk format XLS, karena terdiri lebih dari 65.536 baris. \r\nCoba untuk mengurangi jumlah baris dalam laporan Anda dan ekspor laporan ke XLS lagi.</value>
+  </data>
+  <data name="OpenFileDialog_Filter" xml:space="preserve">
+    <value>Pratinjau File Dokumen (*0})|*{0}|Semua File (*.*)|*. *</value>
+  </data>
+  <data name="OpenFileDialog_Title" xml:space="preserve">
+    <value>Buka</value>
+  </data>
+  <data name="OperationLogReportPageTitle" xml:space="preserve">
+    <value>Laporan Op Sistem</value>
+  </data>
+  <data name="PageInfo_PageDate" xml:space="preserve">
+    <value>[Tanggal Dicetak]</value>
+  </data>
+  <data name="PageInfo_PageNumber" xml:space="preserve">
+    <value>[Halaman#]</value>
+  </data>
+  <data name="PageInfo_PageNumberOfTotal" xml:space="preserve">
+    <value>[Halaman# dari Halaman#]</value>
+  </data>
+  <data name="PageInfo_PageTime" xml:space="preserve">
+    <value>[Jam dicetak]</value>
+  </data>
+  <data name="PageInfo_PageUserName" xml:space="preserve">
+    <value>[Nama User]</value>
+  </data>
+  <data name="PF_Caption" xml:space="preserve">
+    <value>Pratinjau</value>
+  </data>
+  <data name="RibbonPreview_ClosePreview_Caption" xml:space="preserve">
+    <value>Tutup Pratinjau Cetak</value>
+  </data>
+  <data name="RibbonPreview_ClosePreview_STipContent" xml:space="preserve">
+    <value>Tutup Pratinjau Cetak dari dokumen</value>
+  </data>
+  <data name="RibbonPreview_ClosePreview_STipTitle" xml:space="preserve">
+    <value>Tutup Pratinjau Cetak</value>
+  </data>
+  <data name="RibbonPreview_Customize_Caption" xml:space="preserve">
+    <value>Pilihan</value>
+  </data>
+  <data name="RibbonPreview_Customize_STipContent" xml:space="preserve">
+    <value>Buka dialog Pilihan Printer, di mana Anda dapat mengubah opsi pencetakan.</value>
+  </data>
+  <data name="RibbonPreview_Customize_STipTitle" xml:space="preserve">
+    <value>Pilihan</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_Caption" xml:space="preserve">
+    <value>Bookmark</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_STipContent" xml:space="preserve">
+    <value>Buka Dokumen Peta, yang memungkinkan Anda untuk menavigasi melalui pandangan struktural dokumen.</value>
+  </data>
+  <data name="RibbonPreview_DocumentMap_STipTitle" xml:space="preserve">
+    <value>Dokumen Peta</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_Caption" xml:space="preserve">
+    <value>Header/Footer</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_STipContent" xml:space="preserve">
+    <value>Ubah header dan footer dokumen</value>
+  </data>
+  <data name="RibbonPreview_EditPageHF_STipTitle" xml:space="preserve">
+    <value>Headaer dan Footer</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_Caption" xml:space="preserve">
+    <value>File CSV</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_Description" xml:space="preserve">
+    <value>Teks CSV</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke CSV dan menyimpannya ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportCsv_STipTitle" xml:space="preserve">
+    <value>Ekspor ke CSV</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_Caption" xml:space="preserve">
+    <value>Ekspor ke</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen saat ini di salah satu format yang tersedia, dan simpan ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportFile_STipTitle" xml:space="preserve">
+    <value>Ekspor ke...</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_Caption" xml:space="preserve">
+    <value>File Gambar</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_Description" xml:space="preserve">
+    <value>BMP, GIF, JPEG, PNG, TIFF, EMF, WMF</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke Gambar dan menyimpannya ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportGraphic_STipTitle" xml:space="preserve">
+    <value>Ekspor ke Gambar</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_Caption" xml:space="preserve">
+    <value>File HTML</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_Description" xml:space="preserve">
+    <value>Halaman Web</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke HTML dan simpan ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportHtm_STipTitle" xml:space="preserve">
+    <value>Ekspor ke HTML</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_Caption" xml:space="preserve">
+    <value>File MHT</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_Description" xml:space="preserve">
+    <value>Halaman Web File Tunggal</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke MHT dan simpan ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportMht_STipTitle" xml:space="preserve">
+    <value>Ekspor ke MHT</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_Caption" xml:space="preserve">
+    <value>File PDF</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_Description" xml:space="preserve">
+    <value>Adobe PDF</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke PDF dan simpan ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportPdf_STipTitle" xml:space="preserve">
+    <value>Ekspor ke PDF</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_Caption" xml:space="preserve">
+    <value>File RTF</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_Description" xml:space="preserve">
+    <value>RTF</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke RFT dan simpan ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportRtf_STipTitle" xml:space="preserve">
+    <value>Ekspor ke RTF</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_Caption" xml:space="preserve">
+    <value>File Teks</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_Description" xml:space="preserve">
+    <value>Teks Biasa</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke Teks dan simpan ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportTxt_STipTitle" xml:space="preserve">
+    <value>Ekspor ke Teks</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_Caption" xml:space="preserve">
+    <value>File Excel</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_Description" xml:space="preserve">
+    <value>Microsoft Ecxel Workbook</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke XLS dan simpan ke file pada disk.</value>
+  </data>
+  <data name="RibbonPreview_ExportXls_STipTitle" xml:space="preserve">
+    <value>Ekspor ke XLS</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_Caption" xml:space="preserve">
+    <value>Warna Halaman</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_STipContent" xml:space="preserve">
+    <value>Pilih warna untuk latar belakang halaman dokumen.</value>
+  </data>
+  <data name="RibbonPreview_FillBackground_STipTitle" xml:space="preserve">
+    <value>Warna Latar Belakang</value>
+  </data>
+  <data name="RibbonPreview_Find_Caption" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="RibbonPreview_Find_STipContent" xml:space="preserve">
+    <value>Tampilkan dialog Cari untuk menemukan teks dalam dokumen.</value>
+  </data>
+  <data name="RibbonPreview_Find_STipTitle" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsModerate_Caption" xml:space="preserve">
+    <value>Sedang</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsModerate_Description" xml:space="preserve">
+    <value>Sedang</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNarrow_Caption" xml:space="preserve">
+    <value>Sempit</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNarrow_Description" xml:space="preserve">
+    <value>Sempit</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNormal_Caption" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsNormal_Description" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsWide_Caption" xml:space="preserve">
+    <value>Lebar</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMarginsWide_Description" xml:space="preserve">
+    <value>Lebar</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageMargins_Description" xml:space="preserve">
+    <value>Atas:\t\t{0}\t\tBawah:\t\t{1}\r\nKiri:\t\t {2}\t\tKanan:\t\t {3}</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationLandscape_Caption" xml:space="preserve">
+    <value>Landscape</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationLandscape_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationPortrait_Caption" xml:space="preserve">
+    <value>Portrait</value>
+  </data>
+  <data name="RibbonPreview_GalleryItem_PageOrientationPortrait_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RibbonPreview_GalleryItem_PaperSize_Description" xml:space="preserve">
+    <value>{0} x {1}</value>
+  </data>
+  <data name="RibbonPreview_HandTool_Caption" xml:space="preserve">
+    <value>Hand Tool</value>
+  </data>
+  <data name="RibbonPreview_HandTool_STipContent" xml:space="preserve">
+    <value>Memanggil Hand Tool secara manual menggulir halaman.</value>
+  </data>
+  <data name="RibbonPreview_HandTool_STipTitle" xml:space="preserve">
+    <value>Hand Tool</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_Caption" xml:space="preserve">
+    <value>Pembesar</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_STipContent" xml:space="preserve">
+    <value>Memanggil alat Pembesar.\r\n\r\nKlik sekali membesarkan pada dokumen sehingga satu halaman menjadi sepenuhnya terlihat, sementara mengklik lain waktu membesarkan ke 100% dari ukuran normal.</value>
+  </data>
+  <data name="RibbonPreview_Magnifier_STipTitle" xml:space="preserve">
+    <value>Pembesar</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_Caption" xml:space="preserve">
+    <value>Banyak Halaman</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_STipContent" xml:space="preserve">
+    <value>Pilih tata letak halaman untuk mengatur halaman pratinjau dokumen.</value>
+  </data>
+  <data name="RibbonPreview_MultiplePages_STipTitle" xml:space="preserve">
+    <value>Tampilkan Banyak Halaman</value>
+  </data>
+  <data name="RibbonPreview_Open_Caption" xml:space="preserve">
+    <value>Buka</value>
+  </data>
+  <data name="RibbonPreview_Open_STipContent" xml:space="preserve">
+    <value>Buka sebuah dokumen</value>
+  </data>
+  <data name="RibbonPreview_Open_STipTitle" xml:space="preserve">
+    <value>Buka (Ctrl+O)</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Background" xml:space="preserve">
+    <value>Latar belakang Halaman</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Document" xml:space="preserve">
+    <value>Dokumen</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Export" xml:space="preserve">
+    <value>Ekspor</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Navigation" xml:space="preserve">
+    <value>Navigasi</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup" xml:space="preserve">
+    <value>Pengaturan Halaman</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup_STipContent" xml:space="preserve">
+    <value>Tampilkan dialog Pengaturan Halaman</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_PageSetup_STipTitle" xml:space="preserve">
+    <value>Pengaturan Halaman</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Print" xml:space="preserve">
+    <value>Cetak</value>
+  </data>
+  <data name="RibbonPreview_PageGroup_Zoom" xml:space="preserve">
+    <value>Perbesar</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_Caption" xml:space="preserve">
+    <value>Batas Tepi</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_STipContent" xml:space="preserve">
+    <value>Pilih ukuran Batas Tepi untuk seluruh dokumen.\r\n\r\nUntuk menerapkan ukuran batas tepi khusus untuk dokumen, klik Batas Tepi Kustom.</value>
+  </data>
+  <data name="RibbonPreview_PageMargins_STipTitle" xml:space="preserve">
+    <value>Batas Tepi Halaman</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_Caption" xml:space="preserve">
+    <value>Orientasi</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_STipContent" xml:space="preserve">
+    <value>Beralih halaman antara tata letak portrait dan landscape.</value>
+  </data>
+  <data name="RibbonPreview_PageOrientation_STipTitle" xml:space="preserve">
+    <value>Orientasi Halaman</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_Caption" xml:space="preserve">
+    <value>Batas Tepi Kustom...</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_STipContent" xml:space="preserve">
+    <value>Tampilkan dialog Pengaturan Halaman</value>
+  </data>
+  <data name="RibbonPreview_PageSetup_STipTitle" xml:space="preserve">
+    <value>Pengaturan Halaman</value>
+  </data>
+  <data name="RibbonPreview_PageText" xml:space="preserve">
+    <value>Pratinjau Cetak</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_Caption" xml:space="preserve">
+    <value>Ukuran</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_STipContent" xml:space="preserve">
+    <value>Pilih ukuran kertas dokumen</value>
+  </data>
+  <data name="RibbonPreview_PaperSize_STipTitle" xml:space="preserve">
+    <value>Ukuran Halaman</value>
+  </data>
+  <data name="RibbonPreview_Parameters_Caption" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="RibbonPreview_Parameters_STipContent" xml:space="preserve">
+    <value>Buka panel Parameter, yang memungkinkan Anda untuk memasukkan nilai-nilai parameter laporan.</value>
+  </data>
+  <data name="RibbonPreview_Parameters_STipTitle" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="RibbonPreview_Pointer_Caption" xml:space="preserve">
+    <value>Pointer</value>
+  </data>
+  <data name="RibbonPreview_Pointer_STipContent" xml:space="preserve">
+    <value>Tampilkan Pointer Mouse</value>
+  </data>
+  <data name="RibbonPreview_Pointer_STipTitle" xml:space="preserve">
+    <value>Pointer Mouse</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_Caption" xml:space="preserve">
+    <value>Cetak Cepat</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_STipContent" xml:space="preserve">
+    <value>Mengirim dokumen langsung ke printer default tanpa membuat perubahan.</value>
+  </data>
+  <data name="RibbonPreview_PrintDirect_STipTitle" xml:space="preserve">
+    <value>Cetak Cepat</value>
+  </data>
+  <data name="RibbonPreview_Print_Caption" xml:space="preserve">
+    <value>Cetak</value>
+  </data>
+  <data name="RibbonPreview_Print_STipContent" xml:space="preserve">
+    <value>Pilih printer, jumlah salinan dan pilihan cetak lainnya sebelum mencetak.</value>
+  </data>
+  <data name="RibbonPreview_Print_STipTitle" xml:space="preserve">
+    <value>Cetak (Ctrl+P)</value>
+  </data>
+  <data name="RibbonPreview_Save_Caption" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="RibbonPreview_Save_STipContent" xml:space="preserve">
+    <value>Simpan dokumen</value>
+  </data>
+  <data name="RibbonPreview_Save_STipTitle" xml:space="preserve">
+    <value>Simpan (Ctrl+S)</value>
+  </data>
+  <data name="RibbonPreview_Scale_Caption" xml:space="preserve">
+    <value>Skala</value>
+  </data>
+  <data name="RibbonPreview_Scale_STipContent" xml:space="preserve">
+    <value>Meregangkan atau mengecilkan output yang dicetak ke dalam persentase dari ukuran sebenarnya.</value>
+  </data>
+  <data name="RibbonPreview_Scale_STipTitle" xml:space="preserve">
+    <value>Skala</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_Caption" xml:space="preserve">
+    <value>File CSV</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_Description" xml:space="preserve">
+    <value>Teks CSV</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke CSV dan melampirkannya pada e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendCsv_STipTitle" xml:space="preserve">
+    <value>E-mail sebagai CSV</value>
+  </data>
+  <data name="RibbonPreview_SendFile_Caption" xml:space="preserve">
+    <value>E-mail sebagai</value>
+  </data>
+  <data name="RibbonPreview_SendFile_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen saat di salah satu format yang tersedia, dan melampirkannya ke e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendFile_STipTitle" xml:space="preserve">
+    <value>E-mail sebagai ...</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_Caption" xml:space="preserve">
+    <value>File Gambar</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_Description" xml:space="preserve">
+    <value>BMP, GIF, JPEG, PNG, TIFF, EMF, WMF</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke Gambar dan melampirkannya pada e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendGraphic_STipTitle" xml:space="preserve">
+    <value>E-mail sebagai Gambar</value>
+  </data>
+  <data name="RibbonPreview_SendMht_Caption" xml:space="preserve">
+    <value>File MHT</value>
+  </data>
+  <data name="RibbonPreview_SendMht_Description" xml:space="preserve">
+    <value>Halaman Web File Tunggal</value>
+  </data>
+  <data name="RibbonPreview_SendMht_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke MHT dan melampirkannya pada e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendMht_STipTitle" xml:space="preserve">
+    <value>E-mail sebagai MHT</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_Caption" xml:space="preserve">
+    <value>File PDF</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_Description" xml:space="preserve">
+    <value>Adobe PDF</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke PDF dan melampirkannya pada e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendPdf_STipTitle" xml:space="preserve">
+    <value>E-mail sebagai PDF</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_Caption" xml:space="preserve">
+    <value>File RTF</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_Description" xml:space="preserve">
+    <value>Rich Text Format</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke RTF dan melampirkannya pada e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendRtf_STipTitle" xml:space="preserve">
+    <value>E-mail sebagai RTF</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_Caption" xml:space="preserve">
+    <value>File Teks</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_Description" xml:space="preserve">
+    <value>Teks Biasa</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke Teks dan melampirkannya pada e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendTxt_STipTitle" xml:space="preserve">
+    <value>E-mail sebagai Teks</value>
+  </data>
+  <data name="RibbonPreview_SendXls_Caption" xml:space="preserve">
+    <value>File Excel</value>
+  </data>
+  <data name="RibbonPreview_SendXls_Description" xml:space="preserve">
+    <value>Microsoft Ecxel Workbook</value>
+  </data>
+  <data name="RibbonPreview_SendXls_STipContent" xml:space="preserve">
+    <value>Ekspor dokumen ke Excel dan melampirkannya pada e-mail.</value>
+  </data>
+  <data name="RibbonPreview_SendXls_STipTitle" xml:space="preserve">
+    <value>E-mail sebagai Excel</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_Caption" xml:space="preserve">
+    <value>Halam Pertama</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_STipContent" xml:space="preserve">
+    <value>Navigasi ke halamn pertama dokumen</value>
+  </data>
+  <data name="RibbonPreview_ShowFirstPage_STipTitle" xml:space="preserve">
+    <value>Halamn pertama (Ctrl+Home)</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_Caption" xml:space="preserve">
+    <value>Halman terakhir</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_STipContent" xml:space="preserve">
+    <value>Halaman terakhir (Ctrl+End)</value>
+  </data>
+  <data name="RibbonPreview_ShowLastPage_STipTitle" xml:space="preserve">
+    <value>Navigasi ke halaman terakhir</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_Caption" xml:space="preserve">
+    <value>Halamn selanjutnya</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_STipContent" xml:space="preserve">
+    <value>Halaman selanjutnya (PageDown)</value>
+  </data>
+  <data name="RibbonPreview_ShowNextPage_STipTitle" xml:space="preserve">
+    <value>Navigasi ke halamn selanjutnya</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_Caption" xml:space="preserve">
+    <value>Halaman sebelumnya</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_STipContent" xml:space="preserve">
+    <value>Navigasi ke halaman sebelumnya</value>
+  </data>
+  <data name="RibbonPreview_ShowPrevPage_STipTitle" xml:space="preserve">
+    <value>Halamn sebelumnya (PageUp)</value>
+  </data>
+  <data name="RibbonPreview_Watermark_Caption" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="RibbonPreview_Watermark_STipContent" xml:space="preserve">
+    <value>Masukkan teks "ghosted" atau gambar di balik isi halaman. \ R \ n \ r \ nIni sering digunakan untuk menunjukkan bahwa dokumen harus diperlakukan khusus.</value>
+  </data>
+  <data name="RibbonPreview_Watermark_STipTitle" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="RibbonPreview_ZoomExact_Caption" xml:space="preserve">
+    <value>Tepat:</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_Caption" xml:space="preserve">
+    <value>Perbesar</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_STipContent" xml:space="preserve">
+    <value>Perbesar untuk mendapatkan tampilan close-up dokumen</value>
+  </data>
+  <data name="RibbonPreview_ZoomIn_STipTitle" xml:space="preserve">
+    <value>Perbesar</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_Caption" xml:space="preserve">
+    <value>Perkecil</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_STipContent" xml:space="preserve">
+    <value>Perkecil untuk melihat lebih banyak halaman pada ukuran dikurangi.</value>
+  </data>
+  <data name="RibbonPreview_ZoomOut_STipTitle" xml:space="preserve">
+    <value>Perkecil</value>
+  </data>
+  <data name="RibbonPreview_Zoom_Caption" xml:space="preserve">
+    <value>Perbesar</value>
+  </data>
+  <data name="RibbonPreview_Zoom_STipContent" xml:space="preserve">
+    <value>Ubah level pembesaran pratinjau dokumen</value>
+  </data>
+  <data name="RibbonPreview_Zoom_STipTitle" xml:space="preserve">
+    <value>Perbesar</value>
+  </data>
+  <data name="SampleCode" xml:space="preserve">
+    <value>Kode Karyawan</value>
+  </data>
+  <data name="SampleFirstName" xml:space="preserve">
+    <value>Nama Pertama</value>
+  </data>
+  <data name="SampleHireDate" xml:space="preserve">
+    <value>Tanggal Bergabung</value>
+  </data>
+  <data name="SampleLastName" xml:space="preserve">
+    <value>Nama Belakang</value>
+  </data>
+  <data name="SamplePin" xml:space="preserve">
+    <value>Pin Karyawan</value>
+  </data>
+  <data name="SaveDlg_FilterBmp" xml:space="preserve">
+    <value>Format Bitmap BMP</value>
+  </data>
+  <data name="SaveDlg_FilterCsv" xml:space="preserve">
+    <value>Dokumen CSV</value>
+  </data>
+  <data name="SaveDlg_FilterEmf" xml:space="preserve">
+    <value>Enhanced Windows Metalife EMF</value>
+  </data>
+  <data name="SaveDlg_FilterGif" xml:space="preserve">
+    <value>Graphics Interchange Format GIF</value>
+  </data>
+  <data name="SaveDlg_FilterHtm" xml:space="preserve">
+    <value>HTML dokumen</value>
+  </data>
+  <data name="SaveDlg_FilterJpeg" xml:space="preserve">
+    <value>Format JPEG</value>
+  </data>
+  <data name="SaveDlg_FilterMht" xml:space="preserve">
+    <value>MHT dokumen</value>
+  </data>
+  <data name="SaveDlg_FilterNativeFormat" xml:space="preserve">
+    <value>Format Native</value>
+  </data>
+  <data name="SaveDlg_FilterPdf" xml:space="preserve">
+    <value>PDF dokumen</value>
+  </data>
+  <data name="SaveDlg_FilterPng" xml:space="preserve">
+    <value>PNG</value>
+  </data>
+  <data name="SaveDlg_FilterRtf" xml:space="preserve">
+    <value>RTF</value>
+  </data>
+  <data name="SaveDlg_FilterTiff" xml:space="preserve">
+    <value>TIFF</value>
+  </data>
+  <data name="SaveDlg_FilterTxt" xml:space="preserve">
+    <value>Teks dokumen</value>
+  </data>
+  <data name="SaveDlg_FilterWmf" xml:space="preserve">
+    <value>WMF</value>
+  </data>
+  <data name="SaveDlg_FilterXls" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="SaveDlg_Title" xml:space="preserve">
+    <value>Simpan sebagai</value>
+  </data>
+  <data name="SB_CurrentPageNo" xml:space="preserve">
+    <value>Halaman saat ini</value>
+  </data>
+  <data name="SB_PageInfo" xml:space="preserve">
+    <value>{0} dari {1}</value>
+  </data>
+  <data name="SB_PageNone" xml:space="preserve">
+    <value>tidak ada</value>
+  </data>
+  <data name="SB_PageOfPages" xml:space="preserve">
+    <value>Halaman {0} dari {1}</value>
+  </data>
+  <data name="SB_PageOfPagesHint" xml:space="preserve">
+    <value>Nomor halaman dalam dokumen. Klik untuk membuka dialog Menuju Ke Halaman.</value>
+  </data>
+  <data name="SB_TotalPageNo" xml:space="preserve">
+    <value>Total Halaman:</value>
+  </data>
+  <data name="SB_TTip_Stop" xml:space="preserve">
+    <value>Berhenti</value>
+  </data>
+  <data name="SB_ZoomFactor" xml:space="preserve">
+    <value>Faktor pembesaran:</value>
+  </data>
+  <data name="ScalePopup_AdjustTo" xml:space="preserve">
+    <value>Atur ke:</value>
+  </data>
+  <data name="ScalePopup_FitTo" xml:space="preserve">
+    <value>Cocokkan ke</value>
+  </data>
+  <data name="ScalePopup_GroupText" xml:space="preserve">
+    <value>Skala</value>
+  </data>
+  <data name="ScalePopup_NormalSize" xml:space="preserve">
+    <value>% ukuran normal</value>
+  </data>
+  <data name="ScalePopup_PagesWide" xml:space="preserve">
+    <value>lebar halaman</value>
+  </data>
+  <data name="ScrollingInfo_Page" xml:space="preserve">
+    <value>Halaman</value>
+  </data>
+  <data name="TipDateTime" xml:space="preserve">
+    <value>TanggalJam</value>
+  </data>
+  <data name="TipDescription" xml:space="preserve">
+    <value>Deskripsi</value>
+  </data>
+  <data name="TipOperator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="TotalTimeCardPageTitle" xml:space="preserve">
+    <value>Total Jam Kaartu Laporan</value>
+  </data>
+  <data name="TransactionsPageTitle" xml:space="preserve">
+    <value>Laporan Transaksi</value>
+  </data>
+  <data name="TT_Backgr" xml:space="preserve">
+    <value>Latar belakang</value>
+  </data>
+  <data name="TT_Close" xml:space="preserve">
+    <value>Tutup Pratinjau</value>
+  </data>
+  <data name="TT_Customize" xml:space="preserve">
+    <value>Kustomisasi</value>
+  </data>
+  <data name="TT_EditPageHF" xml:space="preserve">
+    <value>Header dan Footer</value>
+  </data>
+  <data name="TT_Export" xml:space="preserve">
+    <value>Ekspor Dokumen...</value>
+  </data>
+  <data name="TT_FirstPage" xml:space="preserve">
+    <value>Halaman Pertama</value>
+  </data>
+  <data name="TT_HandTool" xml:space="preserve">
+    <value>Hand Tool</value>
+  </data>
+  <data name="TT_LastPage" xml:space="preserve">
+    <value>Halaman Terkahir</value>
+  </data>
+  <data name="TT_Magnifier" xml:space="preserve">
+    <value>Pembesar</value>
+  </data>
+  <data name="TT_Map" xml:space="preserve">
+    <value>Dokumen Peta</value>
+  </data>
+  <data name="TT_MultiplePages" xml:space="preserve">
+    <value>Beberapa halaman</value>
+  </data>
+  <data name="TT_NextPage" xml:space="preserve">
+    <value>Halaman selanjutnya</value>
+  </data>
+  <data name="TT_Open" xml:space="preserve">
+    <value>Buka sebuah dokumen</value>
+  </data>
+  <data name="TT_PageSetup" xml:space="preserve">
+    <value>Pengaturan Halaman</value>
+  </data>
+  <data name="TT_Parameters" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="TT_PreviousPage" xml:space="preserve">
+    <value>Halaman sebelumnya</value>
+  </data>
+  <data name="TT_Print" xml:space="preserve">
+    <value>Cetak</value>
+  </data>
+  <data name="TT_PrintDirect" xml:space="preserve">
+    <value>Cetak Cepat</value>
+  </data>
+  <data name="TT_Save" xml:space="preserve">
+    <value>Simpan dokumen</value>
+  </data>
+  <data name="TT_Scale" xml:space="preserve">
+    <value>Skala</value>
+  </data>
+  <data name="TT_Search" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="TT_Send" xml:space="preserve">
+    <value>Kirin via E-mail</value>
+  </data>
+  <data name="TT_Watermark" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="TT_Zoom" xml:space="preserve">
+    <value>Pembesaran</value>
+  </data>
+  <data name="TT_ZoomIn" xml:space="preserve">
+    <value>Perbesar</value>
+  </data>
+  <data name="TT_ZoomOut" xml:space="preserve">
+    <value>Perkecil</value>
+  </data>
+  <data name="UserInfoPageTitle" xml:space="preserve">
+    <value>Laporan Informasi Karyawan</value>
+  </data>
+  <data name="UserInfoTipBirthDay" xml:space="preserve">
+    <value>Tanggal Lahir</value>
+  </data>
+  <data name="UserInfoTipCardNumber" xml:space="preserve">
+    <value>No. Kartu</value>
+  </data>
+  <data name="UserInfoTipCity" xml:space="preserve">
+    <value>Kota</value>
+  </data>
+  <data name="UserInfoTipCurrentAddress" xml:space="preserve">
+    <value>Alamat1</value>
+  </data>
+  <data name="UserInfoTipDepartment" xml:space="preserve">
+    <value>Departemen:</value>
+  </data>
+  <data name="UserInfoTipDuty" xml:space="preserve">
+    <value>Jabatan</value>
+  </data>
+  <data name="UserInfoTipEmpState" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UserInfoTipFamilyName" xml:space="preserve">
+    <value>No. HP</value>
+  </data>
+  <data name="UserInfoTipGender" xml:space="preserve">
+    <value>Jenis Kelamin</value>
+  </data>
+  <data name="UserInfoTipJoinDate" xml:space="preserve">
+    <value>Tanggal Bergabung</value>
+  </data>
+  <data name="UserInfoTipPermanentAddress" xml:space="preserve">
+    <value>Alamat2</value>
+  </data>
+  <data name="UserInfoTipPhone" xml:space="preserve">
+    <value>No. Telepon</value>
+  </data>
+  <data name="UserInfoTipQualification" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="UserListPageTitle" xml:space="preserve">
+    <value>Contoh Laporan Karyawan</value>
+  </data>
+  <data name="WMForm_Direction_BackwardDiagonal" xml:space="preserve">
+    <value>Diagonal ke belakang</value>
+  </data>
+  <data name="WMForm_Direction_ForwardDiagonal" xml:space="preserve">
+    <value>Diagonal ke depan</value>
+  </data>
+  <data name="WMForm_Direction_Horizontal" xml:space="preserve">
+    <value>Horisontal</value>
+  </data>
+  <data name="WMForm_Direction_Vertical" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="WMForm_HorzAlign_Center" xml:space="preserve">
+    <value>Tengah</value>
+  </data>
+  <data name="WMForm_HorzAlign_Left" xml:space="preserve">
+    <value>Kiri</value>
+  </data>
+  <data name="WMForm_HorzAlign_Right" xml:space="preserve">
+    <value>Kanan</value>
+  </data>
+  <data name="WMForm_ImageClip" xml:space="preserve">
+    <value>Klip</value>
+  </data>
+  <data name="WMForm_ImageStretch" xml:space="preserve">
+    <value>Melebar</value>
+  </data>
+  <data name="WMForm_ImageZoom" xml:space="preserve">
+    <value>Pembesaran</value>
+  </data>
+  <data name="WMForm_PageRangeRgrItem_All" xml:space="preserve">
+    <value>&amp;Semua</value>
+  </data>
+  <data name="WMForm_PageRangeRgrItem_Pages" xml:space="preserve">
+    <value>&amp;Halaman:</value>
+  </data>
+  <data name="WMForm_PictureDlg_Title" xml:space="preserve">
+    <value>Pilih Gambar</value>
+  </data>
+  <data name="WMForm_VertAlign_Bottom" xml:space="preserve">
+    <value>Bawah</value>
+  </data>
+  <data name="WMForm_VertAlign_Middle" xml:space="preserve">
+    <value>Tengah</value>
+  </data>
+  <data name="WMForm_VertAlign_Top" xml:space="preserve">
+    <value>Atas</value>
+  </data>
+  <data name="WMForm_Watermark_Asap" xml:space="preserve">
+    <value>ASAP</value>
+  </data>
+  <data name="WMForm_Watermark_Confidential" xml:space="preserve">
+    <value>CONFIDENTIAL</value>
+  </data>
+  <data name="WMForm_Watermark_Copy" xml:space="preserve">
+    <value>COPY</value>
+  </data>
+  <data name="WMForm_Watermark_DoNotCopy" xml:space="preserve">
+    <value>DO NOT COPY</value>
+  </data>
+  <data name="WMForm_Watermark_Draft" xml:space="preserve">
+    <value>DRAFT</value>
+  </data>
+  <data name="WMForm_Watermark_Evaluation" xml:space="preserve">
+    <value>EVALUATION</value>
+  </data>
+  <data name="WMForm_Watermark_Original" xml:space="preserve">
+    <value>ORIGINAL</value>
+  </data>
+  <data name="WMForm_Watermark_Personal" xml:space="preserve">
+    <value>PERSONAL</value>
+  </data>
+  <data name="WMForm_Watermark_Sample" xml:space="preserve">
+    <value>SAMPLE</value>
+  </data>
+  <data name="WMForm_Watermark_TopSecret" xml:space="preserve">
+    <value>TOP SECRET</value>
+  </data>
+  <data name="WMForm_Watermark_Urgent" xml:space="preserve">
+    <value>URGENT</value>
+  </data>
+  <data name="WMForm_ZOrderRgrItem_Behind" xml:space="preserve">
+    <value>&amp;Di belakang</value>
+  </data>
+  <data name="WMForm_ZOrderRgrItem_InFront" xml:space="preserve">
+    <value>&amp;Di depan</value>
+  </data>
+</root>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <employee>
+    <field columnName="emp_pin" checked="1" />
+    <field columnName="emp_firstname" checked="1" />
+    <field columnName="emp_lastname" checked="1" />
+    <field columnName="department" checked="1" />
+    <field columnName="emp_gender" checked="1" />
+    <field columnName="emp_cardNumber" checked="1" />
+    <field columnName="emp_hiredate" checked="1" />
+    <field columnName="emp_email" checked="1" />
+    <field columnName="emp_title" checked="1" />
+    <field columnName="emp_birthday" checked="1" />
+    <field columnName="emp_phone" checked="1" />
+    <field columnName="emp_address" checked="1" />
+    <field columnName="emp_firedate" checked="1" />
+    <field columnName="emp_firereason" checked="1" />
+    <field columnName="emp_country" checked="1" />
+    <field columnName="emp_city" checked="1" />
+    <field columnName="emp_privilege" checked="1" />
+    <field columnName="emp_pwd" checked="1" />
+  </employee>
+  <punches>
+    <field checked="1" columnName="emp_pin" />
+    <field checked="1" columnName="fullname" />
+    <field checked="1" columnName="punch_time" />
+    <field checked="1" columnName="workcode" />
+    <field checked="1" columnName="workstate" />
+    <field checked="1" columnName="terminal_name" />
+  </punches>
+  <calculate>
+    <field checked="1" columnName="emp_pin" />
+    <field checked="1" columnName="emp_Name" />
+    <field checked="1" columnName="att_date" />
+    <field checked="1" columnName="Timetable" />
+    <field checked="1" columnName="pc_actualWork" />
+    <field checked="1" columnName="pc_requireWork" />
+    <field checked="1" columnName="pc_overtime1" />
+    <field checked="1" columnName="pc_overtime2" />
+    <field checked="1" columnName="pc_overtime3" />
+    <field checked="1" columnName="pc_lateCome" />
+    <field checked="1" columnName="pc_earlyOut" />
+    <field checked="1" columnName="pc_absence" />
+    <field checked="1" columnName="pc_break" />
+    <field checked="1" columnName="pc_holiday" />
+    <field checked="1" columnName="pc_sick" />
+    <field checked="1" columnName="pc_vacation" />
+    <field checked="1" columnName="pc_personalLeave" />
+    <field checked="1" columnName="pc_annualLeave" />
+    <field checked="1" columnName="pc_businessLeave" />
+    <field checked="0" columnName="check_in" />
+    <field checked="0" columnName="check_out" />
+  </calculate>
+  <AttCalculation>
+    <field checked="1" columnName="emp_department" />
+    <field checked="1" columnName="emp_firstname" />
+    <field checked="1" columnName="emp_lastname" />
+    <field checked="1" columnName="emp_pin" />
+    <field checked="1" columnName="emp_phone" />
+    <field checked="1" columnName="emp_attstate" />
+    <field checked="1" columnName="emp_intime" />
+  </AttCalculation>
+  <condition>
+    <field DateFormat="0" TimeFormat="1" Separator="," ShowHeader="0" PinLength="" Prefix="0" />
+  </condition>
+</root>
