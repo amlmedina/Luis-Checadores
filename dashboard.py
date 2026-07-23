@@ -39,6 +39,15 @@ st.markdown("""
         color: #64748B;
         margin-top: 0.25rem;
     }
+    @media (max-width: 768px) {
+        .metric-card {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .metric-value {
+            font-size: 1.5rem;
+        }
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -124,7 +133,7 @@ if df.empty:
     st.error("No se pudo cargar la base de datos local. Verifica que la carpeta 'Checador' y el archivo 'default.db' existan en este directorio.")
 else:
     # Sidebar Filters
-    st.sidebar.image("https://img.icons8.com/color/96/worker-male.png", width=80)
+    st.sidebar.image("https://img.icons8.com/color/96/bicycle.png", width=80)
     st.sidebar.title("Filtros de Control")
     
     # 1. Date filter
