@@ -10,7 +10,7 @@ from googleapiclient.http import MediaIoBaseDownload
 # Configuration
 SPREADSHEET_ID = "1B_MvLNFyZUoLlQwyZopDK487_5zQEv2V4HXbf9zhj-w"
 SHEET_NAME = "Sheet1"
-DRIVE_FOLDER_ID = "1iRf_enMw1ELIfnszm25vDre-2NkPHhcB"
+DRIVE_FOLDER_ID = "1Up1Ch18VKQTUeG_LamKo0EbrchlSxiBV"
 LOCAL_DB_PATH = "temp_downloaded_default.db"
 CREDS_FILE = "Servicio.json"
 
