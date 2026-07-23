@@ -101,21 +101,18 @@ if "authenticated" not in st.session_state:
 if not st.session_state.authenticated:
     st.title("🔑 Acceso al Sistema de RH")
     st.markdown("Por favor, ingresa el PIN de seguridad para acceder al panel de asistencia.")
-    
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        st.write("")
-        st.markdown("<div style='background-color:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);'>", unsafe_allow_html=True)
-        pin_input = st.text_input("PIN de Acceso", type="password", key="login_pin")
-        
-        if st.button("Entrar", use_container_width=True):
-            correct_pin = get_saved_pin()
-            if pin_input == correct_pin:
-                st.session_state.authenticated = True
-                st.rerun()
-            else:
-                st.error("PIN incorrecto. Inténtalo de nuevo.")
-        st.markdown("</div>", unsafe_allow_html=True)
+        with st.container(border=True):
+            pin_input = st.text_input("PIN de Acceso", type="password", key="login_pin")
+            
+            if st.button("Entrar", use_container_width=True):
+                correct_pin = get_saved_pin()
+                if pin_input == correct_pin:
+                    st.session_state.authenticated = True
+                    st.rerun()
+                else:
+                    st.error("PIN incorrecto. Inténtalo de nuevo.")
     st.stop()  # Stop rendering the rest of the app if not logged in
 
 # ----------------- MAIN APP CONTENT (Authenticated) -----------------
