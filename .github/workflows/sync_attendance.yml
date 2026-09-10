@@ -2,7 +2,7 @@ name: Sincronizar Asistencia a Google Sheets
 
 on:
   schedule:
-    - cron: '0 9 * * *'        # Se ejecuta automáticamente todos los días a las 9:00 UTC (aprox 3:00 AM CDMX)
+    - cron: '0 * * * *'        # Se ejecuta automáticamente al inicio de cada hora
   workflow_dispatch:          # Permite ejecución manual desde GitHub
 
 jobs:
