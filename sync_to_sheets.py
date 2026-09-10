@@ -20,12 +20,14 @@ def download_database_from_drive(creds_info):
     creds = Credentials.from_service_account_info(creds_info, scopes=scopes)
     drive_service = build("drive", "v3", credentials=creds)
 
-    print(f"Buscando archivos de base de datos en la carpeta de Drive: {DRIVE_FOLDER_ID}...")
+    print(f"Buscando archivo de base de datos default.db en la carpeta de Drive: {DRIVE_FOLDER_ID}...")
     try:
+        # Priorizar explícitamente default.db y ordenar por el más recientemente modificado
         results = drive_service.files().list(
-            q=f"'{DRIVE_FOLDER_ID}' in parents and name contains '.db' and trashed = false",
-            fields="files(id, name)",
-            pageSize=1
+            q=f"'{DRIVE_FOLDER_ID}' in parents and (name = 'default.db' or name contains '.db') and trashed = false",
+            orderBy="name desc, modifiedTime desc",
+            fields="files(id, name, modifiedTime)",
+            pageSize=10
         ).execute()
         files = results.get("files", [])
 
@@ -33,10 +35,11 @@ def download_database_from_drive(creds_info):
             print("No se encontró ningún archivo .db en la carpeta de Google Drive.")
             return False
 
-        db_file = files[0]
+        # Si existe default.db, seleccionarlo explícitamente; si no, tomar el más reciente
+        db_file = next((f for f in files if f["name"] == "default.db"), files[0])
         file_id = db_file["id"]
         file_name = db_file["name"]
-        print(f"Archivo encontrado: {file_name} (ID: {file_id}). Descargando...")
+        print(f"Archivo seleccionado: {file_name} (ID: {file_id}, Modificado: {db_file.get('modifiedTime')}). Descargando...")
 
         request = drive_service.files().get_media(fileId=file_id)
         fh = io.BytesIO()
