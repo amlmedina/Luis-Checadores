@@ -167,7 +167,30 @@
       });
 
       document.getElementById("btn-csv").addEventListener("click", downloadCSV);
-      document.getElementById("btn-refresh").addEventListener("click", loadData);
+      document.getElementById("btn-refresh").addEventListener("click", async () => {
+        const btn = document.getElementById("btn-refresh");
+        btn.disabled = true;
+        btn.classList.add("opacity-75", "animate-pulse");
+        btn.textContent = "⏳ Actualizando...";
+        try {
+          await loadData();
+          const now = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+          btn.classList.remove("animate-pulse");
+          btn.textContent = `✅ Actualizado (${now})`;
+          setTimeout(() => {
+            btn.textContent = "🔄 Actualizar";
+            btn.classList.remove("opacity-75");
+            btn.disabled = false;
+          }, 2500);
+        } catch (e) {
+          btn.classList.remove("animate-pulse", "opacity-75");
+          btn.textContent = "❌ Error al actualizar";
+          setTimeout(() => {
+            btn.textContent = "🔄 Actualizar";
+            btn.disabled = false;
+          }, 2500);
+        }
+      });
       await loadData();
     }
 
