@@ -209,15 +209,22 @@
       { idx: "0", label: "Dom" }
     ];
 
-    function computeStatus(horaStr, tienda, fechaStr) {
+    function getDayRule(tienda, fechaStr) {
       const dayIdx = String(new Date(fechaStr + "T12:00:00").getDay());
       const storeCfg = appConfig.storeHours[tienda];
-      const entryTime = (typeof storeCfg === "object" && storeCfg !== null)
-        ? (storeCfg[dayIdx] || "09:00")
-        : (storeCfg || "09:00");
+      const raw = (typeof storeCfg === "object" && storeCfg !== null) ? storeCfg[dayIdx] : null;
+      if (raw && typeof raw === "object") {
+        return { in: raw.in || "09:00", out: raw.out || "18:00", lunch: Number(raw.lunch ?? 60) };
+      }
+      const fallbackIn = typeof raw === "string" ? raw : (typeof storeCfg === "string" ? storeCfg : "09:00");
+      return { in: fallbackIn, out: "18:00", lunch: 60 };
+    }
+
+    function computeStatus(horaStr, tienda, fechaStr) {
+      const rule = getDayRule(tienda, fechaStr);
       const tol = Number(appConfig.tolerance ?? 5);
       const punchMin = timeToMinutes(horaStr.slice(0, 5));
-      const entryMin = timeToMinutes(entryTime);
+      const entryMin = timeToMinutes(rule.in);
       if (punchMin <= entryMin) return "En tiempo";
       if (punchMin <= entryMin + tol) return "Tolerancia";
       return "Retardo";
@@ -235,12 +242,29 @@
           <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
             <div class="text-xs font-bold text-slate-700 mb-2">${s}</div>
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
-              ${DAYS_LABELS.map(d => `
-                <div>
-                  <label class="block text-[10px] text-slate-500 mb-0.5">${d.label}</label>
-                  <input type="time" data-store-hour="${s}" data-day-idx="${d.idx}" value="${storeCfg[d.idx] || fallback}" class="w-full border border-slate-300 rounded px-1.5 py-0.5 text-xs" />
-                </div>
-              `).join("")}
+              ${DAYS_LABELS.map(d => {
+                const raw = storeCfg[d.idx];
+                const vIn = (raw && typeof raw === "object") ? (raw.in || "09:00") : (typeof raw === "string" ? raw : fallback);
+                const vOut = (raw && typeof raw === "object") ? (raw.out || "18:00") : "18:00";
+                const vLunch = (raw && typeof raw === "object") ? (raw.lunch ?? 60) : 60;
+                return `
+                  <div class="bg-white border border-slate-200 rounded p-1.5 space-y-1">
+                    <div class="text-[11px] font-bold text-slate-600">${d.label}</div>
+                    <div>
+                      <label class="block text-[9px] text-slate-400">Entrada</label>
+                      <input type="time" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="in" value="${vIn}" class="w-full border border-slate-300 rounded px-1 py-0.5 text-[11px]" />
+                    </div>
+                    <div>
+                      <label class="block text-[9px] text-slate-400">Salida</label>
+                      <input type="time" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="out" value="${vOut}" class="w-full border border-slate-300 rounded px-1 py-0.5 text-[11px]" />
+                    </div>
+                    <div>
+                      <label class="block text-[9px] text-slate-400">Comida (min)</label>
+                      <input type="number" min="0" max="180" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="lunch" value="${vLunch}" class="w-full border border-slate-300 rounded px-1 py-0.5 text-[11px]" />
+                    </div>
+                  </div>
+                `;
+              }).join("")}
             </div>
           </div>
         `;
@@ -250,10 +274,15 @@
         inp.addEventListener("change", () => {
           const st = inp.dataset.storeHour;
           const dy = inp.dataset.dayIdx;
+          const field = inp.dataset.field;
           if (typeof appConfig.storeHours[st] !== "object" || appConfig.storeHours[st] === null) {
             appConfig.storeHours[st] = {};
           }
-          appConfig.storeHours[st][dy] = inp.value || "09:00";
+          const cur = appConfig.storeHours[st][dy];
+          if (typeof cur !== "object" || cur === null) {
+            appConfig.storeHours[st][dy] = { in: typeof cur === "string" ? cur : "09:00", out: "18:00", lunch: 60 };
+          }
+          appConfig.storeHours[st][dy][field] = field === "lunch" ? Number(inp.value || 0) : (inp.value || "09:00");
           saveConfig();
           applyFilters();
         });
