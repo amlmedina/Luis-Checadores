@@ -102,19 +102,22 @@
     <!-- Resumen de Días por Trabajador -->
     <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
       <div class="px-4 py-3 border-b border-slate-200">
-        <h2 class="text-sm font-semibold text-slate-700">Resumen de Días de Asistencia por Trabajador</h2>
+        <h2 class="text-sm font-semibold text-slate-700">📊 Semáforo y Alertas Disciplinarias por Trabajador</h2>
       </div>
       <div class="overflow-x-auto">
         <table class="w-full text-sm text-left">
           <thead class="bg-slate-100 text-slate-600 text-xs uppercase">
             <tr>
-              <th class="px-4 py-2.5">Trabajador</th>
-              <th class="px-4 py-2.5 text-center">Días Asistidos</th>
-              <th class="px-4 py-2.5 text-center text-green-700">En Tiempo</th>
-              <th class="px-4 py-2.5 text-center text-amber-600">Tolerancias</th>
-              <th class="px-4 py-2.5 text-center text-red-600">Retardos</th>
-              <th class="px-4 py-2.5 text-center text-blue-600">Justificados</th>
-              <th class="px-4 py-2.5 text-center text-slate-500">Faltas</th>
+              <th class="px-3 py-2.5">Trabajador</th>
+              <th class="px-3 py-2.5 text-center">Asistidos</th>
+              <th class="px-3 py-2.5 text-center text-green-700">En Tiempo</th>
+              <th class="px-3 py-2.5 text-center text-amber-600">Tolerancias</th>
+              <th class="px-3 py-2.5 text-center text-red-600">Retardos</th>
+              <th class="px-3 py-2.5 text-center text-slate-500">Faltas</th>
+              <th class="px-3 py-2.5 text-center text-blue-600">Vac/Inc/Perm</th>
+              <th class="px-3 py-2.5 text-center">% Puntual.</th>
+              <th class="px-3 py-2.5 text-center">Semáforo</th>
+              <th class="px-3 py-2.5">Acción Disciplinaria</th>
             </tr>
           </thead>
           <tbody id="summary-body" class="divide-y divide-slate-100"></tbody>
@@ -136,6 +139,7 @@
               <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="nombre">Nombre ↕</th>
               <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="fecha">Fecha ↕</th>
               <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="hora">Entrada ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="dif_min">Dif. (min) ↕</th>
               <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida_comer">Salida Comer ↕</th>
               <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="regreso_comer">Regreso Comer ↕</th>
               <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida">Salida ↕</th>
@@ -347,9 +351,12 @@
         .map(r => {
           const key = `${r.pin}|${r.fecha}|${r.tienda}`;
           const ov = manualOverrides[key] || {};
+          const rule = getDayRule(r.tienda, r.fecha);
+          const difMin = timeToMinutes(r.hora.slice(0, 5)) - timeToMinutes(rule.in);
           return {
             ...r,
             _key: key,
+            dif_min: difMin,
             estado: ov.status || computeStatus(r.hora, r.tienda, r.fecha),
             comentario: ov.comment || ""
           };
@@ -366,31 +373,43 @@
       filteredRecords.forEach(r => {
         const w = r.nombre;
         if (!byWorker[w]) {
-          byWorker[w] = { asistidos: 0, ontime: 0, tol: 0, late: 0, just: 0, falta: 0 };
+          byWorker[w] = { asistidos: 0, ontime: 0, tol: 0, late: 0, special: 0, falta: 0 };
         }
         if (r.estado === "Falta") {
           byWorker[w].falta++;
+        } else if (["Vacaciones", "Incapacidad", "Permiso", "Justificado"].includes(r.estado)) {
+          byWorker[w].special++;
         } else {
           byWorker[w].asistidos++;
           if (r.estado === "En tiempo") byWorker[w].ontime++;
           else if (r.estado === "Tolerancia") byWorker[w].tol++;
           else if (r.estado === "Retardo") byWorker[w].late++;
-          else if (r.estado === "Justificado") byWorker[w].just++;
         }
       });
 
       const tbody = document.getElementById("summary-body");
       tbody.innerHTML = Object.keys(byWorker).sort().map(w => {
         const s = byWorker[w];
+        const evalTotal = s.ontime + s.tol + s.late + s.falta;
+        const pct = evalTotal > 0 ? Math.round(((s.ontime + s.tol) / evalTotal) * 100) : 100;
+        const semaforo = pct >= 80 ? "🟢 OK" : (pct >= 60 ? "🟡 ATENCIÓN" : "🔴 ALERTA");
+        let accion = "🟢 Sin acción";
+        if (s.late >= 9) accion = "🔴 Acta administrativa";
+        else if (s.late >= 6) accion = "🔴 Amonestación escrita";
+        else if (s.late >= 3) accion = "🟡 Llamada verbal";
+
         return `
           <tr class="hover:bg-slate-50">
-            <td class="px-4 py-2 font-medium text-slate-900">${w}</td>
-            <td class="px-4 py-2 text-center font-bold text-slate-800">${s.asistidos}</td>
-            <td class="px-4 py-2 text-center text-green-700 font-semibold">${s.ontime}</td>
-            <td class="px-4 py-2 text-center text-amber-600 font-semibold">${s.tol}</td>
-            <td class="px-4 py-2 text-center text-red-600 font-semibold">${s.late}</td>
-            <td class="px-4 py-2 text-center text-blue-600 font-semibold">${s.just}</td>
-            <td class="px-4 py-2 text-center text-slate-500">${s.falta}</td>
+            <td class="px-3 py-2 font-medium text-slate-900">${w}</td>
+            <td class="px-3 py-2 text-center font-bold text-slate-800">${s.asistidos}</td>
+            <td class="px-3 py-2 text-center text-green-700 font-semibold">${s.ontime}</td>
+            <td class="px-3 py-2 text-center text-amber-600 font-semibold">${s.tol}</td>
+            <td class="px-3 py-2 text-center text-red-600 font-semibold">${s.late}</td>
+            <td class="px-3 py-2 text-center text-slate-500">${s.falta}</td>
+            <td class="px-3 py-2 text-center text-blue-600 font-semibold">${s.special}</td>
+            <td class="px-3 py-2 text-center font-semibold">${pct}%</td>
+            <td class="px-3 py-2 text-center text-xs font-semibold">${semaforo}</td>
+            <td class="px-3 py-2 text-xs">${accion}</td>
           </tr>
         `;
       }).join("");
@@ -459,17 +478,19 @@
     function statusBadgeClass(st) {
       if (st === "En tiempo" || st === "Justificado") return "bg-green-100 text-green-700 border-green-200";
       if (st === "Tolerancia") return "bg-amber-100 text-amber-700 border-amber-200";
+      if (["Vacaciones", "Incapacidad", "Permiso"].includes(st)) return "bg-blue-100 text-blue-700 border-blue-200";
       return "bg-red-100 text-red-700 border-red-200";
     }
 
     function renderTable() {
       const sorted = [...filteredRecords].sort((a, b) => {
-        const va = a[sortKey] || "";
-        const vb = b[sortKey] || "";
-        return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+        const va = a[sortKey] ?? "";
+        const vb = b[sortKey] ?? "";
+        if (typeof va === "number" && typeof vb === "number") return sortAsc ? va - vb : vb - va;
+        return sortAsc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
       });
 
-      const statuses = ["En tiempo", "Tolerancia", "Retardo", "Justificado", "Falta"];
+      const statuses = ["En tiempo", "Tolerancia", "Retardo", "Falta", "Vacaciones", "Incapacidad", "Permiso", "Justificado"];
       const tbody = document.getElementById("table-body");
       tbody.innerHTML = sorted.map(r => `
         <tr class="hover:bg-slate-50">
@@ -477,6 +498,7 @@
           <td class="px-3 py-2.5 font-medium text-slate-900">${r.nombre}</td>
           <td class="px-3 py-2.5 whitespace-nowrap">${formatDateDisplay(r.fecha)}</td>
           <td class="px-3 py-2.5 font-mono text-xs">${r.hora}</td>
+          <td class="px-3 py-2.5 font-mono text-xs text-center ${r.dif_min > 0 ? 'text-red-600' : 'text-green-600'}">${r.dif_min > 0 ? '+' + r.dif_min : r.dif_min}</td>
           <td class="px-3 py-2.5 font-mono text-xs text-slate-500">${r.salida_comer || "-"}</td>
           <td class="px-3 py-2.5 font-mono text-xs text-slate-500">${r.regreso_comer || "-"}</td>
           <td class="px-3 py-2.5 font-mono text-xs">${r.salida || "-"}</td>
