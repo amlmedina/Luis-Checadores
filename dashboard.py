@@ -164,6 +164,11 @@ else:
     st.sidebar.image("https://img.icons8.com/color/96/bicycle.png", width=80)
     st.sidebar.title("Filtros de Control")
     
+    # Show database freshness info
+    db_mtime = datetime.fromtimestamp(os.path.getmtime(DB_PATH)).strftime("%d/%m/%Y %H:%M")
+    latest_punch = df['Fecha_Hora'].max().strftime("%d/%m/%Y %H:%M")
+    st.sidebar.caption(f"🗄️ Base de datos: {db_mtime}\n\n🕒 Último registro: {latest_punch}")
+    
     # Real-time synchronization button from Drive
     if st.sidebar.button("🔄 Sincronizar con Drive Ahora", use_container_width=True):
         with st.spinner("Sincronizando base de datos..."):
