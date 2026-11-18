@@ -60,7 +60,23 @@ function doGet() {
   for (var k in grouped) {
     var g = grouped[k];
     g.punches.sort(function(a, b) { return a - b; });
-    var p = g.punches;
+    // Protección contra doble checada (< 5 min): en entrada toma la más temprana, en salida toma la más tardía
+    var rawP = g.punches;
+    var p = [];
+    var WINDOW_MS = 5 * 60 * 1000;
+    for (var idx = 0; idx < rawP.length; idx++) {
+      if (p.length === 0) {
+        p.push(rawP[idx]);
+      } else {
+        var diff = rawP[idx] - p[p.length - 1];
+        if (diff <= WINDOW_MS) {
+          // Si ya hay más de 1 marca (es salida o evento posterior), conservar la más tardía; si es la primera (entrada), conservar la más temprana
+          if (p.length > 1) p[p.length - 1] = rawP[idx];
+        } else {
+          p.push(rawP[idx]);
+        }
+      }
+    }
     var fmt = function(d) { return Utilities.formatDate(d, ss.getSpreadsheetTimeZone(), "HH:mm:ss"); };
     var dur = function(ms) {
       if (ms <= 0) return "0h 00m";
