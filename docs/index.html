@@ -163,9 +163,9 @@
     let sortKey = "fecha";
     let sortAsc = false;
 
-    // Configuración y sobreescrituras sincronizadas en Google Sheets
-    let appConfig = { tolerance: 5, storeHours: {} };
-    let manualOverrides = {};
+    // Configuración y sobreescrituras sincronizadas en Google Sheets + respaldo local
+    let appConfig = JSON.parse(localStorage.getItem("checador_config") || '{"tolerance":5,"storeHours":{}}');
+    let manualOverrides = JSON.parse(localStorage.getItem("checador_overrides") || "{}");
 
     async function postToSheets(payload) {
       if (!APPS_SCRIPT_URL) return;
@@ -182,6 +182,7 @@
     }
 
     function saveConfig() {
+      localStorage.setItem("checador_config", JSON.stringify(appConfig));
       postToSheets({ type: "config", config: appConfig });
       const msg = document.getElementById("config-saved-msg");
       msg.classList.remove("hidden");
@@ -189,6 +190,7 @@
     }
 
     function saveOverride(key) {
+      localStorage.setItem("checador_overrides", JSON.stringify(manualOverrides));
       const ov = manualOverrides[key] || {};
       postToSheets({ type: "override", key: key, status: ov.status || "", comment: ov.comment || "" });
     }
@@ -298,8 +300,14 @@
       const res = await fetch(url);
       const data = await res.json();
       allRecords = data.records || [];
-      if (data.config) appConfig = { tolerance: 5, storeHours: {}, ...data.config };
-      if (data.overrides) manualOverrides = data.overrides;
+      if (data.config && data.config.storeHours && Object.keys(data.config.storeHours).length > 0) {
+        appConfig = { tolerance: 5, storeHours: {}, ...data.config };
+        localStorage.setItem("checador_config", JSON.stringify(appConfig));
+      }
+      if (data.overrides && Object.keys(data.overrides).length > 0) {
+        manualOverrides = { ...manualOverrides, ...data.overrides };
+        localStorage.setItem("checador_overrides", JSON.stringify(manualOverrides));
+      }
 
       const meta = data.metadata || {};
       document.getElementById("db-info").textContent =
