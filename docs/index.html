@@ -41,8 +41,8 @@
           <p class="text-xs text-slate-400 mt-1">Ej. Entrada 09:00 + 5 min = hasta 09:05 es Tolerancia; 09:06+ es Retardo.</p>
         </div>
         <div class="md:col-span-2">
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Horario de entrada por tienda</label>
-          <div id="cfg-stores-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Horario de entrada por tienda y día</label>
+          <div id="cfg-stores-list" class="space-y-2"></div>
         </div>
       </div>
     </div>
@@ -96,6 +96,29 @@
       <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
         <h2 class="text-sm font-semibold text-slate-700 mb-2">Tolerancias y Retardos por Trabajador</h2>
         <div id="chart-workers" class="w-full h-72"></div>
+      </div>
+    </div>
+
+    <!-- Resumen de Días por Trabajador -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
+      <div class="px-4 py-3 border-b border-slate-200">
+        <h2 class="text-sm font-semibold text-slate-700">Resumen de Días de Asistencia por Trabajador</h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-slate-100 text-slate-600 text-xs uppercase">
+            <tr>
+              <th class="px-4 py-2.5">Trabajador</th>
+              <th class="px-4 py-2.5 text-center">Días Asistidos</th>
+              <th class="px-4 py-2.5 text-center text-green-700">En Tiempo</th>
+              <th class="px-4 py-2.5 text-center text-amber-600">Tolerancias</th>
+              <th class="px-4 py-2.5 text-center text-red-600">Retardos</th>
+              <th class="px-4 py-2.5 text-center text-blue-600">Justificados</th>
+              <th class="px-4 py-2.5 text-center text-slate-500">Faltas</th>
+            </tr>
+          </thead>
+          <tbody id="summary-body" class="divide-y divide-slate-100"></tbody>
+        </table>
       </div>
     </div>
 
@@ -176,8 +199,22 @@
       return h * 60 + m;
     }
 
-    function computeStatus(horaStr, tienda) {
-      const entryTime = appConfig.storeHours[tienda] || "09:00";
+    const DAYS_LABELS = [
+      { idx: "1", label: "Lun" },
+      { idx: "2", label: "Mar" },
+      { idx: "3", label: "Mié" },
+      { idx: "4", label: "Jue" },
+      { idx: "5", label: "Vie" },
+      { idx: "6", label: "Sáb" },
+      { idx: "0", label: "Dom" }
+    ];
+
+    function computeStatus(horaStr, tienda, fechaStr) {
+      const dayIdx = String(new Date(fechaStr + "T12:00:00").getDay());
+      const storeCfg = appConfig.storeHours[tienda];
+      const entryTime = (typeof storeCfg === "object" && storeCfg !== null)
+        ? (storeCfg[dayIdx] || "09:00")
+        : (storeCfg || "09:00");
       const tol = Number(appConfig.tolerance ?? 5);
       const punchMin = timeToMinutes(horaStr.slice(0, 5));
       const entryMin = timeToMinutes(entryTime);
@@ -190,18 +227,33 @@
       document.getElementById("cfg-tolerance").value = appConfig.tolerance ?? 5;
       const container = document.getElementById("cfg-stores-list");
       container.innerHTML = stores.map(s => {
-        const val = appConfig.storeHours[s] || "09:00";
+        const storeCfg = (typeof appConfig.storeHours[s] === "object" && appConfig.storeHours[s] !== null)
+          ? appConfig.storeHours[s]
+          : {};
+        const fallback = typeof appConfig.storeHours[s] === "string" ? appConfig.storeHours[s] : "09:00";
         return `
-          <div class="flex items-center justify-between gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5">
-            <span class="text-xs font-medium text-slate-700 truncate">${s}</span>
-            <input type="time" data-store-hour="${s}" value="${val}" class="border border-slate-300 rounded px-2 py-0.5 text-xs" />
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+            <div class="text-xs font-bold text-slate-700 mb-2">${s}</div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
+              ${DAYS_LABELS.map(d => `
+                <div>
+                  <label class="block text-[10px] text-slate-500 mb-0.5">${d.label}</label>
+                  <input type="time" data-store-hour="${s}" data-day-idx="${d.idx}" value="${storeCfg[d.idx] || fallback}" class="w-full border border-slate-300 rounded px-1.5 py-0.5 text-xs" />
+                </div>
+              `).join("")}
+            </div>
           </div>
         `;
       }).join("");
 
       container.querySelectorAll("input[data-store-hour]").forEach(inp => {
         inp.addEventListener("change", () => {
-          appConfig.storeHours[inp.dataset.storeHour] = inp.value || "09:00";
+          const st = inp.dataset.storeHour;
+          const dy = inp.dataset.dayIdx;
+          if (typeof appConfig.storeHours[st] !== "object" || appConfig.storeHours[st] === null) {
+            appConfig.storeHours[st] = {};
+          }
+          appConfig.storeHours[st][dy] = inp.value || "09:00";
           saveConfig();
           applyFilters();
         });
@@ -269,14 +321,50 @@
           return {
             ...r,
             _key: key,
-            estado: ov.status || computeStatus(r.hora, r.tienda),
+            estado: ov.status || computeStatus(r.hora, r.tienda, r.fecha),
             comentario: ov.comment || ""
           };
         });
 
       renderKPIs();
       renderCharts();
+      renderSummary();
       renderTable();
+    }
+
+    function renderSummary() {
+      const byWorker = {};
+      filteredRecords.forEach(r => {
+        const w = r.nombre;
+        if (!byWorker[w]) {
+          byWorker[w] = { asistidos: 0, ontime: 0, tol: 0, late: 0, just: 0, falta: 0 };
+        }
+        if (r.estado === "Falta") {
+          byWorker[w].falta++;
+        } else {
+          byWorker[w].asistidos++;
+          if (r.estado === "En tiempo") byWorker[w].ontime++;
+          else if (r.estado === "Tolerancia") byWorker[w].tol++;
+          else if (r.estado === "Retardo") byWorker[w].late++;
+          else if (r.estado === "Justificado") byWorker[w].just++;
+        }
+      });
+
+      const tbody = document.getElementById("summary-body");
+      tbody.innerHTML = Object.keys(byWorker).sort().map(w => {
+        const s = byWorker[w];
+        return `
+          <tr class="hover:bg-slate-50">
+            <td class="px-4 py-2 font-medium text-slate-900">${w}</td>
+            <td class="px-4 py-2 text-center font-bold text-slate-800">${s.asistidos}</td>
+            <td class="px-4 py-2 text-center text-green-700 font-semibold">${s.ontime}</td>
+            <td class="px-4 py-2 text-center text-amber-600 font-semibold">${s.tol}</td>
+            <td class="px-4 py-2 text-center text-red-600 font-semibold">${s.late}</td>
+            <td class="px-4 py-2 text-center text-blue-600 font-semibold">${s.just}</td>
+            <td class="px-4 py-2 text-center text-slate-500">${s.falta}</td>
+          </tr>
+        `;
+      }).join("");
     }
 
     function renderKPIs() {
