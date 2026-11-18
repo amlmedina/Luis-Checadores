@@ -413,18 +413,23 @@ else:
     if not filtered_df.empty:
         # Clean dataframe for display (6 columns: including Tienda)
         display_df = filtered_df[['PIN', 'Nombre', 'Fecha', 'Hora', 'Tienda', 'Estado']].copy()
-        display_df['Fecha'] = display_df['Fecha'].apply(lambda x: x.strftime('%d/%m/%Y'))
+        display_df['Fecha'] = pd.to_datetime(display_df['Fecha'])
         display_df['Hora'] = display_df['Hora'].apply(lambda x: x.strftime('%H:%M:%S'))
         
         # Styling table based on status
         st.dataframe(
             display_df,
             use_container_width=True,
-            hide_index=True
+            hide_index=True,
+            column_config={
+                "Fecha": st.column_config.DateColumn("Fecha", format="DD/MM/YYYY")
+            }
         )
         
         # Export options
-        csv = display_df.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
+        csv_df = display_df.copy()
+        csv_df['Fecha'] = csv_df['Fecha'].dt.strftime('%d/%m/%Y')
+        csv = csv_df.to_csv(index=False, encoding='utf-8-sig').encode('utf-8-sig')
         st.download_button(
             label="📥 Descargar Reporte en Excel (CSV)",
             data=csv,
