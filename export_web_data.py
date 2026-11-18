@@ -19,6 +19,15 @@ def get_store_map():
     return {}
 
 
+def format_duration(seconds):
+    if seconds <= 0:
+        return "0h 00m"
+    mins = int(seconds // 60)
+    hrs = mins // 60
+    rem_mins = mins % 60
+    return f"{hrs}h {rem_mins:02d}m"
+
+
 def main():
     if not os.path.exists(DB_PATH):
         print(f"Error: No se encontró la base de datos en {DB_PATH}")
@@ -34,7 +43,7 @@ def main():
         FROM att_punches p
         JOIN hr_employee e ON p.employee_id = e.id
         LEFT JOIN att_terminal t ON p.terminal_id = t.id
-        ORDER BY p.punch_time DESC;
+        ORDER BY p.punch_time ASC;
     """
     df = pd.read_sql_query(query, conn)
     conn.close()
@@ -45,28 +54,46 @@ def main():
 
     df["Fecha_Hora"] = pd.to_datetime(df["Fecha_Hora"])
     df["Fecha"] = df["Fecha_Hora"].dt.strftime("%Y-%m-%d")
-    df["Hora"] = df["Fecha_Hora"].dt.strftime("%H:%M:%S")
 
     store_map = get_store_map()
     df["Tienda"] = df["ID_Checador"].astype(str).map(store_map).fillna(df["Nombre_Checador"])
 
-    # Primer registro (llegada) por empleado, fecha y checador
-    df_arrivals = (
-        df.sort_values("Fecha_Hora")
-        .groupby(["PIN", "Nombre", "Fecha", "ID_Checador", "Tienda"], as_index=False)
-        .first()
-    )
+    records = []
+    grouped = df.groupby(["PIN", "Nombre", "Fecha", "ID_Checador", "Tienda"], sort=False)
 
-    records = [
-        {
-            "pin": str(row["PIN"]),
-            "nombre": row["Nombre"],
-            "fecha": row["Fecha"],
-            "hora": row["Hora"],
-            "tienda": row["Tienda"],
-        }
-        for _, row in df_arrivals.iterrows()
-    ]
+    for (pin, nombre, fecha, _id_chec, tienda), group in grouped:
+        punches = group["Fecha_Hora"].sort_values().tolist()
+        entrada = punches[0]
+        salida_comer = None
+        regreso_comer = None
+        salida = None
+        horas_trabajadas = ""
+
+        if len(punches) == 2:
+            salida = punches[1]
+            horas_trabajadas = format_duration((salida - entrada).total_seconds())
+        elif len(punches) == 3:
+            salida_comer = punches[1]
+            salida = punches[2]
+            horas_trabajadas = format_duration((salida - entrada).total_seconds())
+        elif len(punches) >= 4:
+            salida_comer = punches[1]
+            regreso_comer = punches[2]
+            salida = punches[-1]
+            total_sec = (salida - entrada).total_seconds() - (regreso_comer - salida_comer).total_seconds()
+            horas_trabajadas = format_duration(total_sec)
+
+        records.append({
+            "pin": str(pin),
+            "nombre": nombre,
+            "fecha": fecha,
+            "hora": entrada.strftime("%H:%M:%S"),
+            "salida_comer": salida_comer.strftime("%H:%M:%S") if salida_comer else "",
+            "regreso_comer": regreso_comer.strftime("%H:%M:%S") if regreso_comer else "",
+            "salida": salida.strftime("%H:%M:%S") if salida else "",
+            "horas_trabajadas": horas_trabajadas,
+            "tienda": tienda,
+        })
 
     payload = {
         "metadata": {

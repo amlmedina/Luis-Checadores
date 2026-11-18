@@ -85,7 +85,11 @@
               <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="pin">PIN ↕</th>
               <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="nombre">Nombre ↕</th>
               <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="fecha">Fecha ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="hora">Hora ↕</th>
+              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="hora">Entrada ↕</th>
+              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida_comer">Salida Comer ↕</th>
+              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="regreso_comer">Regreso Comer ↕</th>
+              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida">Salida ↕</th>
+              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="horas_trabajadas">Horas ↕</th>
               <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="tienda">Tienda ↕</th>
               <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="estado">Estado ↕</th>
             </tr>
@@ -222,6 +226,10 @@
           <td class="px-4 py-2.5 font-medium text-slate-900">${r.nombre}</td>
           <td class="px-4 py-2.5">${formatDateDisplay(r.fecha)}</td>
           <td class="px-4 py-2.5 font-mono text-xs">${r.hora}</td>
+          <td class="px-4 py-2.5 font-mono text-xs text-slate-500">${r.salida_comer || "-"}</td>
+          <td class="px-4 py-2.5 font-mono text-xs text-slate-500">${r.regreso_comer || "-"}</td>
+          <td class="px-4 py-2.5 font-mono text-xs">${r.salida || "-"}</td>
+          <td class="px-4 py-2.5 font-mono text-xs font-semibold text-slate-700">${r.horas_trabajadas || "-"}</td>
           <td class="px-4 py-2.5">${r.tienda}</td>
           <td class="px-4 py-2.5">
             <span class="px-2 py-0.5 rounded-full text-xs font-medium ${r.estado === "Puntual" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}">
@@ -233,9 +241,9 @@
     }
 
     function downloadCSV() {
-      const header = ["PIN", "Nombre", "Fecha", "Hora", "Tienda", "Estado"];
+      const header = ["PIN", "Nombre", "Fecha", "Entrada", "Salida Comer", "Regreso Comer", "Salida", "Horas Trabajadas", "Tienda", "Estado"];
       const rows = filteredRecords.map(r => [
-        r.pin, `"${r.nombre}"`, formatDateDisplay(r.fecha), r.hora, `"${r.tienda}"`, r.estado
+        r.pin, `"${r.nombre}"`, formatDateDisplay(r.fecha), r.hora, r.salida_comer || "", r.regreso_comer || "", r.salida || "", r.horas_trabajadas || "", `"${r.tienda}"`, r.estado
       ]);
       const csv = "\uFEFF" + [header.join(","), ...rows.map(r => r.join(","))].join("\n");
       const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
