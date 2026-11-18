@@ -15,9 +15,14 @@
         <h1 class="text-2xl font-bold text-slate-900">📋 Control de Asistencias - Recursos Humanos</h1>
         <p class="text-sm text-slate-500 mt-1" id="db-info">Cargando información de la base de datos...</p>
       </div>
-      <button id="btn-csv" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
-        📥 Descargar CSV
-      </button>
+      <div class="flex items-center gap-2">
+        <button id="btn-refresh" class="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
+          🔄 Actualizar
+        </button>
+        <button id="btn-csv" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
+          📥 Descargar CSV
+        </button>
+      </div>
     </div>
 
     <!-- Filters -->
@@ -101,6 +106,9 @@
   </div>
 
   <script>
+    // Pega aquí la URL de tu Google Apps Script cuando la publiques (si está vacía, lee ./data.json)
+    const APPS_SCRIPT_URL = "";
+
     let allRecords = [];
     let filteredRecords = [];
     let sortKey = "fecha";
@@ -111,32 +119,40 @@
       return `${d}/${m}/${y}`;
     }
 
-    async function init() {
-      const res = await fetch("./data.json?_=" + Date.now());
+    async function loadData() {
+      const url = APPS_SCRIPT_URL ? `${APPS_SCRIPT_URL}?_=${Date.now()}` : `./data.json?_=${Date.now()}`;
+      const res = await fetch(url);
       const data = await res.json();
       allRecords = data.records || [];
 
       const meta = data.metadata || {};
       document.getElementById("db-info").textContent =
-        `🗄️ Base de datos: ${meta.db_mtime || "-"}  |  🕒 Último registro: ${meta.latest_punch || "-"}`;
+        `🗄️ Fuente: ${meta.db_mtime || "-"}  |  🕒 Último registro: ${meta.latest_punch || "-"}`;
 
       // Populate store filter
-      const stores = [...new Set(allRecords.map(r => r.tienda))].sort();
       const storeSelect = document.getElementById("f-store");
+      const currentStore = storeSelect.value;
+      storeSelect.innerHTML = '<option value="">Todas</option>';
+      const stores = [...new Set(allRecords.map(r => r.tienda))].sort();
       stores.forEach(s => {
         const opt = document.createElement("option");
         opt.value = s;
         opt.textContent = s;
         storeSelect.appendChild(opt);
       });
+      storeSelect.value = currentStore;
 
       // Set default date range
-      if (allRecords.length > 0) {
+      if (allRecords.length > 0 && !document.getElementById("f-start").value) {
         const dates = allRecords.map(r => r.fecha).sort();
         document.getElementById("f-start").value = dates[0];
         document.getElementById("f-end").value = dates[dates.length - 1];
       }
 
+      applyFilters();
+    }
+
+    async function init() {
       ["f-start", "f-end", "f-limit", "f-store", "f-search"].forEach(id => {
         document.getElementById(id).addEventListener("input", applyFilters);
       });
@@ -151,7 +167,8 @@
       });
 
       document.getElementById("btn-csv").addEventListener("click", downloadCSV);
-      applyFilters();
+      document.getElementById("btn-refresh").addEventListener("click", loadData);
+      await loadData();
     }
 
     function applyFilters() {
