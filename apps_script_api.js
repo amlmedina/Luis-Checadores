@@ -21,6 +21,19 @@ function doGet() {
       .setMimeType(ContentService.MimeType.JSON);
   }
 
+  // Cargar catálogo PIN -> Nombre desde Sheet1 y/o Empleados
+  var pinToName = {};
+  ["Sheet1", "Empleados"].forEach(function(tabName) {
+    var s = ss.getSheetByName(tabName);
+    if (!s) return;
+    var rows = s.getDataRange().getValues();
+    for (var r = 1; r < rows.length; r++) {
+      var p = String(rows[r][0] || "").trim();
+      var n = String(rows[r][1] || "").trim();
+      if (p && n && !pinToName[p]) pinToName[p] = n;
+    }
+  });
+
   var grouped = {};
   var latestStr = "";
 
@@ -77,7 +90,7 @@ function doGet() {
 
     records.push({
       pin: g.pin,
-      nombre: "PIN " + g.pin,
+      nombre: pinToName[g.pin] || ("PIN " + g.pin),
       fecha: g.fecha,
       hora: entrada,
       salida_comer: salidaComer,
