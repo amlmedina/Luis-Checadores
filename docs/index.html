@@ -127,11 +127,14 @@
 
     <!-- Table -->
     <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
-      <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
-        <h2 class="text-sm font-semibold text-slate-700">Tabla de Registros Detallada</h2>
+      <div id="btn-table-toggle" class="px-4 py-3 border-b border-slate-200 flex items-center justify-between cursor-pointer hover:bg-slate-50 select-none">
+        <div class="flex items-center gap-2">
+          <h2 class="text-sm font-semibold text-slate-700">Tabla de Registros Detallada</h2>
+          <span id="table-toggle-icon" class="text-xs text-slate-500">▼ Mostrar</span>
+        </div>
         <span class="text-xs text-slate-400">Edita el estatus o agrega comentarios directamente en cada fila</span>
       </div>
-      <div class="overflow-x-auto">
+      <div id="table-wrapper" class="overflow-x-auto hidden">
         <table class="w-full text-sm text-left">
           <thead class="bg-slate-100 text-slate-600 text-xs uppercase">
             <tr>
@@ -557,6 +560,12 @@
     async function init() {
       document.getElementById("btn-config-toggle").addEventListener("click", () => {
         document.getElementById("config-panel").classList.toggle("hidden");
+      });
+      document.getElementById("btn-table-toggle").addEventListener("click", () => {
+        const wrap = document.getElementById("table-wrapper");
+        const icon = document.getElementById("table-toggle-icon");
+        wrap.classList.toggle("hidden");
+        icon.textContent = wrap.classList.contains("hidden") ? "▼ Mostrar" : "▲ Ocultar";
       });
       document.getElementById("cfg-tolerance").addEventListener("change", (e) => {
         appConfig.tolerance = Number(e.target.value || 0);
