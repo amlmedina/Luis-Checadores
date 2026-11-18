@@ -13,9 +13,12 @@
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-5 border-b border-slate-200">
       <div>
         <h1 class="text-2xl font-bold text-slate-900">📋 Control de Asistencias - Recursos Humanos</h1>
-        <p class="text-sm text-slate-500 mt-1" id="db-info">Cargando información de la base de datos...</p>
+        <p class="text-sm text-slate-500 mt-1" id="db-info">Cargando información de Google Sheets...</p>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <button id="btn-config-toggle" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
+          ⚙️ Configuración
+        </button>
         <button id="btn-refresh" class="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
           🔄 Actualizar
         </button>
@@ -25,28 +28,41 @@
       </div>
     </div>
 
-    <!-- Filters -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm mt-5">
-      <div>
-        <label class="block text-xs font-semibold text-slate-500 mb-1">Fecha inicio</label>
-        <input type="date" id="f-start" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
+    <!-- Configuración Panel (Collapsible) -->
+    <div id="config-panel" class="hidden bg-white p-5 rounded-xl border border-slate-200 shadow-sm mt-5">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-base font-bold text-slate-800">⚙️ Configuración de Horarios y Tolerancias</h2>
+        <span id="config-saved-msg" class="text-xs text-green-600 font-medium hidden">✅ Guardado</span>
       </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-500 mb-1">Fecha fin</label>
-        <input type="date" id="f-end" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Tiempo de tolerancia (minutos)</label>
+          <input type="number" id="cfg-tolerance" min="0" max="60" value="5" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
+          <p class="text-xs text-slate-400 mt-1">Ej. Entrada 09:00 + 5 min = hasta 09:05 es Tolerancia; 09:06+ es Retardo.</p>
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Horario de entrada por tienda</label>
+          <div id="cfg-stores-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
+        </div>
       </div>
+    </div>
+
+    <!-- Top Selectors: Mes y Tienda + Búsqueda -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm mt-5">
       <div>
-        <label class="block text-xs font-semibold text-slate-500 mb-1">Hora límite</label>
-        <input type="time" id="f-limit" value="09:05" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
-      </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-500 mb-1">Tienda / Checador</label>
-        <select id="f-store" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm">
-          <option value="">Todas</option>
+        <label class="block text-xs font-semibold text-slate-500 mb-1">Mes a consultar</label>
+        <select id="f-month" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm">
+          <option value="">Todos los meses</option>
         </select>
       </div>
       <div>
-        <label class="block text-xs font-semibold text-slate-500 mb-1">Buscar empleado</label>
+        <label class="block text-xs font-semibold text-slate-500 mb-1">Tienda</label>
+        <select id="f-store" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm">
+          <option value="">Todas las tiendas</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-500 mb-1">Buscar trabajador</label>
         <input type="text" id="f-search" placeholder="Nombre o PIN..." class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
       </div>
     </div>
@@ -59,44 +75,51 @@
       </div>
       <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
         <div class="text-2xl font-bold text-green-600" id="kpi-ontime">0</div>
-        <div class="text-xs text-slate-500 mt-1">Puntuales</div>
+        <div class="text-xs text-slate-500 mt-1">En Tiempo</div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+        <div class="text-2xl font-bold text-amber-500" id="kpi-tol">0</div>
+        <div class="text-xs text-slate-500 mt-1">En Tolerancia</div>
       </div>
       <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
         <div class="text-2xl font-bold text-red-600" id="kpi-late">0</div>
         <div class="text-xs text-slate-500 mt-1">Retardos</div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
-        <div class="text-2xl font-bold text-blue-600" id="kpi-pct">0%</div>
-        <div class="text-xs text-slate-500 mt-1">% Puntualidad</div>
-      </div>
     </div>
 
-    <!-- Chart -->
-    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm mt-5">
-      <h2 class="text-sm font-semibold text-slate-700 mb-2">Asistencia por Día</h2>
-      <div id="chart" class="w-full h-72"></div>
+    <!-- Charts -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-5">
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+        <h2 class="text-sm font-semibold text-slate-700 mb-2">Asistencia por Día</h2>
+        <div id="chart-daily" class="w-full h-72"></div>
+      </div>
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+        <h2 class="text-sm font-semibold text-slate-700 mb-2">Tolerancias y Retardos por Trabajador</h2>
+        <div id="chart-workers" class="w-full h-72"></div>
+      </div>
     </div>
 
     <!-- Table -->
     <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
       <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
         <h2 class="text-sm font-semibold text-slate-700">Tabla de Registros Detallada</h2>
-        <span class="text-xs text-slate-400">Haz clic en cualquier columna para ordenar</span>
+        <span class="text-xs text-slate-400">Edita el estatus o agrega comentarios directamente en cada fila</span>
       </div>
       <div class="overflow-x-auto">
         <table class="w-full text-sm text-left">
           <thead class="bg-slate-100 text-slate-600 text-xs uppercase">
             <tr>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="pin">PIN ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="nombre">Nombre ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="fecha">Fecha ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="hora">Entrada ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida_comer">Salida Comer ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="regreso_comer">Regreso Comer ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida">Salida ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="horas_trabajadas">Horas ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="tienda">Tienda ↕</th>
-              <th class="px-4 py-3 cursor-pointer hover:bg-slate-200" data-sort="estado">Estado ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="pin">PIN ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="nombre">Nombre ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="fecha">Fecha ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="hora">Entrada ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida_comer">Salida Comer ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="regreso_comer">Regreso Comer ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida">Salida ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="horas_trabajadas">Horas ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="tienda">Tienda ↕</th>
+              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="estado">Estatus ↕</th>
+              <th class="px-3 py-3">Comentarios</th>
             </tr>
           </thead>
           <tbody id="table-body" class="divide-y divide-slate-100"></tbody>
@@ -106,7 +129,6 @@
   </div>
 
   <script>
-    // Pega aquí la URL de tu Google Apps Script cuando la publiques (si está vacía, lee ./data.json)
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw8HZZ6-h0LDAacRiOdX37AfgzJZDfnrp7d8Dbr7vrWV7iPMZHcEZSdAxiuhGgwmgwpLA/exec";
 
     let allRecords = [];
@@ -114,9 +136,62 @@
     let sortKey = "fecha";
     let sortAsc = false;
 
+    // Configuración persistente en localStorage
+    let appConfig = JSON.parse(localStorage.getItem("checador_config") || '{"tolerance":5,"storeHours":{}}');
+    // Sobreescrituras manuales: { "pin|fecha|tienda": { status: "...", comment: "..." } }
+    let manualOverrides = JSON.parse(localStorage.getItem("checador_overrides") || "{}");
+
+    function saveConfig() {
+      localStorage.setItem("checador_config", JSON.stringify(appConfig));
+      const msg = document.getElementById("config-saved-msg");
+      msg.classList.remove("hidden");
+      setTimeout(() => msg.classList.add("hidden"), 1800);
+    }
+
+    function saveOverrides() {
+      localStorage.setItem("checador_overrides", JSON.stringify(manualOverrides));
+    }
+
     function formatDateDisplay(isoDate) {
       const [y, m, d] = isoDate.split("-");
       return `${d}/${m}/${y}`;
+    }
+
+    function timeToMinutes(hhmm) {
+      const [h, m] = hhmm.split(":").map(Number);
+      return h * 60 + m;
+    }
+
+    function computeStatus(horaStr, tienda) {
+      const entryTime = appConfig.storeHours[tienda] || "09:00";
+      const tol = Number(appConfig.tolerance ?? 5);
+      const punchMin = timeToMinutes(horaStr.slice(0, 5));
+      const entryMin = timeToMinutes(entryTime);
+      if (punchMin <= entryMin) return "En tiempo";
+      if (punchMin <= entryMin + tol) return "Tolerancia";
+      return "Retardo";
+    }
+
+    function renderConfigStores(stores) {
+      document.getElementById("cfg-tolerance").value = appConfig.tolerance ?? 5;
+      const container = document.getElementById("cfg-stores-list");
+      container.innerHTML = stores.map(s => {
+        const val = appConfig.storeHours[s] || "09:00";
+        return `
+          <div class="flex items-center justify-between gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5">
+            <span class="text-xs font-medium text-slate-700 truncate">${s}</span>
+            <input type="time" data-store-hour="${s}" value="${val}" class="border border-slate-300 rounded px-2 py-0.5 text-xs" />
+          </div>
+        `;
+      }).join("");
+
+      container.querySelectorAll("input[data-store-hour]").forEach(inp => {
+        inp.addEventListener("change", () => {
+          appConfig.storeHours[inp.dataset.storeHour] = inp.value || "09:00";
+          saveConfig();
+          applyFilters();
+        });
+      });
     }
 
     async function loadData() {
@@ -129,11 +204,25 @@
       document.getElementById("db-info").textContent =
         `🗄️ Fuente: ${meta.db_mtime || "-"}  |  🕒 Último registro: ${meta.latest_punch || "-"}`;
 
-      // Populate store filter
+      // Meses disponibles
+      const monthSelect = document.getElementById("f-month");
+      const currentMonth = monthSelect.value;
+      const months = [...new Set(allRecords.map(r => r.fecha.slice(0, 7)))].sort().reverse();
+      monthSelect.innerHTML = '<option value="">Todos los meses</option>';
+      months.forEach(m => {
+        const opt = document.createElement("option");
+        opt.value = m;
+        opt.textContent = m;
+        monthSelect.appendChild(opt);
+      });
+      if (currentMonth) monthSelect.value = currentMonth;
+      else if (months.length > 0) monthSelect.value = months[0];
+
+      // Tiendas disponibles
       const storeSelect = document.getElementById("f-store");
       const currentStore = storeSelect.value;
-      storeSelect.innerHTML = '<option value="">Todas</option>';
       const stores = [...new Set(allRecords.map(r => r.tienda))].sort();
+      storeSelect.innerHTML = '<option value="">Todas las tiendas</option>';
       stores.forEach(s => {
         const opt = document.createElement("option");
         opt.value = s;
@@ -142,18 +231,177 @@
       });
       storeSelect.value = currentStore;
 
-      // Set default date range
-      if (allRecords.length > 0 && !document.getElementById("f-start").value) {
-        const dates = allRecords.map(r => r.fecha).sort();
-        document.getElementById("f-start").value = dates[0];
-        document.getElementById("f-end").value = dates[dates.length - 1];
-      }
-
+      renderConfigStores(stores);
       applyFilters();
     }
 
+    function applyFilters() {
+      const month = document.getElementById("f-month").value;
+      const store = document.getElementById("f-store").value;
+      const search = document.getElementById("f-search").value.trim().toLowerCase();
+
+      filteredRecords = allRecords
+        .filter(r => {
+          if (month && !r.fecha.startsWith(month)) return false;
+          if (store && r.tienda !== store) return false;
+          if (search && !r.nombre.toLowerCase().includes(search) && !r.pin.toLowerCase().includes(search)) return false;
+          return true;
+        })
+        .map(r => {
+          const key = `${r.pin}|${r.fecha}|${r.tienda}`;
+          const ov = manualOverrides[key] || {};
+          return {
+            ...r,
+            _key: key,
+            estado: ov.status || computeStatus(r.hora, r.tienda),
+            comentario: ov.comment || ""
+          };
+        });
+
+      renderKPIs();
+      renderCharts();
+      renderTable();
+    }
+
+    function renderKPIs() {
+      const total = filteredRecords.length;
+      const ontime = filteredRecords.filter(r => r.estado === "En tiempo" || r.estado === "Justificado").length;
+      const tol = filteredRecords.filter(r => r.estado === "Tolerancia").length;
+      const late = filteredRecords.filter(r => r.estado === "Retardo" || r.estado === "Falta").length;
+
+      document.getElementById("kpi-total").textContent = total;
+      document.getElementById("kpi-ontime").textContent = ontime;
+      document.getElementById("kpi-tol").textContent = tol;
+      document.getElementById("kpi-late").textContent = late;
+    }
+
+    function renderCharts() {
+      // 1. Asistencia por Día
+      const byDate = {};
+      filteredRecords.forEach(r => {
+        if (!byDate[r.fecha]) byDate[r.fecha] = { "En tiempo": 0, "Tolerancia": 0, "Retardo": 0 };
+        if (r.estado === "En tiempo" || r.estado === "Justificado") byDate[r.fecha]["En tiempo"]++;
+        else if (r.estado === "Tolerancia") byDate[r.fecha]["Tolerancia"]++;
+        else byDate[r.fecha]["Retardo"]++;
+      });
+      const dates = Object.keys(byDate).sort();
+      const xLabels = dates.map(formatDateDisplay);
+
+      Plotly.newPlot("chart-daily", [
+        { x: xLabels, y: dates.map(d => byDate[d]["En tiempo"]), name: "En tiempo", type: "bar", marker: { color: "#16A34A" } },
+        { x: xLabels, y: dates.map(d => byDate[d]["Tolerancia"]), name: "Tolerancia", type: "bar", marker: { color: "#F59E0B" } },
+        { x: xLabels, y: dates.map(d => byDate[d]["Retardo"]), name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
+      ], {
+        barmode: "stack",
+        margin: { l: 35, r: 15, t: 10, b: 40 },
+        paper_bgcolor: "rgba(0,0,0,0)",
+        plot_bgcolor: "rgba(0,0,0,0)",
+        legend: { orientation: "h", y: 1.15 }
+      }, { responsive: true });
+
+      // 2. Por Trabajador
+      const byWorker = {};
+      filteredRecords.forEach(r => {
+        const label = r.nombre;
+        if (!byWorker[label]) byWorker[label] = { "En tiempo": 0, "Tolerancia": 0, "Retardo": 0 };
+        if (r.estado === "En tiempo" || r.estado === "Justificado") byWorker[label]["En tiempo"]++;
+        else if (r.estado === "Tolerancia") byWorker[label]["Tolerancia"]++;
+        else byWorker[label]["Retardo"]++;
+      });
+      const workers = Object.keys(byWorker).sort();
+
+      Plotly.newPlot("chart-workers", [
+        { x: workers, y: workers.map(w => byWorker[w]["En tiempo"]), name: "En tiempo", type: "bar", marker: { color: "#16A34A" } },
+        { x: workers, y: workers.map(w => byWorker[w]["Tolerancia"]), name: "Tolerancia", type: "bar", marker: { color: "#F59E0B" } },
+        { x: workers, y: workers.map(w => byWorker[w]["Retardo"]), name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
+      ], {
+        barmode: "stack",
+        margin: { l: 35, r: 15, t: 10, b: 60 },
+        paper_bgcolor: "rgba(0,0,0,0)",
+        plot_bgcolor: "rgba(0,0,0,0)",
+        legend: { orientation: "h", y: 1.15 }
+      }, { responsive: true });
+    }
+
+    function statusBadgeClass(st) {
+      if (st === "En tiempo" || st === "Justificado") return "bg-green-100 text-green-700 border-green-200";
+      if (st === "Tolerancia") return "bg-amber-100 text-amber-700 border-amber-200";
+      return "bg-red-100 text-red-700 border-red-200";
+    }
+
+    function renderTable() {
+      const sorted = [...filteredRecords].sort((a, b) => {
+        const va = a[sortKey] || "";
+        const vb = b[sortKey] || "";
+        return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+      });
+
+      const statuses = ["En tiempo", "Tolerancia", "Retardo", "Justificado", "Falta"];
+      const tbody = document.getElementById("table-body");
+      tbody.innerHTML = sorted.map(r => `
+        <tr class="hover:bg-slate-50">
+          <td class="px-3 py-2.5 font-mono text-xs text-slate-600">${r.pin}</td>
+          <td class="px-3 py-2.5 font-medium text-slate-900">${r.nombre}</td>
+          <td class="px-3 py-2.5 whitespace-nowrap">${formatDateDisplay(r.fecha)}</td>
+          <td class="px-3 py-2.5 font-mono text-xs">${r.hora}</td>
+          <td class="px-3 py-2.5 font-mono text-xs text-slate-500">${r.salida_comer || "-"}</td>
+          <td class="px-3 py-2.5 font-mono text-xs text-slate-500">${r.regreso_comer || "-"}</td>
+          <td class="px-3 py-2.5 font-mono text-xs">${r.salida || "-"}</td>
+          <td class="px-3 py-2.5 font-mono text-xs font-semibold text-slate-700">${r.horas_trabajadas || "-"}</td>
+          <td class="px-3 py-2.5">${r.tienda}</td>
+          <td class="px-3 py-2.5">
+            <select data-status-key="${r._key}" class="text-xs font-medium rounded-full px-2 py-1 border ${statusBadgeClass(r.estado)}">
+              ${statuses.map(s => `<option value="${s}" ${r.estado === s ? "selected" : ""}>${s}</option>`).join("")}
+            </select>
+          </td>
+          <td class="px-3 py-2.5">
+            <input type="text" data-comment-key="${r._key}" value="${r.comentario.replace(/"/g, '&quot;')}" placeholder="Agregar nota..." class="w-40 border border-slate-200 rounded px-2 py-1 text-xs focus:outline-none focus:border-blue-400" />
+          </td>
+        </tr>
+      `).join("");
+
+      tbody.querySelectorAll("select[data-status-key]").forEach(sel => {
+        sel.addEventListener("change", () => {
+          const k = sel.dataset.statusKey;
+          manualOverrides[k] = { ...(manualOverrides[k] || {}), status: sel.value };
+          saveOverrides();
+          applyFilters();
+        });
+      });
+
+      tbody.querySelectorAll("input[data-comment-key]").forEach(inp => {
+        inp.addEventListener("change", () => {
+          const k = inp.dataset.commentKey;
+          manualOverrides[k] = { ...(manualOverrides[k] || {}), comment: inp.value };
+          saveOverrides();
+        });
+      });
+    }
+
+    function downloadCSV() {
+      const header = ["PIN", "Nombre", "Fecha", "Entrada", "Salida Comer", "Regreso Comer", "Salida", "Horas Trabajadas", "Tienda", "Estatus", "Comentarios"];
+      const rows = filteredRecords.map(r => [
+        r.pin, `"${r.nombre}"`, formatDateDisplay(r.fecha), r.hora, r.salida_comer || "", r.regreso_comer || "", r.salida || "", r.horas_trabajadas || "", `"${r.tienda}"`, r.estado, `"${(r.comentario || "").replace(/"/g, '""')}"`
+      ]);
+      const csv = "\uFEFF" + [header.join(","), ...rows.map(r => r.join(","))].join("\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `reporte_asistencia_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+    }
+
     async function init() {
-      ["f-start", "f-end", "f-limit", "f-store", "f-search"].forEach(id => {
+      document.getElementById("btn-config-toggle").addEventListener("click", () => {
+        document.getElementById("config-panel").classList.toggle("hidden");
+      });
+      document.getElementById("cfg-tolerance").addEventListener("change", (e) => {
+        appConfig.tolerance = Number(e.target.value || 0);
+        saveConfig();
+        applyFilters();
+      });
+
+      ["f-month", "f-store", "f-search"].forEach(id => {
         document.getElementById(id).addEventListener("input", applyFilters);
       });
 
@@ -191,106 +439,8 @@
           }, 2500);
         }
       });
+
       await loadData();
-    }
-
-    function applyFilters() {
-      const start = document.getElementById("f-start").value;
-      const end = document.getElementById("f-end").value;
-      const limit = document.getElementById("f-limit").value || "09:05";
-      const store = document.getElementById("f-store").value;
-      const search = document.getElementById("f-search").value.trim().toLowerCase();
-
-      filteredRecords = allRecords
-        .filter(r => {
-          if (start && r.fecha < start) return false;
-          if (end && r.fecha > end) return false;
-          if (store && r.tienda !== store) return false;
-          if (search && !r.nombre.toLowerCase().includes(search) && !r.pin.toLowerCase().includes(search)) return false;
-          return true;
-        })
-        .map(r => ({
-          ...r,
-          estado: r.hora.slice(0, 5) <= limit ? "Puntual" : "Retardo"
-        }));
-
-      renderKPIs();
-      renderChart();
-      renderTable();
-    }
-
-    function renderKPIs() {
-      const total = filteredRecords.length;
-      const ontime = filteredRecords.filter(r => r.estado === "Puntual").length;
-      const late = total - ontime;
-      const pct = total ? Math.round((ontime / total) * 100) : 0;
-
-      document.getElementById("kpi-total").textContent = total;
-      document.getElementById("kpi-ontime").textContent = ontime;
-      document.getElementById("kpi-late").textContent = late;
-      document.getElementById("kpi-pct").textContent = `${pct}%`;
-    }
-
-    function renderChart() {
-      const byDate = {};
-      filteredRecords.forEach(r => {
-        if (!byDate[r.fecha]) byDate[r.fecha] = { Puntual: 0, Retardo: 0 };
-        byDate[r.fecha][r.estado]++;
-      });
-      const dates = Object.keys(byDate).sort();
-      const xLabels = dates.map(formatDateDisplay);
-
-      Plotly.newPlot("chart", [
-        { x: xLabels, y: dates.map(d => byDate[d].Puntual), name: "Puntual", type: "bar", marker: { color: "#16A34A" } },
-        { x: xLabels, y: dates.map(d => byDate[d].Retardo), name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
-      ], {
-        barmode: "stack",
-        margin: { l: 35, r: 15, t: 10, b: 40 },
-        paper_bgcolor: "rgba(0,0,0,0)",
-        plot_bgcolor: "rgba(0,0,0,0)",
-        legend: { orientation: "h", y: 1.12 }
-      }, { responsive: true });
-    }
-
-    function renderTable() {
-      const sorted = [...filteredRecords].sort((a, b) => {
-        const va = a[sortKey] || "";
-        const vb = b[sortKey] || "";
-        return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
-      });
-
-      const tbody = document.getElementById("table-body");
-      tbody.innerHTML = sorted.map(r => `
-        <tr class="hover:bg-slate-50">
-          <td class="px-4 py-2.5 font-mono text-xs text-slate-600">${r.pin}</td>
-          <td class="px-4 py-2.5 font-medium text-slate-900">${r.nombre}</td>
-          <td class="px-4 py-2.5">${formatDateDisplay(r.fecha)}</td>
-          <td class="px-4 py-2.5 font-mono text-xs">${r.hora}</td>
-          <td class="px-4 py-2.5 font-mono text-xs text-slate-500">${r.salida_comer || "-"}</td>
-          <td class="px-4 py-2.5 font-mono text-xs text-slate-500">${r.regreso_comer || "-"}</td>
-          <td class="px-4 py-2.5 font-mono text-xs">${r.salida || "-"}</td>
-          <td class="px-4 py-2.5 font-mono text-xs font-semibold text-slate-700">${r.horas_trabajadas || "-"}</td>
-          <td class="px-4 py-2.5">${r.tienda}</td>
-          <td class="px-4 py-2.5">
-            <span class="px-2 py-0.5 rounded-full text-xs font-medium ${r.estado === "Puntual" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}">
-              ${r.estado}
-            </span>
-          </td>
-        </tr>
-      `).join("");
-    }
-
-    function downloadCSV() {
-      const header = ["PIN", "Nombre", "Fecha", "Entrada", "Salida Comer", "Regreso Comer", "Salida", "Horas Trabajadas", "Tienda", "Estado"];
-      const rows = filteredRecords.map(r => [
-        r.pin, `"${r.nombre}"`, formatDateDisplay(r.fecha), r.hora, r.salida_comer || "", r.regreso_comer || "", r.salida || "", r.horas_trabajadas || "", `"${r.tienda}"`, r.estado
-      ]);
-      const csv = "\uFEFF" + [header.join(","), ...rows.map(r => r.join(","))].join("\n");
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = `reporte_asistencia_${new Date().toISOString().slice(0,10)}.csv`;
-      a.click();
     }
 
     init();
