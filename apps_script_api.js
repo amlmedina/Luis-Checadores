@@ -101,15 +101,74 @@ function doGet() {
     });
   }
 
+  var config = { tolerance: 5, storeHours: {} };
+  var cfgSheet = ss.getSheetByName("Config_Web");
+  if (cfgSheet && cfgSheet.getLastRow() >= 1) {
+    try {
+      var rawCfg = cfgSheet.getRange(1, 1).getValue();
+      if (rawCfg) config = JSON.parse(rawCfg);
+    } catch (e) {}
+  }
+
+  var overrides = {};
+  var notesSheet = ss.getSheetByName("Notas_Web");
+  if (notesSheet && notesSheet.getLastRow() > 1) {
+    var nRows = notesSheet.getDataRange().getValues();
+    for (var n = 1; n < nRows.length; n++) {
+      var nk = String(nRows[n][0] || "");
+      if (nk) {
+        overrides[nk] = {
+          status: String(nRows[n][1] || ""),
+          comment: String(nRows[n][2] || "")
+        };
+      }
+    }
+  }
+
   var payload = {
     metadata: {
       db_mtime: "Google Sheets en vivo",
       latest_punch: latestStr,
       total_records: records.length
     },
+    config: config,
+    overrides: overrides,
     records: records
   };
 
   return ContentService.createTextOutput(JSON.stringify(payload))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function doPost(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var body = JSON.parse(e.postData.contents || "{}");
+
+  if (body.type === "config") {
+    var cfgSheet = ss.getSheetByName("Config_Web") || ss.insertSheet("Config_Web");
+    cfgSheet.getRange(1, 1).setValue(JSON.stringify(body.config || {}));
+  } else if (body.type === "override" && body.key) {
+    var notesSheet = ss.getSheetByName("Notas_Web") || ss.insertSheet("Notas_Web");
+    if (notesSheet.getLastRow() === 0) {
+      notesSheet.appendRow(["Key", "Estatus", "Comentario"]);
+    }
+    var rows = notesSheet.getDataRange().getValues();
+    var foundRow = -1;
+    for (var i = 1; i < rows.length; i++) {
+      if (String(rows[i][0]) === String(body.key)) {
+        foundRow = i + 1;
+        break;
+      }
+    }
+    var st = body.status || "";
+    var cm = body.comment || "";
+    if (foundRow > 0) {
+      notesSheet.getRange(foundRow, 2, 1, 2).setValues([[st, cm]]);
+    } else {
+      notesSheet.appendRow([body.key, st, cm]);
+    }
+  }
+
+  return ContentService.createTextOutput(JSON.stringify({ ok: true }))
     .setMimeType(ContentService.MimeType.JSON);
 }

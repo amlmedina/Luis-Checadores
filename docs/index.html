@@ -136,20 +136,34 @@
     let sortKey = "fecha";
     let sortAsc = false;
 
-    // Configuración persistente en localStorage
-    let appConfig = JSON.parse(localStorage.getItem("checador_config") || '{"tolerance":5,"storeHours":{}}');
-    // Sobreescrituras manuales: { "pin|fecha|tienda": { status: "...", comment: "..." } }
-    let manualOverrides = JSON.parse(localStorage.getItem("checador_overrides") || "{}");
+    // Configuración y sobreescrituras sincronizadas en Google Sheets
+    let appConfig = { tolerance: 5, storeHours: {} };
+    let manualOverrides = {};
+
+    async function postToSheets(payload) {
+      if (!APPS_SCRIPT_URL) return;
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        console.error("Error guardando en Sheets:", e);
+      }
+    }
 
     function saveConfig() {
-      localStorage.setItem("checador_config", JSON.stringify(appConfig));
+      postToSheets({ type: "config", config: appConfig });
       const msg = document.getElementById("config-saved-msg");
       msg.classList.remove("hidden");
       setTimeout(() => msg.classList.add("hidden"), 1800);
     }
 
-    function saveOverrides() {
-      localStorage.setItem("checador_overrides", JSON.stringify(manualOverrides));
+    function saveOverride(key) {
+      const ov = manualOverrides[key] || {};
+      postToSheets({ type: "override", key: key, status: ov.status || "", comment: ov.comment || "" });
     }
 
     function formatDateDisplay(isoDate) {
@@ -199,6 +213,8 @@
       const res = await fetch(url);
       const data = await res.json();
       allRecords = data.records || [];
+      if (data.config) appConfig = { tolerance: 5, storeHours: {}, ...data.config };
+      if (data.overrides) manualOverrides = data.overrides;
 
       const meta = data.metadata || {};
       document.getElementById("db-info").textContent =
@@ -364,7 +380,7 @@
         sel.addEventListener("change", () => {
           const k = sel.dataset.statusKey;
           manualOverrides[k] = { ...(manualOverrides[k] || {}), status: sel.value };
-          saveOverrides();
+          saveOverride(k);
           applyFilters();
         });
       });
@@ -373,7 +389,7 @@
         inp.addEventListener("change", () => {
           const k = inp.dataset.commentKey;
           manualOverrides[k] = { ...(manualOverrides[k] || {}), comment: inp.value };
-          saveOverrides();
+          saveOverride(k);
         });
       });
     }
