@@ -539,9 +539,12 @@
           <td class="px-3 py-2 font-medium text-slate-900 sticky left-0 bg-white whitespace-nowrap">${w}</td>
           ${days.map(d => {
             const rec = map[`${w}|${d}`];
-            if (!rec) return '<td class="px-2 py-2 text-center text-slate-300">·</td>';
+            if (!rec) return '<td class="px-1.5 py-2 text-center text-slate-300">-</td>';
             const tip = `${rec.estado} | Ent: ${rec.hora}${rec.salida ? ' | Sal: ' + rec.salida : ''}`;
-            return `<td class="px-2 py-2 text-center cursor-default" title="${tip}">${statusIcon(rec.estado)}</td>`;
+            const label = ["Falta", "Vacaciones", "Incapacidad", "Permiso"].includes(rec.estado) ? rec.estado.slice(0, 4) : rec.hora.slice(0, 5);
+            return `<td class="px-1 py-1.5 text-center" title="${tip}">
+              <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold border ${statusBadgeClass(rec.estado)}">${label}</span>
+            </td>`;
           }).join("")}
         </tr>
       `).join("")}</tbody>`;
@@ -620,10 +623,12 @@
       const dates = Object.keys(byDate).sort();
       const xLabels = dates.map(formatDateDisplay);
 
+      const calcPct = (val, tot) => (tot > 0 && val > 0) ? `${Math.round((val / tot) * 100)}%` : "";
+
       Plotly.newPlot("chart-daily", [
-        { x: xLabels, y: dates.map(d => byDate[d]["En tiempo"]), name: "En tiempo", type: "bar", marker: { color: "#16A34A" } },
-        { x: xLabels, y: dates.map(d => byDate[d]["Tolerancia"]), name: "Tolerancia", type: "bar", marker: { color: "#F59E0B" } },
-        { x: xLabels, y: dates.map(d => byDate[d]["Retardo"]), name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
+        { x: xLabels, y: dates.map(d => byDate[d]["En tiempo"]), text: dates.map(d => calcPct(byDate[d]["En tiempo"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "En tiempo", type: "bar", marker: { color: "#16A34A" } },
+        { x: xLabels, y: dates.map(d => byDate[d]["Tolerancia"]), text: dates.map(d => calcPct(byDate[d]["Tolerancia"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "Tolerancia", type: "bar", marker: { color: "#F59E0B" } },
+        { x: xLabels, y: dates.map(d => byDate[d]["Retardo"]), text: dates.map(d => calcPct(byDate[d]["Retardo"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
       ], {
         barmode: "stack",
         margin: { l: 35, r: 15, t: 10, b: 40 },
@@ -644,9 +649,9 @@
       const workers = Object.keys(byWorker).sort();
 
       Plotly.newPlot("chart-workers", [
-        { x: workers, y: workers.map(w => byWorker[w]["En tiempo"]), name: "En tiempo", type: "bar", marker: { color: "#16A34A" } },
-        { x: workers, y: workers.map(w => byWorker[w]["Tolerancia"]), name: "Tolerancia", type: "bar", marker: { color: "#F59E0B" } },
-        { x: workers, y: workers.map(w => byWorker[w]["Retardo"]), name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
+        { x: workers, y: workers.map(w => byWorker[w]["En tiempo"]), text: workers.map(w => calcPct(byWorker[w]["En tiempo"], byWorker[w]["En tiempo"] + byWorker[w]["Tolerancia"] + byWorker[w]["Retardo"])), textposition: "inside", name: "En tiempo", type: "bar", marker: { color: "#16A34A" } },
+        { x: workers, y: workers.map(w => byWorker[w]["Tolerancia"]), text: workers.map(w => calcPct(byWorker[w]["Tolerancia"], byWorker[w]["En tiempo"] + byWorker[w]["Tolerancia"] + byWorker[w]["Retardo"])), textposition: "inside", name: "Tolerancia", type: "bar", marker: { color: "#F59E0B" } },
+        { x: workers, y: workers.map(w => byWorker[w]["Retardo"]), text: workers.map(w => calcPct(byWorker[w]["Retardo"], byWorker[w]["En tiempo"] + byWorker[w]["Tolerancia"] + byWorker[w]["Retardo"])), textposition: "inside", name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
       ], {
         barmode: "stack",
         margin: { l: 35, r: 15, t: 10, b: 60 },
