@@ -366,6 +366,7 @@
       applyFilters();
     }
 
+    function renderEmployeesPanel() {
       const pins = [...new Set(allRecords.map(r => r.pin))].sort((a, b) => Number(a) - Number(b));
       const container = document.getElementById("emp-list");
       container.innerHTML = pins.map(pin => {
