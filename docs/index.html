@@ -16,6 +16,9 @@
         <p class="text-sm text-slate-500 mt-1" id="db-info">Cargando información de Google Sheets...</p>
       </div>
       <div class="flex flex-wrap items-center gap-2">
+        <button id="btn-vac-toggle" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
+          🏖 Vacaciones
+        </button>
         <button id="btn-emp-toggle" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
           👥 Empleados
         </button>
@@ -29,6 +32,21 @@
           📥 Descargar CSV
         </button>
       </div>
+    </div>
+
+    <!-- Vacaciones Panel (Collapsible) -->
+    <div id="vac-panel" class="hidden bg-white p-5 rounded-xl border border-slate-200 shadow-sm mt-5">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-base font-bold text-slate-800">🏖 Módulo de Vacaciones</h2>
+        <span class="text-xs text-slate-400">Durante estos rangos no se contará falta ni retardo</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-4">
+        <select id="vac-worker" class="border border-slate-300 rounded-lg px-3 py-1.5 text-sm"></select>
+        <input type="date" id="vac-start" class="border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
+        <input type="date" id="vac-end" class="border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
+        <button id="btn-vac-add" type="button" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-1.5 rounded-lg">➕ Agregar Vacaciones</button>
+      </div>
+      <div id="vac-list" class="space-y-1.5"></div>
     </div>
 
     <!-- Empleados Panel (Collapsible) -->
@@ -417,7 +435,41 @@
 
       renderConfigStores(stores);
       renderDynamicFilters();
+      renderVacationsPanel();
       applyFilters();
+    }
+
+    function isOnVacation(nombre, fecha) {
+      const vacs = appConfig.vacations || [];
+      return vacs.some(v => v.worker === nombre && fecha >= v.start && fecha <= v.end);
+    }
+
+    function renderVacationsPanel() {
+      const workers = [...new Set(allRecords.map(r => r.nombre))].sort();
+      const sel = document.getElementById("vac-worker");
+      sel.innerHTML = workers.map(w => `<option value="${w.replace(/"/g, '&quot;')}">${w}</option>`).join("");
+
+      const vacs = appConfig.vacations || [];
+      const list = document.getElementById("vac-list");
+      if (vacs.length === 0) {
+        list.innerHTML = '<p class="text-xs text-slate-400">No hay periodos de vacaciones registrados.</p>';
+        return;
+      }
+      list.innerHTML = vacs.map((v, idx) => `
+        <div class="flex items-center justify-between bg-blue-50 border border-blue-200 rounded-lg px-3 py-1.5 text-xs">
+          <span><strong>${v.worker}</strong> — del <code>${formatDateDisplay(v.start)}</code> al <code>${formatDateDisplay(v.end)}</code></span>
+          <button type="button" data-vac-del="${idx}" class="text-red-600 hover:underline font-medium">🗑️ Eliminar</button>
+        </div>
+      `).join("");
+
+      list.querySelectorAll("button[data-vac-del]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          appConfig.vacations.splice(Number(btn.dataset.vacDel), 1);
+          saveConfig();
+          renderVacationsPanel();
+          applyFilters();
+        });
+      });
     }
 
     const ALL_STATUSES = ["En tiempo", "Tolerancia", "Retardo", "Falta", "Vacaciones", "Incapacidad", "Permiso", "Justificado"];
@@ -513,7 +565,7 @@
             ...r,
             _key: key,
             dif_min: difMin,
-            estado: ov.status || computeStatus(r.hora, r.tienda, r.fecha),
+            estado: ov.status || (isOnVacation(r.nombre, r.fecha) ? "Vacaciones" : computeStatus(r.hora, r.tienda, r.fecha)),
             comentario: ov.comment || ""
           };
         })
@@ -793,6 +845,20 @@
     }
 
     async function init() {
+      document.getElementById("btn-vac-toggle").addEventListener("click", () => {
+        document.getElementById("vac-panel").classList.toggle("hidden");
+      });
+      document.getElementById("btn-vac-add").addEventListener("click", () => {
+        const w = document.getElementById("vac-worker").value;
+        const s = document.getElementById("vac-start").value;
+        const e = document.getElementById("vac-end").value;
+        if (!w || !s || !e || s > e) return;
+        if (!Array.isArray(appConfig.vacations)) appConfig.vacations = [];
+        appConfig.vacations.push({ worker: w, start: s, end: e });
+        saveConfig();
+        renderVacationsPanel();
+        applyFilters();
+      });
       document.getElementById("btn-emp-toggle").addEventListener("click", () => {
         document.getElementById("emp-panel").classList.toggle("hidden");
       });
