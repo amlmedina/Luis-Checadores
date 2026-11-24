@@ -257,7 +257,22 @@
     // Configuración y sobreescrituras sincronizadas en Google Sheets + respaldo local
     let appConfig = JSON.parse(localStorage.getItem("checador_config") || '{"tolerance":5,"storeHours":{}}');
     let manualOverrides = JSON.parse(localStorage.getItem("checador_overrides") || "{}");
-    let employeeNames = JSON.parse(localStorage.getItem("checador_employees") || "{}");
+    const DEFAULT_EMPLOYEES = {
+      "13": "Admin DM",
+      "883": "Alejandro Ramirez",
+      "1519": "Hugo Pacheco",
+      "2115": "Aaron Fuentes",
+      "4079": "Luis Matus",
+      "4283": "Manuel Ponce",
+      "6771": "Torres (Baja)",
+      "7504": "Enrique Avila",
+      "7512": "Ale APP",
+      "7694": "Daniel Bonilla",
+      "8312": "Alberto Gutierrez",
+      "8729": "Carlos Barrera",
+      "9710": "Josue Castañeda"
+    };
+    let employeeNames = { ...DEFAULT_EMPLOYEES, ...JSON.parse(localStorage.getItem("checador_employees") || "{}") };
 
     async function postToSheets(payload) {
       if (!APPS_SCRIPT_URL) return;
@@ -391,7 +406,10 @@
       const url = APPS_SCRIPT_URL ? `${APPS_SCRIPT_URL}?_=${Date.now()}` : `./data.json?_=${Date.now()}`;
       const res = await fetch(url);
       const data = await res.json();
-      allRecords = data.records || [];
+      allRecords = (data.records || []).map(r => ({
+        ...r,
+        nombre: employeeNames[r.pin] || r.nombre
+      }));
       if (data.config && data.config.storeHours && Object.keys(data.config.storeHours).length > 0) {
         appConfig = { tolerance: 5, storeHours: {}, ...data.config };
         localStorage.setItem("checador_config", JSON.stringify(appConfig));
