@@ -631,31 +631,38 @@
         return;
       }
       const days = [...new Set(filteredRecords.map(r => r.fecha))].sort();
-      const workers = [...new Set(filteredRecords.map(r => r.nombre))].sort();
+      const stores = [...new Set(filteredRecords.map(r => r.tienda || "SinTienda"))].sort();
       const map = {};
-      filteredRecords.forEach(r => { map[`${r.nombre}|${r.fecha}`] = r; });
+      filteredRecords.forEach(r => { map[`${r.tienda || "SinTienda"}|${r.nombre}|${r.fecha}`] = r; });
 
       const thead = `<thead class="bg-slate-100 text-slate-600"><tr>
         <th class="px-3 py-2 sticky left-0 bg-slate-100 z-10">Trabajador</th>
         ${days.map(d => `<th class="px-2 py-2 text-center whitespace-nowrap">${d.slice(8)}/${d.slice(5,7)}</th>`).join("")}
       </tr></thead>`;
 
-      const tbody = `<tbody class="divide-y divide-slate-100">${workers.map(w => `
-        <tr class="hover:bg-slate-50">
-          <td class="px-3 py-2 font-medium text-slate-900 sticky left-0 bg-white whitespace-nowrap">${w}</td>
-          ${days.map(d => {
-            const rec = map[`${w}|${d}`];
-            if (!rec) return '<td class="px-1.5 py-2 text-center text-slate-300">-</td>';
-            const tip = `${rec.estado} | Ent: ${rec.hora}${rec.salida ? ' | Sal: ' + rec.salida : ''}`;
-            const label = ["Falta", "Vacaciones", "Incapacidad", "Permiso"].includes(rec.estado) ? rec.estado.slice(0, 4) : rec.hora.slice(0, 5);
-            return `<td class="px-1 py-1.5 text-center" title="${tip}">
-              <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold border ${statusBadgeClass(rec.estado)}">${label}</span>
-            </td>`;
-          }).join("")}
-        </tr>
-      `).join("")}</tbody>`;
+      const tbodyRows = stores.map(st => {
+        const storeWorkers = [...new Set(filteredRecords.filter(r => (r.tienda || "SinTienda") === st).map(r => r.nombre))].sort();
+        const headerRow = `<tr class="bg-slate-50 border-t border-slate-200">
+          <td colspan="${days.length + 1}" class="px-3 py-1.5 text-[11px] font-bold text-blue-700 uppercase tracking-wide sticky left-0 bg-slate-50">🏢 ${st}</td>
+        </tr>`;
+        const workerRows = storeWorkers.map(w => `
+          <tr class="hover:bg-slate-50">
+            <td class="px-3 py-2 font-medium text-slate-900 sticky left-0 bg-white whitespace-nowrap">${w}</td>
+            ${days.map(d => {
+              const rec = map[`${st}|${w}|${d}`];
+              if (!rec) return '<td class="px-1.5 py-2 text-center text-slate-300">-</td>';
+              const tip = `${rec.estado} | Ent: ${rec.hora}${rec.salida ? ' | Sal: ' + rec.salida : ''}`;
+              const label = ["Falta", "Vacaciones", "Incapacidad", "Permiso"].includes(rec.estado) ? rec.estado.slice(0, 4) : rec.hora.slice(0, 5);
+              return `<td class="px-1 py-1.5 text-center" title="${tip}">
+                <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold border ${statusBadgeClass(rec.estado)}">${label}</span>
+              </td>`;
+            }).join("")}
+          </tr>
+        `).join("");
+        return headerRow + workerRows;
+      }).join("");
 
-      tbl.innerHTML = thead + tbody;
+      tbl.innerHTML = thead + `<tbody class="divide-y divide-slate-100">${tbodyRows}</tbody>`;
     }
 
     function renderSummary() {
