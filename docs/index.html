@@ -16,6 +16,9 @@
         <p class="text-sm text-slate-500 mt-1" id="db-info">Cargando información de Google Sheets...</p>
       </div>
       <div class="flex flex-wrap items-center gap-2">
+        <button id="btn-emp-toggle" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
+          👥 Empleados
+        </button>
         <button id="btn-config-toggle" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
           ⚙️ Configuración
         </button>
@@ -26,6 +29,15 @@
           📥 Descargar CSV
         </button>
       </div>
+    </div>
+
+    <!-- Empleados Panel (Collapsible) -->
+    <div id="emp-panel" class="hidden bg-white p-5 rounded-xl border border-slate-200 shadow-sm mt-5">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-base font-bold text-slate-800">👥 Catálogo de Empleados (PIN → Nombre)</h2>
+        <span id="emp-saved-msg" class="text-xs text-green-600 font-medium hidden">✅ Guardado en Google Sheets</span>
+      </div>
+      <div id="emp-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
     </div>
 
     <!-- Configuración Panel (Collapsible) -->
@@ -169,6 +181,7 @@
     // Configuración y sobreescrituras sincronizadas en Google Sheets + respaldo local
     let appConfig = JSON.parse(localStorage.getItem("checador_config") || '{"tolerance":5,"storeHours":{}}');
     let manualOverrides = JSON.parse(localStorage.getItem("checador_overrides") || "{}");
+    let employeeNames = JSON.parse(localStorage.getItem("checador_employees") || "{}");
 
     async function postToSheets(payload) {
       if (!APPS_SCRIPT_URL) return;
@@ -311,6 +324,12 @@
         manualOverrides = { ...manualOverrides, ...data.overrides };
         localStorage.setItem("checador_overrides", JSON.stringify(manualOverrides));
       }
+      if (data.employees && Object.keys(data.employees).length > 0) {
+        employeeNames = { ...employeeNames, ...data.employees };
+        localStorage.setItem("checador_employees", JSON.stringify(employeeNames));
+      }
+
+      renderEmployeesPanel();
 
       const meta = data.metadata || {};
       document.getElementById("db-info").textContent =
@@ -345,6 +364,34 @@
 
       renderConfigStores(stores);
       applyFilters();
+    }
+
+      const pins = [...new Set(allRecords.map(r => r.pin))].sort((a, b) => Number(a) - Number(b));
+      const container = document.getElementById("emp-list");
+      container.innerHTML = pins.map(pin => {
+        const curName = employeeNames[pin] || "";
+        return `
+          <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5">
+            <span class="font-mono text-xs font-bold text-slate-600 w-14">PIN ${pin}</span>
+            <input type="text" data-emp-pin="${pin}" value="${curName.replace(/"/g, '&quot;')}" placeholder="Nombre completo..." class="flex-1 border border-slate-300 rounded px-2 py-1 text-xs" />
+          </div>
+        `;
+      }).join("");
+
+      container.querySelectorAll("input[data-emp-pin]").forEach(inp => {
+        inp.addEventListener("change", () => {
+          const pin = inp.dataset.empPin;
+          const name = inp.value.trim();
+          employeeNames[pin] = name;
+          localStorage.setItem("checador_employees", JSON.stringify(employeeNames));
+          allRecords.forEach(r => { if (r.pin === pin && name) r.nombre = name; });
+          postToSheets({ type: "employee", pin: pin, name: name });
+          const msg = document.getElementById("emp-saved-msg");
+          msg.classList.remove("hidden");
+          setTimeout(() => msg.classList.add("hidden"), 1800);
+          applyFilters();
+        });
+      });
     }
 
     function applyFilters() {
@@ -558,6 +605,9 @@
     }
 
     async function init() {
+      document.getElementById("btn-emp-toggle").addEventListener("click", () => {
+        document.getElementById("emp-panel").classList.toggle("hidden");
+      });
       document.getElementById("btn-config-toggle").addEventListener("click", () => {
         document.getElementById("config-panel").classList.toggle("hidden");
       });
