@@ -140,6 +140,30 @@
       </div>
     </div>
 
+    <!-- Situación por Sucursal -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
+      <div class="px-4 py-3 border-b border-slate-200">
+        <h2 class="text-sm font-semibold text-slate-700">🏢 Situación por Sucursal</h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-slate-100 text-slate-600 text-xs uppercase">
+            <tr>
+              <th class="px-3 py-2.5">Sucursal</th>
+              <th class="px-3 py-2.5 text-center">Asistidos</th>
+              <th class="px-3 py-2.5 text-center text-green-700">En Tiempo</th>
+              <th class="px-3 py-2.5 text-center text-amber-600">Tolerancias</th>
+              <th class="px-3 py-2.5 text-center text-red-600">Retardos</th>
+              <th class="px-3 py-2.5 text-center text-slate-500">Faltas</th>
+              <th class="px-3 py-2.5 text-center">% Puntual.</th>
+              <th class="px-3 py-2.5 text-center">Semáforo</th>
+            </tr>
+          </thead>
+          <tbody id="store-summary-body" class="divide-y divide-slate-100"></tbody>
+        </table>
+      </div>
+    </div>
+
     <!-- Resumen de Días por Trabajador -->
     <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
       <div class="px-4 py-3 border-b border-slate-200">
@@ -504,8 +528,44 @@
       renderKPIs();
       renderCharts();
       renderMonthlyMatrix();
+      renderStoreSummary();
       renderSummary();
       renderTable();
+    }
+
+    function renderStoreSummary() {
+      const byStore = {};
+      filteredRecords.forEach(r => {
+        const st = r.tienda || "SinTienda";
+        if (!byStore[st]) byStore[st] = { asistidos: 0, ontime: 0, tol: 0, late: 0, falta: 0 };
+        if (r.estado === "Falta") byStore[st].falta++;
+        else if (!["Vacaciones", "Incapacidad", "Permiso", "Justificado"].includes(r.estado)) {
+          byStore[st].asistidos++;
+          if (r.estado === "En tiempo") byStore[st].ontime++;
+          else if (r.estado === "Tolerancia") byStore[st].tol++;
+          else if (r.estado === "Retardo") byStore[st].late++;
+        }
+      });
+
+      const tbody = document.getElementById("store-summary-body");
+      tbody.innerHTML = Object.keys(byStore).sort().map(st => {
+        const s = byStore[st];
+        const evalTotal = s.ontime + s.tol + s.late + s.falta;
+        const pct = evalTotal > 0 ? Math.round(((s.ontime + s.tol) / evalTotal) * 100) : 100;
+        const semaforo = pct >= 80 ? "🟢 OK" : (pct >= 60 ? "🟡 ATENCIÓN" : "🔴 ALERTA");
+        return `
+          <tr class="hover:bg-slate-50">
+            <td class="px-3 py-2 font-semibold text-slate-900">${st}</td>
+            <td class="px-3 py-2 text-center font-bold text-slate-800">${s.asistidos}</td>
+            <td class="px-3 py-2 text-center text-green-700 font-semibold">${s.ontime}</td>
+            <td class="px-3 py-2 text-center text-amber-600 font-semibold">${s.tol}</td>
+            <td class="px-3 py-2 text-center text-red-600 font-semibold">${s.late}</td>
+            <td class="px-3 py-2 text-center text-slate-500">${s.falta}</td>
+            <td class="px-3 py-2 text-center font-semibold">${pct}%</td>
+            <td class="px-3 py-2 text-center text-xs font-semibold">${semaforo}</td>
+          </tr>
+        `;
+      }).join("");
     }
 
     function statusIcon(st) {
