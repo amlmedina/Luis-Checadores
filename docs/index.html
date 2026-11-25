@@ -664,9 +664,13 @@
       const map = {};
       filteredRecords.forEach(r => { map[`${r.tienda || "SinTienda"}|${r.nombre}|${r.fecha}`] = r; });
 
+      const DAY_SHORT = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
       const thead = `<thead class="bg-slate-100 text-slate-600"><tr>
         <th class="px-3 py-2 sticky left-0 bg-slate-100 z-10">Trabajador</th>
-        ${days.map(d => `<th class="px-2 py-2 text-center whitespace-nowrap">${d.slice(8)}/${d.slice(5,7)}</th>`).join("")}
+        ${days.map(d => {
+          const dayName = DAY_SHORT[new Date(d + "T12:00:00").getDay()];
+          return `<th class="px-2 py-2 text-center whitespace-nowrap"><div>${d.slice(8)}/${d.slice(5,7)}</div><div class="text-[10px] font-normal text-slate-400">${dayName}</div></th>`;
+        }).join("")}
       </tr></thead>`;
 
       const tbodyRows = stores.map(st => {
