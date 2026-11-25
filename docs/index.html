@@ -767,8 +767,12 @@
         else if (r.estado === "Tolerancia") byDate[r.fecha]["Tolerancia"]++;
         else byDate[r.fecha]["Retardo"]++;
       });
+      const MONTHS_ES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
       const dates = Object.keys(byDate).sort();
-      const xLabels = dates.map(formatDateDisplay);
+      const xLabels = dates.map(d => {
+        const [, m, day] = d.split("-");
+        return `${Number(day)} ${MONTHS_ES[Number(m) - 1]}`;
+      });
 
       const calcPct = (val, tot) => (tot > 0 && val > 0) ? `${Math.round((val / tot) * 100)}%` : "";
 
