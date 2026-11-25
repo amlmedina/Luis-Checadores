@@ -408,6 +408,7 @@
       const data = await res.json();
       allRecords = (data.records || []).map(r => ({
         ...r,
+        tienda: r.tienda === "Inde" ? "Independencia" : r.tienda,
         nombre: employeeNames[r.pin] || r.nombre
       }));
       if (data.config && data.config.storeHours && Object.keys(data.config.storeHours).length > 0) {
