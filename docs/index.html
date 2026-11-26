@@ -152,7 +152,6 @@
       <div>
         <div class="brand-kicker">GALAXY BIKES · CONTROL OPERATIVO DE PERSONAL</div>
         <h1>Bitácora Mensual de Asistencias</h1>
-        <div class="meta-line mono" id="db-info">Sincronizando con Google Sheets...</div>
       </div>
       <div class="actions">
         <button id="btn-config-toggle" class="btn">Configuración</button>
@@ -326,6 +325,8 @@
         </table>
       </div>
     </section>
+
+    <footer style="margin-top:14px;text-align:right;font-size:11px;color:var(--muted);" class="mono" id="db-info">Sincronizando con Google Sheets...</footer>
   </div>
 
   <script>
@@ -641,10 +642,10 @@
         return `<th class="num"><div>${d.slice(8)}/${d.slice(5,7)}</div><div style="font-weight:400;font-size:9.5px;">${dn}</div></th>`;
       }).join("")}</tr></thead>`;
 
-      const rows = stores.map(st => {
+      const rows = stores.map((st, idx) => {
         const sw = [...new Set(filteredRecords.filter(r => (r.tienda || "SinTienda") === st).map(r => r.nombre))].sort();
-        return `<tr class="store-divider"><td colspan="${days.length + 1}" class="sticky-col">SUCURSAL · ${st}</td></tr>` +
-          sw.map(w => `<tr><td class="sticky-col" style="font-weight:600;white-space:nowrap;">${w}</td>${days.map(d => {
+        return `<tr class="store-divider" data-store-group="${idx}" style="cursor:pointer;"><td colspan="${days.length + 1}" class="sticky-col">[−] SUCURSAL · ${st}</td></tr>` +
+          sw.map(w => `<tr data-store-row="${idx}"><td class="sticky-col" style="font-weight:600;white-space:nowrap;">${w}</td>${days.map(d => {
             const rec = map[`${st}|${w}|${d}`];
             if (!rec) return '<td class="num" style="color:var(--line);">·</td>';
             const lbl = ["Falta", "Vacaciones", "Incapacidad", "Permiso"].includes(rec.estado) ? rec.estado.slice(0, 4) : rec.hora.slice(0, 5);
@@ -652,6 +653,15 @@
           }).join("")}</tr>`).join("");
       }).join("");
       tbl.innerHTML = thead + `<tbody>${rows}</tbody>`;
+      tbl.querySelectorAll("tr[data-store-group]").forEach(hdr => {
+        hdr.addEventListener("click", () => {
+          const g = hdr.dataset.storeGroup;
+          const cell = hdr.querySelector("td");
+          const collapsed = cell.textContent.startsWith("[+]");
+          cell.textContent = (collapsed ? "[−]" : "[+]") + cell.textContent.slice(3);
+          tbl.querySelectorAll(`tr[data-store-row="${g}"]`).forEach(r => r.classList.toggle("hidden", !collapsed));
+        });
+      });
     }
 
     function renderStoreSummary() {
