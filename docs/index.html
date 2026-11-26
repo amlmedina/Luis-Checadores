@@ -3,289 +3,365 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Control de Asistencias - RH</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>GALAXY BIKES · Bitácora Operativa de Asistencias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+  <style>
+    :root {
+      --bg: #F5F3EE;
+      --surface: #ECE8DF;
+      --ink: #141414;
+      --muted: #525250;
+      --line: #D5D0C5;
+      --accent: #1F4E3D;
+      --amber: #9A5B13;
+      --red: #A62626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 13px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+    .wrap { max-width: 1440px; margin: 0 auto; padding: 16px 20px 40px; }
+    .topbar {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end;
+      gap: 12px; padding-bottom: 12px; border-bottom: 2px solid var(--ink);
+    }
+    .brand-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+    }
+    h1 { margin: 2px 0 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+    .meta-line { margin-top: 4px; font-size: 11.5px; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 6px; }
+    .btn {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 12px; font-weight: 600;
+      padding: 6px 12px; border: 1px solid var(--ink);
+      background: var(--bg); color: var(--ink);
+      cursor: pointer; border-radius: 2px;
+    }
+    .btn:hover { background: var(--surface); }
+    .btn-primary { background: var(--accent); color: #F5F3EE; border-color: var(--accent); }
+    .btn-primary:hover { opacity: 0.92; }
+
+    .strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line); border-top: none; background: var(--surface);
+    }
+    .strip-cell {
+      padding: 10px 14px; border-right: 1px solid var(--line);
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .strip-cell:last-child { border-right: none; }
+    .strip-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .strip-val { font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    .controls {
+      margin-top: 14px; border: 1px solid var(--line); background: var(--surface); padding: 12px 14px;
+    }
+    .controls-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .field label {
+      display: block; font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 4px;
+    }
+    select, input[type="text"], input[type="time"], input[type="number"], input[type="date"] {
+      width: 100%; padding: 5px 8px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; border-radius: 2px;
+    }
+    .status-bar { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .chk-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 8px; border: 1px solid var(--line); background: var(--bg);
+      font-size: 11.5px; cursor: pointer;
+    }
+
+    .section { margin-top: 14px; border: 1px solid var(--line); background: var(--bg); }
+    .sec-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 12px; background: var(--surface); border-bottom: 1px solid var(--line);
+      cursor: pointer; user-select: none;
+    }
+    .sec-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    .sec-toggle { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+    .hidden { display: none !important; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th {
+      background: var(--surface); color: var(--muted);
+      font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap;
+    }
+    td { padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+    tr:hover td { background: rgba(236, 232, 223, 0.55); }
+    .num { text-align: center; font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+    .sticky-col { position: sticky; left: 0; background: var(--bg); z-index: 2; border-right: 1px solid var(--line); }
+    thead .sticky-col { background: var(--surface); z-index: 3; }
+
+    .sig-ok { color: var(--accent); font-weight: 600; }
+    .sig-tol { color: var(--amber); font-weight: 600; }
+    .sig-late { color: var(--red); font-weight: 600; }
+    .sig-spec { color: var(--muted); font-weight: 600; }
+    .cell-tag {
+      display: inline-block; padding: 1px 5px; border: 1px solid currentColor;
+      font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-variant-numeric: tabular-nums;
+    }
+    .store-divider td {
+      background: var(--surface); font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em;
+    }
+
+    .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+    .chart-box { background: var(--bg); padding: 12px; }
+    .chart-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; }
+
+    .dd-wrap { position: relative; }
+    .dd-menu {
+      position: absolute; z-index: 30; top: 100%; left: 0; right: 0; margin-top: 2px;
+      background: var(--bg); border: 1px solid var(--ink); padding: 8px; max-height: 240px; overflow-y: auto;
+    }
+    .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 12px; }
+    .tab-btn {
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 5px 10px;
+      border: 1px solid var(--line); background: var(--bg); cursor: pointer;
+    }
+    .tab-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+    @media (max-width: 900px) {
+      .strip { grid-template-columns: repeat(2, 1fr); }
+      .controls-grid, .charts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen">
-  <div class="max-w-7xl mx-auto px-4 py-6">
-    <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-5 border-b border-slate-200">
+<body>
+  <div class="wrap">
+    <header class="topbar">
       <div>
-        <h1 class="text-2xl font-bold text-slate-900">📋 Control de Asistencias - Recursos Humanos</h1>
-        <p class="text-sm text-slate-500 mt-1" id="db-info">Cargando información de Google Sheets...</p>
+        <div class="brand-kicker">GALAXY BIKES · CONTROL OPERATIVO DE PERSONAL</div>
+        <h1>Bitácora Mensual de Asistencias</h1>
+        <div class="meta-line mono" id="db-info">Sincronizando con Google Sheets...</div>
       </div>
-      <div class="flex flex-wrap items-center gap-2">
-        <button id="btn-config-toggle" class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
-          ⚙️ Configuración
-        </button>
-        <button id="btn-refresh" class="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
-          🔄 Actualizar
-        </button>
-        <button id="btn-csv" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition">
-          📥 Descargar CSV
-        </button>
+      <div class="actions">
+        <button id="btn-config-toggle" class="btn">Configuración</button>
+        <button id="btn-refresh" class="btn">Actualizar</button>
+        <button id="btn-csv" class="btn btn-primary">Exportar CSV</button>
       </div>
-    </div>
+    </header>
 
-    <!-- Configuración Centralizada (Con pestañas) -->
-    <div id="config-panel" class="hidden bg-white p-5 rounded-xl border border-slate-200 shadow-sm mt-5">
-      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3 mb-4">
-        <div class="flex flex-wrap gap-2">
-          <button type="button" data-cfg-tab="tab-horarios" class="cfg-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white">🕒 Horarios y Tolerancia</button>
-          <button type="button" data-cfg-tab="tab-empleados" class="cfg-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">👥 Empleados</button>
-          <button type="button" data-cfg-tab="tab-vacaciones" class="cfg-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">🏖 Vacaciones</button>
-        </div>
-        <span id="config-saved-msg" class="text-xs text-green-600 font-medium hidden">✅ Guardado</span>
+    <section class="strip">
+      <div class="strip-cell"><span class="strip-label">Registros</span><span class="strip-val" id="kpi-total">0</span></div>
+      <div class="strip-cell"><span class="strip-label">En tiempo</span><span class="strip-val sig-ok" id="kpi-ontime">0</span></div>
+      <div class="strip-cell"><span class="strip-label">Tolerancia</span><span class="strip-val sig-tol" id="kpi-tol">0</span></div>
+      <div class="strip-cell"><span class="strip-label">Retardos</span><span class="strip-val sig-late" id="kpi-late">0</span></div>
+    </section>
+
+    <!-- Panel de Configuración Centralizada -->
+    <section id="config-panel" class="section hidden" style="padding:12px 14px;">
+      <div class="tabs">
+        <button type="button" data-cfg-tab="tab-horarios" class="tab-btn active">Horarios y Tolerancia</button>
+        <button type="button" data-cfg-tab="tab-empleados" class="tab-btn">Catálogo de Empleados</button>
+        <button type="button" data-cfg-tab="tab-vacaciones" class="tab-btn">Vacaciones</button>
+        <span id="config-saved-msg" class="mono sig-ok hidden" style="margin-left:auto;font-size:11px;">[Guardado en Sheets]</span>
       </div>
 
-      <div id="tab-horarios" class="cfg-tab-content grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Tiempo de tolerancia (minutos)</label>
-          <input type="number" id="cfg-tolerance" min="0" max="60" value="5" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
-          <p class="text-xs text-slate-400 mt-1">Ej. Entrada 09:00 + 5 min = hasta 09:05 es Tolerancia; 09:06+ es Retardo.</p>
+      <div id="tab-horarios" class="cfg-tab-content">
+        <div style="max-width:260px;margin-bottom:12px;">
+          <label class="mono" style="font-size:11px;color:var(--muted);">Tolerancia global (minutos)</label>
+          <input type="number" id="cfg-tolerance" min="0" max="60" value="5" />
         </div>
-        <div class="md:col-span-2">
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Horario de entrada, salida y comida por tienda y día</label>
-          <div id="cfg-stores-list" class="space-y-2"></div>
-        </div>
+        <div id="cfg-stores-list" style="display:grid;gap:10px;"></div>
       </div>
 
       <div id="tab-empleados" class="cfg-tab-content hidden">
-        <div class="flex items-center justify-between mb-2">
-          <span class="text-xs text-slate-500">Asigna el nombre completo a cada PIN</span>
-          <span id="emp-saved-msg" class="text-xs text-green-600 font-medium hidden">✅ Guardado en Google Sheets</span>
-        </div>
-        <div id="emp-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
+        <div id="emp-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;"></div>
       </div>
 
       <div id="tab-vacaciones" class="cfg-tab-content hidden">
-        <p class="text-xs text-slate-500 mb-3">Durante estos rangos no se contará falta ni retardo.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 mb-4">
-          <select id="vac-worker" class="border border-slate-300 rounded-lg px-3 py-1.5 text-sm"></select>
-          <input type="date" id="vac-start" class="border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
-          <input type="date" id="vac-end" class="border border-slate-300 rounded-lg px-3 py-1.5 text-sm" />
-          <button id="btn-vac-add" type="button" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-1.5 rounded-lg">➕ Agregar Vacaciones</button>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:10px;">
+          <select id="vac-worker"></select>
+          <input type="date" id="vac-start" />
+          <input type="date" id="vac-end" />
+          <button id="btn-vac-add" type="button" class="btn btn-primary">Registrar Vacaciones</button>
         </div>
-        <div id="vac-list" class="space-y-1.5"></div>
+        <div id="vac-list" style="display:grid;gap:6px;"></div>
       </div>
-    </div>
+    </section>
 
-    <!-- Top Selectors: Mes, Tienda, Empleados (Multi-Checkbox) y Estatus -->
-    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm mt-5 space-y-3">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Mes a consultar</label>
-          <select id="f-month" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm">
-            <option value="">Todos los meses</option>
-          </select>
+    <!-- Controles Operativos -->
+    <section class="controls">
+      <div class="controls-grid">
+        <div class="field">
+          <label>Mes a consultar</label>
+          <select id="f-month"><option value="">Todos los meses</option></select>
         </div>
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Tienda</label>
-          <select id="f-store" class="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm">
-            <option value="">Todas las tiendas</option>
-          </select>
+        <div class="field">
+          <label>Sucursal</label>
+          <select id="f-store"><option value="">Todas las sucursales</option></select>
         </div>
-        <div class="relative">
-          <label class="block text-xs font-semibold text-slate-500 mb-1">Trabajadores (selección múltiple)</label>
-          <button id="btn-workers-dd" type="button" class="w-full text-left border border-slate-300 rounded-lg px-3 py-1.5 text-sm bg-white flex items-center justify-between">
-            <span id="workers-dd-label">Todos los trabajadores</span>
-            <span class="text-slate-400">▾</span>
+        <div class="field dd-wrap">
+          <label>Colaboradores (selección múltiple)</label>
+          <button id="btn-workers-dd" type="button" class="btn" style="width:100%;text-align:left;display:flex;justify-content:space-between;">
+            <span id="workers-dd-label">Todos los colaboradores</span><span>▾</span>
           </button>
-          <div id="workers-dd-menu" class="hidden absolute z-20 mt-1 w-full bg-white border border-slate-200 rounded-xl shadow-lg p-2 max-h-60 overflow-y-auto">
-            <div class="flex justify-between pb-1.5 mb-1.5 border-b border-slate-100 text-xs">
-              <button type="button" id="btn-workers-all" class="text-blue-600 hover:underline font-medium">Todos</button>
-              <button type="button" id="btn-workers-none" class="text-slate-500 hover:underline">Ninguno</button>
+          <div id="workers-dd-menu" class="dd-menu hidden">
+            <div style="display:flex;justify-content:space-between;padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--line);font-size:11px;">
+              <button type="button" id="btn-workers-all" style="background:none;border:none;color:var(--accent);cursor:pointer;font-weight:600;">Todos</button>
+              <button type="button" id="btn-workers-none" style="background:none;border:none;color:var(--muted);cursor:pointer;">Ninguno</button>
             </div>
-            <div id="workers-checkboxes" class="space-y-1"></div>
+            <div id="workers-checkboxes"></div>
           </div>
         </div>
       </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-500 mb-1.5">Filtrar por Estatus</label>
-        <div id="status-checkboxes" class="flex flex-wrap gap-2"></div>
-      </div>
-    </div>
+      <div class="status-bar" id="status-checkboxes"></div>
+    </section>
 
-    <!-- KPIs -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
-        <div class="text-2xl font-bold text-slate-900" id="kpi-total">0</div>
-        <div class="text-xs text-slate-500 mt-1">Total de Registros</div>
+    <!-- Gráficas -->
+    <section class="section">
+      <div data-collapse-target="sec-charts" class="sec-head">
+        <span class="sec-title">Gráficas de Cumplimiento</span>
+        <span class="sec-toggle collapse-icon">[−] Ocultar</span>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
-        <div class="text-2xl font-bold text-green-600" id="kpi-ontime">0</div>
-        <div class="text-xs text-slate-500 mt-1">En Tiempo</div>
+      <div id="sec-charts" class="charts-grid">
+        <div class="chart-box">
+          <div class="chart-label">Asistencia por Día (%)</div>
+          <div id="chart-daily" style="height:260px;"></div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-label">Distribución por Colaborador (%)</div>
+          <div id="chart-workers" style="height:260px;"></div>
+        </div>
       </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
-        <div class="text-2xl font-bold text-amber-500" id="kpi-tol">0</div>
-        <div class="text-xs text-slate-500 mt-1">En Tolerancia</div>
-      </div>
-      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
-        <div class="text-2xl font-bold text-red-600" id="kpi-late">0</div>
-        <div class="text-xs text-slate-500 mt-1">Retardos</div>
-      </div>
-    </div>
+    </section>
 
-    <!-- Charts -->
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
-      <div data-collapse-target="sec-charts" class="px-4 py-3 border-b border-slate-200 flex items-center justify-between cursor-pointer hover:bg-slate-50 select-none">
-        <h2 class="text-sm font-semibold text-slate-700">📊 Gráficas de Asistencia</h2>
-        <span class="collapse-icon text-xs text-slate-500">▲ Ocultar</span>
+    <!-- Vista Mensual por Trabajador -->
+    <section class="section">
+      <div data-collapse-target="sec-matrix" class="sec-head">
+        <span class="sec-title">Matriz Mensual por Sucursal y Colaborador</span>
+        <span class="sec-toggle collapse-icon">[−] Ocultar</span>
       </div>
-      <div id="sec-charts" class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
-        <div>
-          <h3 class="text-xs font-semibold text-slate-500 mb-2">Asistencia por Día</h3>
-          <div id="chart-daily" class="w-full h-72"></div>
-        </div>
-        <div>
-          <h3 class="text-xs font-semibold text-slate-500 mb-2">Tolerancias y Retardos por Trabajador</h3>
-          <div id="chart-workers" class="w-full h-72"></div>
-        </div>
+      <div id="sec-matrix" class="table-wrap">
+        <table id="monthly-matrix"></table>
       </div>
-    </div>
-
-    <!-- Vista Mensual Ejecutiva (Matriz por Día) -->
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
-      <div data-collapse-target="sec-matrix" class="px-4 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2 cursor-pointer hover:bg-slate-50 select-none">
-        <div class="flex items-center gap-2">
-          <h2 class="text-sm font-semibold text-slate-700">📅 Vista Mensual por Trabajador</h2>
-          <span class="collapse-icon text-xs text-slate-500">▲ Ocultar</span>
-        </div>
-        <div class="flex flex-wrap gap-2 text-[11px] text-slate-500">
-          <span>✅ En tiempo</span><span>🟡 Tolerancia</span><span>🔴 Retardo</span><span>⛔ Falta</span><span>🏖 Vac</span><span>🩺 Inc</span><span>📋 Perm</span>
-        </div>
-      </div>
-      <div id="sec-matrix" class="overflow-x-auto">
-        <table class="w-full text-xs text-left" id="monthly-matrix"></table>
-      </div>
-    </div>
+    </section>
 
     <!-- Situación por Sucursal -->
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
-      <div data-collapse-target="sec-stores" class="px-4 py-3 border-b border-slate-200 flex items-center justify-between cursor-pointer hover:bg-slate-50 select-none">
-        <h2 class="text-sm font-semibold text-slate-700">🏢 Situación por Sucursal</h2>
-        <span class="collapse-icon text-xs text-slate-500">▲ Ocultar</span>
+    <section class="section">
+      <div data-collapse-target="sec-stores" class="sec-head">
+        <span class="sec-title">Situación por Sucursal</span>
+        <span class="sec-toggle collapse-icon">[−] Ocultar</span>
       </div>
-      <div id="sec-stores" class="overflow-x-auto">
-        <table class="w-full text-sm text-left">
-          <thead class="bg-slate-100 text-slate-600 text-xs uppercase">
+      <div id="sec-stores" class="table-wrap">
+        <table>
+          <thead>
             <tr>
-              <th class="px-3 py-2.5">Sucursal</th>
-              <th class="px-3 py-2.5 text-center">Asistidos</th>
-              <th class="px-3 py-2.5 text-center text-green-700">En Tiempo</th>
-              <th class="px-3 py-2.5 text-center text-amber-600">Tolerancias</th>
-              <th class="px-3 py-2.5 text-center text-red-600">Retardos</th>
-              <th class="px-3 py-2.5 text-center text-slate-500">Faltas</th>
-              <th class="px-3 py-2.5 text-center">% Puntual.</th>
-              <th class="px-3 py-2.5 text-center">Semáforo</th>
+              <th>Sucursal</th><th class="num">Asistidos</th><th class="num">En Tiempo</th>
+              <th class="num">Tolerancias</th><th class="num">Retardos</th><th class="num">Faltas</th>
+              <th class="num">% Puntual.</th><th class="num">Semáforo</th>
             </tr>
           </thead>
-          <tbody id="store-summary-body" class="divide-y divide-slate-100"></tbody>
+          <tbody id="store-summary-body"></tbody>
         </table>
       </div>
-    </div>
+    </section>
 
-    <!-- Resumen de Días por Trabajador -->
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
-      <div data-collapse-target="sec-workers" class="px-4 py-3 border-b border-slate-200 flex items-center justify-between cursor-pointer hover:bg-slate-50 select-none">
-        <h2 class="text-sm font-semibold text-slate-700">📊 Semáforo y Alertas Disciplinarias por Trabajador</h2>
-        <span class="collapse-icon text-xs text-slate-500">▲ Ocultar</span>
+    <!-- Semáforo y Alertas Disciplinarias -->
+    <section class="section">
+      <div data-collapse-target="sec-workers" class="sec-head">
+        <span class="sec-title">Semáforo y Alertas Disciplinarias</span>
+        <span class="sec-toggle collapse-icon">[−] Ocultar</span>
       </div>
-      <div id="sec-workers" class="overflow-x-auto">
-        <table class="w-full text-sm text-left">
-          <thead class="bg-slate-100 text-slate-600 text-xs uppercase">
+      <div id="sec-workers" class="table-wrap">
+        <table>
+          <thead>
             <tr>
-              <th class="px-3 py-2.5">Trabajador</th>
-              <th class="px-3 py-2.5 text-center">Asistidos</th>
-              <th class="px-3 py-2.5 text-center text-green-700">En Tiempo</th>
-              <th class="px-3 py-2.5 text-center text-amber-600">Tolerancias</th>
-              <th class="px-3 py-2.5 text-center text-red-600">Retardos</th>
-              <th class="px-3 py-2.5 text-center text-slate-500">Faltas</th>
-              <th class="px-3 py-2.5 text-center text-blue-600">Vac/Inc/Perm</th>
-              <th class="px-3 py-2.5 text-center">% Puntual.</th>
-              <th class="px-3 py-2.5 text-center">Semáforo</th>
-              <th class="px-3 py-2.5">Acción Disciplinaria</th>
+              <th>Colaborador</th><th class="num">Asistidos</th><th class="num">En Tiempo</th>
+              <th class="num">Tolerancias</th><th class="num">Retardos</th><th class="num">Faltas</th>
+              <th class="num">Vac/Inc/Perm</th><th class="num">% Puntual.</th>
+              <th class="num">Semáforo</th><th>Acción Disciplinaria</th>
             </tr>
           </thead>
-          <tbody id="summary-body" class="divide-y divide-slate-100"></tbody>
+          <tbody id="summary-body"></tbody>
         </table>
       </div>
-    </div>
+    </section>
 
-    <!-- Table -->
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm mt-5 overflow-hidden">
-      <div id="btn-table-toggle" class="px-4 py-3 border-b border-slate-200 flex items-center justify-between cursor-pointer hover:bg-slate-50 select-none">
-        <div class="flex items-center gap-2">
-          <h2 class="text-sm font-semibold text-slate-700">Tabla de Registros Detallada</h2>
-          <span id="table-toggle-icon" class="text-xs text-slate-500">▼ Mostrar</span>
-        </div>
-        <span class="text-xs text-slate-400">Edita el estatus o agrega comentarios directamente en cada fila</span>
+    <!-- Tabla Detallada -->
+    <section class="section">
+      <div id="btn-table-toggle" class="sec-head">
+        <span class="sec-title">Bitácora Detallada de Marcajes (Editable)</span>
+        <span id="table-toggle-icon" class="sec-toggle">[+] Mostrar</span>
       </div>
-      <div id="table-wrapper" class="overflow-x-auto hidden">
-        <table class="w-full text-sm text-left">
-          <thead class="bg-slate-100 text-slate-600 text-xs uppercase">
+      <div id="table-wrapper" class="table-wrap hidden">
+        <table>
+          <thead>
             <tr>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="pin">PIN ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="nombre">Nombre ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="fecha">Fecha ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="hora">Entrada ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="dif_min">Dif. (min) ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida_comer">Salida Comer ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="regreso_comer">Regreso Comer ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="salida">Salida ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="horas_trabajadas">Horas ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="tienda">Tienda ↕</th>
-              <th class="px-3 py-3 cursor-pointer hover:bg-slate-200" data-sort="estado">Estatus ↕</th>
-              <th class="px-3 py-3">Comentarios</th>
+              <th data-sort="pin" style="cursor:pointer;">PIN ↕</th>
+              <th data-sort="nombre" style="cursor:pointer;">Colaborador ↕</th>
+              <th data-sort="fecha" style="cursor:pointer;">Fecha ↕</th>
+              <th data-sort="hora" style="cursor:pointer;">Entrada ↕</th>
+              <th data-sort="dif_min" style="cursor:pointer;">Dif. (min) ↕</th>
+              <th data-sort="salida_comer" style="cursor:pointer;">Comida Sal. ↕</th>
+              <th data-sort="regreso_comer" style="cursor:pointer;">Comida Reg. ↕</th>
+              <th data-sort="salida" style="cursor:pointer;">Salida ↕</th>
+              <th data-sort="horas_trabajadas" style="cursor:pointer;">Horas ↕</th>
+              <th data-sort="tienda" style="cursor:pointer;">Sucursal ↕</th>
+              <th data-sort="estado" style="cursor:pointer;">Estatus ↕</th>
+              <th>Observaciones</th>
             </tr>
           </thead>
-          <tbody id="table-body" class="divide-y divide-slate-100"></tbody>
+          <tbody id="table-body"></tbody>
         </table>
       </div>
-    </div>
+    </section>
   </div>
 
   <script>
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw8HZZ6-h0LDAacRiOdX37AfgzJZDfnrp7d8Dbr7vrWV7iPMZHcEZSdAxiuhGgwmgwpLA/exec";
+    const DEFAULT_EMPLOYEES = {
+      "13": "Admin DM", "883": "Alejandro Ramirez", "1519": "Hugo Pacheco",
+      "2115": "Aaron Fuentes", "4079": "Luis Matus", "4283": "Manuel Ponce",
+      "6771": "Torres (Baja)", "7504": "Enrique Avila", "7512": "Ale APP",
+      "7694": "Daniel Bonilla", "8312": "Alberto Gutierrez", "8729": "Carlos Barrera",
+      "9710": "Josue Castañeda"
+    };
+    const ALL_STATUSES = ["En tiempo", "Tolerancia", "Retardo", "Falta", "Vacaciones", "Incapacidad", "Permiso", "Justificado"];
+    const DAYS_LABELS = [
+      { idx: "1", label: "Lun" }, { idx: "2", label: "Mar" }, { idx: "3", label: "Mié" },
+      { idx: "4", label: "Jue" }, { idx: "5", label: "Vie" }, { idx: "6", label: "Sáb" }, { idx: "0", label: "Dom" }
+    ];
 
     let allRecords = [];
     let filteredRecords = [];
     let sortKey = "fecha";
     let sortAsc = false;
-
-    // Configuración y sobreescrituras sincronizadas en Google Sheets + respaldo local
+    let selectedWorkers = new Set();
+    let selectedStatuses = new Set(ALL_STATUSES);
     let appConfig = JSON.parse(localStorage.getItem("checador_config") || '{"tolerance":5,"storeHours":{}}');
     let manualOverrides = JSON.parse(localStorage.getItem("checador_overrides") || "{}");
-    const DEFAULT_EMPLOYEES = {
-      "13": "Admin DM",
-      "883": "Alejandro Ramirez",
-      "1519": "Hugo Pacheco",
-      "2115": "Aaron Fuentes",
-      "4079": "Luis Matus",
-      "4283": "Manuel Ponce",
-      "6771": "Torres (Baja)",
-      "7504": "Enrique Avila",
-      "7512": "Ale APP",
-      "7694": "Daniel Bonilla",
-      "8312": "Alberto Gutierrez",
-      "8729": "Carlos Barrera",
-      "9710": "Josue Castañeda"
-    };
     let employeeNames = { ...DEFAULT_EMPLOYEES, ...JSON.parse(localStorage.getItem("checador_employees") || "{}") };
 
     async function postToSheets(payload) {
       if (!APPS_SCRIPT_URL) return;
       try {
         await fetch(APPS_SCRIPT_URL, {
-          method: "POST",
-          mode: "no-cors",
+          method: "POST", mode: "no-cors",
           headers: { "Content-Type": "text/plain" },
           body: JSON.stringify(payload)
         });
-      } catch (e) {
-        console.error("Error guardando en Sheets:", e);
-      }
+      } catch (e) { console.error(e); }
     }
 
     function saveConfig() {
@@ -299,7 +375,7 @@
     function saveOverride(key) {
       localStorage.setItem("checador_overrides", JSON.stringify(manualOverrides));
       const ov = manualOverrides[key] || {};
-      postToSheets({ type: "override", key: key, status: ov.status || "", comment: ov.comment || "" });
+      postToSheets({ type: "override", key, status: ov.status || "", comment: ov.comment || "" });
     }
 
     function formatDateDisplay(isoDate) {
@@ -312,23 +388,11 @@
       return h * 60 + m;
     }
 
-    const DAYS_LABELS = [
-      { idx: "1", label: "Lun" },
-      { idx: "2", label: "Mar" },
-      { idx: "3", label: "Mié" },
-      { idx: "4", label: "Jue" },
-      { idx: "5", label: "Vie" },
-      { idx: "6", label: "Sáb" },
-      { idx: "0", label: "Dom" }
-    ];
-
     function getDayRule(tienda, fechaStr) {
       const dayIdx = String(new Date(fechaStr + "T12:00:00").getDay());
       const storeCfg = appConfig.storeHours[tienda];
       const raw = (typeof storeCfg === "object" && storeCfg !== null) ? storeCfg[dayIdx] : null;
-      if (raw && typeof raw === "object") {
-        return { in: raw.in || "09:00", out: raw.out || "18:00", lunch: Number(raw.lunch ?? 60) };
-      }
+      if (raw && typeof raw === "object") return { in: raw.in || "09:00", out: raw.out || "18:00", lunch: Number(raw.lunch ?? 60) };
       const fallbackIn = typeof raw === "string" ? raw : (typeof storeCfg === "string" ? storeCfg : "09:00");
       return { in: fallbackIn, out: "18:00", lunch: 60 };
     }
@@ -343,74 +407,20 @@
       return "Retardo";
     }
 
-    function renderConfigStores(stores) {
-      document.getElementById("cfg-tolerance").value = appConfig.tolerance ?? 5;
-      const container = document.getElementById("cfg-stores-list");
-      container.innerHTML = stores.map(s => {
-        const storeCfg = (typeof appConfig.storeHours[s] === "object" && appConfig.storeHours[s] !== null)
-          ? appConfig.storeHours[s]
-          : {};
-        const fallback = typeof appConfig.storeHours[s] === "string" ? appConfig.storeHours[s] : "09:00";
-        return `
-          <div class="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-            <div class="text-xs font-bold text-slate-700 mb-2">${s}</div>
-            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
-              ${DAYS_LABELS.map(d => {
-                const raw = storeCfg[d.idx];
-                const vIn = (raw && typeof raw === "object") ? (raw.in || "09:00") : (typeof raw === "string" ? raw : fallback);
-                const vOut = (raw && typeof raw === "object") ? (raw.out || "18:00") : "18:00";
-                const vLunch = (raw && typeof raw === "object") ? (raw.lunch ?? 60) : 60;
-                return `
-                  <div class="bg-white border border-slate-200 rounded p-1.5 space-y-1">
-                    <div class="text-[11px] font-bold text-slate-600">${d.label}</div>
-                    <div>
-                      <label class="block text-[9px] text-slate-400">Entrada</label>
-                      <input type="time" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="in" value="${vIn}" class="w-full border border-slate-300 rounded px-1 py-0.5 text-[11px]" />
-                    </div>
-                    <div>
-                      <label class="block text-[9px] text-slate-400">Salida</label>
-                      <input type="time" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="out" value="${vOut}" class="w-full border border-slate-300 rounded px-1 py-0.5 text-[11px]" />
-                    </div>
-                    <div>
-                      <label class="block text-[9px] text-slate-400">Comida (min)</label>
-                      <input type="number" min="0" max="180" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="lunch" value="${vLunch}" class="w-full border border-slate-300 rounded px-1 py-0.5 text-[11px]" />
-                    </div>
-                  </div>
-                `;
-              }).join("")}
-            </div>
-          </div>
-        `;
-      }).join("");
+    function isOnVacation(nombre, fecha) {
+      return (appConfig.vacations || []).some(v => v.worker === nombre && fecha >= v.start && fecha <= v.end);
+    }
 
-      container.querySelectorAll("input[data-store-hour]").forEach(inp => {
-        inp.addEventListener("change", () => {
-          const st = inp.dataset.storeHour;
-          const dy = inp.dataset.dayIdx;
-          const field = inp.dataset.field;
-          if (typeof appConfig.storeHours[st] !== "object" || appConfig.storeHours[st] === null) {
-            appConfig.storeHours[st] = {};
-          }
-          const cur = appConfig.storeHours[st][dy];
-          if (typeof cur !== "object" || cur === null) {
-            appConfig.storeHours[st][dy] = { in: typeof cur === "string" ? cur : "09:00", out: "18:00", lunch: 60 };
-          }
-          appConfig.storeHours[st][dy][field] = field === "lunch" ? Number(inp.value || 0) : (inp.value || "09:00");
-          saveConfig();
-          applyFilters();
-        });
-      });
+    function statusClass(st) {
+      if (st === "En tiempo" || st === "Justificado") return "sig-ok";
+      if (st === "Tolerancia") return "sig-tol";
+      if (["Vacaciones", "Incapacidad", "Permiso"].includes(st)) return "sig-spec";
+      return "sig-late";
     }
 
     async function loadData() {
-      const url = APPS_SCRIPT_URL ? `${APPS_SCRIPT_URL}?_=${Date.now()}` : `./data.json?_=${Date.now()}`;
-      const res = await fetch(url);
+      const res = await fetch(`${APPS_SCRIPT_URL}?_=${Date.now()}`);
       const data = await res.json();
-      allRecords = (data.records || []).map(r => ({
-        ...r,
-        tienda: r.tienda === "Inde" ? "Independencia" : r.tienda,
-        nombre: employeeNames[r.pin] || r.nombre
-      }));
       if (data.config && data.config.storeHours && Object.keys(data.config.storeHours).length > 0) {
         appConfig = { tolerance: 5, storeHours: {}, ...data.config };
         localStorage.setItem("checador_config", JSON.stringify(appConfig));
@@ -424,123 +434,66 @@
         localStorage.setItem("checador_employees", JSON.stringify(employeeNames));
       }
 
-      renderEmployeesPanel();
+      allRecords = (data.records || []).map(r => ({
+        ...r,
+        tienda: r.tienda === "Inde" ? "Independencia" : r.tienda,
+        nombre: employeeNames[r.pin] || r.nombre
+      }));
 
       const meta = data.metadata || {};
-      document.getElementById("db-info").textContent =
-        `🕒 Último registro: ${meta.latest_punch || "-"}`;
+      document.getElementById("db-info").textContent = `Último marcaje sincronizado: ${meta.latest_punch || "-"}`;
 
-      // Meses disponibles
       const monthSelect = document.getElementById("f-month");
-      const currentMonth = monthSelect.value;
+      const curM = monthSelect.value;
       const months = [...new Set(allRecords.map(r => r.fecha.slice(0, 7)))].sort().reverse();
-      monthSelect.innerHTML = '<option value="">Todos los meses</option>';
-      months.forEach(m => {
-        const opt = document.createElement("option");
-        opt.value = m;
-        opt.textContent = m;
-        monthSelect.appendChild(opt);
-      });
-      if (currentMonth) monthSelect.value = currentMonth;
-      else if (months.length > 0) monthSelect.value = months[0];
+      monthSelect.innerHTML = '<option value="">Todos los meses</option>' + months.map(m => `<option value="${m}">${m}</option>`).join("");
+      monthSelect.value = curM || (months[0] || "");
 
-      // Tiendas disponibles
       const storeSelect = document.getElementById("f-store");
-      const currentStore = storeSelect.value;
+      const curS = storeSelect.value;
       const stores = [...new Set(allRecords.map(r => r.tienda))].sort();
-      storeSelect.innerHTML = '<option value="">Todas las tiendas</option>';
-      stores.forEach(s => {
-        const opt = document.createElement("option");
-        opt.value = s;
-        opt.textContent = s;
-        storeSelect.appendChild(opt);
-      });
-      storeSelect.value = currentStore;
+      storeSelect.innerHTML = '<option value="">Todas las sucursales</option>' + stores.map(s => `<option value="${s}">${s}</option>`).join("");
+      storeSelect.value = curS;
 
       renderConfigStores(stores);
-      renderDynamicFilters();
+      renderEmployeesPanel();
       renderVacationsPanel();
+      renderDynamicFilters();
       applyFilters();
     }
 
-    function isOnVacation(nombre, fecha) {
-      const vacs = appConfig.vacations || [];
-      return vacs.some(v => v.worker === nombre && fecha >= v.start && fecha <= v.end);
-    }
+    function renderConfigStores(stores) {
+      document.getElementById("cfg-tolerance").value = appConfig.tolerance ?? 5;
+      const container = document.getElementById("cfg-stores-list");
+      container.innerHTML = stores.map(s => {
+        const storeCfg = (typeof appConfig.storeHours[s] === "object" && appConfig.storeHours[s] !== null) ? appConfig.storeHours[s] : {};
+        return `
+          <div style="border:1px solid var(--line);padding:8px;background:var(--surface);">
+            <div style="font-weight:700;font-size:12px;margin-bottom:6px;">${s}</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:6px;">
+              ${DAYS_LABELS.map(d => {
+                const raw = storeCfg[d.idx];
+                const vIn = (raw && typeof raw === "object") ? (raw.in || "09:00") : (typeof raw === "string" ? raw : "09:00");
+                const vOut = (raw && typeof raw === "object") ? (raw.out || "18:00") : "18:00";
+                const vLunch = (raw && typeof raw === "object") ? (raw.lunch ?? 60) : 60;
+                return `<div style="background:var(--bg);border:1px solid var(--line);padding:5px;">
+                  <div class="mono" style="font-size:10.5px;font-weight:600;margin-bottom:3px;">${d.label}</div>
+                  <input type="time" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="in" value="${vIn}" style="margin-bottom:2px;font-size:11px;" />
+                  <input type="time" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="out" value="${vOut}" style="margin-bottom:2px;font-size:11px;" />
+                  <input type="number" min="0" max="180" data-store-hour="${s}" data-day-idx="${d.idx}" data-field="lunch" value="${vLunch}" style="font-size:11px;" />
+                </div>`;
+              }).join("")}
+            </div>
+          </div>`;
+      }).join("");
 
-    function renderVacationsPanel() {
-      const workers = [...new Set(allRecords.map(r => r.nombre))].sort();
-      const sel = document.getElementById("vac-worker");
-      sel.innerHTML = workers.map(w => `<option value="${w.replace(/"/g, '&quot;')}">${w}</option>`).join("");
-
-      const vacs = appConfig.vacations || [];
-      const list = document.getElementById("vac-list");
-      if (vacs.length === 0) {
-        list.innerHTML = '<p class="text-xs text-slate-400">No hay periodos de vacaciones registrados.</p>';
-        return;
-      }
-      list.innerHTML = vacs.map((v, idx) => `
-        <div class="flex items-center justify-between bg-blue-50 border border-blue-200 rounded-lg px-3 py-1.5 text-xs">
-          <span><strong>${v.worker}</strong> — del <code>${formatDateDisplay(v.start)}</code> al <code>${formatDateDisplay(v.end)}</code></span>
-          <button type="button" data-vac-del="${idx}" class="text-red-600 hover:underline font-medium">🗑️ Eliminar</button>
-        </div>
-      `).join("");
-
-      list.querySelectorAll("button[data-vac-del]").forEach(btn => {
-        btn.addEventListener("click", () => {
-          appConfig.vacations.splice(Number(btn.dataset.vacDel), 1);
+      container.querySelectorAll("input[data-store-hour]").forEach(inp => {
+        inp.addEventListener("change", () => {
+          const st = inp.dataset.storeHour, dy = inp.dataset.dayIdx, field = inp.dataset.field;
+          if (typeof appConfig.storeHours[st] !== "object" || appConfig.storeHours[st] === null) appConfig.storeHours[st] = {};
+          if (typeof appConfig.storeHours[st][dy] !== "object" || appConfig.storeHours[st][dy] === null) appConfig.storeHours[st][dy] = { in: "09:00", out: "18:00", lunch: 60 };
+          appConfig.storeHours[st][dy][field] = field === "lunch" ? Number(inp.value || 0) : (inp.value || "09:00");
           saveConfig();
-          renderVacationsPanel();
-          applyFilters();
-        });
-      });
-    }
-
-    const ALL_STATUSES = ["En tiempo", "Tolerancia", "Retardo", "Falta", "Vacaciones", "Incapacidad", "Permiso", "Justificado"];
-    let selectedWorkers = new Set();
-    let selectedStatuses = new Set(ALL_STATUSES);
-
-    function renderDynamicFilters() {
-      const workers = [...new Set(allRecords.map(r => r.nombre))].sort();
-      if (selectedWorkers.size === 0) workers.forEach(w => selectedWorkers.add(w));
-
-      const wBox = document.getElementById("workers-checkboxes");
-      wBox.innerHTML = workers.map(w => `
-        <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer hover:bg-slate-50 px-1.5 py-1 rounded">
-          <input type="checkbox" value="${w.replace(/"/g, '&quot;')}" ${selectedWorkers.has(w) ? "checked" : ""} class="rounded text-blue-600" />
-          <span class="truncate">${w}</span>
-        </label>
-      `).join("");
-
-      const updateWLabel = () => {
-        const lbl = document.getElementById("workers-dd-label");
-        if (selectedWorkers.size === workers.length) lbl.textContent = "Todos los trabajadores";
-        else if (selectedWorkers.size === 0) lbl.textContent = "Ninguno seleccionado";
-        else lbl.textContent = `${selectedWorkers.size} seleccionados`;
-      };
-      updateWLabel();
-
-      wBox.querySelectorAll("input[type=checkbox]").forEach(cb => {
-        cb.addEventListener("change", () => {
-          if (cb.checked) selectedWorkers.add(cb.value);
-          else selectedWorkers.delete(cb.value);
-          updateWLabel();
-          applyFilters();
-        });
-      });
-
-      const sBox = document.getElementById("status-checkboxes");
-      sBox.innerHTML = ALL_STATUSES.map(st => `
-        <label class="inline-flex items-center gap-1.5 text-xs bg-slate-50 border border-slate-200 rounded-full px-3 py-1 cursor-pointer hover:bg-slate-100">
-          <input type="checkbox" value="${st}" ${selectedStatuses.has(st) ? "checked" : ""} class="rounded text-blue-600" />
-          <span>${st}</span>
-        </label>
-      `).join("");
-
-      sBox.querySelectorAll("input[type=checkbox]").forEach(cb => {
-        cb.addEventListener("change", () => {
-          if (cb.checked) selectedStatuses.add(cb.value);
-          else selectedStatuses.delete(cb.value);
           applyFilters();
         });
       });
@@ -549,64 +502,156 @@
     function renderEmployeesPanel() {
       const pins = [...new Set(allRecords.map(r => r.pin))].sort((a, b) => Number(a) - Number(b));
       const container = document.getElementById("emp-list");
-      container.innerHTML = pins.map(pin => {
-        const curName = employeeNames[pin] || "";
-        return `
-          <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5">
-            <span class="font-mono text-xs font-bold text-slate-600 w-14">PIN ${pin}</span>
-            <input type="text" data-emp-pin="${pin}" value="${curName.replace(/"/g, '&quot;')}" placeholder="Nombre completo..." class="flex-1 border border-slate-300 rounded px-2 py-1 text-xs" />
-          </div>
-        `;
-      }).join("");
-
+      container.innerHTML = pins.map(pin => `
+        <div style="display:flex;align-items:center;gap:6px;border:1px solid var(--line);padding:5px 8px;background:var(--surface);">
+          <span class="mono" style="font-size:11px;font-weight:600;min-width:54px;">PIN ${pin}</span>
+          <input type="text" data-emp-pin="${pin}" value="${(employeeNames[pin] || "").replace(/"/g, '&quot;')}" placeholder="Nombre..." />
+        </div>
+      `).join("");
       container.querySelectorAll("input[data-emp-pin]").forEach(inp => {
         inp.addEventListener("change", () => {
-          const pin = inp.dataset.empPin;
-          const name = inp.value.trim();
+          const pin = inp.dataset.empPin, name = inp.value.trim();
           employeeNames[pin] = name;
           localStorage.setItem("checador_employees", JSON.stringify(employeeNames));
           allRecords.forEach(r => { if (r.pin === pin && name) r.nombre = name; });
-          postToSheets({ type: "employee", pin: pin, name: name });
-          const msg = document.getElementById("emp-saved-msg");
-          msg.classList.remove("hidden");
-          setTimeout(() => msg.classList.add("hidden"), 1800);
+          postToSheets({ type: "employee", pin, name });
           applyFilters();
         });
       });
     }
 
+    function renderVacationsPanel() {
+      const workers = [...new Set(allRecords.map(r => r.nombre))].sort();
+      document.getElementById("vac-worker").innerHTML = workers.map(w => `<option value="${w.replace(/"/g, '&quot;')}">${w}</option>`).join("");
+      const vacs = appConfig.vacations || [];
+      document.getElementById("vac-list").innerHTML = vacs.length === 0
+        ? '<span style="font-size:12px;color:var(--muted);">Sin periodos de vacaciones registrados.</span>'
+        : vacs.map((v, i) => `<div style="display:flex;justify-content:space-between;border:1px solid var(--line);padding:5px 8px;background:var(--surface);font-size:12px;">
+            <span><strong>${v.worker}</strong> · <span class="mono">${formatDateDisplay(v.start)} → ${formatDateDisplay(v.end)}</span></span>
+            <button type="button" data-vac-del="${i}" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:11px;">Eliminar</button>
+          </div>`).join("");
+      document.querySelectorAll("button[data-vac-del]").forEach(b => {
+        b.addEventListener("click", () => {
+          appConfig.vacations.splice(Number(b.dataset.vacDel), 1);
+          saveConfig(); renderVacationsPanel(); applyFilters();
+        });
+      });
+    }
+
+    function renderDynamicFilters() {
+      const workers = [...new Set(allRecords.map(r => r.nombre))].sort();
+      if (selectedWorkers.size === 0) workers.forEach(w => selectedWorkers.add(w));
+      const wBox = document.getElementById("workers-checkboxes");
+      wBox.innerHTML = workers.map(w => `
+        <label style="display:flex;align-items:center;gap:6px;padding:3px 4px;font-size:12px;cursor:pointer;">
+          <input type="checkbox" value="${w.replace(/"/g, '&quot;')}" ${selectedWorkers.has(w) ? "checked" : ""} />
+          <span>${w}</span>
+        </label>
+      `).join("");
+      const updateLbl = () => {
+        const l = document.getElementById("workers-dd-label");
+        l.textContent = selectedWorkers.size === workers.length ? "Todos los colaboradores" : `${selectedWorkers.size} seleccionados`;
+      };
+      updateLbl();
+      wBox.querySelectorAll("input").forEach(cb => cb.addEventListener("change", () => {
+        if (cb.checked) selectedWorkers.add(cb.value); else selectedWorkers.delete(cb.value);
+        updateLbl(); applyFilters();
+      }));
+
+      const sBox = document.getElementById("status-checkboxes");
+      sBox.innerHTML = ALL_STATUSES.map(st => `
+        <label class="chk-pill"><input type="checkbox" value="${st}" ${selectedStatuses.has(st) ? "checked" : ""} /><span>${st}</span></label>
+      `).join("");
+      sBox.querySelectorAll("input").forEach(cb => cb.addEventListener("change", () => {
+        if (cb.checked) selectedStatuses.add(cb.value); else selectedStatuses.delete(cb.value);
+        applyFilters();
+      }));
+    }
+
     function applyFilters() {
       const month = document.getElementById("f-month").value;
       const store = document.getElementById("f-store").value;
+      filteredRecords = allRecords.map(r => {
+        const key = `${r.pin}|${r.fecha}|${r.tienda}`;
+        const ov = manualOverrides[key] || {};
+        const rule = getDayRule(r.tienda, r.fecha);
+        return {
+          ...r, _key: key,
+          dif_min: timeToMinutes(r.hora.slice(0, 5)) - timeToMinutes(rule.in),
+          estado: ov.status || (isOnVacation(r.nombre, r.fecha) ? "Vacaciones" : computeStatus(r.hora, r.tienda, r.fecha)),
+          comentario: ov.comment || ""
+        };
+      }).filter(r => (!month || r.fecha.startsWith(month)) && (!store || r.tienda === store) && selectedWorkers.has(r.nombre) && selectedStatuses.has(r.estado));
 
-      filteredRecords = allRecords
-        .map(r => {
-          const key = `${r.pin}|${r.fecha}|${r.tienda}`;
-          const ov = manualOverrides[key] || {};
-          const rule = getDayRule(r.tienda, r.fecha);
-          const difMin = timeToMinutes(r.hora.slice(0, 5)) - timeToMinutes(rule.in);
-          return {
-            ...r,
-            _key: key,
-            dif_min: difMin,
-            estado: ov.status || (isOnVacation(r.nombre, r.fecha) ? "Vacaciones" : computeStatus(r.hora, r.tienda, r.fecha)),
-            comentario: ov.comment || ""
-          };
-        })
-        .filter(r => {
-          if (month && !r.fecha.startsWith(month)) return false;
-          if (store && r.tienda !== store) return false;
-          if (!selectedWorkers.has(r.nombre)) return false;
-          if (!selectedStatuses.has(r.estado)) return false;
-          return true;
-        });
+      renderKPIs(); renderCharts(); renderMonthlyMatrix(); renderStoreSummary(); renderSummary(); renderTable();
+    }
 
-      renderKPIs();
-      renderCharts();
-      renderMonthlyMatrix();
-      renderStoreSummary();
-      renderSummary();
-      renderTable();
+    function renderKPIs() {
+      document.getElementById("kpi-total").textContent = filteredRecords.length;
+      document.getElementById("kpi-ontime").textContent = filteredRecords.filter(r => r.estado === "En tiempo" || r.estado === "Justificado").length;
+      document.getElementById("kpi-tol").textContent = filteredRecords.filter(r => r.estado === "Tolerancia").length;
+      document.getElementById("kpi-late").textContent = filteredRecords.filter(r => r.estado === "Retardo" || r.estado === "Falta").length;
+    }
+
+    function renderCharts() {
+      const MONTHS_ES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+      const byDate = {};
+      filteredRecords.forEach(r => {
+        if (!byDate[r.fecha]) byDate[r.fecha] = { "En tiempo": 0, "Tolerancia": 0, "Retardo": 0 };
+        if (r.estado === "En tiempo" || r.estado === "Justificado") byDate[r.fecha]["En tiempo"]++;
+        else if (r.estado === "Tolerancia") byDate[r.fecha]["Tolerancia"]++;
+        else byDate[r.fecha]["Retardo"]++;
+      });
+      const dates = Object.keys(byDate).sort();
+      const xLabels = dates.map(d => { const [, m, day] = d.split("-"); return `${Number(day)} ${MONTHS_ES[Number(m) - 1]}`; });
+      const pct = (v, t) => (t > 0 && v > 0) ? `${Math.round((v / t) * 100)}%` : "";
+
+      Plotly.newPlot("chart-daily", [
+        { x: xLabels, y: dates.map(d => byDate[d]["En tiempo"]), text: dates.map(d => pct(byDate[d]["En tiempo"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "En tiempo", type: "bar", marker: { color: "#1F4E3D" } },
+        { x: xLabels, y: dates.map(d => byDate[d]["Tolerancia"]), text: dates.map(d => pct(byDate[d]["Tolerancia"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "Tolerancia", type: "bar", marker: { color: "#9A5B13" } },
+        { x: xLabels, y: dates.map(d => byDate[d]["Retardo"]), text: dates.map(d => pct(byDate[d]["Retardo"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "Retardo", type: "bar", marker: { color: "#A62626" } }
+      ], { barmode: "stack", margin: { l: 30, r: 10, t: 10, b: 40 }, paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", font: { family: "IBM Plex Mono", size: 10 }, legend: { orientation: "h", y: 1.15 } }, { responsive: true });
+
+      const byW = {};
+      filteredRecords.forEach(r => {
+        if (!byW[r.nombre]) byW[r.nombre] = { "En tiempo": 0, "Tolerancia": 0, "Retardo": 0 };
+        if (r.estado === "En tiempo" || r.estado === "Justificado") byW[r.nombre]["En tiempo"]++;
+        else if (r.estado === "Tolerancia") byW[r.nombre]["Tolerancia"]++;
+        else byW[r.nombre]["Retardo"]++;
+      });
+      const ws = Object.keys(byW).sort();
+      Plotly.newPlot("chart-workers", [
+        { x: ws, y: ws.map(w => byW[w]["En tiempo"]), text: ws.map(w => pct(byW[w]["En tiempo"], byW[w]["En tiempo"] + byW[w]["Tolerancia"] + byW[w]["Retardo"])), textposition: "inside", name: "En tiempo", type: "bar", marker: { color: "#1F4E3D" } },
+        { x: ws, y: ws.map(w => byW[w]["Tolerancia"]), text: ws.map(w => pct(byW[w]["Tolerancia"], byW[w]["En tiempo"] + byW[w]["Tolerancia"] + byW[w]["Retardo"])), textposition: "inside", name: "Tolerancia", type: "bar", marker: { color: "#9A5B13" } },
+        { x: ws, y: ws.map(w => byW[w]["Retardo"]), text: ws.map(w => pct(byW[w]["Retardo"], byW[w]["En tiempo"] + byW[w]["Tolerancia"] + byW[w]["Retardo"])), textposition: "inside", name: "Retardo", type: "bar", marker: { color: "#A62626" } }
+      ], { barmode: "stack", margin: { l: 30, r: 10, t: 10, b: 60 }, paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", font: { family: "IBM Plex Mono", size: 10 }, legend: { orientation: "h", y: 1.15 } }, { responsive: true });
+    }
+
+    function renderMonthlyMatrix() {
+      const tbl = document.getElementById("monthly-matrix");
+      if (filteredRecords.length === 0) { tbl.innerHTML = '<tr><td style="padding:16px;text-align:center;color:var(--muted);">Sin registros.</td></tr>'; return; }
+      const DAY_SHORT = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+      const days = [...new Set(filteredRecords.map(r => r.fecha))].sort();
+      const stores = [...new Set(filteredRecords.map(r => r.tienda || "SinTienda"))].sort();
+      const map = {};
+      filteredRecords.forEach(r => { map[`${r.tienda || "SinTienda"}|${r.nombre}|${r.fecha}`] = r; });
+
+      const thead = `<thead><tr><th class="sticky-col">Colaborador</th>${days.map(d => {
+        const dn = DAY_SHORT[new Date(d + "T12:00:00").getDay()];
+        return `<th class="num"><div>${d.slice(8)}/${d.slice(5,7)}</div><div style="font-weight:400;font-size:9.5px;">${dn}</div></th>`;
+      }).join("")}</tr></thead>`;
+
+      const rows = stores.map(st => {
+        const sw = [...new Set(filteredRecords.filter(r => (r.tienda || "SinTienda") === st).map(r => r.nombre))].sort();
+        return `<tr class="store-divider"><td colspan="${days.length + 1}" class="sticky-col">SUCURSAL · ${st}</td></tr>` +
+          sw.map(w => `<tr><td class="sticky-col" style="font-weight:600;white-space:nowrap;">${w}</td>${days.map(d => {
+            const rec = map[`${st}|${w}|${d}`];
+            if (!rec) return '<td class="num" style="color:var(--line);">·</td>';
+            const lbl = ["Falta", "Vacaciones", "Incapacidad", "Permiso"].includes(rec.estado) ? rec.estado.slice(0, 4) : rec.hora.slice(0, 5);
+            return `<td class="num" title="${rec.estado} | Ent: ${rec.hora}${rec.salida ? ' | Sal: ' + rec.salida : ''}"><span class="cell-tag ${statusClass(rec.estado)}">${lbl}</span></td>`;
+          }).join("")}</tr>`).join("");
+      }).join("");
+      tbl.innerHTML = thead + `<tbody>${rows}</tbody>`;
     }
 
     function renderStoreSummary() {
@@ -622,374 +667,115 @@
           else if (r.estado === "Retardo") byStore[st].late++;
         }
       });
-
-      const tbody = document.getElementById("store-summary-body");
-      tbody.innerHTML = Object.keys(byStore).sort().map(st => {
-        const s = byStore[st];
-        const evalTotal = s.ontime + s.tol + s.late + s.falta;
-        const pct = evalTotal > 0 ? Math.round(((s.ontime + s.tol) / evalTotal) * 100) : 100;
-        const semaforo = pct >= 80 ? "🟢 OK" : (pct >= 60 ? "🟡 ATENCIÓN" : "🔴 ALERTA");
-        return `
-          <tr class="hover:bg-slate-50">
-            <td class="px-3 py-2 font-semibold text-slate-900">${st}</td>
-            <td class="px-3 py-2 text-center font-bold text-slate-800">${s.asistidos}</td>
-            <td class="px-3 py-2 text-center text-green-700 font-semibold">${s.ontime}</td>
-            <td class="px-3 py-2 text-center text-amber-600 font-semibold">${s.tol}</td>
-            <td class="px-3 py-2 text-center text-red-600 font-semibold">${s.late}</td>
-            <td class="px-3 py-2 text-center text-slate-500">${s.falta}</td>
-            <td class="px-3 py-2 text-center font-semibold">${pct}%</td>
-            <td class="px-3 py-2 text-center text-xs font-semibold">${semaforo}</td>
-          </tr>
-        `;
+      document.getElementById("store-summary-body").innerHTML = Object.keys(byStore).sort().map(st => {
+        const s = byStore[st], tot = s.ontime + s.tol + s.late + s.falta;
+        const pct = tot > 0 ? Math.round(((s.ontime + s.tol) / tot) * 100) : 100;
+        const sem = pct >= 80 ? '<span class="sig-ok">OK</span>' : (pct >= 60 ? '<span class="sig-tol">ATENCIÓN</span>' : '<span class="sig-late">ALERTA</span>');
+        return `<tr><td style="font-weight:600;">${st}</td><td class="num">${s.asistidos}</td><td class="num sig-ok">${s.ontime}</td><td class="num sig-tol">${s.tol}</td><td class="num sig-late">${s.late}</td><td class="num">${s.falta}</td><td class="num">${pct}%</td><td class="num">${sem}</td></tr>`;
       }).join("");
-    }
-
-    function statusIcon(st) {
-      if (st === "En tiempo" || st === "Justificado") return "✅";
-      if (st === "Tolerancia") return "🟡";
-      if (st === "Retardo") return "🔴";
-      if (st === "Vacaciones") return "🏖";
-      if (st === "Incapacidad") return "🩺";
-      if (st === "Permiso") return "📋";
-      return "⛔";
-    }
-
-    function renderMonthlyMatrix() {
-      const tbl = document.getElementById("monthly-matrix");
-      if (filteredRecords.length === 0) {
-        tbl.innerHTML = '<tr><td class="p-4 text-center text-slate-400">Sin registros para los filtros seleccionados.</td></tr>';
-        return;
-      }
-      const days = [...new Set(filteredRecords.map(r => r.fecha))].sort();
-      const stores = [...new Set(filteredRecords.map(r => r.tienda || "SinTienda"))].sort();
-      const map = {};
-      filteredRecords.forEach(r => { map[`${r.tienda || "SinTienda"}|${r.nombre}|${r.fecha}`] = r; });
-
-      const DAY_SHORT = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
-      const thead = `<thead class="bg-slate-100 text-slate-600"><tr>
-        <th class="px-3 py-2 sticky left-0 bg-slate-100 z-10">Trabajador</th>
-        ${days.map(d => {
-          const dayName = DAY_SHORT[new Date(d + "T12:00:00").getDay()];
-          return `<th class="px-2 py-2 text-center whitespace-nowrap"><div>${d.slice(8)}/${d.slice(5,7)}</div><div class="text-[10px] font-normal text-slate-400">${dayName}</div></th>`;
-        }).join("")}
-      </tr></thead>`;
-
-      const tbodyRows = stores.map(st => {
-        const storeWorkers = [...new Set(filteredRecords.filter(r => (r.tienda || "SinTienda") === st).map(r => r.nombre))].sort();
-        const headerRow = `<tr class="bg-slate-50 border-t border-slate-200">
-          <td colspan="${days.length + 1}" class="px-3 py-1.5 text-[11px] font-bold text-blue-700 uppercase tracking-wide sticky left-0 bg-slate-50">🏢 ${st}</td>
-        </tr>`;
-        const workerRows = storeWorkers.map(w => `
-          <tr class="hover:bg-slate-50">
-            <td class="px-3 py-2 font-medium text-slate-900 sticky left-0 bg-white whitespace-nowrap">${w}</td>
-            ${days.map(d => {
-              const rec = map[`${st}|${w}|${d}`];
-              if (!rec) return '<td class="px-1.5 py-2 text-center text-slate-300">-</td>';
-              const tip = `${rec.estado} | Ent: ${rec.hora}${rec.salida ? ' | Sal: ' + rec.salida : ''}`;
-              const label = ["Falta", "Vacaciones", "Incapacidad", "Permiso"].includes(rec.estado) ? rec.estado.slice(0, 4) : rec.hora.slice(0, 5);
-              return `<td class="px-1 py-1.5 text-center" title="${tip}">
-                <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold border ${statusBadgeClass(rec.estado)}">${label}</span>
-              </td>`;
-            }).join("")}
-          </tr>
-        `).join("");
-        return headerRow + workerRows;
-      }).join("");
-
-      tbl.innerHTML = thead + `<tbody class="divide-y divide-slate-100">${tbodyRows}</tbody>`;
     }
 
     function renderSummary() {
-      const byWorker = {};
+      const byW = {};
       filteredRecords.forEach(r => {
-        const w = r.nombre;
-        if (!byWorker[w]) {
-          byWorker[w] = { asistidos: 0, ontime: 0, tol: 0, late: 0, special: 0, falta: 0 };
-        }
-        if (r.estado === "Falta") {
-          byWorker[w].falta++;
-        } else if (["Vacaciones", "Incapacidad", "Permiso", "Justificado"].includes(r.estado)) {
-          byWorker[w].special++;
-        } else {
-          byWorker[w].asistidos++;
-          if (r.estado === "En tiempo") byWorker[w].ontime++;
-          else if (r.estado === "Tolerancia") byWorker[w].tol++;
-          else if (r.estado === "Retardo") byWorker[w].late++;
+        if (!byW[r.nombre]) byW[r.nombre] = { asistidos: 0, ontime: 0, tol: 0, late: 0, special: 0, falta: 0 };
+        if (r.estado === "Falta") byW[r.nombre].falta++;
+        else if (["Vacaciones", "Incapacidad", "Permiso", "Justificado"].includes(r.estado)) byW[r.nombre].special++;
+        else {
+          byW[r.nombre].asistidos++;
+          if (r.estado === "En tiempo") byW[r.nombre].ontime++;
+          else if (r.estado === "Tolerancia") byW[r.nombre].tol++;
+          else if (r.estado === "Retardo") byW[r.nombre].late++;
         }
       });
-
-      const tbody = document.getElementById("summary-body");
-      tbody.innerHTML = Object.keys(byWorker).sort().map(w => {
-        const s = byWorker[w];
-        const evalTotal = s.ontime + s.tol + s.late + s.falta;
-        const pct = evalTotal > 0 ? Math.round(((s.ontime + s.tol) / evalTotal) * 100) : 100;
-        const semaforo = pct >= 80 ? "🟢 OK" : (pct >= 60 ? "🟡 ATENCIÓN" : "🔴 ALERTA");
-        let accion = "🟢 Sin acción";
-        if (s.late >= 9) accion = "🔴 Acta administrativa";
-        else if (s.late >= 6) accion = "🔴 Amonestación escrita";
-        else if (s.late >= 3) accion = "🟡 Llamada verbal";
-
-        return `
-          <tr class="hover:bg-slate-50">
-            <td class="px-3 py-2 font-medium text-slate-900">${w}</td>
-            <td class="px-3 py-2 text-center font-bold text-slate-800">${s.asistidos}</td>
-            <td class="px-3 py-2 text-center text-green-700 font-semibold">${s.ontime}</td>
-            <td class="px-3 py-2 text-center text-amber-600 font-semibold">${s.tol}</td>
-            <td class="px-3 py-2 text-center text-red-600 font-semibold">${s.late}</td>
-            <td class="px-3 py-2 text-center text-slate-500">${s.falta}</td>
-            <td class="px-3 py-2 text-center text-blue-600 font-semibold">${s.special}</td>
-            <td class="px-3 py-2 text-center font-semibold">${pct}%</td>
-            <td class="px-3 py-2 text-center text-xs font-semibold">${semaforo}</td>
-            <td class="px-3 py-2 text-xs">${accion}</td>
-          </tr>
-        `;
+      document.getElementById("summary-body").innerHTML = Object.keys(byW).sort().map(w => {
+        const s = byW[w], tot = s.ontime + s.tol + s.late + s.falta;
+        const pct = tot > 0 ? Math.round(((s.ontime + s.tol) / tot) * 100) : 100;
+        const sem = pct >= 80 ? '<span class="sig-ok">OK</span>' : (pct >= 60 ? '<span class="sig-tol">ATENCIÓN</span>' : '<span class="sig-late">ALERTA</span>');
+        let acc = '<span class="sig-ok">Sin acción</span>';
+        if (s.late >= 9) acc = '<span class="sig-late">Acta administrativa</span>';
+        else if (s.late >= 6) acc = '<span class="sig-late">Amonestación escrita</span>';
+        else if (s.late >= 3) acc = '<span class="sig-tol">Llamada verbal</span>';
+        return `<tr><td style="font-weight:600;">${w}</td><td class="num">${s.asistidos}</td><td class="num sig-ok">${s.ontime}</td><td class="num sig-tol">${s.tol}</td><td class="num sig-late">${s.late}</td><td class="num">${s.falta}</td><td class="num sig-spec">${s.special}</td><td class="num">${pct}%</td><td class="num">${sem}</td><td>${acc}</td></tr>`;
       }).join("");
-    }
-
-    function renderKPIs() {
-      const total = filteredRecords.length;
-      const ontime = filteredRecords.filter(r => r.estado === "En tiempo" || r.estado === "Justificado").length;
-      const tol = filteredRecords.filter(r => r.estado === "Tolerancia").length;
-      const late = filteredRecords.filter(r => r.estado === "Retardo" || r.estado === "Falta").length;
-
-      document.getElementById("kpi-total").textContent = total;
-      document.getElementById("kpi-ontime").textContent = ontime;
-      document.getElementById("kpi-tol").textContent = tol;
-      document.getElementById("kpi-late").textContent = late;
-    }
-
-    function renderCharts() {
-      // 1. Asistencia por Día
-      const byDate = {};
-      filteredRecords.forEach(r => {
-        if (!byDate[r.fecha]) byDate[r.fecha] = { "En tiempo": 0, "Tolerancia": 0, "Retardo": 0 };
-        if (r.estado === "En tiempo" || r.estado === "Justificado") byDate[r.fecha]["En tiempo"]++;
-        else if (r.estado === "Tolerancia") byDate[r.fecha]["Tolerancia"]++;
-        else byDate[r.fecha]["Retardo"]++;
-      });
-      const MONTHS_ES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
-      const dates = Object.keys(byDate).sort();
-      const xLabels = dates.map(d => {
-        const [, m, day] = d.split("-");
-        return `${Number(day)} ${MONTHS_ES[Number(m) - 1]}`;
-      });
-
-      const calcPct = (val, tot) => (tot > 0 && val > 0) ? `${Math.round((val / tot) * 100)}%` : "";
-
-      Plotly.newPlot("chart-daily", [
-        { x: xLabels, y: dates.map(d => byDate[d]["En tiempo"]), text: dates.map(d => calcPct(byDate[d]["En tiempo"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "En tiempo", type: "bar", marker: { color: "#16A34A" } },
-        { x: xLabels, y: dates.map(d => byDate[d]["Tolerancia"]), text: dates.map(d => calcPct(byDate[d]["Tolerancia"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "Tolerancia", type: "bar", marker: { color: "#F59E0B" } },
-        { x: xLabels, y: dates.map(d => byDate[d]["Retardo"]), text: dates.map(d => calcPct(byDate[d]["Retardo"], byDate[d]["En tiempo"] + byDate[d]["Tolerancia"] + byDate[d]["Retardo"])), textposition: "inside", name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
-      ], {
-        barmode: "stack",
-        margin: { l: 35, r: 15, t: 10, b: 40 },
-        paper_bgcolor: "rgba(0,0,0,0)",
-        plot_bgcolor: "rgba(0,0,0,0)",
-        legend: { orientation: "h", y: 1.15 }
-      }, { responsive: true });
-
-      // 2. Por Trabajador
-      const byWorker = {};
-      filteredRecords.forEach(r => {
-        const label = r.nombre;
-        if (!byWorker[label]) byWorker[label] = { "En tiempo": 0, "Tolerancia": 0, "Retardo": 0 };
-        if (r.estado === "En tiempo" || r.estado === "Justificado") byWorker[label]["En tiempo"]++;
-        else if (r.estado === "Tolerancia") byWorker[label]["Tolerancia"]++;
-        else byWorker[label]["Retardo"]++;
-      });
-      const workers = Object.keys(byWorker).sort();
-
-      Plotly.newPlot("chart-workers", [
-        { x: workers, y: workers.map(w => byWorker[w]["En tiempo"]), text: workers.map(w => calcPct(byWorker[w]["En tiempo"], byWorker[w]["En tiempo"] + byWorker[w]["Tolerancia"] + byWorker[w]["Retardo"])), textposition: "inside", name: "En tiempo", type: "bar", marker: { color: "#16A34A" } },
-        { x: workers, y: workers.map(w => byWorker[w]["Tolerancia"]), text: workers.map(w => calcPct(byWorker[w]["Tolerancia"], byWorker[w]["En tiempo"] + byWorker[w]["Tolerancia"] + byWorker[w]["Retardo"])), textposition: "inside", name: "Tolerancia", type: "bar", marker: { color: "#F59E0B" } },
-        { x: workers, y: workers.map(w => byWorker[w]["Retardo"]), text: workers.map(w => calcPct(byWorker[w]["Retardo"], byWorker[w]["En tiempo"] + byWorker[w]["Tolerancia"] + byWorker[w]["Retardo"])), textposition: "inside", name: "Retardo", type: "bar", marker: { color: "#DC2626" } }
-      ], {
-        barmode: "stack",
-        margin: { l: 35, r: 15, t: 10, b: 60 },
-        paper_bgcolor: "rgba(0,0,0,0)",
-        plot_bgcolor: "rgba(0,0,0,0)",
-        legend: { orientation: "h", y: 1.15 }
-      }, { responsive: true });
-    }
-
-    function statusBadgeClass(st) {
-      if (st === "En tiempo" || st === "Justificado") return "bg-green-100 text-green-700 border-green-200";
-      if (st === "Tolerancia") return "bg-amber-100 text-amber-700 border-amber-200";
-      if (["Vacaciones", "Incapacidad", "Permiso"].includes(st)) return "bg-blue-100 text-blue-700 border-blue-200";
-      return "bg-red-100 text-red-700 border-red-200";
     }
 
     function renderTable() {
       const sorted = [...filteredRecords].sort((a, b) => {
-        const va = a[sortKey] ?? "";
-        const vb = b[sortKey] ?? "";
+        const va = a[sortKey] ?? "", vb = b[sortKey] ?? "";
         if (typeof va === "number" && typeof vb === "number") return sortAsc ? va - vb : vb - va;
         return sortAsc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
       });
-
-      const statuses = ["En tiempo", "Tolerancia", "Retardo", "Falta", "Vacaciones", "Incapacidad", "Permiso", "Justificado"];
-      const tbody = document.getElementById("table-body");
-      tbody.innerHTML = sorted.map(r => `
-        <tr class="hover:bg-slate-50">
-          <td class="px-3 py-2.5 font-mono text-xs text-slate-600">${r.pin}</td>
-          <td class="px-3 py-2.5 font-medium text-slate-900">${r.nombre}</td>
-          <td class="px-3 py-2.5 whitespace-nowrap">${formatDateDisplay(r.fecha)}</td>
-          <td class="px-3 py-2.5 font-mono text-xs">${r.hora}</td>
-          <td class="px-3 py-2.5 font-mono text-xs text-center ${r.dif_min > 0 ? 'text-red-600' : 'text-green-600'}">${r.dif_min > 0 ? '+' + r.dif_min : r.dif_min}</td>
-          <td class="px-3 py-2.5 font-mono text-xs text-slate-500">${r.salida_comer || "-"}</td>
-          <td class="px-3 py-2.5 font-mono text-xs text-slate-500">${r.regreso_comer || "-"}</td>
-          <td class="px-3 py-2.5 font-mono text-xs">${r.salida || "-"}</td>
-          <td class="px-3 py-2.5 font-mono text-xs font-semibold text-slate-700">${r.horas_trabajadas || "-"}</td>
-          <td class="px-3 py-2.5">${r.tienda}</td>
-          <td class="px-3 py-2.5">
-            <select data-status-key="${r._key}" class="text-xs font-medium rounded-full px-2 py-1 border ${statusBadgeClass(r.estado)}">
-              ${statuses.map(s => `<option value="${s}" ${r.estado === s ? "selected" : ""}>${s}</option>`).join("")}
-            </select>
-          </td>
-          <td class="px-3 py-2.5">
-            <input type="text" data-comment-key="${r._key}" value="${r.comentario.replace(/"/g, '&quot;')}" placeholder="Agregar nota..." class="w-40 border border-slate-200 rounded px-2 py-1 text-xs focus:outline-none focus:border-blue-400" />
-          </td>
-        </tr>
-      `).join("");
-
-      tbody.querySelectorAll("select[data-status-key]").forEach(sel => {
-        sel.addEventListener("change", () => {
-          const k = sel.dataset.statusKey;
-          manualOverrides[k] = { ...(manualOverrides[k] || {}), status: sel.value };
-          saveOverride(k);
-          applyFilters();
-        });
-      });
-
-      tbody.querySelectorAll("input[data-comment-key]").forEach(inp => {
-        inp.addEventListener("change", () => {
-          const k = inp.dataset.commentKey;
-          manualOverrides[k] = { ...(manualOverrides[k] || {}), comment: inp.value };
-          saveOverride(k);
-        });
-      });
+      document.getElementById("table-body").innerHTML = sorted.map(r => `<tr>
+        <td class="mono">${r.pin}</td><td style="font-weight:600;">${r.nombre}</td><td class="mono">${formatDateDisplay(r.fecha)}</td>
+        <td class="mono">${r.hora}</td><td class="num ${r.dif_min > 0 ? 'sig-late' : 'sig-ok'}">${r.dif_min > 0 ? '+' + r.dif_min : r.dif_min}</td>
+        <td class="mono">${r.salida_comer || "-"}</td><td class="mono">${r.regreso_comer || "-"}</td><td class="mono">${r.salida || "-"}</td>
+        <td class="mono">${r.horas_trabajadas || "-"}</td><td>${r.tienda}</td>
+        <td><select data-status-key="${r._key}" class="${statusClass(r.estado)}" style="width:auto;font-size:11.5px;">${ALL_STATUSES.map(s => `<option value="${s}" ${r.estado === s ? "selected" : ""}>${s}</option>`).join("")}</select></td>
+        <td><input type="text" data-comment-key="${r._key}" value="${r.comentario.replace(/"/g, '&quot;')}" placeholder="Observación..." /></td>
+      </tr>`).join("");
+      document.querySelectorAll("select[data-status-key]").forEach(s => s.addEventListener("change", () => {
+        manualOverrides[s.dataset.statusKey] = { ...(manualOverrides[s.dataset.statusKey] || {}), status: s.value };
+        saveOverride(s.dataset.statusKey); applyFilters();
+      }));
+      document.querySelectorAll("input[data-comment-key]").forEach(i => i.addEventListener("change", () => {
+        manualOverrides[i.dataset.commentKey] = { ...(manualOverrides[i.dataset.commentKey] || {}), comment: i.value };
+        saveOverride(i.dataset.commentKey);
+      }));
     }
 
     function downloadCSV() {
-      const header = ["PIN", "Nombre", "Fecha", "Entrada", "Salida Comer", "Regreso Comer", "Salida", "Horas Trabajadas", "Tienda", "Estatus", "Comentarios"];
-      const rows = filteredRecords.map(r => [
-        r.pin, `"${r.nombre}"`, formatDateDisplay(r.fecha), r.hora, r.salida_comer || "", r.regreso_comer || "", r.salida || "", r.horas_trabajadas || "", `"${r.tienda}"`, r.estado, `"${(r.comentario || "").replace(/"/g, '""')}"`
-      ]);
-      const csv = "\uFEFF" + [header.join(","), ...rows.map(r => r.join(","))].join("\n");
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = `reporte_asistencia_${new Date().toISOString().slice(0,10)}.csv`;
-      a.click();
+      const header = ["PIN", "Colaborador", "Fecha", "Entrada", "Dif(min)", "Comida Salida", "Comida Regreso", "Salida", "Horas", "Sucursal", "Estatus", "Observaciones"];
+      const rows = filteredRecords.map(r => [r.pin, `"${r.nombre}"`, formatDateDisplay(r.fecha), r.hora, r.dif_min, r.salida_comer || "", r.regreso_comer || "", r.salida || "", r.horas_trabajadas || "", `"${r.tienda}"`, r.estado, `"${(r.comentario || "").replace(/"/g, '""')}"`]);
+      const blob = new Blob(["\uFEFF" + [header.join(","), ...rows.map(r => r.join(","))].join("\n")], { type: "text/csv;charset=utf-8;" });
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `bitacora_asistencia_${new Date().toISOString().slice(0,10)}.csv`; a.click();
     }
 
-    async function init() {
-      document.querySelectorAll(".cfg-tab-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".cfg-tab-btn").forEach(b => {
-            b.classList.remove("bg-blue-600", "text-white");
-            b.classList.add("bg-slate-100", "text-slate-700");
-          });
-          btn.classList.add("bg-blue-600", "text-white");
-          btn.classList.remove("bg-slate-100", "text-slate-700");
-          document.querySelectorAll(".cfg-tab-content").forEach(c => c.classList.add("hidden"));
-          document.getElementById(btn.dataset.cfgTab).classList.remove("hidden");
-        });
-      });
-      document.getElementById("btn-vac-add").addEventListener("click", () => {
-        const w = document.getElementById("vac-worker").value;
-        const s = document.getElementById("vac-start").value;
-        const e = document.getElementById("vac-end").value;
-        if (!w || !s || !e || s > e) return;
-        if (!Array.isArray(appConfig.vacations)) appConfig.vacations = [];
-        appConfig.vacations.push({ worker: w, start: s, end: e });
-        saveConfig();
-        renderVacationsPanel();
-        applyFilters();
-      });
-      document.getElementById("btn-config-toggle").addEventListener("click", () => {
-        document.getElementById("config-panel").classList.toggle("hidden");
-      });
-      document.querySelectorAll("[data-collapse-target]").forEach(hdr => {
-        hdr.addEventListener("click", () => {
-          const target = document.getElementById(hdr.dataset.collapseTarget);
-          const icon = hdr.querySelector(".collapse-icon");
-          target.classList.toggle("hidden");
-          icon.textContent = target.classList.contains("hidden") ? "▼ Mostrar" : "▲ Ocultar";
-        });
-      });
-      document.getElementById("btn-table-toggle").addEventListener("click", () => {
-        const wrap = document.getElementById("table-wrapper");
-        const icon = document.getElementById("table-toggle-icon");
-        wrap.classList.toggle("hidden");
-        icon.textContent = wrap.classList.contains("hidden") ? "▼ Mostrar" : "▲ Ocultar";
-      });
-      document.getElementById("cfg-tolerance").addEventListener("change", (e) => {
-        appConfig.tolerance = Number(e.target.value || 0);
-        saveConfig();
-        applyFilters();
-      });
-
-      ["f-month", "f-store"].forEach(id => {
-        document.getElementById(id).addEventListener("input", applyFilters);
-      });
-      document.getElementById("btn-workers-dd").addEventListener("click", () => {
-        document.getElementById("workers-dd-menu").classList.toggle("hidden");
-      });
-      document.getElementById("btn-workers-all").addEventListener("click", () => {
-        document.querySelectorAll("#workers-checkboxes input[type=checkbox]").forEach(cb => {
-          cb.checked = true;
-          selectedWorkers.add(cb.value);
-        });
-        document.getElementById("workers-dd-label").textContent = "Todos los trabajadores";
-        applyFilters();
-      });
-      document.getElementById("btn-workers-none").addEventListener("click", () => {
-        document.querySelectorAll("#workers-checkboxes input[type=checkbox]").forEach(cb => { cb.checked = false; });
-        selectedWorkers.clear();
-        document.getElementById("workers-dd-label").textContent = "Ninguno seleccionado";
-        applyFilters();
-      });
-
-      document.querySelectorAll("th[data-sort]").forEach(th => {
-        th.addEventListener("click", () => {
-          const key = th.dataset.sort;
-          if (sortKey === key) sortAsc = !sortAsc;
-          else { sortKey = key; sortAsc = key !== "fecha"; }
-          renderTable();
-        });
-      });
-
-      document.getElementById("btn-csv").addEventListener("click", downloadCSV);
-      document.getElementById("btn-refresh").addEventListener("click", async () => {
-        const btn = document.getElementById("btn-refresh");
-        btn.disabled = true;
-        btn.classList.add("opacity-75", "animate-pulse");
-        btn.textContent = "⏳ Actualizando...";
-        try {
-          await loadData();
-          const now = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-          btn.classList.remove("animate-pulse");
-          btn.textContent = `✅ Actualizado (${now})`;
-          setTimeout(() => {
-            btn.textContent = "🔄 Actualizar";
-            btn.classList.remove("opacity-75");
-            btn.disabled = false;
-          }, 2500);
-        } catch (e) {
-          btn.classList.remove("animate-pulse", "opacity-75");
-          btn.textContent = "❌ Error al actualizar";
-          setTimeout(() => {
-            btn.textContent = "🔄 Actualizar";
-            btn.disabled = false;
-          }, 2500);
-        }
-      });
-
-      await loadData();
-    }
-
-    init();
+    document.getElementById("btn-config-toggle").addEventListener("click", () => document.getElementById("config-panel").classList.toggle("hidden"));
+    document.querySelectorAll(".tab-btn").forEach(b => b.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      document.querySelectorAll(".cfg-tab-content").forEach(c => c.classList.add("hidden"));
+      document.getElementById(b.dataset.cfgTab).classList.remove("hidden");
+    }));
+    document.getElementById("cfg-tolerance").addEventListener("change", e => { appConfig.tolerance = Number(e.target.value || 0); saveConfig(); applyFilters(); });
+    document.getElementById("btn-vac-add").addEventListener("click", () => {
+      const w = document.getElementById("vac-worker").value, s = document.getElementById("vac-start").value, e = document.getElementById("vac-end").value;
+      if (!w || !s || !e || s > e) return;
+      if (!Array.isArray(appConfig.vacations)) appConfig.vacations = [];
+      appConfig.vacations.push({ worker: w, start: s, end: e });
+      saveConfig(); renderVacationsPanel(); applyFilters();
+    });
+    ["f-month", "f-store"].forEach(id => document.getElementById(id).addEventListener("input", applyFilters));
+    document.getElementById("btn-workers-dd").addEventListener("click", () => document.getElementById("workers-dd-menu").classList.toggle("hidden"));
+    document.getElementById("btn-workers-all").addEventListener("click", () => {
+      document.querySelectorAll("#workers-checkboxes input").forEach(cb => { cb.checked = true; selectedWorkers.add(cb.value); });
+      document.getElementById("workers-dd-label").textContent = "Todos los colaboradores"; applyFilters();
+    });
+    document.getElementById("btn-workers-none").addEventListener("click", () => {
+      document.querySelectorAll("#workers-checkboxes input").forEach(cb => cb.checked = false);
+      selectedWorkers.clear(); document.getElementById("workers-dd-label").textContent = "0 seleccionados"; applyFilters();
+    });
+    document.querySelectorAll("[data-collapse-target]").forEach(h => h.addEventListener("click", () => {
+      const t = document.getElementById(h.dataset.collapseTarget);
+      t.classList.toggle("hidden");
+      h.querySelector(".collapse-icon").textContent = t.classList.contains("hidden") ? "[+] Mostrar" : "[−] Ocultar";
+    }));
+    document.getElementById("btn-table-toggle").addEventListener("click", () => {
+      const w = document.getElementById("table-wrapper");
+      w.classList.toggle("hidden");
+      document.getElementById("table-toggle-icon").textContent = w.classList.contains("hidden") ? "[+] Mostrar" : "[−] Ocultar";
+    });
+    document.querySelectorAll("th[data-sort]").forEach(th => th.addEventListener("click", () => {
+      const k = th.dataset.sort; if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = k !== "fecha"; } renderTable();
+    }));
+    document.getElementById("btn-csv").addEventListener("click", downloadCSV);
+    document.getElementById("btn-refresh").addEventListener("click", async () => {
+      const btn = document.getElementById("btn-refresh"); btn.disabled = true; btn.textContent = "Actualizando...";
+      try { await loadData(); btn.textContent = "Actualizado"; setTimeout(() => { btn.textContent = "Actualizar"; btn.disabled = false; }, 2000); }
+      catch { btn.textContent = "Error"; setTimeout(() => { btn.textContent = "Actualizar"; btn.disabled = false; }, 2000); }
+    });
+    loadData();
   </script>
 </body>
 </html>
